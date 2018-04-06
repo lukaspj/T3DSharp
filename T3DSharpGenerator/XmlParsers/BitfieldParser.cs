@@ -1,4 +1,5 @@
 ﻿using System.Xml;
+using T3DSharpGenerator.Model;
 
 namespace T3DSharpGenerator.XmlParsers
 {
@@ -8,7 +9,8 @@ namespace T3DSharpGenerator.XmlParsers
             return element.Name.Equals("EngineBitfieldType");
         }
 
-        public void Parse(XmlElement element, ParseState parseState) {
+        public ParseState Parse(XmlElement element, ParseState parseState) {
+            return new EnumParser().Parse(element, parseState);
         }
     }
 }

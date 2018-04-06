@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
+using T3DSharpGenerator.Model;
 using T3DSharpGenerator.XmlParsers;
 
 namespace T3DSharpGenerator
@@ -8,6 +9,17 @@ namespace T3DSharpGenerator
     internal class ParseState
     {
         public string Scope { get; private set; }
+        public List<EngineEnum> Enums { get; }
+        public List<EngineStruct> Structs { get; }
+        public List<EngineFunction> Functions { get; }
+        public List<EngineClass> Classes { get; }
+
+        public ParseState() {
+            Enums = new List<EngineEnum>();
+            Structs = new List<EngineStruct>();
+            Functions = new List<EngineFunction>();
+            Classes = new List<EngineClass>();
+        }
 
         public ParseState AddScope(string scope) {
             if (string.IsNullOrEmpty(Scope)) {
@@ -19,7 +31,7 @@ namespace T3DSharpGenerator
             return this;
         }
     }
-    
+
     internal static class EngineApiParser
     {
         private static readonly List<IApiXmlParser> Parsers = new List<IApiXmlParser>() {
@@ -32,22 +44,23 @@ namespace T3DSharpGenerator
             new BitfieldParser()
         };
 
-        public static void Parse(string content) {
+        public static EngineApi Parse(string content) {
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(content);
 
-            if (doc.DocumentElement == null) return;
+            if (doc.DocumentElement == null) return null;
 
-            ParseElement(doc.DocumentElement, new ParseState());
-
-            XmlNodeList elements = doc.ChildNodes;
-            if (elements.Count == 1) {
-                elements = elements[0].ChildNodes;
-            }
+            ParseState parseState = ParseElement(doc.DocumentElement, new ParseState());
+            
+            return new EngineApi()
+                .SetEnums(parseState.Enums)
+                .SetStructs(parseState.Structs)
+                .SetClasses(parseState.Classes)
+                .SetFunctions(parseState.Functions);
         }
 
-        public static void ParseElement(XmlElement element, ParseState parseState) {
-            Parsers.FindAll(x => x.Parses(element))
+        public static ParseState ParseElement(XmlElement element, ParseState parseState) {
+            return Parsers.FindAll(x => x.Parses(element))
                 .DefaultIfEmpty(new NotHandledParser())
                 .Single()
                 .Parse(element, parseState);

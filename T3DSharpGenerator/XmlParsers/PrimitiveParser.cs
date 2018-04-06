@@ -8,7 +8,8 @@ namespace T3DSharpGenerator.XmlParsers
             return element.Name.Equals("EnginePrimitiveType");
         }
 
-        public void Parse(XmlElement element, ParseState parseState) {
+        public ParseState Parse(XmlElement element, ParseState parseState) {
+            return parseState;
         }
     }
 }

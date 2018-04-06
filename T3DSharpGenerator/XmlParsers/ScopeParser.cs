@@ -9,12 +9,13 @@ namespace T3DSharpGenerator.XmlParsers
             return element.Name.Equals("EngineExportScope");
         }
 
-        public void Parse(XmlElement element, ParseState parseState) {
+        public ParseState Parse(XmlElement element, ParseState parseState) {
             Console.WriteLine("Parsing scope with: " + element.Attributes["name"].InnerText,
                 ", " + element.Attributes["docs"].InnerText);
             foreach (XmlElement childNode in element.ChildNodes[0].ChildNodes) {
-                EngineApiParser.ParseElement(childNode, parseState.AddScope(element.Attributes["name"].InnerText));
+                parseState = EngineApiParser.ParseElement(childNode, parseState.AddScope(element.Attributes["name"].InnerText));
             }
+            return parseState;
         }
     }
 }

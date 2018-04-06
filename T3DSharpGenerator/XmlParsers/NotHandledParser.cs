@@ -9,8 +9,9 @@ namespace T3DSharpGenerator.XmlParsers
             return true;
         }
 
-        public void Parse(XmlElement element, ParseState parseState) {
+        public ParseState Parse(XmlElement element, ParseState parseState) {
             Console.WriteLine("Element with type " + element.Name + " was not handled");
+            return parseState;
         }
     }
 }

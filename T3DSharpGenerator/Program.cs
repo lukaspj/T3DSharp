@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using T3DSharpFramework.Interop;
+using T3DSharpGenerator.Model;
 
 namespace T3DSharpGenerator
 {
@@ -60,7 +61,12 @@ namespace T3DSharpGenerator
             string content = sr.ReadToEnd();
             sr.Close();
 
-            EngineApiParser.Parse(content);
+            EngineApi engineApi = EngineApiParser.Parse(content);
+
+            Console.WriteLine(engineApi.Enums.Count);
+            Console.WriteLine(engineApi.Structs.Count);
+            Console.WriteLine(engineApi.Functions.Count);
+            Console.WriteLine(engineApi.Classes.Count);
         }
     }
 }

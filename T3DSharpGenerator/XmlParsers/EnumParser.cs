@@ -1,4 +1,5 @@
 ﻿using System.Xml;
+using T3DSharpGenerator.Model;
 
 namespace T3DSharpGenerator.XmlParsers
 {
@@ -8,13 +9,27 @@ namespace T3DSharpGenerator.XmlParsers
             return element.Name.Equals("EngineEnumType");
         }
 
-        public void Parse(XmlElement element, ParseState parseState) {
+        public ParseState Parse(XmlElement element, ParseState parseState) {
             string name = element.Attributes["name"].InnerText;
             string docs = element.Attributes["docs"].InnerText;
-            
+
+            EngineEnum engineEnum = new EngineEnum() {
+                Name = name,
+                Docs = docs,
+                Scope = parseState.Scope
+            };
+
             foreach (XmlElement childNode in element.ChildNodes[0].ChildNodes) {
-                EngineApiParser.ParseElement(childNode, parseState.AddScope(element.Attributes["name"].InnerText));
+                engineEnum.Add(new EngineEnum.Field() {
+                    Name = childNode.Attributes["name"].InnerText,
+                    Value = int.Parse(childNode.Attributes["value"].InnerText),
+                    Docs = childNode.Attributes["docs"].InnerText
+                });
             }
+
+            parseState.Enums.Add(engineEnum);
+            
+            return parseState;
         }
     }
 }

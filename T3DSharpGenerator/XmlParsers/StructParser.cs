@@ -1,4 +1,6 @@
-﻿using System.Xml;
+﻿using System.Diagnostics.Eventing.Reader;
+using System.Xml;
+using T3DSharpGenerator.Model;
 
 namespace T3DSharpGenerator.XmlParsers
 {
@@ -8,7 +10,30 @@ namespace T3DSharpGenerator.XmlParsers
             return element.Name.Equals("EngineStructType");
         }
 
-        public void Parse(XmlElement element, ParseState parseState) {
+        public ParseState Parse(XmlElement element, ParseState parseState) {
+            string name = element.Attributes["name"].InnerText;
+            string docs = element.Attributes["docs"].InnerText;
+
+            EngineStruct engineStruct = new EngineStruct() {
+                Name = name,
+                Docs = docs,
+                Scope = parseState.Scope
+            };
+            
+            foreach (XmlElement childNode in element.ChildNodes) {
+                if (!childNode.Name.Equals("fields")) continue;
+                foreach (XmlElement fieldNode in childNode.ChildNodes) {
+                    engineStruct.Add(new EngineStruct.Field() {
+                        Name = fieldNode.Attributes["name"].InnerText,
+                        Type = fieldNode.Attributes["type"].InnerText,
+                        Offset = fieldNode.Attributes["offset"].InnerText,
+                        Docs = fieldNode.Attributes["docs"].InnerText
+                    });
+                }
+            }
+
+            parseState.Structs.Add(engineStruct);
+            return parseState;
         }
     }
 }

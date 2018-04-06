@@ -28,6 +28,13 @@
       <e p="T3DSharpGenerator" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="EngineApiParser.cs" t="Include" />
+        <e p="Model" t="Include">
+          <e p="EngineApi.cs" t="Include" />
+          <e p="EngineClass.cs" t="Include" />
+          <e p="EngineEnum.cs" t="Include" />
+          <e p="EngineFunction.cs" t="Include" />
+          <e p="EngineStruct.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
