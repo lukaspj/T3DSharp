@@ -21,7 +21,7 @@ namespace T3DSharpGenerator
             Classes = new List<EngineClass>();
         }
 
-        public ParseState AddScope(string scope) {
+        public ParseState EnterScope(string scope) {
             if (string.IsNullOrEmpty(Scope)) {
                 Scope = scope;
             } else if (!string.IsNullOrEmpty(scope)) {
@@ -29,6 +29,16 @@ namespace T3DSharpGenerator
             }
 
             return this;
+        }
+
+        public void ExitScope(string scope) {
+            if (!string.IsNullOrEmpty(scope)) {
+                Scope = Scope.Substring(0, Scope.Length - scope.Length);
+            }
+
+            if (Scope.EndsWith(".")) {
+                Scope = Scope.Substring(0, Scope.Length - 1);
+            }
         }
     }
 
@@ -51,7 +61,7 @@ namespace T3DSharpGenerator
             if (doc.DocumentElement == null) return null;
 
             ParseState parseState = ParseElement(doc.DocumentElement, new ParseState());
-            
+
             return new EngineApi()
                 .SetEnums(parseState.Enums)
                 .SetStructs(parseState.Structs)

@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using T3DSharpFramework.Interop;
+using T3DSharpGenerator.Generators;
 using T3DSharpGenerator.Model;
 
 namespace T3DSharpGenerator
@@ -67,6 +68,14 @@ namespace T3DSharpGenerator
             Console.WriteLine(engineApi.Structs.Count);
             Console.WriteLine(engineApi.Functions.Count);
             Console.WriteLine(engineApi.Classes.Count);
+
+            foreach (EngineStruct engineStruct in engineApi.Structs) {
+                if (engineStruct.Fields.Count < 1) {
+                    Console.WriteLine("No fields defined in struct: " + engineStruct.Name);
+                }
+            }
+            
+            EnumGenerator.GenerateFor(engineApi.Enums);
         }
     }
 }

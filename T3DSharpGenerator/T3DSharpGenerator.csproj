@@ -32,6 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mustachio, Version=1.0.26.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Mustachio.1.1.26\lib\net45\Mustachio.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -39,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EngineApiParser.cs" />
+    <Compile Include="Generators\EnumGenerator.cs" />
     <Compile Include="Model\EngineApi.cs" />
     <Compile Include="Model\EngineClass.cs" />
     <Compile Include="Model\EngineEnum.cs" />
@@ -61,6 +69,17 @@
       <Project>{383BB2AC-7904-4222-BB85-3012A490EEE9}</Project>
       <Name>T3DSharpFramework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Templates\SimEnum.mustache">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
