@@ -1,8 +1,0 @@
-namespace Torque3D.Enums.{{^Scope}}Global{{/Scope}}{{#Scope}}{{.}}{{/Scope}} {
-    {{#each Enums}}
-    public enum {{Name}} {
-        {{#each Fields}}{{Name}} = {{Value}}{{^Last}},
-        {{/Last}}{{/each}}
-    }
-    {{/each}}
-}

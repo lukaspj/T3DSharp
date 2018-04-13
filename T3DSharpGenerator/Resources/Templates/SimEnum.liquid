@@ -1,0 +1,10 @@
+namespace Torque3D.Enums.{{Scope}} {
+{% for enum in Enums %}
+    public enum {{enum.Name}} {
+{% for field in enum.Fields -%}
+        {{field.Name}} = {{field.Value}}{% if forloop.rindex0 != 0 %},{% endif -%}
+        
+{% endfor -%}
+    }
+{% endfor %}
+}

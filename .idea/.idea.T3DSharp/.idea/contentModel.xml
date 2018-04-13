@@ -31,6 +31,14 @@
         <e p="EngineApiParser.cs" t="Include" />
         <e p="Generators" t="Include">
           <e p="EnumGenerator.cs" t="Include" />
+          <e p="FunctionGenerator.cs" t="Include" />
+          <e p="StructGenerator.cs" t="Include" />
+          <e p="Templating" t="Include">
+            <e p="BaseTemplate.cs" t="Include" />
+            <e p="EnumTemplate.cs" t="Include" />
+            <e p="FunctionTemplate.cs" t="Include" />
+            <e p="StructTemplate.cs" t="Include" />
+          </e>
         </e>
         <e p="Model" t="Include">
           <e p="EngineApi.cs" t="Include" />
@@ -47,7 +55,11 @@
         </e>
         <e p="Resources" t="Include">
           <e p="Templates" t="Include">
-            <e p="SimEnum.mustache" t="Include" />
+            <e p="_managed_function.liquid" t="Include" />
+            <e p="_native_function.liquid" t="Include" />
+            <e p="SimEnum.liquid" t="Include" />
+            <e p="SimFunction.liquid" t="Include" />
+            <e p="SimStruct.liquid" t="Include" />
           </e>
         </e>
         <e p="T3DSharpGenerator.csproj" t="IncludeRecursive" />

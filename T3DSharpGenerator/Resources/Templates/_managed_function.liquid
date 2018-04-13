@@ -1,0 +1,6 @@
+        public static {{function.ReturnType}} {{function.Name}}({% for arg in function.Args %}{{arg.Type}} {{arg.Name}}{% if forloop.rindex0 != 0 %}, {% endif %}{% endfor %}) {
+{% if function.IsVariadic -%}
+{% else -%}
+            {{function.ReturnStmtPrefix}}InternalUnsafeMethods.{{function.Name}}({% for arg in function.Args %}{{arg.Name}}{% if forloop.rindex0 != 0%}, {% endif %}{% endfor %}){{function.ReturnStmtPostfix}};
+{% endif -%}
+        }

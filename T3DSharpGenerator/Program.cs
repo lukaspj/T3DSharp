@@ -76,6 +76,8 @@ namespace T3DSharpGenerator
             }
             
             EnumGenerator.GenerateFor(engineApi.Enums);
+            StructGenerator.GenerateFor(engineApi.Structs);
+            FunctionGenerator.GenerateFor(engineApi.Functions);
         }
     }
 }

@@ -32,10 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Mustachio, Version=1.0.26.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Mustachio.1.1.26\lib\net45\Mustachio.dll</HintPath>
+    <Reference Include="DotLiquid, Version=2.0.254.0, Culture=neutral, PublicKeyToken=82e46016ecf9f07c">
+      <HintPath>..\packages\DotLiquid.2.0.254\lib\net45\DotLiquid.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -47,6 +47,12 @@
   <ItemGroup>
     <Compile Include="EngineApiParser.cs" />
     <Compile Include="Generators\EnumGenerator.cs" />
+    <Compile Include="Generators\FunctionGenerator.cs" />
+    <Compile Include="Generators\StructGenerator.cs" />
+    <Compile Include="Generators\Templating\BaseTemplate.cs" />
+    <Compile Include="Generators\Templating\EnumTemplate.cs" />
+    <Compile Include="Generators\Templating\FunctionTemplate.cs" />
+    <Compile Include="Generators\Templating\StructTemplate.cs" />
     <Compile Include="Model\EngineApi.cs" />
     <Compile Include="Model\EngineClass.cs" />
     <Compile Include="Model\EngineEnum.cs" />
@@ -77,7 +83,19 @@
     <Folder Include="Resources" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Templates\SimEnum.mustache">
+    <Content Include="Resources\Templates\_managed_function.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\_native_function.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\SimEnum.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\SimFunction.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\SimStruct.liquid">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

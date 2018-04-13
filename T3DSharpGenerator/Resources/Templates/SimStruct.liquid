@@ -1,0 +1,10 @@
+namespace Torque3D.Structs.{{Scope}} {
+{% for struct in Structs %}
+    [StructLayout(LayoutKind.Explicit)]
+    public struct {{struct.Name}} {
+{% for field in struct.Fields -%}
+        [FieldOffset({{field.Offset}})] protected {{field.Type}} {{field.Name}};
+{% endfor -%}
+    }
+{% endfor %}
+}
