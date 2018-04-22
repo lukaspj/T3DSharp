@@ -11,19 +11,19 @@ namespace T3DSharpGenerator.Generators
 {
     public static class StructGenerator
     {
-        public static void GenerateFor(List<EngineStruct> structs) {
+        public static void GenerateFor(EngineApi engineApi, List<EngineStruct> structs) {
             structs.GroupBy(x => x.Scope)
-                .Select(x => new {Scope = x.Key, Structs = x.Select(ToStructModel)})
+                .Select(x => new {Scope = x.Key, Structs = x})
                 .ToList()
-                .ForEach(x => GenerateStructsInScope(x.Structs, x.Scope));
+                .ForEach(x => GenerateStructsInScope(engineApi, x.Structs, x.Scope));
         }
 
-        private static void GenerateStructsInScope(IEnumerable<Hash> structs, string scope) {
+        private static void GenerateStructsInScope(EngineApi engineApi, IEnumerable<EngineStruct> structs, string scope) {
             var model = Hash.FromAnonymousObject(new {
                 Structs = structs,
                 Scope = (string.IsNullOrEmpty(scope) ? "Global" : scope)
             });
-            string output = StructTemplate.Get().Render(model);
+            string output = StructTemplate.Get(engineApi).Render(model);
             
             Console.WriteLine(model["Scope"] + "_structs.cs");
 
@@ -32,23 +32,6 @@ namespace T3DSharpGenerator.Generators
             using (StreamWriter SW = new StreamWriter($"Generated/Torque3D/Structs/{model["Scope"]}.cs")) {
                 SW.Write(output);        
             }
-        }
-
-        private static Hash ToStructModel(EngineStruct engineStruct) {
-            return Hash.FromAnonymousObject(new {
-                Name = engineStruct.Name,
-                Docs = engineStruct.Docs,
-                Fields = engineStruct.Fields.Select(ToStructModel)
-            });
-        }
-
-        private static Hash ToStructModel(EngineStruct.Field engineStructField) {
-            return Hash.FromAnonymousObject(new {
-                Name = engineStructField.Name,
-                Offset = engineStructField.Offset,
-                Type = engineStructField.Type,
-                Docs = engineStructField.Docs
-            });
         }
     }
 }

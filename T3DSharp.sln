@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T3DSharpGenerator", "T3DSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T3DSharpFramework", "T3DSharpFramework\T3DSharpFramework.csproj", "{383BB2AC-7904-4222-BB85-3012A490EEE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T3DSharpLogParser", "T3DSharpLogParser\T3DSharpLogParser.csproj", "{DBB4A51F-0E11-4908-90C6-CF135ED866FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{383BB2AC-7904-4222-BB85-3012A490EEE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{383BB2AC-7904-4222-BB85-3012A490EEE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{383BB2AC-7904-4222-BB85-3012A490EEE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB4A51F-0E11-4908-90C6-CF135ED866FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB4A51F-0E11-4908-90C6-CF135ED866FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB4A51F-0E11-4908-90C6-CF135ED866FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB4A51F-0E11-4908-90C6-CF135ED866FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

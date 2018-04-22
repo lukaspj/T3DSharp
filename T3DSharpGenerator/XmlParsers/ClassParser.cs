@@ -20,14 +20,13 @@ namespace T3DSharpGenerator.XmlParsers
             bool isDisposable = GenericMarshal.StringToBool(element.Attributes["isDisposable"].InnerText);
             bool isSingleton = GenericMarshal.StringToBool(element.Attributes["isSingleton"].InnerText);
 
-            EngineClass engineClass = new EngineClass() {
-                Name = name,
+            EngineClass engineClass = new EngineClass(name) {
                 Docs = docs,
-                SuperType = superType,
+                SuperTypeName = superType,
                 Scope = parseState.Scope,
                 IsAbstract = isAbstract,
                 IsInstantiable = isInstantiable,
-                IsDispoable = isDisposable,
+                IsDisposable = isDisposable,
                 IsSingleton = isSingleton
             };
 
@@ -63,7 +62,7 @@ namespace T3DSharpGenerator.XmlParsers
                     properties.Add(new EngineClass.Property() {
                         Name = propElement.Attributes["name"].InnerText,
                         Docs = propElement.Attributes["docs"].InnerText,
-                        Type = propElement.Attributes["type"].InnerText,
+                        TypeName = propElement.Attributes["type"].InnerText,
                         Group = group,
                         IsConstant = propElement.Attributes["isConstant"].InnerText,
                         IsTransient = propElement.Attributes["isTransient"].InnerText,

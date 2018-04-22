@@ -4,8 +4,8 @@ using T3DSharpGenerator.Model;
 
 namespace T3DSharpGenerator.Generators.Templating
 {
-    public static class FunctionTemplate
-    {
+    public static class ClassTemplate
+    {   
         private static Template Template { get; set; }
         
         public static Template Get(EngineApi engineApi) {
@@ -19,7 +19,7 @@ namespace T3DSharpGenerator.Generators.Templating
         private static Template InitializeTemplate(EngineApi engineApi) {
             BaseTemplate.InitializeTemplatingSystem(engineApi);
             
-            using (StreamReader reader = new StreamReader("Resources/Templates/SimFunction.liquid")) {
+            using (StreamReader reader = new StreamReader("Resources/Templates/SimClass.liquid")) {
                 Template = DotLiquid.Template.Parse(reader.ReadToEnd());
             }
             

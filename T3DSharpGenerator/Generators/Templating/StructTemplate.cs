@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using DotLiquid;
+using T3DSharpGenerator.Model;
 
 namespace T3DSharpGenerator.Generators.Templating
 {
@@ -7,16 +8,16 @@ namespace T3DSharpGenerator.Generators.Templating
     {
         private static Template Template { get; set; }
         
-        public static Template Get() {
+        public static Template Get(EngineApi engineApi) {
             if (Template == null) {
-                InitializeTemplate();
+                InitializeTemplate(engineApi);
             }
 
             return Template;
         }
 
-        private static Template InitializeTemplate() {
-            BaseTemplate.InitializeTemplatingSystem();
+        private static Template InitializeTemplate(EngineApi engineApi) {
+            BaseTemplate.InitializeTemplatingSystem(engineApi);
             
             using (StreamReader reader = new StreamReader("Resources/Templates/SimStruct.liquid")) {
                 Template = DotLiquid.Template.Parse(reader.ReadToEnd());

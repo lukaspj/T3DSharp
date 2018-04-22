@@ -1,7 +1,7 @@
                 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-                private delegate {{function.ReturnType}} _{{function.Name}}({% for arg in function.Args %}{{arg.Type}} {{arg.Name}}{% if forloop.rindex0 != 0 %}, {% endif %}{% endfor %});
+                private delegate {{function.ReturnType.NativeReturnType}} _{{function.Name}}({% for arg in function.Args %}{{arg.Type.NativeArgType}} {{arg.Name}}{% if forloop.rindex0 != 0 %}, {% endif %}{% endfor %});
                 private static _{{function.Name}} _{{function.Name}}Func;
-                internal static bool {{function.Name}}({% for arg in function.Args %}{{arg.Type}} {{arg.Name}}{% if forloop.rindex0 != 0 %}, {% endif %}{% endfor %}) {
+                internal static {{function.ReturnType.NativeReturnType}} {{function.Name}}({% for arg in function.Args %}{{arg.Type.NativeArgType}} {{arg.Name}}{% if forloop.rindex0 != 0 %}, {% endif %}{% endfor %}) {
                     if (_{{function.Name}}Func == null) {
                         _{{function.Name}}Func =
                             (_{{function.Name}})Marshal.GetDelegateForFunctionPointer(

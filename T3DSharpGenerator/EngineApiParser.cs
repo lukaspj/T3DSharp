@@ -66,7 +66,9 @@ namespace T3DSharpGenerator
                 .SetEnums(parseState.Enums)
                 .SetStructs(parseState.Structs)
                 .SetClasses(parseState.Classes)
-                .SetFunctions(parseState.Functions);
+                .SetFunctions(parseState.Functions)
+                .SetPrimitives(EngineApiPrimitives.GetEngineApiPrimitives())
+                .AnnotateTypes();
         }
 
         public static ParseState ParseElement(XmlElement element, ParseState parseState) {

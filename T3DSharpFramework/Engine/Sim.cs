@@ -34,7 +34,7 @@ namespace T3DSharpFramework.Engine
             {
                _FindObjectByIdFunc =
                   (_FindObjectById)Marshal.GetDelegateForFunctionPointer(Torque3D.DllLoadUtils.GetProcAddress(Torque3D.Torque3DLibHandle,
-                     "Sim_FindObjectById"), typeof(_FindObjectById));
+                     "fnFindObjectById"), typeof(_FindObjectById));
             }
 
             return _FindObjectByIdFunc(id);
@@ -49,7 +49,7 @@ namespace T3DSharpFramework.Engine
             {
                _FindObjectByNameFunc =
                   (_FindObjectByName)Marshal.GetDelegateForFunctionPointer(Torque3D.DllLoadUtils.GetProcAddress(Torque3D.Torque3DLibHandle,
-                     "Sim_FindObjectByName"), typeof(_FindObjectByName));
+                     "fnFindObjectByName"), typeof(_FindObjectByName));
             }
 
             return _FindObjectByNameFunc(name);
@@ -64,7 +64,7 @@ namespace T3DSharpFramework.Engine
             {
                _FindDataBlockByNameFunc =
                   (_FindDataBlockByName)Marshal.GetDelegateForFunctionPointer(Torque3D.DllLoadUtils.GetProcAddress(Torque3D.Torque3DLibHandle,
-                     "Sim_FindDataBlockByName"), typeof(_FindDataBlockByName));
+                     "fnFindDataBlockByName"), typeof(_FindDataBlockByName));
             }
 
             return _FindDataBlockByNameFunc(name);
@@ -79,7 +79,7 @@ namespace T3DSharpFramework.Engine
             {
                _Sim_WrapObjectFunc =
                   (_Sim_WrapObject)Marshal.GetDelegateForFunctionPointer(Torque3D.DllLoadUtils.GetProcAddress(Torque3D.Torque3DLibHandle,
-                     "Sim_WrapObject"), typeof(_Sim_WrapObject));
+                     "fnWrapObject"), typeof(_Sim_WrapObject));
             }
 
             return _Sim_WrapObjectFunc(obj);
@@ -94,7 +94,7 @@ namespace T3DSharpFramework.Engine
             {
                _Sim_DeleteObjectPtrFunc =
                   (_Sim_DeleteObjectPtr)Marshal.GetDelegateForFunctionPointer(Torque3D.DllLoadUtils.GetProcAddress(Torque3D.Torque3DLibHandle,
-                     "Sim_DeleteObjectPtr"), typeof(_Sim_DeleteObjectPtr));
+                     "fnDeleteObjectPtr"), typeof(_Sim_DeleteObjectPtr));
             }
 
             _Sim_DeleteObjectPtrFunc(obj);

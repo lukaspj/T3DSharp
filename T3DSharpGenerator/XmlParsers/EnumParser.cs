@@ -13,8 +13,7 @@ namespace T3DSharpGenerator.XmlParsers
             string name = element.Attributes["name"].InnerText;
             string docs = element.Attributes["docs"].InnerText;
 
-            EngineEnum engineEnum = new EngineEnum() {
-                Name = name,
+            EngineEnum engineEnum = new EngineEnum(name) {
                 Docs = docs,
                 Scope = parseState.Scope
             };

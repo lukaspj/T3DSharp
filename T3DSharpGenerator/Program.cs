@@ -28,11 +28,17 @@ namespace T3DSharpGenerator
         }
         
         public static void Main(string[] args) {
+            
             CultureInfo customCulture =
                 (CultureInfo) Thread.CurrentThread.CurrentCulture.Clone();
             customCulture.NumberFormat.NumberDecimalSeparator = ".";
 
             Thread.CurrentThread.CurrentCulture = customCulture;
+
+            if (File.Exists("engineApi.xml")) {
+                ParseEngineApi();
+                return;
+            }
             
             Initializer.InitializeTypeDictionaries(Assembly.GetExecutingAssembly().GetTypes());
             Torque3D.Libraries libraries = new Torque3D.Libraries
@@ -55,8 +61,13 @@ namespace T3DSharpGenerator
             eval("setLogMode(6);");
             
             Console.WriteLine(eval("exportEngineAPIToXML().saveFile(\"engineApi.xml\");"));
+            
             eval("quit();");
             
+            ParseEngineApi();
+        }
+
+        private static void ParseEngineApi() {
             StreamReader sr =
                 new StreamReader("engineApi.xml");
             string content = sr.ReadToEnd();
@@ -75,9 +86,10 @@ namespace T3DSharpGenerator
                 }
             }
             
-            EnumGenerator.GenerateFor(engineApi.Enums);
-            StructGenerator.GenerateFor(engineApi.Structs);
-            FunctionGenerator.GenerateFor(engineApi.Functions);
+            EnumGenerator.GenerateFor(engineApi, engineApi.Enums);
+            StructGenerator.GenerateFor(engineApi, engineApi.Structs);
+            FunctionGenerator.GenerateFor(engineApi, engineApi.Functions);
+            ClassGenerator.GenerateFor(engineApi, engineApi.Classes);
         }
     }
 }

@@ -1,0 +1,17 @@
+namespace Torque3D.Functions {
+
+    public static unsafe class {{Class.Scope}} {
+
+        #region UnsafeNativeMethods
+        new internal struct InternalUnsafeMethods {
+{% for function in Class.Functions %}
+{% include "native_function" %}
+{% endfor %}
+        }
+        #endregion
+
+{% for function in Class.Functions %}
+{% include "managed_function" %}
+{% endfor %}
+    }
+}

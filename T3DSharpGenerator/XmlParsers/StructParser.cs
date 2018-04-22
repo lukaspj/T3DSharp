@@ -14,8 +14,7 @@ namespace T3DSharpGenerator.XmlParsers
             string name = element.Attributes["name"].InnerText;
             string docs = element.Attributes["docs"].InnerText;
 
-            EngineStruct engineStruct = new EngineStruct() {
-                Name = name,
+            EngineStruct engineStruct = new EngineStruct(name) {
                 Docs = docs,
                 Scope = parseState.Scope
             };
@@ -25,7 +24,7 @@ namespace T3DSharpGenerator.XmlParsers
                 foreach (XmlElement fieldNode in childNode.ChildNodes) {
                     engineStruct.Add(new EngineStruct.Field() {
                         Name = fieldNode.Attributes["name"].InnerText,
-                        Type = fieldNode.Attributes["type"].InnerText,
+                        TypeName = fieldNode.Attributes["type"].InnerText,
                         Offset = fieldNode.Attributes["offset"].InnerText,
                         Docs = fieldNode.Attributes["docs"].InnerText
                     });

@@ -46,18 +46,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EngineApiParser.cs" />
+    <Compile Include="Generators\ClassGenerator.cs" />
     <Compile Include="Generators\EnumGenerator.cs" />
     <Compile Include="Generators\FunctionGenerator.cs" />
     <Compile Include="Generators\StructGenerator.cs" />
     <Compile Include="Generators\Templating\BaseTemplate.cs" />
+    <Compile Include="Generators\Templating\ClassTemplate.cs" />
     <Compile Include="Generators\Templating\EnumTemplate.cs" />
     <Compile Include="Generators\Templating\FunctionTemplate.cs" />
     <Compile Include="Generators\Templating\StructTemplate.cs" />
     <Compile Include="Model\EngineApi.cs" />
+    <Compile Include="Model\EngineApiPrimitives.cs" />
     <Compile Include="Model\EngineClass.cs" />
     <Compile Include="Model\EngineEnum.cs" />
     <Compile Include="Model\EngineFunction.cs" />
+    <Compile Include="Model\EnginePrimitive.cs" />
     <Compile Include="Model\EngineStruct.cs" />
+    <Compile Include="Model\IEngineObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlParsers\BitfieldParser.cs" />
@@ -83,6 +88,9 @@
     <Folder Include="Resources" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Templates\SimClass.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Templates\_managed_function.liquid">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
