@@ -19,8 +19,8 @@ namespace T3DSharpGenerator.Model
 
             Name = name;
             ManagedType = Name;
-            NativeReturnType = Name;
-            NativeArgType = Name;
+            NativeReturnType = Name + ".InternalStruct";
+            NativeArgType = "ref " + Name + ".InternalStruct";
         }
 
         public class Field : ILiquidizable
@@ -30,12 +30,15 @@ namespace T3DSharpGenerator.Model
             public string Offset { get; set; }
             public IEngineObject Type { get; set; }
             public string TypeName { get; set; }
+            public int IndexedSize { get; set; }
+
             public object ToLiquid() {
                 return new {
                     Name = Name,
                     Docs = Docs,
                     Offset = Offset,
-                    Type = Type
+                    Type = Type,
+                    IndexedSize = IndexedSize
                 };
             }
         }
@@ -47,12 +50,13 @@ namespace T3DSharpGenerator.Model
         public object ToLiquid() {
             return new {
                 Name = Name,
-                ManagedType = ManagedType,
-                NativeReturnType = NativeReturnType,
-                NativeArgType = NativeArgType,
                 Docs = Docs,
                 Scope = Scope,
-                Fields = Fields
+                Fields = Fields,
+                
+                ManagedType = ManagedType,
+                NativeReturnType = NativeReturnType,
+                NativeArgType = NativeArgType
             };
         }
     }

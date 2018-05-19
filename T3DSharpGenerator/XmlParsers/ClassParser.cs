@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Xml;
 using T3DSharpFramework.Interop;
 using T3DSharpGenerator.Model;
@@ -30,7 +32,8 @@ namespace T3DSharpGenerator.XmlParsers
                 IsSingleton = isSingleton
             };
 
-            ParseState functionParseState = new ParseState();
+            ParseState functionParseState = new ParseState()
+                .EnterScope(name);
 
             foreach (XmlElement childNode in element.ChildNodes) {
                 if (childNode.Name.Equals("properties")) {
@@ -40,6 +43,7 @@ namespace T3DSharpGenerator.XmlParsers
                     }
                 } else if (childNode.Name.Equals("exports")) {
                     foreach (XmlElement funElement in childNode.ChildNodes) {
+                        if (funElement.Name.Equals("RegisterObject")) Debugger.Break();
                         new FunctionParser().Parse(funElement, functionParseState);
                     }
                 } else {
@@ -59,15 +63,21 @@ namespace T3DSharpGenerator.XmlParsers
             List<EngineClass.Property> properties = new List<EngineClass.Property>();
             foreach (XmlElement propElement in childNode.ChildNodes) {
                 if (propElement.Name.Equals("EngineProperty")) {
-                    properties.Add(new EngineClass.Property() {
+                    EngineClass.Property property = new EngineClass.Property() {
                         Name = propElement.Attributes["name"].InnerText,
                         Docs = propElement.Attributes["docs"].InnerText,
                         TypeName = propElement.Attributes["type"].InnerText,
+                        IndexedSize = int.Parse(propElement.Attributes["indexedSize"].InnerText),
                         Group = group,
                         IsConstant = propElement.Attributes["isConstant"].InnerText,
                         IsTransient = propElement.Attributes["isTransient"].InnerText,
                         IsVisible = propElement.Attributes["isVisible"].InnerText
-                    });
+                    };
+                    if (property.TypeName.Equals("deprecated")) {
+                        Console.WriteLine($"Property {property.Name} is deprecated, so it is ignored.");
+                    } else {
+                        properties.Add(property);
+                    }
                 } else {
                     string newGroupName = propElement.Attributes["name"].InnerText;
                     properties.AddRange(ParseProperties((XmlElement) propElement.ChildNodes[0],

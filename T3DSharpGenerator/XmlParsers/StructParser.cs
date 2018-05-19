@@ -26,7 +26,8 @@ namespace T3DSharpGenerator.XmlParsers
                         Name = fieldNode.Attributes["name"].InnerText,
                         TypeName = fieldNode.Attributes["type"].InnerText,
                         Offset = fieldNode.Attributes["offset"].InnerText,
-                        Docs = fieldNode.Attributes["docs"].InnerText
+                        Docs = fieldNode.Attributes["docs"].InnerText,
+                        IndexedSize = int.Parse(fieldNode.Attributes["indexedSize"].InnerText)
                     });
                 }
             }

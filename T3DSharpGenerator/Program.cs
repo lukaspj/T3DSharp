@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -85,11 +86,16 @@ namespace T3DSharpGenerator
                     Console.WriteLine("No fields defined in struct: " + engineStruct.Name);
                 }
             }
+
+            if (Directory.Exists("Generated/")) {
+                Directory.Delete("Generated/", true);
+            }
             
             EnumGenerator.GenerateFor(engineApi, engineApi.Enums);
             StructGenerator.GenerateFor(engineApi, engineApi.Structs);
             FunctionGenerator.GenerateFor(engineApi, engineApi.Functions);
             ClassGenerator.GenerateFor(engineApi, engineApi.Classes);
+            Console.WriteLine("Finished code generation.");
         }
     }
 }

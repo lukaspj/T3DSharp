@@ -21,6 +21,18 @@ namespace T3DSharpGenerator.Model
                     NativeReturnType = "uint"
                 },
                 new EnginePrimitive() {
+                    Name = "short",
+                    ManagedType = "short",
+                    NativeArgType = "short",
+                    NativeReturnType = "short"
+                },
+                new EnginePrimitive() {
+                    Name = "ushort",
+                    ManagedType = "ushort",
+                    NativeArgType = "ushort",
+                    NativeReturnType = "ushort"
+                },
+                new EnginePrimitive() {
                     Name = "bool",
                     ManagedType = "bool",
                     NativeArgType = "bool",
@@ -77,6 +89,60 @@ namespace T3DSharpGenerator.Model
                 new EnginePrimitive() {
                     Name = "ptr",
                     ManagedType = "IntPtr",
+                    NativeArgType = "IntPtr",
+                    NativeReturnType = "IntPtr"
+                },
+                new EnginePrimitive() {
+                    Name = "string[]",
+                    ManagedType = "string[]",
+                    NativeArgType = "IntPtr",
+                    NativeReturnType = "IntPtr"
+                },
+                new EnginePrimitive() {
+                    Name = "bool[]",
+                    ManagedType = "bool[]",
+                    NativeArgType = "IntPtr",
+                    NativeReturnType = "IntPtr"
+                },
+                new EnginePrimitive() {
+                    Name = "Edge[]",
+                    ManagedType = "Edge[]",
+                    NativeArgType = "IntPtr",
+                    NativeReturnType = "IntPtr"
+                },
+                new EnginePrimitive() {
+                    Name = "PlaneF[]",
+                    ManagedType = "PlaneF[]",
+                    NativeArgType = "IntPtr",
+                    NativeReturnType = "IntPtr"
+                },
+                new EnginePrimitive() {
+                    Name = "Point3F[]",
+                    ManagedType = "Point3F[]",
+                    NativeArgType = "IntPtr",
+                    NativeReturnType = "IntPtr"
+                },
+                new EnginePrimitive() {
+                    Name = "float[]",
+                    ManagedType = "float[]",
+                    NativeArgType = "IntPtr",
+                    NativeReturnType = "IntPtr"
+                },
+                new EnginePrimitive() {
+                    Name = "int[]",
+                    ManagedType = "int[]",
+                    NativeArgType = "IntPtr",
+                    NativeReturnType = "IntPtr"
+                },
+                new EnginePrimitive() {
+                    Name = "ubyte[]",
+                    ManagedType = "byte[]",
+                    NativeArgType = "IntPtr",
+                    NativeReturnType = "IntPtr"
+                },
+                new EnginePrimitive() {
+                    Name = "uint[]",
+                    ManagedType = "uint[]",
                     NativeArgType = "IntPtr",
                     NativeReturnType = "IntPtr"
                 }

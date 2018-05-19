@@ -55,6 +55,18 @@
     <Compile Include="Generators\Templating\EnumTemplate.cs" />
     <Compile Include="Generators\Templating\FunctionTemplate.cs" />
     <Compile Include="Generators\Templating\StructTemplate.cs" />
+    <Compile Include="Generators\Templating\Tags\AllocTag.cs" />
+    <Compile Include="Generators\Templating\Tags\DefaultBodyValueTag.cs" />
+    <Compile Include="Generators\Templating\Tags\DefaultParamValueTag.cs" />
+    <Compile Include="Generators\Templating\Tags\FreeTag.cs" />
+    <Compile Include="Generators\Templating\Tags\GetManagedParametersTag.cs" />
+    <Compile Include="Generators\Templating\Tags\GetReturnStatementBlock.cs" />
+    <Compile Include="Generators\Templating\Tags\MarshalTag.cs" />
+    <Compile Include="Generators\Templating\Tags\SanitizeNameTag.cs" />
+    <Compile Include="Generators\Templating\Tags\StructFieldAllocTag.cs" />
+    <Compile Include="Generators\Templating\Tags\StructFieldFreeTag.cs" />
+    <Compile Include="Generators\Templating\Tags\VarToStringTag.cs" />
+    <Compile Include="Generators\Util\SimObjectTree.cs" />
     <Compile Include="Model\EngineApi.cs" />
     <Compile Include="Model\EngineApiPrimitives.cs" />
     <Compile Include="Model\EngineClass.cs" />
@@ -91,7 +103,13 @@
     <Content Include="Resources\Templates\SimClass.liquid">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Templates\_engineobject_body.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Templates\_managed_function.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\_managed_property.liquid">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Templates\_native_function.liquid">
@@ -104,6 +122,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Templates\SimStruct.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\_simobject_body.liquid">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -1,6 +1,53 @@
-        public static {{function.ReturnType.ManagedType}} {{function.Name}}({% for arg in function.Args %}{{arg.Type.ManagedType}} {{arg.Name}}{% if forloop.rindex0 != 0 %}, {% endif %}{% endfor %}) {
+{% if function.Name != "create" and function.Name != "RegisterObject" -%}
 {% if function.IsVariadic -%}
+        public {% if function.IsStatic %}static {% endif %}{% if function.IsOverride %}override {% endif %}{{function.ReturnType.ManagedType}} {% sanitizeName function.Name CamelCase:true %}(params string[] args) {
+    
+                
+            List<string> _argList = new List<string>() {""{% if function.IsStatic == false %}, ""{% endif %}};
+            _argList.AddRange(args);
+            
+            StringVector nativeVecArgs = new StringVector {
+                ElementCount = (uint)_argList.Count,
+                Array = _argList.ToArray(),
+                ArraySize = (uint)_argList.Count
+            };
+            nativeVecArgs.Alloc();
+            {% if function.ReturnType.ManagedType != 'void' %}{{ function.ReturnType.NativeReturnType }} _engineResult = {% endif %}InternalUnsafeMethods.{% sanitizeName function.Name CamelCase:true %}()({% if function.IsStatic == false %}ObjectPtr, {% endif %}ref nativeVecArgs.internalStruct);
+            nativeVecArgs.Free();
+    
+{% if function.ReturnType.ManagedType != 'void' -%}
+            {% getReturnString function.ReturnType %}_engineResult{% endgetReturnString %};
+{% endif -%}
 {% else -%}
-            {% getReturnString function.ReturnType %}InternalUnsafeMethods.{{function.Name}}({% for arg in function.Args %}{% marshal arg %}{% if forloop.rindex0 != 0%}, {% endif %}{% endfor %}){% endgetReturnString %};
+{% if function.IsStatic -%}
+        public static {{function.ReturnType.ManagedType}} {% sanitizeName function.Name CamelCase:true %}({% getManagedParameters function %}) {
+        
+{% for arg in function.Args %}
+            {% alloc arg %}
+{% endfor %}
+            {% if function.ReturnType.ManagedType != 'void' %}{{ function.ReturnType.NativeReturnType }} _engineResult = {% endif %}InternalUnsafeMethods.{% sanitizeName function.Name CamelCase:true %}()({% for arg in function.Args %}{% marshal arg %}{% if forloop.rindex0 != 0%}, {% endif %}{% endfor %});
+{% for arg in function.Args %}
+            {% free arg %}
+{% endfor %}
+            
+{% if function.ReturnType.ManagedType != 'void' -%}
+            {% getReturnString function.ReturnType %}_engineResult{% endgetReturnString %};
+{% endif -%}
+{% else -%}
+        public {% if function.IsOverride %}override {% endif %}{{function.ReturnType.ManagedType}} {% sanitizeName function.Name CamelCase:true %}({% getManagedParameters function %}) {
+        
+{% for arg in function.Args -%}
+            {% alloc arg -%}
+{% endfor -%}
+            {% if function.ReturnType.ManagedType != 'void' %}{{ function.ReturnType.NativeReturnType }} _engineResult = {% endif %}InternalUnsafeMethods.{% sanitizeName function.Name CamelCase:true %}()(ObjectPtr{% for arg in function.Args offset:1 %}, {% marshal arg %}{% endfor %});
+{% for arg in function.Args -%}
+            {% free arg -%}
+{% endfor -%}
+            
+{% if function.ReturnType.ManagedType != 'void' -%}
+            {% getReturnString function.ReturnType %}_engineResult{% endgetReturnString %};
+{% endif -%}
+{% endif -%}
 {% endif -%}
         }
+{% endif -%}

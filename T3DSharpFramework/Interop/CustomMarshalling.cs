@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Globalization;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using T3DSharpFramework.Engine;
 
 namespace T3DSharpFramework.Interop
 {
@@ -71,6 +74,78 @@ namespace T3DSharpFramework.Interop
                 default:
                     return Boolean.Parse(str);
             }
+        }
+        
+        public static string ToString(string s) {
+            return s;
+        }
+        
+        public static string ToString(bool b) {
+            return b ? "1" : "0";
+        }
+        
+        public static string ToString(int i) {
+            return i.ToString();
+        }
+        
+        public static string ToString(long l) {
+            return l.ToString();
+        }
+        
+        public static string ToString(float f) {
+            return f.ToString(CultureInfo.InvariantCulture);
+        }
+        
+        public static string ToString(double d) {
+            return d.ToString(CultureInfo.InvariantCulture);
+        }
+        
+        public static string ToString(ISimObject sim) {
+            return sim.Name;
+        }
+        
+        public static string ToString(IEngineStruct engineStruct) {
+            return engineStruct.ToString();
+        }
+
+        public static T StringTo<T>(string s) {
+            bool found = false;
+            object ret = null;
+            if (typeof(T) == typeof(string)) {
+                found = true;
+                ret = s;
+            } else if (typeof(T) == typeof(char)) {
+                found = true;
+                ret = char.Parse(s);
+            } else if (typeof(T) == typeof(int)) {
+                found = true;
+                ret = int.Parse(s);
+            } else if (typeof(T) == typeof(long)) {
+                found = true;
+                ret = long.Parse(s);
+            } else if (typeof(T) == typeof(float)) {
+                found = true;
+                ret = float.Parse(s);
+            } else if (typeof(T) == typeof(double)) {
+                found = true;
+                ret = double.Parse(s);
+            } else if (typeof(T).IsEnum) {
+                found = true;
+                ret = Enum.Parse(typeof(T), s);
+            } else if (typeof(T).IsClass) {
+                found = true;
+                ConstructorInfo cinfo = typeof(T).GetConstructor(new[] {typeof(string)});
+                if (cinfo != null) {
+                    ret = cinfo.Invoke(new object[] {s});
+                } else {
+                    throw new NotImplementedException("No constructor that takes a string");
+                }
+            } 
+
+            if (found) {
+                return (T) ret;
+            }
+            throw new NotImplementedException();
         }
     }
 }

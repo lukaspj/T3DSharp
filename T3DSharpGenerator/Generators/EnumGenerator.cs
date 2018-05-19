@@ -27,10 +27,10 @@ namespace T3DSharpGenerator.Generators
             string output = EnumTemplate.Get(engineApi).Render(model);
             Console.WriteLine(model["Scope"] + "_enums.cs");
 
-            Directory.CreateDirectory("Generated/Torque3D/Enums");
+            Directory.CreateDirectory("Generated/Enums");
 
             using (StreamWriter SW =
-                new StreamWriter($"Generated/Torque3D/Enums/{model["Scope"]}.cs")) {
+                new StreamWriter($"Generated/Enums/{model["Scope"]}.cs")) {
                 SW.Write(output);
             }
         }

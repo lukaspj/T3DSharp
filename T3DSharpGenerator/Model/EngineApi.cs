@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using T3DSharpGenerator.Generators.Util;
 
 namespace T3DSharpGenerator.Model
 {
@@ -39,7 +41,6 @@ namespace T3DSharpGenerator.Model
 
 
         public EngineApi AnnotateTypes() {
-            
             Structs.ForEach(AnnotateStructTypes);
             Classes.ForEach(AnnotateClassTypes);
             Functions.ForEach(AnnotateFunctionTypes);
@@ -59,11 +60,19 @@ namespace T3DSharpGenerator.Model
         }
 
         private void AnnotateStructTypes(EngineStruct obj) {
-            obj.Fields.ForEach(x => x.Type = ToType(x.TypeName));
+            foreach (EngineStruct.Field field in obj.Fields) {
+                if (field.TypeName.StartsWith("ptr_")
+                    && field.Name.Equals("array")) {
+                    field.Type = ToType(field.TypeName.Substring(4) + "[]");
+                } else if (field.IndexedSize > 1) {
+                    field.Type = ToType(field.TypeName + "[]");
+                } else {
+                    field.Type = ToType(field.TypeName);
+                }
+            }
         }
 
         public IEngineObject ToType(string typeName) {
-
             if (typeName == null) {
                 return null;
             }
@@ -134,7 +143,7 @@ namespace T3DSharpGenerator.Model
                     return enginePrimitive;
                 }
             }
-            
+
             foreach (EngineEnum engineEnum in Enums) {
                 if (engineEnum.Name.Equals(typeName)) {
                     return engineEnum;
@@ -157,21 +166,9 @@ namespace T3DSharpGenerator.Model
         }
 
         public object GetObject(string name) {
-            foreach (EngineClass engineClass in Classes) {
-                if (engineClass.Name.Equals(name)) {
-                    return engineClass;
-                }
-            }
-
-            foreach (EngineStruct engineStruct in Structs) {
-                if (engineStruct.Name.Equals(name)) {
-                    return engineStruct;
-                }
-            }
-
-            foreach (EngineFunction engineFunction in Functions) {
-                if (engineFunction.Name.Equals(name)) {
-                    return engineFunction;
+            foreach (EnginePrimitive enginePrimitive in Primitives) {
+                if (enginePrimitive.Name.Equals(name)) {
+                    return enginePrimitive;
                 }
             }
 
@@ -181,9 +178,109 @@ namespace T3DSharpGenerator.Model
                 }
             }
 
-            foreach (EnginePrimitive enginePrimitive in Primitives) {
-                if (enginePrimitive.Name.Equals(name)) {
-                    return enginePrimitive;
+            foreach (EngineStruct engineStruct in Structs) {
+                if (engineStruct.Name.Equals(name)) {
+                    return engineStruct;
+                }
+            }
+
+            foreach (EngineClass engineClass in Classes) {
+                if (engineClass.Name.Equals(name)) {
+                    return engineClass;
+                }
+            }
+
+            foreach (EngineFunction engineFunction in Functions) {
+                if (engineFunction.Name.Equals(name)) {
+                    return engineFunction;
+                }
+            }
+
+            return null;
+        }
+
+        public EngineApi AnnotateFunctionOverrides() {
+            foreach (EngineClass engineClass in Classes) {
+                foreach (EngineFunction method in engineClass.Methods) {
+                    method.IsOverride = SuperTreeContainsMethod(engineClass.SuperType, method);
+                }
+            }
+
+            return this;
+        }
+
+        private bool SuperTreeContainsMethod(IEngineObject engineClassSuperType, EngineFunction method) {
+            if (engineClassSuperType == null
+                || !(engineClassSuperType is EngineClass @class)) {
+                return false;
+            }
+
+            foreach (EngineFunction other in @class.Methods) {
+                if (!other.Name.Equals(method.Name) 
+                    || other.Arguments.Count != method.Arguments.Count) {
+                    continue;
+                }
+
+                bool alike = true;
+                for (var index = 0; index < method.Arguments.Count; index++) {
+                    EngineFunction.Argument argument = method.Arguments[index];
+                    EngineFunction.Argument otherArgument = other.Arguments[index];
+                    if (argument.Type == otherArgument.Type) {
+                        continue;
+                    }
+
+                    alike = false;
+                    break;
+                }
+
+                if (alike) {
+                    return true;
+                }
+            }
+
+            return SuperTreeContainsMethod(@class.SuperType, method);
+        }
+
+        public EngineApi PruneSubClassProperties() {
+            foreach (EngineClass engineClass in Classes) {
+                var properties = new List<EngineClass.Property>();
+                foreach (EngineClass.Property property in engineClass.Properties) {
+                    if (!SuperTreeContainsProperty(engineClass.SuperType, property)) {
+                        properties.Add(property);
+                    }
+                }
+
+                engineClass.Properties = properties;
+            }
+
+            return this;
+        }
+
+        private bool SuperTreeContainsProperty(IEngineObject engineClassSuperType, EngineClass.Property property) {
+            if (engineClassSuperType == null
+                || !(engineClassSuperType is EngineClass @class)) {
+                return false;
+            }
+
+            foreach (EngineClass.Property other in @class.Properties) {
+                if (other.Equals(property)) {
+                    return true;
+                }
+            }
+
+            return SuperTreeContainsProperty(@class.SuperType, property);
+        }
+
+        public EngineFunction ToFunction(string symbol) {
+            EngineFunction func = Functions.FirstOrDefault(x => x.Symbol.Equals(symbol));
+            if (func != null) {
+                return func;
+            }
+
+            foreach (EngineClass engineClass in Classes) {
+                func = engineClass.Methods.FirstOrDefault(x => x.Symbol.Equals(symbol));
+                if (func != null) {
+                    return func;
                 }
             }
 

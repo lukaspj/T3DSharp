@@ -34,10 +34,14 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Engine\ConsoleObject.cs" />
+    <Compile Include="Engine\ConsoleObjectBase.cs" />
     <Compile Include="Engine\IDataBlock.cs" />
+    <Compile Include="Engine\IEngineStruct.cs" />
+    <Compile Include="Engine\ISimObject.cs" />
     <Compile Include="Engine\Sim.cs" />
     <Compile Include="Engine\SimDictionary.cs" />
+    <Compile Include="Engine\UnkownSimObject.cs" />
+    <Compile Include="Engine\Util\DynamicFieldVector.cs" />
     <Compile Include="Interop\Attributes.cs" />
     <Compile Include="Interop\CustomMarshalling.cs" />
     <Compile Include="Interop\DLLLoadUtils.cs" />
@@ -47,6 +51,7 @@
     <Compile Include="Interop\Torque3D.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Engine\Structs" />
     <Folder Include="Generated" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

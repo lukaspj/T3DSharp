@@ -19,17 +19,27 @@ namespace T3DSharpGenerator.Generators
         }
 
         private static void GenerateFunctionsInScope(EngineApi engineApi, IEnumerable<EngineFunction> functions, string scope) {
+            scope = (string.IsNullOrEmpty(scope) ? "Global" : scope);
+            int lastSeparatorIndex = scope.LastIndexOf('.');
+            string scopeClass = scope;
+            if (lastSeparatorIndex > 0) {
+                scopeClass = scope.Substring(lastSeparatorIndex + 1);
+                scope = scope.Substring(0, lastSeparatorIndex);
+            }
             var model = Hash.FromAnonymousObject(new {
                 Functions = functions,
-                Scope = (string.IsNullOrEmpty(scope) ? "Global" : scope)
+                Scope = scope,
+                ClassName = scopeClass
             });
             string output = FunctionTemplate.Get(engineApi).Render(model);
             
             Console.WriteLine($"{model["Scope"]}_functions.cs");
 
-            Directory.CreateDirectory("Generated/Torque3D/Functions");
+            string dir = $"Generated/Functions/";
             
-            using (StreamWriter SW = new StreamWriter($"Generated/Torque3D/Functions/{model["Scope"]}.cs")) {
+            Directory.CreateDirectory(dir);
+            
+            using (StreamWriter SW = new StreamWriter($"{dir}/{scopeClass}.cs")) {
                 SW.Write(output);        
             }
         }

@@ -40,7 +40,7 @@ namespace T3DSharpFramework.Engine
             return _FindObjectByIdFunc(id);
          }
          
-         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+         [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
          private delegate IntPtr _FindObjectByName(string name);
          private static _FindObjectByName _FindObjectByNameFunc;
          internal static IntPtr FindObjectByName(string name)
@@ -105,7 +105,7 @@ namespace T3DSharpFramework.Engine
 
       #region Functions
 
-      public static T FindObject<T>(string objRep) where T : ConsoleObject
+      public static T FindObject<T>(string objRep) where T : class, ISimObject
       {
          uint id;
          if (uint.TryParse(objRep, out id))
@@ -116,12 +116,12 @@ namespace T3DSharpFramework.Engine
          return FindObjectByName<T>(objRep);
       }
 
-      public static T FindObject<T>(int objRep) where T : ConsoleObject
+      public static T FindObject<T>(int objRep) where T : class, ISimObject
       {
          return FindObjectById<T>((uint)objRep);
       }
 
-      public static T FindObjectById<T>(uint id) where T : ConsoleObject
+      public static T FindObjectById<T>(uint id) where T : class, ISimObject
       {
          IntPtr objPtr = InternalUnsafeMethods.FindObjectById(id);
          T obj = SimDictionary.Find<T>(id);
@@ -134,12 +134,12 @@ namespace T3DSharpFramework.Engine
 
       public static IntPtr FindObjectPtrById(uint id)
       {
-         ConsoleObject obj = SimDictionary.Find<ConsoleObject>(id);
+         ISimObject obj = SimDictionary.Find<ISimObject>(id);
          if (obj != null) return obj.ObjectPtr;
          return InternalUnsafeMethods.FindObjectById(id);
       }
 
-      public static T FindObjectByName<T>(string name) where T : ConsoleObject
+      public static T FindObjectByName<T>(string name) where T : class, ISimObject
       {
          T dictObj = SimDictionary.Find<T>(name);
          if (dictObj != null) return dictObj;
@@ -148,31 +148,31 @@ namespace T3DSharpFramework.Engine
          {
             IntPtr objPtr = FindDataBlockPtrByName(name);
             if (objPtr == IntPtr.Zero) objPtr = FindObjectPtrByName(name);
-            if (objPtr == IntPtr.Zero) return null;
+            if (objPtr == IntPtr.Zero) return default(T);
             obj.SetPointer(objPtr);
          }
          else
          {
             IntPtr objPtr = FindObjectPtrByName(name);
-            if (objPtr == IntPtr.Zero) return null;
+            if (objPtr == IntPtr.Zero) return default(T);
             obj.SetPointer(objPtr);
          }
          if (obj.ObjectPtr == IntPtr.Zero)
-            return null;
+            return default(T);
          SimDictionary.RegisterObject(obj);
          return obj;
       }
 
       public static IntPtr FindObjectPtrByName(string name)
       {
-         ConsoleObject obj = SimDictionary.Find<ConsoleObject>(name);
+         ISimObject obj = SimDictionary.Find<ISimObject>(name);
          if (obj != null) return obj.ObjectPtr;
          return InternalUnsafeMethods.FindObjectByName(name);
       }
 
       public static IntPtr FindDataBlockPtrByName(string name)
       {
-         ConsoleObject obj = SimDictionary.Find<ConsoleObject>(name);
+         ISimObject obj = SimDictionary.Find<ISimObject>(name);
          if (obj != null) return obj.ObjectPtr;
          return InternalUnsafeMethods.FindDataBlockByName(name);
       }

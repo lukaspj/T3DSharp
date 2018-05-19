@@ -30,10 +30,10 @@ namespace T3DSharpFramework.Interop
             out bool found) {
             if (pFunctionNamespace != null) {
                 Type type;
-                ConsoleObject obj = SimDictionary.Find(pFunctionNamespace);
+                ISimObject obj = SimDictionary.Find(pFunctionNamespace);
 
                 string objectName = pFunctionNamespace;
-                if (objectName != null && ClassTypeDictionary.ContainsKey(objectName)) {
+                if (ClassTypeDictionary.ContainsKey(objectName)) {
                     type = ClassTypeDictionary[objectName];
                 }
                 else if (obj != null) {
@@ -59,12 +59,12 @@ namespace T3DSharpFramework.Interop
             return InvokeMethod(methodInfo, null, args, out found);
         }
 
-        public static string CallScriptMethod(string className, string classNamespace, ConsoleObject objectWrapper,
+        public static string CallScriptMethod(string className, string classNamespace, ISimObject objectBaseWrapper,
             string methodName, object[] args, out bool found) {
             if (methodName.Equals("pushDialog"))
                 methodName = methodName;
             Type type;
-            string objectName = objectWrapper.getName();
+            string objectName = objectBaseWrapper.getName();
             if (objectName != null && ClassTypeDictionary.ContainsKey(objectName)) {
                 type = ClassTypeDictionary[objectName];
             }
@@ -74,31 +74,31 @@ namespace T3DSharpFramework.Interop
             else if (ClassTypeDictionary.ContainsKey(className)) {
                 type = ClassTypeDictionary[className];
             }
-            else if (SimDictionary.Find(objectWrapper.Name) != null) {
-                type = SimDictionary.Find(objectWrapper.Name).GetType();
+            else if (SimDictionary.Find(objectBaseWrapper.Name) != null) {
+                type = SimDictionary.Find(objectBaseWrapper.Name).GetType();
             }
-            else if (SimDictionary.Find(objectWrapper.getId()) != null) {
-                type = SimDictionary.Find(objectWrapper.getId()).GetType();
+            else if (SimDictionary.Find(objectBaseWrapper.GetId()) != null) {
+                type = SimDictionary.Find(objectBaseWrapper.GetId()).GetType();
             }
             else {
-                if (ClassTypeDictionary.ContainsKey(objectWrapper.GetType().Name))
-                    type = ClassTypeDictionary[objectWrapper.GetType().Name];
+                if (ClassTypeDictionary.ContainsKey(objectBaseWrapper.GetType().Name))
+                    type = ClassTypeDictionary[objectBaseWrapper.GetType().Name];
                 else {
                     found = false;
                     return null;
                 }
             }
 
-            return CallNamespaceMethod(type, objectWrapper, methodName, args, out found);
+            return CallNamespaceMethod(type, objectBaseWrapper, methodName, args, out found);
         }
 
-        private static string CallNamespaceMethod(Type namespaceClass, ConsoleObject objectWrapper, string methodName,
+        private static string CallNamespaceMethod(Type namespaceClass, ISimObject objectBaseWrapper, string methodName,
             object[] args, out bool found) {
             MethodInfo callbackMethod = namespaceClass.GetMethod(methodName);
             if (callbackMethod != null) {
-                ConsoleObject simObj = null;
+                ISimObject simObj = null;
                 if (!callbackMethod.IsStatic)
-                    simObj = (ConsoleObject) SimDictionary.CreateInstance(namespaceClass, objectWrapper);
+                    simObj = (ISimObject) SimDictionary.CreateInstance(namespaceClass, objectBaseWrapper);
                 return InvokeMethod(callbackMethod, simObj, args, out found);
             }
 
@@ -106,7 +106,7 @@ namespace T3DSharpFramework.Interop
             return null;
         }
 
-        private static string InvokeMethod(MethodInfo callbackMethod, ConsoleObject obj, object[] args, out bool found) {
+        private static string InvokeMethod(MethodInfo callbackMethod, ISimObject obj, object[] args, out bool found) {
             if (obj != null
                 && !callbackMethod.DeclaringType.GetCustomAttributes<ConsoleClassAttribute>().Any()) {
                 found = false;
@@ -146,8 +146,8 @@ namespace T3DSharpFramework.Interop
         }
 
         private static object ConvertArgFromString(Type objType, string obj) {
-            if (typeof(ConsoleObject).IsAssignableFrom(objType)) {
-                return Sim.FindObject<ConsoleObject>(obj).As(objType);
+            if (typeof(ISimObject).IsAssignableFrom(objType)) {
+                return Sim.FindObject<ISimObject>(obj).As(objType);
             }
 
             if (objType == typeof(int)) return int.Parse(obj);

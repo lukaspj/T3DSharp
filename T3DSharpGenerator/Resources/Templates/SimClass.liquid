@@ -1,17 +1,87 @@
-namespace Torque3D.Functions {
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using T3DSharpFramework.Engine;
+using T3DSharpFramework.Engine.Util;
+using T3DSharpFramework.Generated.Classes.Global;
+using T3DSharpFramework.Generated.Classes.Reflection;
+using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Net;
+using T3DSharpFramework.Generated.Enums.Global;
+using T3DSharpFramework.Generated.Enums.Reflection;
+using T3DSharpFramework.Generated.Structs.Global;
+using T3DSharpFramework.Generated.Structs.Gui;
+using T3DSharpFramework.Generated.Structs.Math;
+using T3DSharpFramework.Interop;
 
-    public static unsafe class {{Class.Scope}} {
+namespace T3DSharpFramework.Generated.Classes.{{Class.Scope}} {    
+{% if Class.SuperType %}
+    public unsafe class {{Class.Name}} : {{Class.SuperType.ManagedType}}{% if Class.Name == "SimObject" %}, ISimObject{% endif %} {
+{% else %}
+    public unsafe class {{Class.Name}} : ConsoleObjectBase {
+{% endif %}
+
+{% if Class.IsSimObject %}
+{% include "simobject_body" %}
+{% else %}
+{% include "engineobject_body" %}
+{% endif %}
+
+{% if Class.Name == "SimObject" %}
+        public void SetPointerFromObject(ISimObject pObj) {
+            if (pObj is SimObject sim) {
+                base.SetPointerFromObject(sim);
+            } else if (pObj is UnkownSimObject unk) {
+                base.SetPointerFromObject(unk);
+            } else {
+                throw new NotImplementedException();
+            }
+        }
+
+        public T As<T>() where T : class, ISimObject {
+            if (typeof(SimObject).IsAssignableFrom(typeof(T))) {
+                return base.As(typeof(T)) as T;
+            }
+            throw new NotImplementedException();
+        }
+
+        public ISimObject As(Type t) {
+            if (typeof(SimObject).IsAssignableFrom(t)) {
+                return base.As(t) as ISimObject;
+            }
+            throw new NotImplementedException();
+        }
+        
+        public static implicit operator string(SimObject simObject) {
+            return GenericMarshal.ToString((ISimObject)simObject);
+        }
+        
+        public bool RegisterObject() {
+            bool registered = InternalUnsafeMethods.RegisterObject()(ObjectPtr);
+            if (registered) {
+                SimDictionary.RegisterObject(this);
+            }
+
+            return registered;
+        }
+
+        public bool RegisterSingleton() => RegisterObject();
+{% endif %}
 
         #region UnsafeNativeMethods
         new internal struct InternalUnsafeMethods {
-{% for function in Class.Functions %}
+{% for function in Class.Methods %}
 {% include "native_function" %}
 {% endfor %}
         }
         #endregion
 
-{% for function in Class.Functions %}
+{% for function in Class.Methods %}
 {% include "managed_function" %}
+{% endfor %}
+
+{% for property in Class.Properties %}
+{% include "managed_property" %}
 {% endfor %}
     }
 }

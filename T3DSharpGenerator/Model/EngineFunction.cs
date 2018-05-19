@@ -12,6 +12,8 @@ namespace T3DSharpGenerator.Model
         public string Scope { get; set; }
         public bool IsCallback { get; set; }
         public bool IsVariadic { get; set; }
+        public bool IsStatic { get; set; }
+        public bool IsOverride { get; set; }
         public IEngineObject ReturnType { get; set; }
         public string ReturnTypeName { get; set; }
         public string Symbol { get; set; }
@@ -21,6 +23,9 @@ namespace T3DSharpGenerator.Model
             Arguments = new List<Argument>();
 
             Name = name;
+            
+            // Default to static.
+            IsStatic = true;
         }
 
         public class Argument : ILiquidizable
@@ -49,6 +54,8 @@ namespace T3DSharpGenerator.Model
                 Docs = Docs,
                 IsCallback = IsCallback,
                 IsVariadic = IsVariadic,
+                IsStatic = IsStatic,
+                IsOverride = IsOverride,
                 ReturnType = ReturnType,
                 Symbol = Symbol,
                 Args = Arguments

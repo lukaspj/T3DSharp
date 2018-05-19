@@ -144,11 +144,11 @@ namespace T3DSharpFramework.Interop
             string _classNamespace = Marshal.PtrToStringAnsi(classNamespace);
             string _name = Marshal.PtrToStringAnsi(name);
 
-            ConsoleObject objectWrapper = Sim.FindObjectById<ConsoleObject>(obj);
+            UnkownSimObject objectBaseWrapper = Sim.FindObjectById<UnkownSimObject>(obj);
             string[] strings = { };
             if (argv != IntPtr.Zero)
                 strings = StringMarshal.IntPtrToStringArray(argv, argc);
-            string strRes = EngineCallbacks.CallScriptMethod(_className, _classNamespace, objectWrapper, _name, strings,
+            string strRes = EngineCallbacks.CallScriptMethod(_className, _classNamespace, objectBaseWrapper, _name, strings,
                 out result);
             return strRes;
         }

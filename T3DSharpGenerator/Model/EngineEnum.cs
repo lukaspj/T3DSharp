@@ -45,7 +45,11 @@ namespace T3DSharpGenerator.Model
             return new {
                 Name = Name,
                 Docs = Docs,
-                Fields = Fields.Select(x => x.ToLiquid())
+                Fields = Fields,
+                
+                ManagedType = ManagedType,
+                NativeArgType = NativeArgType,
+                NativeReturnType = NativeReturnType
             };
         }
     }

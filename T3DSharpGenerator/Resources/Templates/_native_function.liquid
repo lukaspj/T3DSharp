@@ -1,13 +1,14 @@
                 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-                private delegate {{function.ReturnType.NativeReturnType}} _{{function.Name}}({% for arg in function.Args %}{{arg.Type.NativeArgType}} {{arg.Name}}{% if forloop.rindex0 != 0 %}, {% endif %}{% endfor %});
-                private static _{{function.Name}} _{{function.Name}}Func;
-                internal static {{function.ReturnType.NativeReturnType}} {{function.Name}}({% for arg in function.Args %}{{arg.Type.NativeArgType}} {{arg.Name}}{% if forloop.rindex0 != 0 %}, {% endif %}{% endfor %}) {
-                    if (_{{function.Name}}Func == null) {
-                        _{{function.Name}}Func =
-                            (_{{function.Name}})Marshal.GetDelegateForFunctionPointer(
+                internal delegate {{function.ReturnType.NativeReturnType}} _{% sanitizeName function.Name CamelCase:true %}({% for arg in function.Args %}{{arg.Type.NativeArgType}} {% sanitizeName arg.Name %}{% if forloop.rindex0 != 0 %}, {% endif %}{% endfor %});
+                private static _{% sanitizeName function.Name CamelCase:true %} _{% sanitizeName function.Name CamelCase:true %}Func;
+                internal static _{% sanitizeName function.Name CamelCase:true %} {% sanitizeName function.Name CamelCase:true %}() {
+                    if (_{% sanitizeName function.Name CamelCase:true %}Func == null) {
+                        _{% sanitizeName function.Name CamelCase:true %}Func =
+                            (_{% sanitizeName function.Name CamelCase:true %})Marshal.GetDelegateForFunctionPointer(
                                 Torque3D.DllLoadUtils.GetProcAddress(
                                     Torque3D.Torque3DLibHandle,
-                                    "{{function.Symbol}}"), typeof(_{{function.Name}}));
+                                    "{{function.Symbol}}"), typeof(_{% sanitizeName function.Name CamelCase:true %}));
                     }
-                    return _{{function.Name}}Func({% for arg in function.Args %}{{arg.Name}}{% if forloop.rindex0 != 0%}, {% endif %}{% endfor %});
+                    
+                    return _{% sanitizeName function.Name CamelCase:true %}Func;
                 }

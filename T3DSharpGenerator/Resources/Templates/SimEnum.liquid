@@ -1,8 +1,8 @@
-namespace Torque3D.Enums.{{Scope}} {
+namespace T3DSharpFramework.Generated.Enums.{{Scope}} {
 {% for enum in Enums %}
     public enum {{enum.Name}} {
 {% for field in enum.Fields -%}
-        {{field.Name}} = {{field.Value}}{% if forloop.rindex0 != 0 %},{% endif -%}
+        {% sanitizeName field.Name CamelCase:true %} = {{field.Value}}{% if forloop.rindex0 != 0 %},{% endif -%}
         
 {% endfor -%}
     }

@@ -27,9 +27,9 @@ namespace T3DSharpGenerator.Generators
             
             Console.WriteLine(model["Scope"] + "_structs.cs");
 
-            Directory.CreateDirectory("Generated/Torque3D/Structs");
+            Directory.CreateDirectory("Generated/Structs");
             
-            using (StreamWriter SW = new StreamWriter($"Generated/Torque3D/Structs/{model["Scope"]}.cs")) {
+            using (StreamWriter SW = new StreamWriter($"Generated/Structs/{model["Scope"]}.cs")) {
                 SW.Write(output);        
             }
         }
