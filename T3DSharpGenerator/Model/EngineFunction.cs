@@ -35,11 +35,13 @@ namespace T3DSharpGenerator.Model
             public string TypeName { get; set; }
             public string DefaultValue { get; set; }
             public bool IsVariadic { get; set; }
+            public int Offset { get; set; }
             public object ToLiquid() {
                 return new {
                     Name = Name,
                     Type = Type,
-                    DefaultValue = DefaultValue
+                    DefaultValue = DefaultValue,
+                    Offset = Offset,
                 };
             }
         }

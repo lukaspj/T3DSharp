@@ -19,6 +19,7 @@ namespace T3DSharpGenerator.Generators.Templating
             Template.RegisterTag<GetManagedParametersTag>("getManagedParameters");
             Template.RegisterTag<VarToStringTag>("varToString");
             Template.RegisterTag<MarshalTag>("marshal");
+            Template.RegisterTag<MarshalAsTag>("marshalAs");
             Template.RegisterTag<SanitizeNameTag>("sanitizeName");
             Template.RegisterTag<DefaultParamValueTag>("defaultParamValue");
             Template.RegisterTag<DefaultBodyValueTag>("defaultBodyValue");

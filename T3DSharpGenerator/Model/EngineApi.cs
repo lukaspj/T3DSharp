@@ -63,9 +63,9 @@ namespace T3DSharpGenerator.Model
             foreach (EngineStruct.Field field in obj.Fields) {
                 if (field.TypeName.StartsWith("ptr_")
                     && field.Name.Equals("array")) {
-                    field.Type = ToType(field.TypeName.Substring(4) + "[]");
+                    field.Type = ToType(field.TypeName);
                 } else if (field.IndexedSize > 1) {
-                    field.Type = ToType(field.TypeName + "[]");
+                    field.Type = ToType("ptr_" + field.TypeName);
                 } else {
                     field.Type = ToType(field.TypeName);
                 }
@@ -105,6 +105,10 @@ namespace T3DSharpGenerator.Model
                 typeName = "SimPersistID";
             }
 
+            if (typeName.Equals("char")) {
+                typeName = "byte";
+            }
+
             if (typeName.Equals("caseString")) {
                 typeName = "string";
             }
@@ -127,6 +131,10 @@ namespace T3DSharpGenerator.Model
 
             if (typeName.Equals("GameObjectAssetPtr")) {
                 typeName = "SimObjectPtr";
+            }
+
+            if (typeName.Equals("SimObjectPtr")) {
+                typeName = "ptr";
             }
 
             if (typeName.Equals("assetIdString")) {
@@ -285,6 +293,19 @@ namespace T3DSharpGenerator.Model
             }
 
             return null;
+        }
+
+        public EngineApi AddVoidType() {
+            Primitives.Add(new EnginePrimitive("void") {
+                Name = "void",
+                Scope = "Global",
+                Docs = "Void type.",
+                Size = "0",
+                ManagedType = "void",
+                NativeArgType = "void",
+                NativeReturnType = "void"
+            });
+            return this;
         }
     }
 }

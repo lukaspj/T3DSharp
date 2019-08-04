@@ -16,7 +16,7 @@ using T3DSharpFramework.Interop;
 
 namespace T3DSharpFramework.Generated.Classes.{{Class.Scope}} {    
 {% if Class.SuperType %}
-    public unsafe class {{Class.Name}} : {{Class.SuperType.ManagedType}}{% if Class.Name == "SimObject" %}, ISimObject{% endif %} {
+    public unsafe class {{Class.Name}} : {{Class.SuperType.ManagedType}}{% if Class.Name == "SimObject" %}, ISimObject{% endif %}{% if Class.Name == "SimPersistID" %}, ISimPersistID{% endif %} {
 {% else %}
     public unsafe class {{Class.Name}} : ConsoleObjectBase {
 {% endif %}
@@ -31,7 +31,7 @@ namespace T3DSharpFramework.Generated.Classes.{{Class.Scope}} {
         public void SetPointerFromObject(ISimObject pObj) {
             if (pObj is SimObject sim) {
                 base.SetPointerFromObject(sim);
-            } else if (pObj is UnkownSimObject unk) {
+            } else if (pObj is UnknownSimObject unk) {
                 base.SetPointerFromObject(unk);
             } else {
                 throw new NotImplementedException();
@@ -40,6 +40,8 @@ namespace T3DSharpFramework.Generated.Classes.{{Class.Scope}} {
 
         public T As<T>() where T : class, ISimObject {
             if (typeof(SimObject).IsAssignableFrom(typeof(T))) {
+                return base.As(typeof(T)) as T;
+            } else if (typeof(UnknownSimObject).IsAssignableFrom(typeof(T))) {
                 return base.As(typeof(T)) as T;
             }
             throw new NotImplementedException();
@@ -57,7 +59,10 @@ namespace T3DSharpFramework.Generated.Classes.{{Class.Scope}} {
         }
         
         public bool RegisterObject() {
-            bool registered = InternalUnsafeMethods.RegisterObject()(ObjectPtr);
+			InternalUnsafeMethods.RegisterObject__Args _args = new InternalUnsafeMethods.RegisterObject__Args()
+			{
+			};
+            bool registered = InternalUnsafeMethods.RegisterObject()(ObjectPtr, _args);
             if (registered) {
                 SimDictionary.RegisterObject(this);
             }
@@ -66,6 +71,10 @@ namespace T3DSharpFramework.Generated.Classes.{{Class.Scope}} {
         }
 
         public bool RegisterSingleton() => RegisterObject();
+{% elsif Class.Name == "SimPersistID" %}
+		public string MarshalToString() {
+			return GenericMarshal.ToString(GetUUID());
+		}
 {% endif %}
 
         #region UnsafeNativeMethods

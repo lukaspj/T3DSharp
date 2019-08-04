@@ -40,12 +40,14 @@
           <e p="ClassGenerator.cs" t="Include" />
           <e p="EnumGenerator.cs" t="Include" />
           <e p="FunctionGenerator.cs" t="Include" />
+          <e p="PrimitiveSizesGenerator.cs" t="Include" />
           <e p="StructGenerator.cs" t="Include" />
           <e p="Templating" t="Include">
             <e p="BaseTemplate.cs" t="Include" />
             <e p="ClassTemplate.cs" t="Include" />
             <e p="EnumTemplate.cs" t="Include" />
             <e p="FunctionTemplate.cs" t="Include" />
+            <e p="PrimitiveSizesTemplate.cs" t="Include" />
             <e p="StructTemplate.cs" t="Include" />
             <e p="Tags" t="Include">
               <e p="AllocTag.cs" t="Include" />
@@ -54,6 +56,7 @@
               <e p="FreeTag.cs" t="Include" />
               <e p="GetManagedParametersTag.cs" t="Include" />
               <e p="GetReturnStatementBlock.cs" t="Include" />
+              <e p="MarshalAsTag.cs" t="Include" />
               <e p="MarshalTag.cs" t="Include" />
               <e p="SanitizeNameTag.cs" t="Include" />
               <e p="StructFieldAllocTag.cs" t="Include" />
@@ -67,7 +70,6 @@
         </e>
         <e p="Model" t="Include">
           <e p="EngineApi.cs" t="Include" />
-          <e p="EngineApiPrimitives.cs" t="Include" />
           <e p="EngineClass.cs" t="Include" />
           <e p="EngineEnum.cs" t="Include" />
           <e p="EngineFunction.cs" t="Include" />
@@ -88,6 +90,7 @@
             <e p="_managed_property.liquid" t="Include" />
             <e p="_native_function.liquid" t="Include" />
             <e p="_simobject_body.liquid" t="Include" />
+            <e p="PrimitiveSizes.liquid" t="Include" />
             <e p="SimClass.liquid" t="Include" />
             <e p="SimEnum.liquid" t="Include" />
             <e p="SimFunction.liquid" t="Include" />

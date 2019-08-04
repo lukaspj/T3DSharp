@@ -56,7 +56,7 @@ namespace T3DSharpFramework.Engine
             
             if (this is ISimObject sim) {
                 return (ConsoleObjectBase) SimDictionary.CreateInstance(t, sim);
-            } else if (this is UnkownSimObject unk) {
+            } else if (this is UnknownSimObject unk) {
                 return (ConsoleObjectBase) SimDictionary.CreateInstance(t, unk);
             }
             

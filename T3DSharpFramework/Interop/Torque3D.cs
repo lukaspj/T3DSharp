@@ -144,7 +144,7 @@ namespace T3DSharpFramework.Interop
             string _classNamespace = Marshal.PtrToStringAnsi(classNamespace);
             string _name = Marshal.PtrToStringAnsi(name);
 
-            UnkownSimObject objectBaseWrapper = Sim.FindObjectById<UnkownSimObject>(obj);
+            UnknownSimObject objectBaseWrapper = Sim.FindObjectById<UnknownSimObject>(obj);
             string[] strings = { };
             if (argv != IntPtr.Zero)
                 strings = StringMarshal.IntPtrToStringArray(argv, argc);

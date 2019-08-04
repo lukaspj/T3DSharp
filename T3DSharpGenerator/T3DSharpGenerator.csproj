@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>T3DSharpGenerator</RootNamespace>
     <AssemblyName>T3DSharpGenerator</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -31,6 +32,26 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotLiquid, Version=2.0.254.0, Culture=neutral, PublicKeyToken=82e46016ecf9f07c">
       <HintPath>..\packages\DotLiquid.2.0.254\lib\net45\DotLiquid.dll</HintPath>
@@ -49,11 +70,14 @@
     <Compile Include="Generators\ClassGenerator.cs" />
     <Compile Include="Generators\EnumGenerator.cs" />
     <Compile Include="Generators\FunctionGenerator.cs" />
+    <Compile Include="Generators\PrimitiveSizesGenerator.cs" />
     <Compile Include="Generators\StructGenerator.cs" />
     <Compile Include="Generators\Templating\BaseTemplate.cs" />
     <Compile Include="Generators\Templating\ClassTemplate.cs" />
     <Compile Include="Generators\Templating\EnumTemplate.cs" />
+    <Compile Include="Generators\Templating\VariadicFunctionTemplate.cs" />
     <Compile Include="Generators\Templating\FunctionTemplate.cs" />
+    <Compile Include="Generators\Templating\PrimitiveSizesTemplate.cs" />
     <Compile Include="Generators\Templating\StructTemplate.cs" />
     <Compile Include="Generators\Templating\Tags\AllocTag.cs" />
     <Compile Include="Generators\Templating\Tags\DefaultBodyValueTag.cs" />
@@ -61,6 +85,7 @@
     <Compile Include="Generators\Templating\Tags\FreeTag.cs" />
     <Compile Include="Generators\Templating\Tags\GetManagedParametersTag.cs" />
     <Compile Include="Generators\Templating\Tags\GetReturnStatementBlock.cs" />
+    <Compile Include="Generators\Templating\Tags\MarshalAsTag.cs" />
     <Compile Include="Generators\Templating\Tags\MarshalTag.cs" />
     <Compile Include="Generators\Templating\Tags\SanitizeNameTag.cs" />
     <Compile Include="Generators\Templating\Tags\StructFieldAllocTag.cs" />
@@ -68,7 +93,6 @@
     <Compile Include="Generators\Templating\Tags\VarToStringTag.cs" />
     <Compile Include="Generators\Util\SimObjectTree.cs" />
     <Compile Include="Model\EngineApi.cs" />
-    <Compile Include="Model\EngineApiPrimitives.cs" />
     <Compile Include="Model\EngineClass.cs" />
     <Compile Include="Model\EngineEnum.cs" />
     <Compile Include="Model\EngineFunction.cs" />
@@ -94,12 +118,26 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+    <Content Include="Resources\Templates\_managed_variadic_function.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\_managed_typed_function.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\_native_variadic_function.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\_native_typed_function.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Resources\Templates\PrimitiveSizes.liquid">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Templates\SimClass.liquid">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

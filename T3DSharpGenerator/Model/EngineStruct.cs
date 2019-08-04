@@ -20,7 +20,8 @@ namespace T3DSharpGenerator.Model
             Name = name;
             ManagedType = Name;
             NativeReturnType = Name + ".InternalStruct";
-            NativeArgType = "ref " + Name + ".InternalStruct";
+            NativeArgType = "IntPtr";
+            //NativeArgType = "ref " + Name + ".InternalStruct";
         }
 
         public class Field : ILiquidizable

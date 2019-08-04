@@ -1,0 +1,29 @@
+
+
+                [StructLayout(LayoutKind.Sequential)]
+                internal struct {% sanitizeName function.Name CamelCase:true %}__Args
+                {
+{% for arg in function.Args -%}
+{% if forloop.index0 != 0 or function.IsStatic -%}
+				   {% marshalAs arg.Type.Name %}
+				   internal {{arg.Type.NativeArgType}} {% sanitizeName arg.Name %};
+{% endif -%}
+{% endfor -%}
+                }
+
+                [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+                {% marshalAs function.ReturnType.NativeReturnType return:true %}
+                //internal delegate {{function.ReturnType.NativeReturnType}} _{% sanitizeName function.Name CamelCase:true %}({% for arg in function.Args %}{% marshalAs arg.Type.Name %}{{arg.Type.NativeArgType}} {% sanitizeName arg.Name %}{% if forloop.rindex0 != 0 %}, {% endif %}{% endfor %});
+                internal delegate {{function.ReturnType.NativeReturnType}} _{% sanitizeName function.Name CamelCase:true %}({% if function.IsStatic == false %}IntPtr _this, {% endif %}{% sanitizeName function.Name CamelCase:true %}__Args args);
+                private static _{% sanitizeName function.Name CamelCase:true %} _{% sanitizeName function.Name CamelCase:true %}Func;
+                internal static _{% sanitizeName function.Name CamelCase:true %} {% sanitizeName function.Name CamelCase:true %}() {
+                    if (_{% sanitizeName function.Name CamelCase:true %}Func == null) {
+                        _{% sanitizeName function.Name CamelCase:true %}Func =
+                            (_{% sanitizeName function.Name CamelCase:true %})Marshal.GetDelegateForFunctionPointer(
+                                Torque3D.DllLoadUtils.GetProcAddress(
+                                    Torque3D.Torque3DLibHandle,
+                                    "{{function.Symbol}}"), typeof(_{% sanitizeName function.Name CamelCase:true %}));
+                    }
+                    
+                    return _{% sanitizeName function.Name CamelCase:true %}Func;
+                }

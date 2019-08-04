@@ -1,0 +1,17 @@
+					public {% if function.IsStatic %}static {% endif %}{% if function.IsOverride %}override {% endif %}{{function.ReturnType.ManagedType}} {% sanitizeName function.Name CamelCase:true %}(params string[] args) { 
+						List<string> _argList = new List<string>() {""{% if function.IsStatic == false %}, ""{% endif %}};
+						_argList.AddRange(args);
+            
+						StringVector nativeVecArgs = new StringVector {
+							ElementCount = (uint)_argList.Count,
+							Array = _argList.ToArray(),
+							ArraySize = (uint)_argList.Count
+						};
+						nativeVecArgs.Alloc();
+						{% if function.ReturnType.ManagedType != 'void' %}{{ function.ReturnType.NativeReturnType }} _engineResult = {% endif %}InternalUnsafeMethods.{% sanitizeName function.Name CamelCase:true %}()({% if function.IsStatic == false %}ObjectPtr, {% endif %}ref nativeVecArgs.internalStruct);
+						nativeVecArgs.Free();
+            
+{% if function.ReturnType.ManagedType != 'void' -%}
+						{% getReturnString function.ReturnType %}_engineResult{% endgetReturnString %};
+{% endif -%}
+					}

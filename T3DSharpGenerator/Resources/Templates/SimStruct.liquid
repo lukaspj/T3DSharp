@@ -16,6 +16,8 @@ namespace T3DSharpFramework.Generated.Structs.{{Scope}} {
         
         public InternalStruct internalStruct;
         
+        public IntPtr internalStructPtr;
+        
 {% for field in struct.Fields -%}
         public {{field.Type.ManagedType}} {% sanitizeName field.Name CamelCase:true %} { get; set; }
 {% endfor -%}
@@ -24,6 +26,7 @@ namespace T3DSharpFramework.Generated.Structs.{{Scope}} {
         
         public {{struct.Name}}(InternalStruct data) { 
             internalStruct = data;
+			Free();
         }
         
         public {{struct.Name}}(string s) {
@@ -37,12 +40,17 @@ namespace T3DSharpFramework.Generated.Structs.{{Scope}} {
 {% for field in struct.Fields -%}
             {% structFieldAlloc field %}
 {% endfor -%}
+            internalStructPtr = StructMarshal.StructToIntPtr(internalStruct);
         }
         
         public void Free() {
 {% for field in struct.Fields -%}
             {% structFieldFree field %}
 {% endfor -%}
+            if (internalStructPtr != IntPtr.Zero) {
+                StructMarshal.FreeStructPtr<InternalStruct>(internalStructPtr);
+            }
+            internalStructPtr = IntPtr.Zero;
         }
         
         public override string ToString() {

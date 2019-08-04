@@ -44,8 +44,8 @@ namespace T3DSharpGenerator
             Initializer.InitializeTypeDictionaries(Assembly.GetExecutingAssembly().GetTypes());
             Torque3D.Libraries libraries = new Torque3D.Libraries
             {
-                Windows32bit = "Full_DEBUG.dll",
-                Windows64bit = "Full_DEBUG.dll"
+                Windows32bit = "BaseGame_DEBUG.dll",
+                Windows64bit = "BaseGame_DEBUG.dll"
             };
 
             Torque3D.Initialize(args, libraries);
@@ -95,6 +95,7 @@ namespace T3DSharpGenerator
             StructGenerator.GenerateFor(engineApi, engineApi.Structs);
             FunctionGenerator.GenerateFor(engineApi, engineApi.Functions);
             ClassGenerator.GenerateFor(engineApi, engineApi.Classes);
+            PrimitiveSizesGenerator.GenerateFor(engineApi, engineApi.Primitives);
             Console.WriteLine("Finished code generation.");
         }
     }

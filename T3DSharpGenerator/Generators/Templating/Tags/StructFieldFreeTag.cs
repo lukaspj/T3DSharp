@@ -30,7 +30,7 @@ namespace T3DSharpGenerator.Generators.Templating.Tags
             
             if (field.Type is EngineStruct @struct) {
                 result.Write($"{name_CC}.internalStruct = internalStruct.{name_cC};");
-                result.Write($"{name_CC}.Free();");
+                result.Write($" {name_CC}.Free();");
                 return;
             }
 
@@ -40,12 +40,13 @@ namespace T3DSharpGenerator.Generators.Templating.Tags
             }
 
             string baseType = field.Type.ManagedType;
-            if (baseType.EndsWith("[]")) {
-                baseType = baseType.Substring(0, baseType.Length - 2);
+            if (baseType.StartsWith("ptr_")) {
+                baseType = baseType.Substring(4);
             }
 
             if (field.Type is EnginePrimitive @primitive) {
                 if (@primitive.NativeReturnType.Equals("IntPtr")) {
+                    baseType = baseType.Substring(0, baseType.Length - 2);
                     if (field.IndexedSize > 1) {
                         result.Write($"{name_CC} = GenericMarshal.FromPtr<{baseType}>(internalStruct.{name_cC}, {field.IndexedSize}, true);");
                     } else {

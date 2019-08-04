@@ -13,12 +13,14 @@ namespace T3DSharpGenerator
         public List<EngineStruct> Structs { get; }
         public List<EngineFunction> Functions { get; }
         public List<EngineClass> Classes { get; }
+        public List<EnginePrimitive> Primitives { get; set; }
 
         public ParseState() {
             Enums = new List<EngineEnum>();
             Structs = new List<EngineStruct>();
             Functions = new List<EngineFunction>();
             Classes = new List<EngineClass>();
+            Primitives = new List<EnginePrimitive>();
         }
 
         public ParseState EnterScope(string scope) {
@@ -67,7 +69,8 @@ namespace T3DSharpGenerator
                 .SetStructs(parseState.Structs)
                 .SetClasses(parseState.Classes)
                 .SetFunctions(parseState.Functions)
-                .SetPrimitives(EngineApiPrimitives.GetEngineApiPrimitives())
+                .SetPrimitives(parseState.Primitives)
+                .AddVoidType()
                 .AnnotateTypes()
                 .AnnotateFunctionOverrides()
                 .PruneSubClassProperties();

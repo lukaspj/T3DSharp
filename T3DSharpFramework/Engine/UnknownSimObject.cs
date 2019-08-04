@@ -2,7 +2,7 @@
 
 namespace T3DSharpFramework.Engine
 {
-    public class UnkownSimObject : ConsoleObjectBase, ISimObject
+    public class UnknownSimObject : ConsoleObjectBase, ISimObject
     {
         public void SetPointerFromObject(ISimObject pObj)
         {

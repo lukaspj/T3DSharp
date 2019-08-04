@@ -30,7 +30,7 @@ namespace T3DSharpGenerator.Generators.Templating.Tags
             }
 
             if (type.NativeReturnType == "IntPtr" && type.ManagedType == "string") {
-                result.Write($"Marshal.PtrToStringUni(");
+                result.Write($"StringMarshal.IntPtrToUtf8String(");
                 base.Render(context, result);
                 result.Write(")");
                 return;

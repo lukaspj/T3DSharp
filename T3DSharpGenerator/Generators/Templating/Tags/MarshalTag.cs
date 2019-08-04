@@ -48,11 +48,13 @@ namespace T3DSharpGenerator.Generators.Templating.Tags
 
             if (type is EngineStruct @struct) {
                 //result.Write($"GenericMarshal.ToPtr({arg.Name}");
-                result.Write($"ref ({arg.Name}");
-                if (arg.DefaultValue != null) {
-                    result.Write($" ?? new {@struct.Name}(\"{arg.DefaultValue}\")");
-                }
-                result.Write(").internalStruct");
+                result.Write($"{arg.Name}.internalStructPtr");
+                //result.Write($"StructMarshal.StructToIntPtr(({arg.Name}");
+                //result.Write($"ref ({arg.Name}");
+                //if (arg.DefaultValue != null) {
+                //    result.Write($" ?? new {@struct.Name}(\"{arg.DefaultValue}\")");
+                //}
+                //result.Write(").internalStruct)");
                 return;
             }
 

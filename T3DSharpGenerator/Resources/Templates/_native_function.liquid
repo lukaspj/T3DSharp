@@ -1,14 +1,5 @@
-                [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-                internal delegate {{function.ReturnType.NativeReturnType}} _{% sanitizeName function.Name CamelCase:true %}({% for arg in function.Args %}{{arg.Type.NativeArgType}} {% sanitizeName arg.Name %}{% if forloop.rindex0 != 0 %}, {% endif %}{% endfor %});
-                private static _{% sanitizeName function.Name CamelCase:true %} _{% sanitizeName function.Name CamelCase:true %}Func;
-                internal static _{% sanitizeName function.Name CamelCase:true %} {% sanitizeName function.Name CamelCase:true %}() {
-                    if (_{% sanitizeName function.Name CamelCase:true %}Func == null) {
-                        _{% sanitizeName function.Name CamelCase:true %}Func =
-                            (_{% sanitizeName function.Name CamelCase:true %})Marshal.GetDelegateForFunctionPointer(
-                                Torque3D.DllLoadUtils.GetProcAddress(
-                                    Torque3D.Torque3DLibHandle,
-                                    "{{function.Symbol}}"), typeof(_{% sanitizeName function.Name CamelCase:true %}));
-                    }
-                    
-                    return _{% sanitizeName function.Name CamelCase:true %}Func;
-                }
+{% if function.IsVariadic -%}
+	{% include "native_variadic_function" -%}
+{% else -%}
+	{% include "native_typed_function" -%}
+{% endif -%}

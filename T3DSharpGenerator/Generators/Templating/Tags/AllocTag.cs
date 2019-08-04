@@ -25,8 +25,15 @@ namespace T3DSharpGenerator.Generators.Templating.Tags
                 TypeName = _arg?.GetType()?.GetProperty("TypeName")?.GetValue(_arg, null) as string
             };
             
-            if (arg.Type is EngineStruct @struct) {
-                result.Write($"{SanitizeNameTag.SanitizeName(arg.Name, false)}.Alloc();");
+            if (arg.Type is EngineStruct @struct)
+            {
+                string argName = SanitizeNameTag.SanitizeName(arg.Name, false);
+                if (arg.DefaultValue != null)
+                {
+                    result.Write($"{argName} = {argName} ?? new {@struct.Name}(\"{arg.DefaultValue}\");");
+                }
+
+                result.Write($"{argName}.Alloc();");
                 return;
             }
         }

@@ -25,10 +25,18 @@ namespace T3DSharpFramework.Engine
 
       new internal struct InternalUnsafeMethods
       {
+         [StructLayout(LayoutKind.Explicit)]
+         public struct FindObjectById_Struct
+         {
+            [FieldOffset(0)]
+            public uint id;
+         }
+
          [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-         private delegate IntPtr _FindObjectById(uint id);
+         private delegate IntPtr _FindObjectById(FindObjectById_Struct args);
+
          private static _FindObjectById _FindObjectByIdFunc;
-         internal static IntPtr FindObjectById(uint id)
+         internal static IntPtr FindObjectById(FindObjectById_Struct args)
          {
             if (_FindObjectByIdFunc == null)
             {
@@ -37,11 +45,11 @@ namespace T3DSharpFramework.Engine
                      "fnFindObjectById"), typeof(_FindObjectById));
             }
 
-            return _FindObjectByIdFunc(id);
+            return _FindObjectByIdFunc(args);
          }
          
-         [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-         private delegate IntPtr _FindObjectByName(string name);
+         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+         private delegate IntPtr _FindObjectByName([MarshalAs(UnmanagedType.LPUTF8Str)]string name);
          private static _FindObjectByName _FindObjectByNameFunc;
          internal static IntPtr FindObjectByName(string name)
          {
@@ -123,7 +131,7 @@ namespace T3DSharpFramework.Engine
 
       public static T FindObjectById<T>(uint id) where T : class, ISimObject
       {
-         IntPtr objPtr = InternalUnsafeMethods.FindObjectById(id);
+         IntPtr objPtr = FindObjectPtrById(id);
          T obj = SimDictionary.Find<T>(id);
          if (obj != null && obj.ObjectPtr == objPtr) return obj;
          obj = (T)FormatterServices.GetUninitializedObject(typeof(T));
@@ -134,9 +142,14 @@ namespace T3DSharpFramework.Engine
 
       public static IntPtr FindObjectPtrById(uint id)
       {
+         InternalUnsafeMethods.FindObjectById_Struct idStruct =
+            new InternalUnsafeMethods.FindObjectById_Struct
+            {
+               id = id
+            };
          ISimObject obj = SimDictionary.Find<ISimObject>(id);
          if (obj != null) return obj.ObjectPtr;
-         return InternalUnsafeMethods.FindObjectById(id);
+         return InternalUnsafeMethods.FindObjectById(idStruct);
       }
 
       public static T FindObjectByName<T>(string name) where T : class, ISimObject
