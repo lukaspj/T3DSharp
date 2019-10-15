@@ -1,7 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using DotLiquid;
 
 namespace T3DSharpGenerator.Model
 {
@@ -34,7 +31,7 @@ namespace T3DSharpGenerator.Model
             NativeArgType = "IntPtr";
         }
         
-        public class Property : ILiquidizable
+        public class Property
         {
             public string Name { get; set; }
             public string Docs { get; set; }
@@ -45,18 +42,6 @@ namespace T3DSharpGenerator.Model
             public string IsConstant { get; set; }
             public string IsTransient { get; set; }
             public string IsVisible { get; set; }
-            public object ToLiquid() {
-                return Hash.FromAnonymousObject(new {
-                    Name = Name,
-                    Docs = Docs,
-                    Group = Group,
-                    Type = Type,
-                    IndexedSize = IndexedSize,
-                    IsConstant = IsConstant,
-                    IsTransient = IsTransient,
-                    IsVisible = IsVisible
-                });
-            }
 
             public override bool Equals(object obj) {
                 bool equals = true;

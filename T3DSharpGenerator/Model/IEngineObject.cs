@@ -1,8 +1,6 @@
-﻿using DotLiquid;
-
-namespace T3DSharpGenerator.Model
+﻿namespace T3DSharpGenerator.Model
 {
-    public interface IEngineObject : ILiquidizable
+    public interface IEngineObject
     {
         string Name { get; set; }
         string ManagedType { get; set; }

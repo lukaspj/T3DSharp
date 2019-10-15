@@ -1,7 +1,0 @@
-{% if function.Name != "create" and function.Name != "RegisterObject" -%}
-	{% if function.IsVariadic -%}
-		{% include "managed_variadic_function" -%}
-	{% else -%}
-		{% include "managed_typed_function" -%}
-	{% endif -%}
-{% endif -%}

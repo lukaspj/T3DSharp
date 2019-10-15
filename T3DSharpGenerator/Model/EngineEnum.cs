@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using DotLiquid;
 
 namespace T3DSharpGenerator.Model
 {
@@ -23,7 +21,7 @@ namespace T3DSharpGenerator.Model
             NativeReturnType = "int";
         }
 
-        public class Field : ILiquidizable
+        public class Field
         {
             public string Name { get; set; }
             public int Value { get; set; }
@@ -39,18 +37,6 @@ namespace T3DSharpGenerator.Model
 
         public void Add(Field field) {
             Fields.Add(field);
-        }
-
-        public object ToLiquid() {
-            return new {
-                Name = Name,
-                Docs = Docs,
-                Fields = Fields,
-                
-                ManagedType = ManagedType,
-                NativeArgType = NativeArgType,
-                NativeReturnType = NativeReturnType
-            };
         }
     }
 }

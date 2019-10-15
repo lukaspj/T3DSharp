@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DotLiquid;
+using Scriban.Runtime;
 using T3DSharpGenerator.Generators.Templating;
 using T3DSharpGenerator.Generators.Util;
 using T3DSharpGenerator.Model;
@@ -26,11 +26,15 @@ namespace T3DSharpGenerator.Generators
             Console.WriteLine("End.");
             otherClasses.ForEach(x => GenerateFor(engineApi, x));
         }
-
+        
         private static void GenerateFor(EngineApi engineApi, EngineClass @class) {
             string scope = (string.IsNullOrEmpty(@class.Scope) ? "Global" : @class.Scope);
 
-            string output = ClassTemplate.Get(engineApi).Render(Hash.FromAnonymousObject(new {Class = @class}));
+            var scriptObject = new ScriptObject();
+            scriptObject.Add("class", @class);
+            scriptObject.Add("scope", scope);
+
+            string output = ClassTemplate.Render(@class, scope);
 
             string dir = $"Generated/Classes/{scope.Replace('.', '/')}";
             

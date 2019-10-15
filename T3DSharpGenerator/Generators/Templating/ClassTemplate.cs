@@ -1,29 +1,29 @@
 ﻿using System.IO;
-using DotLiquid;
+using Scriban.Runtime;
 using T3DSharpGenerator.Model;
+using Template = Scriban.Template;
 
 namespace T3DSharpGenerator.Generators.Templating
 {
     public static class ClassTemplate
-    {   
-        private static Template Template { get; set; }
-        
-        public static Template Get(EngineApi engineApi) {
-            if (Template == null) {
-                InitializeTemplate(engineApi);
+    {
+        public static string Render(EngineClass @class, string scope) {
+            Template template;
+            using (StreamReader reader = new StreamReader("Resources/Templates/SimClass.scriban")) {
+                template = Template.Parse(reader.ReadToEnd(), "Resources/Templates/SimClass.scriban");
             }
 
-            return Template;
-        }
+            var scriptObject = new ScriptObject {
+                {"class", @class}, 
+                {"scope", scope}
+            };
 
-        private static Template InitializeTemplate(EngineApi engineApi) {
-            BaseTemplate.InitializeTemplatingSystem(engineApi);
+            scriptObject.Import(BaseTemplate.GetScriptObject());
+
+            var context = BaseTemplate.GetTemplateContext();
+            context.PushGlobal(scriptObject);
             
-            using (StreamReader reader = new StreamReader("Resources/Templates/SimClass.liquid")) {
-                Template = DotLiquid.Template.Parse(reader.ReadToEnd());
-            }
-            
-            return Template;
+            return template.Render(context);
         }
     }
 }

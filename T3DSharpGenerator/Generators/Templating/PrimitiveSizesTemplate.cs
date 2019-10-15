@@ -1,29 +1,29 @@
-﻿using System.IO;
-using DotLiquid;
+﻿using System.Collections.Generic;
+using System.IO;
+using Scriban;
+using Scriban.Runtime;
 using T3DSharpGenerator.Model;
 
 namespace T3DSharpGenerator.Generators.Templating
 {
     public static class PrimitiveSizesTemplate
     {
-        private static Template Template { get; set; }
-        
-        public static Template Get(EngineApi engineApi) {
-            if (Template == null) {
-                InitializeTemplate(engineApi);
-            }
-
-            return Template;
-        }
-
-        private static Template InitializeTemplate(EngineApi engineApi) {
-            BaseTemplate.InitializeTemplatingSystem(engineApi);
-            
-            using (StreamReader reader = new StreamReader("Resources/Templates/PrimitiveSizes.liquid")) {
-                Template = DotLiquid.Template.Parse(reader.ReadToEnd());
+        public static string Render(List<EnginePrimitive> primitives) {
+            Template template;
+            using (StreamReader reader = new StreamReader("Resources/Templates/PrimitiveSizes.scriban")) {
+                template = Template.Parse(reader.ReadToEnd());
             }
             
-            return Template;
+            var scriptObject = new ScriptObject {
+                {"primitives", primitives}
+            };
+            
+            scriptObject.Import(BaseTemplate.GetScriptObject());
+
+            var context = BaseTemplate.GetTemplateContext();
+            context.PushGlobal(scriptObject);
+            
+            return template.Render(context);
         }
     }
 }

@@ -1,29 +1,30 @@
-﻿using System.IO;
-using DotLiquid;
+﻿using System.Collections.Generic;
+using System.IO;
+using Scriban;
+using Scriban.Runtime;
 using T3DSharpGenerator.Model;
 
 namespace T3DSharpGenerator.Generators.Templating
 {
     public static class EnumTemplate
     {
-        private static Template Template { get; set; }
-        
-        public static Template Get(EngineApi engineApi) {
-            if (Template == null) {
-                InitializeTemplate(engineApi);
+        public static string Render(List<EngineEnum> enums, string scope) {
+            Template template;
+            using (StreamReader reader = new StreamReader("Resources/Templates/SimEnum.scriban")) {
+                template = Template.Parse(reader.ReadToEnd());
             }
 
-            return Template;
-        }
+            var scriptObject = new ScriptObject {
+                {"enums", enums}, 
+                {"scope", scope}
+            };
 
-        private static Template InitializeTemplate(EngineApi engineApi) {
-            BaseTemplate.InitializeTemplatingSystem(engineApi);
+            scriptObject.Import(BaseTemplate.GetScriptObject());
+
+            var context = BaseTemplate.GetTemplateContext();
+            context.PushGlobal(scriptObject);
             
-            using (StreamReader reader = new StreamReader("Resources/Templates/SimEnum.liquid")) {
-                Template = DotLiquid.Template.Parse(reader.ReadToEnd());
-            }
-            
-            return Template;
+            return template.Render(context);
         }
     }
 }

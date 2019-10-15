@@ -53,16 +53,26 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DotLiquid, Version=2.0.254.0, Culture=neutral, PublicKeyToken=82e46016ecf9f07c">
-      <HintPath>..\packages\DotLiquid.2.0.254\lib\net45\DotLiquid.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Scriban, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Scriban.2.1.0\lib\net45\Scriban.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -71,26 +81,25 @@
     <Compile Include="Generators\EnumGenerator.cs" />
     <Compile Include="Generators\FunctionGenerator.cs" />
     <Compile Include="Generators\PrimitiveSizesGenerator.cs" />
+    <Compile Include="Generators\Scriban\Templating\DiskTemplateLoader.cs" />
     <Compile Include="Generators\StructGenerator.cs" />
     <Compile Include="Generators\Templating\BaseTemplate.cs" />
     <Compile Include="Generators\Templating\ClassTemplate.cs" />
     <Compile Include="Generators\Templating\EnumTemplate.cs" />
-    <Compile Include="Generators\Templating\VariadicFunctionTemplate.cs" />
+    <Compile Include="Generators\Templating\Functions\AllocContainer.cs" />
+    <Compile Include="Generators\Templating\Functions\DefaultParamValueContainer.cs" />
+    <Compile Include="Generators\Templating\Functions\FreeContainer.cs" />
+    <Compile Include="Generators\Templating\Functions\GetManagedParametersContainer.cs" />
+    <Compile Include="Generators\Templating\Functions\GetReturnStringContainer.cs" />
+    <Compile Include="Generators\Templating\Functions\IndentContainer.cs" />
+    <Compile Include="Generators\Templating\Functions\MarshalAsContainer.cs" />
+    <Compile Include="Generators\Templating\Functions\MarshalContainer.cs" />
+    <Compile Include="Generators\Templating\Functions\SanitizeNameContainer.cs" />
+    <Compile Include="Generators\Templating\Functions\StructFieldAllocContainer.cs" />
+    <Compile Include="Generators\Templating\Functions\StructFieldFreeContainer.cs" />
     <Compile Include="Generators\Templating\FunctionTemplate.cs" />
     <Compile Include="Generators\Templating\PrimitiveSizesTemplate.cs" />
     <Compile Include="Generators\Templating\StructTemplate.cs" />
-    <Compile Include="Generators\Templating\Tags\AllocTag.cs" />
-    <Compile Include="Generators\Templating\Tags\DefaultBodyValueTag.cs" />
-    <Compile Include="Generators\Templating\Tags\DefaultParamValueTag.cs" />
-    <Compile Include="Generators\Templating\Tags\FreeTag.cs" />
-    <Compile Include="Generators\Templating\Tags\GetManagedParametersTag.cs" />
-    <Compile Include="Generators\Templating\Tags\GetReturnStatementBlock.cs" />
-    <Compile Include="Generators\Templating\Tags\MarshalAsTag.cs" />
-    <Compile Include="Generators\Templating\Tags\MarshalTag.cs" />
-    <Compile Include="Generators\Templating\Tags\SanitizeNameTag.cs" />
-    <Compile Include="Generators\Templating\Tags\StructFieldAllocTag.cs" />
-    <Compile Include="Generators\Templating\Tags\StructFieldFreeTag.cs" />
-    <Compile Include="Generators\Templating\Tags\VarToStringTag.cs" />
     <Compile Include="Generators\Util\SimObjectTree.cs" />
     <Compile Include="Model\EngineApi.cs" />
     <Compile Include="Model\EngineClass.cs" />
@@ -120,51 +129,39 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <Content Include="Resources\Templates\_managed_variadic_function.liquid">
+    <Content Include="Resources\Templates\engineobject_body.scriban">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Templates\_managed_typed_function.liquid">
+    <Content Include="Resources\Templates\managed_function.scriban">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Templates\_native_variadic_function.liquid">
+    <Content Include="Resources\Templates\managed_property.scriban">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Templates\_native_typed_function.liquid">
+    <Content Include="Resources\Templates\PrimitiveSizes.scriban">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\SimClass.scriban">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\SimEnum.scriban">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\SimFunction.scriban">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\simobject_body.scriban">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\SimStruct.scriban">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Templates\native_function.scriban">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Resources\Templates\PrimitiveSizes.liquid">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\SimClass.liquid">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\_engineobject_body.liquid">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\_managed_function.liquid">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\_managed_property.liquid">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\_native_function.liquid">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\SimEnum.liquid">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\SimFunction.liquid">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\SimStruct.liquid">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\_simobject_body.liquid">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Folder Include="Resources\ScribanTemplates" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

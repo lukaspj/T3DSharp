@@ -1,29 +1,32 @@
-﻿using System.IO;
-using DotLiquid;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using Scriban;
+using Scriban.Runtime;
 using T3DSharpGenerator.Model;
 
 namespace T3DSharpGenerator.Generators.Templating
 {
     public static class FunctionTemplate
     {
-        private static Template Template { get; set; }
-        
-        public static Template Get(EngineApi engineApi) {
-            if (Template == null) {
-                InitializeTemplate(engineApi);
-            }
-
-            return Template;
-        }
-
-        private static Template InitializeTemplate(EngineApi engineApi) {
-            BaseTemplate.InitializeTemplatingSystem(engineApi);
-            
-            using (StreamReader reader = new StreamReader("Resources/Templates/SimFunction.liquid")) {
-                Template = DotLiquid.Template.Parse(reader.ReadToEnd());
+        public static string Render(List<EngineFunction> functions, string scope, string scopeClass) {
+            Template template;
+            using (StreamReader reader = new StreamReader("Resources/Templates/SimFunction.scriban")) {
+                template = Template.Parse(reader.ReadToEnd());
             }
             
-            return Template;
+            var scriptObject = new ScriptObject {
+                {"functions", functions},
+                {"scope", scope},
+                {"scopeClass", scopeClass}
+            };
+            
+            scriptObject.Import(BaseTemplate.GetScriptObject());
+
+            var context = BaseTemplate.GetTemplateContext();
+            context.PushGlobal(scriptObject);
+            
+            return template.Render(context);
         }
     }
 }

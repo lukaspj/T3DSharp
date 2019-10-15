@@ -1,6 +1,4 @@
-﻿using DotLiquid;
-
-namespace T3DSharpGenerator.Model
+﻿namespace T3DSharpGenerator.Model
 {
     public class EnginePrimitive : IEngineObject
     {
@@ -16,19 +14,6 @@ namespace T3DSharpGenerator.Model
         public string ManagedType { get; set; }
         public string NativeReturnType { get; set; }
         public string NativeArgType { get; set; }
-
-        public object ToLiquid() {
-            return new {
-                Name = Name,
-                Docs = Docs,
-                Scope = Scope,
-                Size = Size,
-                
-                ManagedType = ManagedType,
-                NativeReturnType = NativeReturnType,
-                NativeArgType = NativeArgType
-            };
-        }
 
         public override string ToString() {
             return $"{Name} - {Docs}";

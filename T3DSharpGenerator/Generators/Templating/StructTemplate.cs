@@ -1,29 +1,28 @@
-﻿using System.IO;
-using DotLiquid;
+﻿using System.Collections.Generic;
+using System.IO;
+using Scriban;
+using Scriban.Runtime;
 using T3DSharpGenerator.Model;
 
-namespace T3DSharpGenerator.Generators.Templating
-{
-    public static class StructTemplate
-    {
-        private static Template Template { get; set; }
-        
-        public static Template Get(EngineApi engineApi) {
-            if (Template == null) {
-                InitializeTemplate(engineApi);
-            }
+namespace T3DSharpGenerator.Generators.Templating {
+   public static class StructTemplate {
+      public static string Render(List<EngineStruct> structs, string scope) {
+         Template template;
+         using (StreamReader reader = new StreamReader("Resources/Templates/SimStruct.scriban")) {
+            template = Template.Parse(reader.ReadToEnd());
+         }
 
-            return Template;
-        }
+         var scriptObject = new ScriptObject {
+            {"structs", structs},
+            {"scope", scope}
+         };
 
-        private static Template InitializeTemplate(EngineApi engineApi) {
-            BaseTemplate.InitializeTemplatingSystem(engineApi);
-            
-            using (StreamReader reader = new StreamReader("Resources/Templates/SimStruct.liquid")) {
-                Template = DotLiquid.Template.Parse(reader.ReadToEnd());
-            }
-            
-            return Template;
-        }
-    }
+         scriptObject.Import(BaseTemplate.GetScriptObject());
+
+         var context = BaseTemplate.GetTemplateContext();
+         context.PushGlobal(scriptObject);
+
+         return template.Render(context);
+      }
+   }
 }

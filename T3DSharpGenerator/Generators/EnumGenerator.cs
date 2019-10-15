@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.IO;
 using System.Linq;
-using DotLiquid;
-using DotLiquid.FileSystems;
+using Scriban.Runtime;
 using T3DSharpGenerator.Generators.Templating;
 using T3DSharpGenerator.Model;
 
@@ -20,17 +18,16 @@ namespace T3DSharpGenerator.Generators
         }
 
         private static void GenerateEnumsInScope(EngineApi engineApi, List<EngineEnum> enums, string scope) {
-            var model = Hash.FromAnonymousObject(new {
-                Enums = enums,
-                Scope = (string.IsNullOrEmpty(scope) ? "Global" : scope)
-            });
-            string output = EnumTemplate.Get(engineApi).Render(model);
-            Console.WriteLine(model["Scope"] + "_enums.cs");
+            scope = string.IsNullOrEmpty(scope) ? "Global" : scope;
+            
+            string output = EnumTemplate.Render(enums, scope);
+            
+            Console.WriteLine(scope + "_enums.cs");
 
             Directory.CreateDirectory("Generated/Enums");
 
             using (StreamWriter SW =
-                new StreamWriter($"Generated/Enums/{model["Scope"]}.cs")) {
+                new StreamWriter($"Generated/Enums/{scope}.cs")) {
                 SW.Write(output);
             }
         }

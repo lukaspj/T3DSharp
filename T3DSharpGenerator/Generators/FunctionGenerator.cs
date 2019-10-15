@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.IO;
 using System.Linq;
-using DotLiquid;
+using Scriban.Runtime;
 using T3DSharpGenerator.Generators.Templating;
 using T3DSharpGenerator.Model;
 
@@ -26,16 +25,12 @@ namespace T3DSharpGenerator.Generators
                 scopeClass = scope.Substring(lastSeparatorIndex + 1);
                 scope = scope.Substring(0, lastSeparatorIndex);
             }
-            var model = Hash.FromAnonymousObject(new {
-                Functions = functions,
-                Scope = scope,
-                ClassName = scopeClass
-            });
-            string output = FunctionTemplate.Get(engineApi).Render(model);
             
-            Console.WriteLine($"{model["Scope"]}_functions.cs");
+            string output = FunctionTemplate.Render(functions.ToList(), scope, scopeClass);
+            
+            Console.WriteLine($"Functions/{scope}.cs");
 
-            string dir = $"Generated/Functions/";
+            const string dir = "Generated/Functions/";
             
             Directory.CreateDirectory(dir);
             

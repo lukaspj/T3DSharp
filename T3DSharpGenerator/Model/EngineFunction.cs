@@ -1,11 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Hosting;
-using DotLiquid;
 
 namespace T3DSharpGenerator.Model
 {
-    public class EngineFunction : ILiquidizable
+    public class EngineFunction
     {
         public string Name { get; set; }
         public string Docs { get; set; }
@@ -28,7 +25,7 @@ namespace T3DSharpGenerator.Model
             IsStatic = true;
         }
 
-        public class Argument : ILiquidizable
+        public class Argument
         {
             public string Name { get; set; }
             public IEngineObject Type { get; set; }
@@ -36,32 +33,10 @@ namespace T3DSharpGenerator.Model
             public string DefaultValue { get; set; }
             public bool IsVariadic { get; set; }
             public int Offset { get; set; }
-            public object ToLiquid() {
-                return new {
-                    Name = Name,
-                    Type = Type,
-                    DefaultValue = DefaultValue,
-                    Offset = Offset,
-                };
-            }
         }
 
         public void Add(Argument arg) {
             Arguments.Add(arg);
-        }
-
-        public object ToLiquid() {
-            return new {
-                Name = Name,
-                Docs = Docs,
-                IsCallback = IsCallback,
-                IsVariadic = IsVariadic,
-                IsStatic = IsStatic,
-                IsOverride = IsOverride,
-                ReturnType = ReturnType,
-                Symbol = Symbol,
-                Args = Arguments
-            };
         }
     }
 }

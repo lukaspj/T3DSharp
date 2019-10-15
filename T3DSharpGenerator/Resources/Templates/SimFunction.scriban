@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using T3DNetFramework.Generated.Classes.Global;
+using T3DNetFramework.Generated.Classes.Net;
+using T3DNetFramework.Generated.Classes.Sim;
+using T3DNetFramework.Generated.Classes.Sim.Net;
+using T3DNetFramework.Generated.Enums.Global;
+using T3DNetFramework.Generated.Structs.Global;
+using T3DNetFramework.Generated.Structs.Gui;
+using T3DNetFramework.Generated.Structs.Math;
+using T3DNetFramework.Interop;
+
+namespace T3DNetFramework.Generated.Functions {
+
+    public static unsafe class {{scopeClass}} {
+
+        #region UnsafeNativeMethods
+        new internal struct InternalUnsafeMethods {
+{{~ for function in functions ~}}
+{{ include "native_function" }}
+{{~ if !for.last ~}}
+
+{{~ else ~}}
+{{~ end ~}}
+{{~ end ~}}
+        }
+        #endregion
+
+{{~ for function in functions ~}}
+{{~ include "managed_function" ~}}
+{{~ if !for.last ~}}
+
+{{~ end ~}}
+{{~ end }}
+    }
+}

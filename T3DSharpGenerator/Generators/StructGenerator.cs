@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.IO;
 using System.Linq;
-using DotLiquid;
+using Scriban.Runtime;
 using T3DSharpGenerator.Generators.Templating;
 using T3DSharpGenerator.Model;
 
@@ -19,17 +18,15 @@ namespace T3DSharpGenerator.Generators
         }
 
         private static void GenerateStructsInScope(EngineApi engineApi, IEnumerable<EngineStruct> structs, string scope) {
-            var model = Hash.FromAnonymousObject(new {
-                Structs = structs,
-                Scope = (string.IsNullOrEmpty(scope) ? "Global" : scope)
-            });
-            string output = StructTemplate.Get(engineApi).Render(model);
+            scope = string.IsNullOrEmpty(scope) ? "Global" : scope;
             
-            Console.WriteLine(model["Scope"] + "_structs.cs");
+            string output = StructTemplate.Render(structs.ToList(), scope);
+            
+            Console.WriteLine(scope + "_structs.cs");
 
             Directory.CreateDirectory("Generated/Structs");
             
-            using (StreamWriter SW = new StreamWriter($"Generated/Structs/{model["Scope"]}.cs")) {
+            using (StreamWriter SW = new StreamWriter($"Generated/Structs/{scope}.cs")) {
                 SW.Write(output);        
             }
         }

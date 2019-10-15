@@ -1,32 +1,32 @@
-﻿using System;
-using System.IO;
-using System.Text.RegularExpressions;
-using DotLiquid;
-using DotLiquid.FileSystems;
-using T3DSharpGenerator.Generators.Templating.Tags;
-using T3DSharpGenerator.Model;
+﻿using Scriban;
+using Scriban.Runtime;
+using T3DSharpGenerator.Generators.Scriban.Templating;
 
 namespace T3DSharpGenerator.Generators.Templating
 {
     public static class BaseTemplate
     {
-        public static EngineApi CurrentEngineApi = null;
+        public static TemplateContext GetTemplateContext() {
+            var context = new TemplateContext();
+            context.TemplateLoader = new DiskTemplateLoader();
+            return context;
+        }
 
-        public static void InitializeTemplatingSystem(EngineApi engineApi) {
-            CurrentEngineApi = engineApi;
-            Template.FileSystem = new LocalFileSystem(Path.GetFullPath("Resources/Templates"));
-            Template.RegisterTag<GetReturnStatementBlock>("getReturnString");
-            Template.RegisterTag<GetManagedParametersTag>("getManagedParameters");
-            Template.RegisterTag<VarToStringTag>("varToString");
-            Template.RegisterTag<MarshalTag>("marshal");
-            Template.RegisterTag<MarshalAsTag>("marshalAs");
-            Template.RegisterTag<SanitizeNameTag>("sanitizeName");
-            Template.RegisterTag<DefaultParamValueTag>("defaultParamValue");
-            Template.RegisterTag<DefaultBodyValueTag>("defaultBodyValue");
-            Template.RegisterTag<StructFieldAllocTag>("structFieldAlloc");
-            Template.RegisterTag<StructFieldFreeTag>("structFieldFree");
-            Template.RegisterTag<AllocTag>("alloc");
-            Template.RegisterTag<FreeTag>("free");
+        public static ScriptObject GetScriptObject() {
+            ScriptObject scriptObject = new ScriptObject();
+            scriptObject.Import(new Functions.SanitizeNameContainer());
+            scriptObject.Import(new Functions.MarshalAsContainer());
+            scriptObject.Import(new Functions.GetManagedParametersContainer());
+            scriptObject.Import(new Functions.GetReturnStringContainer());
+            scriptObject.Import(new Functions.AllocContainer());
+            scriptObject.Import(new Functions.FreeContainer());
+            scriptObject.Import(new Functions.MarshalContainer());
+            scriptObject.Import(new Functions.MarshalAsContainer());
+            scriptObject.Import(new Functions.DefaultParamValueContainer());
+            scriptObject.Import(new Functions.StructFieldAllocContainer());
+            scriptObject.Import(new Functions.StructFieldFreeContainer());
+
+            return scriptObject;
         }
     }
 }
