@@ -5,7 +5,7 @@ using Scriban;
 using Scriban.Parsing;
 using Scriban.Runtime;
 
-namespace T3DSharpGenerator.Generators.Scriban.Templating {
+namespace T3DSharpGenerator.Generators.Templating {
    public class DiskTemplateLoader : ITemplateLoader {
       public string GetPath(TemplateContext context, SourceSpan callerSpan, string templateName) {
          return Path.Combine(Environment.CurrentDirectory, $"Resources/Templates/{templateName}.scriban");

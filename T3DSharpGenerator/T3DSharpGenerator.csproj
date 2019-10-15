@@ -81,10 +81,10 @@
     <Compile Include="Generators\EnumGenerator.cs" />
     <Compile Include="Generators\FunctionGenerator.cs" />
     <Compile Include="Generators\PrimitiveSizesGenerator.cs" />
-    <Compile Include="Generators\Scriban\Templating\DiskTemplateLoader.cs" />
     <Compile Include="Generators\StructGenerator.cs" />
     <Compile Include="Generators\Templating\BaseTemplate.cs" />
     <Compile Include="Generators\Templating\ClassTemplate.cs" />
+    <Compile Include="Generators\Templating\DiskTemplateLoader.cs" />
     <Compile Include="Generators\Templating\EnumTemplate.cs" />
     <Compile Include="Generators\Templating\Functions\AllocContainer.cs" />
     <Compile Include="Generators\Templating\Functions\DefaultParamValueContainer.cs" />
