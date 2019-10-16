@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using T3DSharpFramework.Interop;
+using T3DSharpGenerator.DocGenerators;
+using T3DSharpGenerator.DocParsers;
 using T3DSharpGenerator.Generators;
 using T3DSharpGenerator.Model;
 
@@ -89,21 +92,16 @@ namespace T3DSharpGenerator
             if (Directory.Exists("Generated/")) {
                 Directory.Delete("Generated/", true);
             }
-            /*
-            EnumGenerator.GenerateFor(engineApi, engineApi.Enums);
-            StructGenerator.GenerateFor(engineApi, engineApi.Structs);
-            FunctionGenerator.GenerateFor(engineApi, engineApi.Functions);
-            ClassGenerator.GenerateFor(engineApi, engineApi.Classes);
-            PrimitiveSizesGenerator.GenerateFor(engineApi, engineApi.Primitives);
-            Console.WriteLine("Finished code generation.");
-            */
+
+            engineApi.Functions
+                .ForEach(f => f.Docs = DotNetXmlDocGenerator.Generate(EngineApiDocStringParser.Parse(f.Docs)).Trim());
             
             EnumGenerator.GenerateFor(engineApi, engineApi.Enums);
             StructGenerator.GenerateFor(engineApi, engineApi.Structs);
             FunctionGenerator.GenerateFor(engineApi, engineApi.Functions);
             ClassGenerator.GenerateFor(engineApi, engineApi.Classes);
             PrimitiveSizesGenerator.GenerateFor(engineApi, engineApi.Primitives);
-            Console.WriteLine("Finished Scriban code generation.");
+            Console.WriteLine("Finished code generation.");
         }
     }
 }

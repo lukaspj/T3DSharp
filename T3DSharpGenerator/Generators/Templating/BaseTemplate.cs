@@ -24,6 +24,7 @@ namespace T3DSharpGenerator.Generators.Templating
             scriptObject.Import(new Functions.DefaultParamValueContainer());
             scriptObject.Import(new Functions.StructFieldAllocContainer());
             scriptObject.Import(new Functions.StructFieldFreeContainer());
+            scriptObject.Import(new Functions.IndentContainer());
 
             return scriptObject;
         }

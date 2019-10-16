@@ -13,8 +13,7 @@ namespace T3DSharpGenerator.Generators.Templating.Functions
                 .ToList()
                 .Select((x, i) => i > 0 || indentFirstLine ? Prefix(x, Indentation, levels) : x)
                 .Aggregate(new StringBuilder(), (acc, x) => acc.AppendLine(x))
-                .ToString()
-                .Trim();
+                .ToString();
         }
         
         public static string PrefixLines(string text, string prefix, int times = 1, bool indentFirstLine = false) {
@@ -22,8 +21,7 @@ namespace T3DSharpGenerator.Generators.Templating.Functions
                 .ToList()
                 .Select((x, i) => i > 0 || indentFirstLine ? Prefix(x, prefix, times) : x)
                 .Aggregate(new StringBuilder(), (acc, x) => acc.AppendLine(x))
-                .ToString()
-                .Trim();
+                .ToString();
         }
 
         public static string Prefix(string text, string prefix, int times = 1) {

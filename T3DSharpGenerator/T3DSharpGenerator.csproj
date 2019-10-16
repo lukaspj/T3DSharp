@@ -76,6 +76,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocGenerators\DotNetXmlDocGenerator.cs" />
+    <Compile Include="DocParsers\InlineStringParser.cs" />
+    <Compile Include="DocParsers\ParameterRefStringParser.cs" />
+    <Compile Include="DocParsers\RemarkStringParser.cs" />
+    <Compile Include="DocParsers\InternalStringParser.cs" />
+    <Compile Include="DocParsers\CodeExampleStringParser.cs" />
+    <Compile Include="DocParsers\SeeStringParser.cs" />
+    <Compile Include="DocParsers\ReturnStringParser.cs" />
+    <Compile Include="DocParsers\InGroupStringParser.cs" />
+    <Compile Include="DocParsers\DescriptionStringParser.cs" />
+    <Compile Include="DocParsers\DocTag.cs" />
+    <Compile Include="DocParsers\EngineApiDocStringParser.cs" />
+    <Compile Include="DocParsers\IDocStringParser.cs" />
+    <Compile Include="DocParsers\NullStringParser.cs" />
+    <Compile Include="DocParsers\ParameterStringParser.cs" />
+    <Compile Include="DocParsers\SummaryStringParser.cs" />
     <Compile Include="EngineApiParser.cs" />
     <Compile Include="Generators\ClassGenerator.cs" />
     <Compile Include="Generators\EnumGenerator.cs" />
@@ -101,6 +117,22 @@
     <Compile Include="Generators\Templating\PrimitiveSizesTemplate.cs" />
     <Compile Include="Generators\Templating\StructTemplate.cs" />
     <Compile Include="Generators\Util\SimObjectTree.cs" />
+    <Compile Include="Model\Docs\CodeExampleDocElement.cs" />
+    <Compile Include="Model\Docs\CompoundDocElement.cs" />
+    <Compile Include="Model\Docs\SummaryDocElement.cs" />
+    <Compile Include="Model\Docs\DocElement.cs" />
+    <Compile Include="Model\Docs\LeafDocElement.cs" />
+    <Compile Include="Model\Docs\TextDocElement.cs" />
+    <Compile Include="Model\Docs\InGroupDocElement.cs" />
+    <Compile Include="Model\Docs\DescriptionDocElement.cs" />
+    <Compile Include="Model\Docs\IDocElement.cs" />
+    <Compile Include="Model\Docs\NullDocElement.cs" />
+    <Compile Include="Model\Docs\ParameterRefDocElement.cs" />
+    <Compile Include="Model\Docs\RemarkDocElement.cs" />
+    <Compile Include="Model\Docs\InternalDocElement.cs" />
+    <Compile Include="Model\Docs\SeeDocElement.cs" />
+    <Compile Include="Model\Docs\ReturnDocElement.cs" />
+    <Compile Include="Model\Docs\ParameterDocElement.cs" />
     <Compile Include="Model\EngineApi.cs" />
     <Compile Include="Model\EngineClass.cs" />
     <Compile Include="Model\EngineEnum.cs" />

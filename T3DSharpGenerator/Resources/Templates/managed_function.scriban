@@ -5,6 +5,9 @@
     
     functionName = function.name | sanitize_name camelCase:true 
 ~}}
+{{ 
+    prefix_lines function.docs "        /// " indentFirstLine: true 
+~}}
 {{~ if function.is_variadic ~}}
         public {{ if function.is_static }}static {{ end }}{{ if function.is_callback }}virtual {{ end }}{{ if function.is_override }}override {{ end }}{{function.return_type.managed_type}} {{ functionName }}(params string[] args) { 
             List<string> _argList = new List<string>() {""{{ if function.is_static == false }}, ""{{ end }}};
