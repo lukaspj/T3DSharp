@@ -6,7 +6,7 @@ namespace T3DSharpGenerator.DocParsers {
       public DocTag Previous;
          
       public DocTag(string s) {
-         if (s.IndexOf(' ') < 0) {
+         if (s.IndexOf(' ') < 0 || !s.Trim().StartsWith("@")) {
             Tag = "";
             Text = "";
             if (s.StartsWith("@")) {

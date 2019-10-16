@@ -14,7 +14,10 @@ using T3DNetFramework.Generated.Structs.Gui;
 using T3DNetFramework.Generated.Structs.Math;
 using T3DNetFramework.Interop;
 
-namespace T3DNetFramework.Generated.Classes.{{scope}} {    
+namespace T3DNetFramework.Generated.Classes.{{scope}} {
+{{ 
+    prefix_lines class.docs "    /// " indentFirstLine: true 
+~}}
 {{~ if class.super_type ~}}
     public unsafe class {{class.name}} : {{class.super_type.managed_type}}{{ if class.name == "SimObject" }}, ISimObject{{ end }}{{ if class.name == "SimPersistID" }}, ISimPersistID{{ end }} {
 {{~ else ~}}

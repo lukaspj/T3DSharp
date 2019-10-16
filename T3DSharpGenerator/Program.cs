@@ -93,9 +93,24 @@ namespace T3DSharpGenerator
                 Directory.Delete("Generated/", true);
             }
 
+            engineApi.Enums
+                .ForEach(e => e.Docs = DotNetXmlDocGenerator.Generate(EngineApiDocStringParser.Parse(e.Docs)).Trim());
+            
+            engineApi.Structs
+                .ForEach(s => s.Docs = DotNetXmlDocGenerator.Generate(EngineApiDocStringParser.Parse(s.Docs)).Trim());
+            
             engineApi.Functions
                 .ForEach(f => f.Docs = DotNetXmlDocGenerator.Generate(EngineApiDocStringParser.Parse(f.Docs)).Trim());
-            
+
+            engineApi.Classes
+                .ForEach(c => c.Docs = DotNetXmlDocGenerator.Generate(EngineApiDocStringParser.Parse(c.Docs)).Trim());
+
+            engineApi.Classes
+                .ForEach(c => c.Methods.ForEach(m => m.Docs = DotNetXmlDocGenerator.Generate(EngineApiDocStringParser.Parse(m.Docs)).Trim()));
+
+            engineApi.Classes
+                .ForEach(c => c.Properties.ForEach(p => p.Docs = DotNetXmlDocGenerator.Generate(EngineApiDocStringParser.Parse(p.Docs)).Trim()));
+
             EnumGenerator.GenerateFor(engineApi, engineApi.Enums);
             StructGenerator.GenerateFor(engineApi, engineApi.Structs);
             FunctionGenerator.GenerateFor(engineApi, engineApi.Functions);

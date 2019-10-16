@@ -6,6 +6,9 @@ using T3DNetFramework.Interop;
 
 namespace T3DNetFramework.Generated.Structs.{{scope}} {
 {{ for struct in structs }}
+{{ 
+    prefix_lines struct.docs "    /// " indentFirstLine: true 
+~}}
     public class {{struct.name}} : IEngineStruct {
         [StructLayout(LayoutKind.Explicit)]
         public struct InternalStruct {

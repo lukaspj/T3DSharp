@@ -1,5 +1,8 @@
 namespace T3DNetFramework.Generated.Enums.{{scope}} {
 {{ for enum in enums ~}}
+{{ 
+    prefix_lines enum.docs "    /// " indentFirstLine: true 
+~}}
     public enum {{enum.name}} {
 {{~
     for field in enum.fields

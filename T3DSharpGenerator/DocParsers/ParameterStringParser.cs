@@ -10,14 +10,20 @@ namespace T3DSharpGenerator.DocParsers {
 
       public IDocElement Parse(DocTag tag) {
          string text = tag.Text.Trim();
-         return new ParameterDocElement {
-            ParameterName = text.Substring(0, text.IndexOf(' ')),
-            Children = new List<IDocElement>() {
-               new TextDocElement {
-                  Text = text.Substring(text.IndexOf(' ')).Trim()
+         if (text.IndexOf(' ') > -1) {
+            return new ParameterDocElement {
+               ParameterName = text.Substring(0, text.IndexOf(' ')),
+               Children = new List<IDocElement>() {
+                  new TextDocElement {
+                     Text = text.Substring(text.IndexOf(' ')).Trim()
+                  }
                }
-            }
-         };
+            };
+         } else {
+            return new ParameterDocElement {
+               ParameterName = text
+            };
+         }
       }
    }
 }

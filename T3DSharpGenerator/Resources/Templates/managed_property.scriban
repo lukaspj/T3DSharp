@@ -1,3 +1,9 @@
+
+        /// <value>
+{{ 
+    prefix_lines property.docs "        /// " indentFirstLine: true 
+~}}
+        /// </value>
 {{~ if property.name == "Name" ~}}
         public new {{ property.type.managed_type }} {{ sanitize_name property.name camelCase:true }} {
             get => GetName();
