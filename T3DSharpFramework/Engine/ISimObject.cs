@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace T3DSharpFramework.Engine
 {
@@ -11,7 +11,7 @@ namespace T3DSharpFramework.Engine
         ISimObject As(Type t);
         bool IsDead();
         string Name { get; set; }
-        string getName();
+        string GetName();
         int GetId();
         bool RegisterObject();
         string GetFieldValue(string name, int index);

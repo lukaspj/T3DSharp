@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using T3DNetFramework.Generated.Classes.Global;
-using T3DNetFramework.Generated.Classes.Net;
-using T3DNetFramework.Generated.Classes.Sim;
-using T3DNetFramework.Generated.Classes.Sim.Net;
-using T3DNetFramework.Generated.Enums.Global;
-using T3DNetFramework.Generated.Structs.Global;
-using T3DNetFramework.Generated.Structs.Gui;
-using T3DNetFramework.Generated.Structs.Math;
-using T3DNetFramework.Interop;
+using T3DSharpFramework.Generated.Classes.Global;
+using T3DSharpFramework.Generated.Classes.Net;
+using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Net;
+using T3DSharpFramework.Generated.Enums.Global;
+using T3DSharpFramework.Generated.Structs.Global;
+using T3DSharpFramework.Generated.Structs.Gui;
+using T3DSharpFramework.Generated.Structs.Math;
+using T3DSharpFramework.Interop;
 
-namespace T3DNetFramework.Generated.Functions {
+namespace T3DSharpFramework.Generated.Functions {
 
     public static unsafe class {{scopeClass}} {
 

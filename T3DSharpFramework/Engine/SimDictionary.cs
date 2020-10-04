@@ -107,7 +107,7 @@ namespace T3DSharpFramework.Engine
 
         public static T Find<T>(string name) where T : class, ISimObject {
             if (string.IsNullOrEmpty(name)
-                || !ObjectNameDictionary.ContainsKey(name) 
+                || !ObjectNameDictionary.ContainsKey(name)
                 || ObjectDictionary[ObjectNameDictionary[name]].IsDead()) return default(T);
 
             if (ObjectDictionary[ObjectNameDictionary[name]] is T)

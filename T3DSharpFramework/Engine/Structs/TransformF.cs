@@ -13,5 +13,9 @@
             Orientation = orientation;
             HasRotation = hasRotation;
         }
+
+        public TransformF(Generated.Structs.Math.TransformF transformF) {
+            
+        }
     }
 }

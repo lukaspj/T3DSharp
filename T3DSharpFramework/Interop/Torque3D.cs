@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
+using T3DSharpFramework.Generated.Classes.Sim;
 
 namespace T3DSharpFramework.Interop
 {
@@ -120,9 +121,9 @@ namespace T3DSharpFramework.Interop
             while (engineTick() > 0) {
             }
 
-            engineShutdown();
-
             SimDictionary.Shutdown();
+
+            engineShutdown();
 
             DllLoadUtils.FreeLibrary(Torque3DLibHandle);
         }
@@ -133,7 +134,7 @@ namespace T3DSharpFramework.Interop
             string _name = Marshal.PtrToStringAnsi(name);
             string[] strings = null;
             if (argv != IntPtr.Zero)
-                strings = StringMarshal.IntPtrToStringArray(argv, argc);
+                strings = StringMarshal.IntPtrToAnsiStringArray(argv, argc);
             return EngineCallbacks.CallScriptFunction(_nameSpace, _name, strings, out result);
         }
 
@@ -144,10 +145,10 @@ namespace T3DSharpFramework.Interop
             string _classNamespace = Marshal.PtrToStringAnsi(classNamespace);
             string _name = Marshal.PtrToStringAnsi(name);
 
-            UnknownSimObject objectBaseWrapper = Sim.FindObjectById<UnknownSimObject>(obj);
+            SimObject objectBaseWrapper = Sim.FindObjectById<SimObject>(obj);
             string[] strings = { };
             if (argv != IntPtr.Zero)
-                strings = StringMarshal.IntPtrToStringArray(argv, argc);
+                strings = StringMarshal.IntPtrToAnsiStringArray(argv, argc);
             string strRes = EngineCallbacks.CallScriptMethod(_className, _classNamespace, objectBaseWrapper, _name, strings,
                 out result);
             return strRes;

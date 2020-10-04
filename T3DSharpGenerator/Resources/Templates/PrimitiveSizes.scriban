@@ -1,4 +1,4 @@
-namespace T3DNetFramework.Generated {
+namespace T3DSharpFramework.Generated {
     public class PrimitiveSizes {
 {{~ for primitive in primitives ~}}
         public const int {{primitive.name | string.upcase}} = {{primitive.size}}; 

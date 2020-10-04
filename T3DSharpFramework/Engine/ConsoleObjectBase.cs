@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace T3DSharpFramework.Engine
 {
@@ -22,7 +22,7 @@ namespace T3DSharpFramework.Engine
         public ConsoleObjectBase(IntPtr pObj) {
             SetPointer(pObj);
         }
-        
+
         public IntPtr ObjectPtr { get; protected set; }
 
         public void SetPointerFromObject(ConsoleObjectBase pObj)
@@ -32,7 +32,7 @@ namespace T3DSharpFramework.Engine
             if (this is ISimObject sim && !SimDictionary.Contains(sim)) {
                 SimDictionary.RegisterObject(sim);
             }
-            
+
         }
 
         public void SetPointer(IntPtr pObjPtr) {
@@ -47,19 +47,19 @@ namespace T3DSharpFramework.Engine
             if (this is ISimObject sim) {
                 return (T) SimDictionary.CreateInstance(typeof(T), sim);
             }
-            
+
             throw new NotImplementedException();
         }
 
         public ConsoleObjectBase As(Type t) {
             if (!typeof(ConsoleObjectBase).IsAssignableFrom(t)) return null;
-            
+
             if (this is ISimObject sim) {
                 return (ConsoleObjectBase) SimDictionary.CreateInstance(t, sim);
             } else if (this is UnknownSimObject unk) {
                 return (ConsoleObjectBase) SimDictionary.CreateInstance(t, unk);
             }
-            
+
             throw new NotImplementedException();
         }
 
@@ -87,9 +87,9 @@ namespace T3DSharpFramework.Engine
         protected virtual void CreateObjectPtr() {
             throw new NotImplementedException();
         }
-        
+
         public string Name = null;
-        public string getName() => null;
+        public string GetName() => null;
 
         public int GetId() => -1;
 

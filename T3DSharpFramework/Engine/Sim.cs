@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using T3DSharpFramework.Interop;
@@ -47,7 +47,7 @@ namespace T3DSharpFramework.Engine
 
             return _FindObjectByIdFunc(args);
          }
-         
+
          [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
          private delegate IntPtr _FindObjectByName([MarshalAs(UnmanagedType.LPUTF8Str)]string name);
          private static _FindObjectByName _FindObjectByNameFunc;
@@ -62,7 +62,7 @@ namespace T3DSharpFramework.Engine
 
             return _FindObjectByNameFunc(name);
          }
-         
+
          [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
          private delegate IntPtr _FindDataBlockByName(string name);
          private static _FindDataBlockByName _FindDataBlockByNameFunc;

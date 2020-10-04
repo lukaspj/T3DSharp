@@ -1,4 +1,4 @@
-namespace T3DNetFramework.Generated.Enums.{{scope}} {
+namespace T3DSharpFramework.Generated.Enums.{{scope}} {
 {{ for enum in enums ~}}
 {{ 
     prefix_lines enum.docs "    /// " indentFirstLine: true 

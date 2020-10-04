@@ -1,10 +1,10 @@
 using System;
 using System.Runtime.InteropServices;
-using T3DNetFramework.Engine;
-using T3DNetFramework.Generated.Structs.Math;
-using T3DNetFramework.Interop;
+using T3DSharpFramework.Engine;
+using T3DSharpFramework.Generated.Structs.Math;
+using T3DSharpFramework.Interop;
 
-namespace T3DNetFramework.Generated.Structs.{{scope}} {
+namespace T3DSharpFramework.Generated.Structs.{{scope}} {
 {{ for struct in structs }}
 {{ 
     prefix_lines struct.docs "    /// " indentFirstLine: true 

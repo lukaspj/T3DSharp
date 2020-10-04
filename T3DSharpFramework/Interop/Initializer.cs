@@ -35,9 +35,9 @@ namespace T3DSharpFramework.Interop
 
                     IEnumerable<ScriptEntryPoint> entryAttribute =
                         methodInfo.GetCustomAttributes<ScriptEntryPoint>(false);
-                    
+
                     if (!entryAttribute.Any()) continue;
-                    
+
                     if (methodInfo.IsStatic && !methodInfo.GetParameters().Any() &&
                         methodInfo.ReturnType == typeof(void)) {
                         mScriptEntryPointMethodInfo = methodInfo;

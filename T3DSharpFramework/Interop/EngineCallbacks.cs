@@ -1,17 +1,24 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using T3DSharpFramework.Engine;
+using T3DSharpFramework.Generated.Classes.Global;
+using T3DSharpFramework.Generated.Classes.Sim;
 
 namespace T3DSharpFramework.Interop
 {
-    internal class EngineCallbacks
-    {
-        private static readonly Dictionary<string, Type> ClassTypeDictionary = new Dictionary<string, Type>();
+    internal class EngineCallbacks {
+        private static BindingFlags bindingFlags =
+            BindingFlags.Default | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static |
+            BindingFlags.IgnoreCase;
+        
+        private static readonly Dictionary<string, Type> 
+            ClassTypeDictionary = new Dictionary<string, Type>(StringComparer.OrdinalIgnoreCase);
 
         private static readonly Dictionary<string, MethodInfo>
-            FunctionDictionary = new Dictionary<string, MethodInfo>();
+            FunctionDictionary = new Dictionary<string, MethodInfo>(StringComparer.OrdinalIgnoreCase);
 
         public static void RegisterType(string className, Type classType) {
             ClassTypeDictionary.Add(className, classType);
@@ -26,25 +33,46 @@ namespace T3DSharpFramework.Interop
             FunctionDictionary.Clear();
         }
 
+        public static Type GetObjectType(string className, string classNamespace, ISimObject objectBaseWrapper) {
+            string objectName = objectBaseWrapper?.GetName();
+            if (objectName != null && ClassTypeDictionary.ContainsKey(objectName)) {
+                return ClassTypeDictionary[objectName];
+            }
+
+            if (classNamespace != null && ClassTypeDictionary.ContainsKey(classNamespace)) {
+                return ClassTypeDictionary[classNamespace];
+            }
+
+            if (className != null && ClassTypeDictionary.ContainsKey(className)) {
+                return ClassTypeDictionary[className];
+            }
+
+            if (objectName != null && SimDictionary.Find(objectName) != null) {
+                return SimDictionary.Find(objectName).GetType();
+            }
+
+            if (objectBaseWrapper != null && SimDictionary.Find(objectBaseWrapper.GetId()) != null) {
+                return SimDictionary.Find(objectBaseWrapper.GetId()).GetType();
+            }
+
+            if (objectBaseWrapper != null && ClassTypeDictionary.ContainsKey(objectBaseWrapper.GetType().Name)) {
+                return ClassTypeDictionary[objectBaseWrapper.GetType().Name];
+            }
+            
+            return null;
+        }
+
         public static string CallScriptFunction(string pFunctionNamespace, string pFunctionName, object[] args,
             out bool found) {
             if (pFunctionNamespace != null) {
-                Type type;
                 ISimObject obj = SimDictionary.Find(pFunctionNamespace);
+                Type type = GetObjectType(null, pFunctionNamespace, obj);
 
-                string objectName = pFunctionNamespace;
-                if (ClassTypeDictionary.ContainsKey(objectName)) {
-                    type = ClassTypeDictionary[objectName];
-                }
-                else if (obj != null) {
-                    type = obj.GetType();
-                }
-                else {
-                    //todo throw exception?
+                if (type == null) {
                     found = false;
                     return null;
                 }
-
+                
                 return CallNamespaceMethod(type, obj, pFunctionName, args, out found);
             }
 
@@ -61,32 +89,11 @@ namespace T3DSharpFramework.Interop
 
         public static string CallScriptMethod(string className, string classNamespace, ISimObject objectBaseWrapper,
             string methodName, object[] args, out bool found) {
-            if (methodName.Equals("pushDialog"))
-                methodName = methodName;
-            Type type;
-            string objectName = objectBaseWrapper.getName();
-            if (objectName != null && ClassTypeDictionary.ContainsKey(objectName)) {
-                type = ClassTypeDictionary[objectName];
-            }
-            else if (classNamespace != null && ClassTypeDictionary.ContainsKey(classNamespace)) {
-                type = ClassTypeDictionary[classNamespace];
-            }
-            else if (ClassTypeDictionary.ContainsKey(className)) {
-                type = ClassTypeDictionary[className];
-            }
-            else if (SimDictionary.Find(objectBaseWrapper.Name) != null) {
-                type = SimDictionary.Find(objectBaseWrapper.Name).GetType();
-            }
-            else if (SimDictionary.Find(objectBaseWrapper.GetId()) != null) {
-                type = SimDictionary.Find(objectBaseWrapper.GetId()).GetType();
-            }
-            else {
-                if (ClassTypeDictionary.ContainsKey(objectBaseWrapper.GetType().Name))
-                    type = ClassTypeDictionary[objectBaseWrapper.GetType().Name];
-                else {
-                    found = false;
-                    return null;
-                }
+            Type type = GetObjectType(className, classNamespace, objectBaseWrapper);
+
+            if (type == null) {
+                found = false;
+                return null;
             }
 
             return CallNamespaceMethod(type, objectBaseWrapper, methodName, args, out found);
@@ -94,7 +101,10 @@ namespace T3DSharpFramework.Interop
 
         private static string CallNamespaceMethod(Type namespaceClass, ISimObject objectBaseWrapper, string methodName,
             object[] args, out bool found) {
-            MethodInfo callbackMethod = namespaceClass.GetMethod(methodName);
+            // TODO: Ensure callbackMethod is most recent override of method. (e.g. GameConnection re-defining delete)
+            MethodInfo callbackMethod = namespaceClass
+                .GetMethods(bindingFlags)
+                .FirstOrDefault(x => x.Name.ToLowerInvariant().Equals(methodName.ToLowerInvariant()));
             if (callbackMethod != null) {
                 ISimObject simObj = null;
                 if (!callbackMethod.IsStatic)
@@ -147,7 +157,7 @@ namespace T3DSharpFramework.Interop
 
         private static object ConvertArgFromString(Type objType, string obj) {
             if (typeof(ISimObject).IsAssignableFrom(objType)) {
-                return Sim.FindObject<ISimObject>(obj).As(objType);
+                return Sim.FindObject<UnknownSimObject>(obj).As(objType);
             }
 
             if (objType == typeof(int)) return int.Parse(obj);
@@ -172,9 +182,24 @@ namespace T3DSharpFramework.Interop
         public static bool IsMethod(string className, string methodName) {
             if (className == null)
                 return FunctionDictionary.ContainsKey(methodName);
-            if (!ClassTypeDictionary.ContainsKey(className))
-                return false;
-            return ClassTypeDictionary[className].GetMethod(methodName) != null;
+            
+            SimObject obj = Sim.FindObjectByName<SimObject>(className);
+
+            if (obj == null) {
+                if (!ClassTypeDictionary.ContainsKey(className)) {
+                    return false;
+                }
+
+                MethodInfo method = ClassTypeDictionary[className]
+                    .GetMethod(methodName, bindingFlags);
+                return method != null && method.DeclaringType.GetCustomAttributes<ConsoleClassAttribute>().Any();
+            }
+            
+            Type type = GetObjectType(obj.GetClassName(), obj.GetClassNamespace(), obj);
+
+            return type != null &&
+                   type.GetMethod(methodName, bindingFlags) !=
+                   null;
         }
     }
 }
