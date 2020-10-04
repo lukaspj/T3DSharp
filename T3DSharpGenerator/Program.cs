@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -89,8 +89,11 @@ namespace T3DSharpGenerator
                 }
             }
 
-            if (Directory.Exists("Generated/")) {
-                Directory.Delete("Generated/", true);
+            // Careful!!! Don't choose the wrong directory or it might get deleted..
+            string outputDirectory = "Generated/";
+
+            if (Directory.Exists(outputDirectory)) {
+                Directory.Delete(outputDirectory, true);
             }
 
             engineApi.Enums
@@ -111,11 +114,11 @@ namespace T3DSharpGenerator
             engineApi.Classes
                 .ForEach(c => c.Properties.ForEach(p => p.Docs = DotNetXmlDocGenerator.Generate(EngineApiDocStringParser.Parse(p.Docs)).Trim()));
 
-            EnumGenerator.GenerateFor(engineApi, engineApi.Enums);
-            StructGenerator.GenerateFor(engineApi, engineApi.Structs);
-            FunctionGenerator.GenerateFor(engineApi, engineApi.Functions);
-            ClassGenerator.GenerateFor(engineApi, engineApi.Classes);
-            PrimitiveSizesGenerator.GenerateFor(engineApi, engineApi.Primitives);
+            EnumGenerator.GenerateFor(outputDirectory, engineApi, engineApi.Enums);
+            StructGenerator.GenerateFor(outputDirectory, engineApi, engineApi.Structs);
+            FunctionGenerator.GenerateFor(outputDirectory, engineApi, engineApi.Functions);
+            ClassGenerator.GenerateFor(outputDirectory, engineApi, engineApi.Classes);
+            PrimitiveSizesGenerator.GenerateFor(outputDirectory, engineApi, engineApi.Primitives);
             Console.WriteLine("Finished code generation.");
         }
     }
