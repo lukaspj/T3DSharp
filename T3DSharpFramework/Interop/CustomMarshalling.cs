@@ -4,10 +4,9 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
-using T3DNetFramework.Engine;
-using T3DNetFramework.Generated.Classes.Global;
+using T3DSharpFramework.Engine;
 
-namespace T3DNetFramework.Interop
+namespace T3DSharpFramework.Interop
 {
    /// <summary>
    /// A static class to help ease marshalling strings between managed and

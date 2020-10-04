@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Scriban.Runtime;
 using T3DSharpGenerator.Generators.Templating;
 using T3DSharpGenerator.Model;
 

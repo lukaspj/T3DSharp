@@ -1,8 +1,6 @@
 using System;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
-using T3DSharpFramework.Generated.Classes.Sim;
 
 namespace T3DSharpFramework.Interop
 {
@@ -145,7 +143,7 @@ namespace T3DSharpFramework.Interop
             string _classNamespace = Marshal.PtrToStringAnsi(classNamespace);
             string _name = Marshal.PtrToStringAnsi(name);
 
-            SimObject objectBaseWrapper = Sim.FindObjectById<SimObject>(obj);
+            UnknownSimObject objectBaseWrapper = Sim.FindObjectById<UnknownSimObject>(obj);
             string[] strings = { };
             if (argv != IntPtr.Zero)
                 strings = StringMarshal.IntPtrToAnsiStringArray(argv, argc);

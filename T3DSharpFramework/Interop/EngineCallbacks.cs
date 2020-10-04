@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using T3DSharpFramework.Engine;
-using T3DSharpFramework.Generated.Classes.Global;
-using T3DSharpFramework.Generated.Classes.Sim;
 
 namespace T3DSharpFramework.Interop
 {
@@ -182,8 +179,8 @@ namespace T3DSharpFramework.Interop
         public static bool IsMethod(string className, string methodName) {
             if (className == null)
                 return FunctionDictionary.ContainsKey(methodName);
-            
-            SimObject obj = Sim.FindObjectByName<SimObject>(className);
+
+            UnknownSimObject obj = Sim.FindObjectByName<UnknownSimObject>(className);
 
             if (obj == null) {
                 if (!ClassTypeDictionary.ContainsKey(className)) {
