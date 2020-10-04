@@ -123,6 +123,8 @@ namespace T3DSharpFramework.Interop
 
             engineShutdown();
 
+            SimDictionary.Shutdown();
+
             DllLoadUtils.FreeLibrary(Torque3DLibHandle);
         }
 

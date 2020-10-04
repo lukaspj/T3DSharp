@@ -75,7 +75,11 @@ namespace T3DSharpFramework.Engine
         }
 
         protected virtual void Dispose(bool pDisposing) {
-            SimDictionary.UnregisterObjectPtr(ObjectPtr);
+            bool isDead = IsDead();
+            if (!isDead)
+            {
+                SimDictionary.UnregisterObjectPtr(ObjectPtr);
+            }
         }
 
         ~ConsoleObjectBase() {
