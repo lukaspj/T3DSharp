@@ -145,7 +145,7 @@ And then add a new class `Main` and add the following:
 
          if (Global.IsFunction("loadStartup"))
          {
-            Global.Exec("loadStartup");
+            Global.Call("loadStartup");
          }
          else
          {
