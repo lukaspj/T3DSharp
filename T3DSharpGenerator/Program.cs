@@ -46,8 +46,8 @@ namespace T3DSharpGenerator
             Initializer.InitializeTypeDictionaries(Assembly.GetExecutingAssembly().GetTypes());
             Torque3D.Libraries libraries = new Torque3D.Libraries
             {
-                Windows32bit = "BaseGame_DEBUG.dll",
-                Windows64bit = "BaseGame_DEBUG.dll"
+                Windows32bit = "Stock_DEBUG.dll",
+                Windows64bit = "Stock_DEBUG.dll"
             };
 
             Torque3D.Initialize(args, libraries);
@@ -90,7 +90,7 @@ namespace T3DSharpGenerator
             }
 
             // Careful!!! Don't choose the wrong directory or it might get deleted..
-            string outputDirectory = "Generated/";
+            string outputDirectory = "../t3dsharp/T3DSharpFramework/Generated";
 
             if (Directory.Exists(outputDirectory)) {
                 Directory.Delete(outputDirectory, true);

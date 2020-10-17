@@ -100,6 +100,19 @@ namespace T3DSharpFramework.Engine
              return StringMarshal.IntPtrToUtf8String(_engineResult);
         }
 
+        /// <description>
+        /// Get the underlying unique numeric ID of the object.
+        /// </description>
+        /// <remarks> Object IDs are unique only during single engine runs.
+        /// </remarks>
+        /// <returns>The unique numeric ID of the object.</returns>
+        public int GetId() {
+             InternalUnsafeMethods.GetId__Args _args = new InternalUnsafeMethods.GetId__Args() {
+             };
+             int _engineResult = InternalUnsafeMethods.GetId()(ObjectPtr, _args);
+             return _engineResult;
+        }
+
         #region UnsafeNativeMethods
         new internal struct InternalUnsafeMethods
         {
@@ -225,6 +238,28 @@ namespace T3DSharpFramework.Engine
             }
 
             return _GetNameFunc;
+         }
+
+         [StructLayout(LayoutKind.Sequential)]
+         internal struct GetId__Args
+         {
+         }
+
+         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+         internal delegate int _GetId(IntPtr _this, GetId__Args args);
+         private static _GetId _GetIdFunc;
+         internal static _GetId GetId()
+         {
+            if (_GetIdFunc == null)
+            {
+               _GetIdFunc =
+                   (_GetId)Marshal.GetDelegateForFunctionPointer(
+                       Torque3D.DllLoadUtils.GetProcAddress(
+                           Torque3D.Torque3DLibHandle,
+                           "fnSimObject_getId"), typeof(_GetId));
+            }
+
+            return _GetIdFunc;
          }
       }
         #endregion

@@ -1,6 +1,6 @@
 ﻿namespace T3DSharpFramework.Engine
 {
-    public interface IDataBlock
+    public interface IDataBlock : ISimObject
     {
 
     }

@@ -10,8 +10,8 @@ namespace T3DSharpFramework.Interop
         private static BindingFlags bindingFlags =
             BindingFlags.Default | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static |
             BindingFlags.IgnoreCase;
-        
-        private static readonly Dictionary<string, Type> 
+
+        private static readonly Dictionary<string, Type>
             ClassTypeDictionary = new Dictionary<string, Type>(StringComparer.OrdinalIgnoreCase);
 
         private static readonly Dictionary<string, MethodInfo>
@@ -55,21 +55,21 @@ namespace T3DSharpFramework.Interop
             if (objectBaseWrapper != null && ClassTypeDictionary.ContainsKey(objectBaseWrapper.GetType().Name)) {
                 return ClassTypeDictionary[objectBaseWrapper.GetType().Name];
             }
-            
+
             return null;
         }
 
         public static string CallScriptFunction(string pFunctionNamespace, string pFunctionName, object[] args,
             out bool found) {
             if (pFunctionNamespace != null) {
-                ISimObject obj = SimDictionary.Find(pFunctionNamespace);
+                ISimObject obj = Sim.FindObjectByName<UnknownSimObject>(pFunctionNamespace);
                 Type type = GetObjectType(null, pFunctionNamespace, obj);
 
                 if (type == null) {
                     found = false;
                     return null;
                 }
-                
+
                 return CallNamespaceMethod(type, obj, pFunctionName, args, out found);
             }
 
@@ -191,7 +191,7 @@ namespace T3DSharpFramework.Interop
                     .GetMethod(methodName, bindingFlags);
                 return method != null && method.DeclaringType.GetCustomAttributes<ConsoleClassAttribute>().Any();
             }
-            
+
             Type type = GetObjectType(obj.GetClassName(), obj.GetClassNamespace(), obj);
 
             return type != null &&

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -76,7 +76,10 @@ namespace T3DSharpFramework.Engine
 
             ObjectWrapperCountDictionary[objectPtr]--;
             if (ObjectWrapperCountDictionary[objectPtr] <= 0) {
-                Sim.DeleteObjectPtr((Sim.SimObjectPtr*) ObjectWrapperDictionary[objectPtr]);
+                if (!IsDead(objectPtr))
+                {
+                    Sim.DeleteObjectPtr((Sim.SimObjectPtr*) ObjectWrapperDictionary[objectPtr]);
+                }
                 ObjectWrapperDictionary.Remove(objectPtr);
                 ObjectWrapperCountDictionary.Remove(objectPtr);
             }

@@ -13,6 +13,10 @@ namespace T3DSharpFramework.Engine.Util
         {
             return Global.Detag(str);
         }
+        public static string OrDefault(this String str, string defaultValue)
+        {
+            return string.IsNullOrWhiteSpace(str) ? defaultValue : str;
+        }
 
         public static string ColorEscape(this String str)
         {

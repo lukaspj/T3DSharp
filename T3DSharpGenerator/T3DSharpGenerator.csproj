@@ -1,195 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{484F4883-816B-40FE-B714-4C3ED8AFADC9}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>T3DSharpGenerator</RootNamespace>
-    <AssemblyName>T3DSharpGenerator</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\game\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="DocGenerators\DotNetXmlDocGenerator.cs" />
-    <Compile Include="DocParsers\InlineStringParser.cs" />
-    <Compile Include="DocParsers\ParameterRefStringParser.cs" />
-    <Compile Include="DocParsers\RemarkStringParser.cs" />
-    <Compile Include="DocParsers\InternalStringParser.cs" />
-    <Compile Include="DocParsers\CodeExampleStringParser.cs" />
-    <Compile Include="DocParsers\SeeStringParser.cs" />
-    <Compile Include="DocParsers\ReturnStringParser.cs" />
-    <Compile Include="DocParsers\InGroupStringParser.cs" />
-    <Compile Include="DocParsers\DescriptionStringParser.cs" />
-    <Compile Include="DocParsers\DocTag.cs" />
-    <Compile Include="DocParsers\EngineApiDocStringParser.cs" />
-    <Compile Include="DocParsers\IDocStringParser.cs" />
-    <Compile Include="DocParsers\NullStringParser.cs" />
-    <Compile Include="DocParsers\ParameterStringParser.cs" />
-    <Compile Include="DocParsers\SummaryStringParser.cs" />
-    <Compile Include="EngineApiParser.cs" />
-    <Compile Include="Generators\ClassGenerator.cs" />
-    <Compile Include="Generators\EnumGenerator.cs" />
-    <Compile Include="Generators\FunctionGenerator.cs" />
-    <Compile Include="Generators\PrimitiveSizesGenerator.cs" />
-    <Compile Include="Generators\StructGenerator.cs" />
-    <Compile Include="Generators\Templating\BaseTemplate.cs" />
-    <Compile Include="Generators\Templating\ClassTemplate.cs" />
-    <Compile Include="Generators\Templating\DiskTemplateLoader.cs" />
-    <Compile Include="Generators\Templating\EnumTemplate.cs" />
-    <Compile Include="Generators\Templating\Functions\AllocContainer.cs" />
-    <Compile Include="Generators\Templating\Functions\DefaultParamValueContainer.cs" />
-    <Compile Include="Generators\Templating\Functions\FreeContainer.cs" />
-    <Compile Include="Generators\Templating\Functions\GetManagedParametersContainer.cs" />
-    <Compile Include="Generators\Templating\Functions\GetReturnStringContainer.cs" />
-    <Compile Include="Generators\Templating\Functions\IndentContainer.cs" />
-    <Compile Include="Generators\Templating\Functions\MarshalAsContainer.cs" />
-    <Compile Include="Generators\Templating\Functions\MarshalContainer.cs" />
-    <Compile Include="Generators\Templating\Functions\SanitizeNameContainer.cs" />
-    <Compile Include="Generators\Templating\Functions\StructFieldAllocContainer.cs" />
-    <Compile Include="Generators\Templating\Functions\StructFieldFreeContainer.cs" />
-    <Compile Include="Generators\Templating\FunctionTemplate.cs" />
-    <Compile Include="Generators\Templating\PrimitiveSizesTemplate.cs" />
-    <Compile Include="Generators\Templating\StructTemplate.cs" />
-    <Compile Include="Generators\Util\SimObjectTree.cs" />
-    <Compile Include="Model\Docs\CodeExampleDocElement.cs" />
-    <Compile Include="Model\Docs\CompoundDocElement.cs" />
-    <Compile Include="Model\Docs\SummaryDocElement.cs" />
-    <Compile Include="Model\Docs\DocElement.cs" />
-    <Compile Include="Model\Docs\LeafDocElement.cs" />
-    <Compile Include="Model\Docs\TextDocElement.cs" />
-    <Compile Include="Model\Docs\InGroupDocElement.cs" />
-    <Compile Include="Model\Docs\DescriptionDocElement.cs" />
-    <Compile Include="Model\Docs\IDocElement.cs" />
-    <Compile Include="Model\Docs\NullDocElement.cs" />
-    <Compile Include="Model\Docs\ParameterRefDocElement.cs" />
-    <Compile Include="Model\Docs\RemarkDocElement.cs" />
-    <Compile Include="Model\Docs\InternalDocElement.cs" />
-    <Compile Include="Model\Docs\SeeDocElement.cs" />
-    <Compile Include="Model\Docs\ReturnDocElement.cs" />
-    <Compile Include="Model\Docs\ParameterDocElement.cs" />
-    <Compile Include="Model\EngineApi.cs" />
-    <Compile Include="Model\EngineClass.cs" />
-    <Compile Include="Model\EngineEnum.cs" />
-    <Compile Include="Model\EngineFunction.cs" />
-    <Compile Include="Model\EnginePrimitive.cs" />
-    <Compile Include="Model\EngineStruct.cs" />
-    <Compile Include="Model\IEngineObject.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XmlParsers\BitfieldParser.cs" />
-    <Compile Include="XmlParsers\ClassParser.cs" />
-    <Compile Include="XmlParsers\EnumParser.cs" />
-    <Compile Include="XmlParsers\FunctionParser.cs" />
-    <Compile Include="XmlParsers\IApiXmlParser.cs" />
-    <Compile Include="XmlParsers\NotHandledParser.cs" />
-    <Compile Include="XmlParsers\PrimitiveParser.cs" />
-    <Compile Include="XmlParsers\ScopeParser.cs" />
-    <Compile Include="XmlParsers\StructParser.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <Content Include="Resources\Templates\engineobject_body.scriban">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\managed_function.scriban">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\managed_property.scriban">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\PrimitiveSizes.scriban">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\SimClass.scriban">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\SimEnum.scriban">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\SimFunction.scriban">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\simobject_body.scriban">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\SimStruct.scriban">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Templates\native_function.scriban">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>6.0.8</Version>
-    </PackageReference>
-    <PackageReference Include="Scriban">
-      <Version>2.1.0</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\T3DSharpFramework\T3DSharpFramework.csproj">
-      <Project>{383bb2ac-7904-4222-bb85-3012a490eee9}</Project>
-      <Name>T3DSharpFramework</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
-    </Target>
-    <Target Name="AfterBuild">
-    </Target>
-    -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <OutputType>Exe</OutputType>
+      <TargetFramework>netcoreapp3.1</TargetFramework>
+   </PropertyGroup>
+
+   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <PlatformTarget>x64</PlatformTarget>
+      <OutputPath>../../game</OutputPath>
+   </PropertyGroup>
+
+   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <PlatformTarget>x64</PlatformTarget>
+      <OutputPath>../../game</OutputPath>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\T3DSharpFramework\T3DSharpFramework.csproj"/>
+   </ItemGroup>
+
+   <ItemGroup>
+      <PackageReference Include="Scriban" Version="2.1.4"/>
+   </ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
 
@@ -72,7 +73,7 @@ namespace T3DSharpFramework.Interop
 
             Torque3DLibHandle = DllLoadUtils.LoadLibrary(LibraryName);
             if (Torque3DLibHandle == IntPtr.Zero) {
-                throw new Exception("Unable to load " + (IntPtr.Size == 8 ? "64" : "32") + " bit dll: " + LibraryName);
+                throw new Exception("Unable to load " + (IntPtr.Size == 8 ? "64" : "32") + " bit dll: " + LibraryName + ", in directory: " + Directory.GetCurrentDirectory());
             }
 
             var mainHandle = DllLoadUtils.GetProcAddress(Torque3DLibHandle, platformMain);
