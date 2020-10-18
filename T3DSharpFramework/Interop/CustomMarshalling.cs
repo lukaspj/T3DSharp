@@ -177,7 +177,7 @@ namespace T3DSharpFramework.Interop
          else if (obj is bool[] bs)
          {
             found = true;
-            ret = ToString(bs.Select(ToString));
+            ret = ToString(bs.Select(ToString).ToArray());
          }
          else if (obj is byte by)
          {
@@ -187,7 +187,7 @@ namespace T3DSharpFramework.Interop
          else if (obj is byte[] bytes)
          {
             found = true;
-            ret = ToString(bytes.Select(ToString));
+            ret = ToString(bytes.Select(ToString).ToArray());
          }
          else if (obj is double d)
          {
@@ -197,7 +197,7 @@ namespace T3DSharpFramework.Interop
          else if (obj is double[] doubles)
          {
             found = true;
-            ret = ToString(doubles.Select(ToString));
+            ret = ToString(doubles.Select(ToString).ToArray());
          }
          else if (typeof(T).IsEnum)
          {
@@ -212,7 +212,7 @@ namespace T3DSharpFramework.Interop
          else if (obj is float[] floats)
          {
             found = true;
-            ret = ToString(floats.Select(ToString));
+            ret = ToString(floats.Select(ToString).ToArray());
          }
          else if (obj is IEngineStruct @struct)
          {
@@ -222,7 +222,7 @@ namespace T3DSharpFramework.Interop
          else if (obj is IEngineStruct[] @structs)
          {
             found = true;
-            ret = ToString(@structs.Select(ToString));
+            ret = ToString(@structs.Select(ToString).ToArray());
          }
          else if (obj is int i)
          {
@@ -232,7 +232,7 @@ namespace T3DSharpFramework.Interop
          else if (obj is int[] ints)
          {
             found = true;
-            ret = ToString(ints.Select(ToString));
+            ret = ToString(ints.Select(ToString).ToArray());
          }
          else if (obj is IntPtr ptr)
          {
@@ -266,7 +266,7 @@ namespace T3DSharpFramework.Interop
          else if (obj is uint[] uints)
          {
             found = true;
-            ret = ToString(uints.Select(ToString));
+            ret = ToString(uints.Select(ToString).ToArray());
          }
          else if (obj == null)
          {
