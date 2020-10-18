@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace T3DSharpGenerator.Model
 {
@@ -30,10 +31,18 @@ namespace T3DSharpGenerator.Model
             public IEngineObject Type { get; set; }
             public string TypeName { get; set; }
             public int IndexedSize { get; set; }
+
+            public int FieldOffset { get; set; }
+
+            public int FieldCount { get; set; }
         }
 
         public void Add(Field field) {
             Fields.Add(field);
+        }
+
+        public int CountFields() {
+           return Fields.Aggregate(0, (acc, x) => acc + (x.Type is EngineStruct @struct ? @struct.CountFields() : 1));
         }
     }
 }

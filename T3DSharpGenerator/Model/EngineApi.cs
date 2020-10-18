@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using T3DSharpFramework.Engine;
 using T3DSharpGenerator.Generators.Util;
 
 namespace T3DSharpGenerator.Model
@@ -42,6 +43,7 @@ namespace T3DSharpGenerator.Model
 
         public EngineApi AnnotateTypes() {
             Structs.ForEach(AnnotateStructTypes);
+            Structs.ForEach(AnnotateStructFieldCounts);
             Classes.ForEach(AnnotateClassTypes);
             Functions.ForEach(AnnotateFunctionTypes);
 
@@ -69,6 +71,20 @@ namespace T3DSharpGenerator.Model
                 } else {
                     field.Type = ToType(field.TypeName);
                 }
+            }
+        }
+
+        private void AnnotateStructFieldCounts(EngineStruct obj) {
+            int fieldCount = 0;
+            foreach (EngineStruct.Field field in obj.Fields) {
+               field.FieldOffset = fieldCount;
+               if (field.Type is EngineStruct @struct) {
+                  field.FieldCount = @struct.CountFields();
+               } else {
+                  field.FieldCount = 1;
+               }
+
+               fieldCount += field.FieldCount;
             }
         }
 
@@ -224,7 +240,7 @@ namespace T3DSharpGenerator.Model
             }
 
             foreach (EngineFunction other in @class.Methods) {
-                if (!other.Name.Equals(method.Name) 
+                if (!other.Name.Equals(method.Name)
                     || other.Arguments.Count != method.Arguments.Count) {
                     continue;
                 }
