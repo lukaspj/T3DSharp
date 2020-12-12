@@ -1,5 +1,7 @@
 # T3DSharp - A C# scripting layer for Torque3D
 
+## This README is outdated, I will update it when time permits
+
 This project consists of two parts:
 
 * T3DSharpFramework
