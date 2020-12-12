@@ -21,7 +21,6 @@
    </ItemGroup>
    
    <ItemGroup>
-      <Compile Include="@CSHARP_SOURCE_DIR@/T3DSharpGame/**/*.cs" />
       <Compile Include="@projectOutDir@/Program.cs" />
    </ItemGroup>
    

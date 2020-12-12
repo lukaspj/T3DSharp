@@ -7,10 +7,4 @@
    </PropertyGroup>
    
    <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' "></PropertyGroup>
-
-   <ItemGroup>
-      <Compile Include="@CSHARP_SOURCE_DIR@/T3DSharpFramework/Engine/**/*.cs"/>
-      <Compile Include="@CSHARP_SOURCE_DIR@/T3DSharpFramework/Interop/**/*.cs"/>
-      <Compile Include="@CSHARP_FRAMEWORK_GENERATED_DIR@/**/*.cs"/>
-   </ItemGroup>
 </Project>

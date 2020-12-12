@@ -52,7 +52,4 @@
        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
      </None>
    </ItemGroup>
-   <ItemGroup>
-      <Compile Include="@CSHARP_SOURCE_DIR@/T3DSharpGenerator/**/*.cs"/>
-   </ItemGroup>
 </Project>
