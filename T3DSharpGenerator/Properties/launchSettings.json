@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "T3DSharpGenerator": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

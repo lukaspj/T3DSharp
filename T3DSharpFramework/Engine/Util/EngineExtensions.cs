@@ -1,5 +1,6 @@
 ﻿using System;
 using T3DSharpFramework.Generated.Functions;
+using T3DSharpFramework.Generated.Structs.Math;
 
 namespace T3DSharpFramework.Engine.Util
 {
@@ -28,6 +29,18 @@ namespace T3DSharpFramework.Engine.Util
             str = str.Replace("\\co", System.Text.Encoding.UTF8.GetString(new[] { Text.COLOR_POP }));
             str = str.Replace("\\cr", System.Text.Encoding.UTF8.GetString(new[] { Text.COLOR_RESET }));
             return str;
+        }
+
+        public static MatrixF ToMatrix(this Point3F point) {
+           var matrixF = new MatrixF();
+
+           matrixF.M = new float[16];
+
+           matrixF.M[0] = point.X;
+           matrixF.M[4] = point.Y;
+           matrixF.M[8] = point.Z;
+           matrixF.M[12] = 1.0f;
+           return matrixF;
         }
     }
 }
