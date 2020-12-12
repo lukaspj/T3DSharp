@@ -294,7 +294,7 @@ namespace T3DSharpFramework.Interop
          else if (typeof(T) == typeof(bool))
          {
             found = true;
-            
+
             if (int.TryParse(s, out int parseResult)) {
                ret = parseResult > 0;
             } else {
@@ -334,6 +334,7 @@ namespace T3DSharpFramework.Interop
          else if (typeof(T).IsClass)
          {
             found = true;
+
             ConstructorInfo cinfo = typeof(T).GetConstructor(new[] {typeof(string)});
             if (cinfo != null)
             {

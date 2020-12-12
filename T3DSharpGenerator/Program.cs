@@ -38,7 +38,7 @@ namespace T3DSharpGenerator
 
             Thread.CurrentThread.CurrentCulture = customCulture;
 
-            if (File.Exists("engineApi.xml")) {
+            if (false && File.Exists("engineApi.xml")) {
                 ParseEngineApi();
                 return;
             }

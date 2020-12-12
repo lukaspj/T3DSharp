@@ -18,7 +18,7 @@ namespace T3DSharpGenerator.XmlParsers
                 Docs = docs,
                 Scope = parseState.Scope
             };
-            
+
             foreach (XmlElement childNode in element.ChildNodes) {
                 if (!childNode.Name.Equals("fields")) continue;
                 foreach (XmlElement fieldNode in childNode.ChildNodes) {
