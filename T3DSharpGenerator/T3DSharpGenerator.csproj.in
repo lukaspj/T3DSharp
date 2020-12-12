@@ -5,23 +5,15 @@
       <TargetFramework>netcoreapp3.1</TargetFramework>
       <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
       <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-      <RuntimeIdentifier>win10-x64-aot</RuntimeIdentifier>
-      <PublishSingleFile>true</PublishSingleFile>
       <PublishTrimmed>true</PublishTrimmed>
-   </PropertyGroup>
-
-   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
       <PlatformTarget>x64</PlatformTarget>
-      <OutputPath>../../game</OutputPath>
+      <OutputPath>@projectOutDir@</OutputPath>
    </PropertyGroup>
-
-   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <PlatformTarget>x64</PlatformTarget>
-      <OutputPath>../../game</OutputPath>
-   </PropertyGroup>
-
+   
+   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' "></PropertyGroup>
+   
    <ItemGroup>
-      <ProjectReference Include="..\T3DSharpFramework\T3DSharpFramework.csproj" />
+      <ProjectReference Include="@CSHARP_FRAMEWORK_REL_PATH@" />
    </ItemGroup>
 
    <ItemGroup>
@@ -60,5 +52,7 @@
        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
      </None>
    </ItemGroup>
-
+   <ItemGroup>
+      <Compile Include="@CSHARP_SOURCE_DIR@/T3DSharpGenerator/**/*.cs"/>
+   </ItemGroup>
 </Project>
