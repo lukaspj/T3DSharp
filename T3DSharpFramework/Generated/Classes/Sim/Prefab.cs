@@ -76,7 +76,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnLoadFunc == null) {
                     _OnLoadFunc =
                         (_OnLoad)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbPrefab_onLoad"), typeof(_OnLoad));
                 }
@@ -96,7 +96,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPrefab_staticGetType"), typeof(_StaticGetType));
                 }
@@ -116,7 +116,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPrefab_create"), typeof(_Create));
                 }

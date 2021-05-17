@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UpdateShapeFunc == null) {
                     _UpdateShapeFunc =
                         (_UpdateShape)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_updateShape"), typeof(_UpdateShape));
                 }
@@ -93,7 +93,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetGridSnapSizeFunc == null) {
                     _GetGridSnapSizeFunc =
                         (_GetGridSnapSize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_getGridSnapSize"), typeof(_GetGridSnapSize));
                 }
@@ -114,7 +114,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetGridSnapSizeFunc == null) {
                     _SetGridSnapSizeFunc =
                         (_SetGridSnapSize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_setGridSnapSize"), typeof(_SetGridSnapSize));
                 }
@@ -134,7 +134,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ToggleGridSnappingFunc == null) {
                     _ToggleGridSnappingFunc =
                         (_ToggleGridSnapping)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_toggleGridSnapping"), typeof(_ToggleGridSnapping));
                 }
@@ -154,7 +154,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedFaceZRotFunc == null) {
                     _GetSelectedFaceZRotFunc =
                         (_GetSelectedFaceZRot)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_getSelectedFaceZRot"), typeof(_GetSelectedFaceZRot));
                 }
@@ -175,7 +175,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectedFaceZRotFunc == null) {
                     _SetSelectedFaceZRotFunc =
                         (_SetSelectedFaceZRot)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_setSelectedFaceZRot"), typeof(_SetSelectedFaceZRot));
                 }
@@ -196,7 +196,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedFaceVertFlipFunc == null) {
                     _GetSelectedFaceVertFlipFunc =
                         (_GetSelectedFaceVertFlip)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_getSelectedFaceVertFlip"), typeof(_GetSelectedFaceVertFlip));
                 }
@@ -217,7 +217,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedFaceHorzFlipFunc == null) {
                     _GetSelectedFaceHorzFlipFunc =
                         (_GetSelectedFaceHorzFlip)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_getSelectedFaceHorzFlip"), typeof(_GetSelectedFaceHorzFlip));
                 }
@@ -239,7 +239,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectedFaceVertFlipFunc == null) {
                     _SetSelectedFaceVertFlipFunc =
                         (_SetSelectedFaceVertFlip)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_setSelectedFaceVertFlip"), typeof(_SetSelectedFaceVertFlip));
                 }
@@ -261,7 +261,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectedFaceHorzFlipFunc == null) {
                     _SetSelectedFaceHorzFlipFunc =
                         (_SetSelectedFaceHorzFlip)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_setSelectedFaceHorzFlip"), typeof(_SetSelectedFaceHorzFlip));
                 }
@@ -282,7 +282,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedFaceMaterialFunc == null) {
                     _GetSelectedFaceMaterialFunc =
                         (_GetSelectedFaceMaterial)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_getSelectedFaceMaterial"), typeof(_GetSelectedFaceMaterial));
                 }
@@ -304,7 +304,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectedFaceMaterialFunc == null) {
                     _SetSelectedFaceMaterialFunc =
                         (_SetSelectedFaceMaterial)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_setSelectedFaceMaterial"), typeof(_SetSelectedFaceMaterial));
                 }
@@ -325,7 +325,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectedFaceUVScaleFunc == null) {
                     _SetSelectedFaceUVScaleFunc =
                         (_SetSelectedFaceUVScale)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_setSelectedFaceUVScale"), typeof(_SetSelectedFaceUVScale));
                 }
@@ -346,7 +346,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectedFaceUVOffsetFunc == null) {
                     _SetSelectedFaceUVOffsetFunc =
                         (_SetSelectedFaceUVOffset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_setSelectedFaceUVOffset"), typeof(_SetSelectedFaceUVOffset));
                 }
@@ -366,7 +366,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedFaceUVScaleFunc == null) {
                     _GetSelectedFaceUVScaleFunc =
                         (_GetSelectedFaceUVScale)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_getSelectedFaceUVScale"), typeof(_GetSelectedFaceUVScale));
                 }
@@ -386,7 +386,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedFaceUVOffsetFunc == null) {
                     _GetSelectedFaceUVOffsetFunc =
                         (_GetSelectedFaceUVOffset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_getSelectedFaceUVOffset"), typeof(_GetSelectedFaceUVOffset));
                 }
@@ -406,7 +406,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SplitSelectedFaceFunc == null) {
                     _SplitSelectedFaceFunc =
                         (_SplitSelectedFace)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_splitSelectedFace"), typeof(_SplitSelectedFace));
                 }
@@ -427,7 +427,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SelectConvexFunc == null) {
                     _SelectConvexFunc =
                         (_SelectConvex)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_selectConvex"), typeof(_SelectConvex));
                 }
@@ -447,7 +447,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DropSelectionAtScreenCenterFunc == null) {
                     _DropSelectionAtScreenCenterFunc =
                         (_DropSelectionAtScreenCenter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_dropSelectionAtScreenCenter"), typeof(_DropSelectionAtScreenCenter));
                 }
@@ -467,7 +467,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_HandleDeselectFunc == null) {
                     _HandleDeselectFunc =
                         (_HandleDeselect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_handleDeselect"), typeof(_HandleDeselect));
                 }
@@ -487,7 +487,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_HandleDeleteFunc == null) {
                     _HandleDeleteFunc =
                         (_HandleDelete)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_handleDelete"), typeof(_HandleDelete));
                 }
@@ -507,7 +507,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_HasSelectionFunc == null) {
                     _HasSelectionFunc =
                         (_HasSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_hasSelection"), typeof(_HasSelection));
                 }
@@ -527,7 +527,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RecenterSelectionFunc == null) {
                     _RecenterSelectionFunc =
                         (_RecenterSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_recenterSelection"), typeof(_RecenterSelection));
                 }
@@ -547,7 +547,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_HollowSelectionFunc == null) {
                     _HollowSelectionFunc =
                         (_HollowSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_hollowSelection"), typeof(_HollowSelection));
                 }
@@ -567,7 +567,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -587,7 +587,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConvexEditorCtrl_create"), typeof(_Create));
                 }

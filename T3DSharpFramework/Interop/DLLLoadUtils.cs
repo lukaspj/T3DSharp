@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 
 namespace T3DSharpFramework.Interop
@@ -49,7 +49,7 @@ namespace T3DSharpFramework.Interop
     internal class DllLoadUtilsLinux : IDllLoadUtils
     {
         public IntPtr LoadLibrary(string fileName) {
-            return dlopen(fileName, RTLD_NOW);
+           return dlopen(fileName, RTLD_NOW);
         }
 
         public void FreeLibrary(IntPtr handle) {

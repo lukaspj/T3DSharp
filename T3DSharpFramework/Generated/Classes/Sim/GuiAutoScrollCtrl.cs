@@ -103,7 +103,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ResetFunc == null) {
                     _ResetFunc =
                         (_Reset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiAutoScrollCtrl_reset"), typeof(_Reset));
                 }
@@ -123,7 +123,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnResetFunc == null) {
                     _OnResetFunc =
                         (_OnReset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiAutoScrollCtrl_onReset"), typeof(_OnReset));
                 }
@@ -143,7 +143,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnCompleteFunc == null) {
                     _OnCompleteFunc =
                         (_OnComplete)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiAutoScrollCtrl_onComplete"), typeof(_OnComplete));
                 }
@@ -163,7 +163,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnStartFunc == null) {
                     _OnStartFunc =
                         (_OnStart)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiAutoScrollCtrl_onStart"), typeof(_OnStart));
                 }
@@ -183,7 +183,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnTickFunc == null) {
                     _OnTickFunc =
                         (_OnTick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiAutoScrollCtrl_onTick"), typeof(_OnTick));
                 }
@@ -203,7 +203,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiAutoScrollCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -223,7 +223,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiAutoScrollCtrl_create"), typeof(_Create));
                 }

@@ -160,7 +160,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDeadZoneFunc == null) {
                     _GetDeadZoneFunc =
                         (_GetDeadZone)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_getDeadZone"), typeof(_GetDeadZone));
                 }
@@ -184,7 +184,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetScaleFunc == null) {
                     _GetScaleFunc =
                         (_GetScale)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_getScale"), typeof(_GetScale));
                 }
@@ -209,7 +209,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsInvertedFunc == null) {
                     _IsInvertedFunc =
                         (_IsInverted)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_isInverted"), typeof(_IsInverted));
                 }
@@ -234,7 +234,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetCommandFunc == null) {
                     _GetCommandFunc =
                         (_GetCommand)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_getCommand"), typeof(_GetCommand));
                 }
@@ -257,7 +257,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetBindingFunc == null) {
                     _GetBindingFunc =
                         (_GetBinding)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_getBinding"), typeof(_GetBinding));
                 }
@@ -277,7 +277,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PopFunc == null) {
                     _PopFunc =
                         (_Pop)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_pop"), typeof(_Pop));
                 }
@@ -297,7 +297,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PushFunc == null) {
                     _PushFunc =
                         (_Push)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_push"), typeof(_Push));
                 }
@@ -321,7 +321,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SaveFunc == null) {
                     _SaveFunc =
                         (_Save)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_save"), typeof(_Save));
                 }
@@ -348,7 +348,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UnbindObjFunc == null) {
                     _UnbindObjFunc =
                         (_UnbindObj)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_unbindObj"), typeof(_UnbindObj));
                 }
@@ -373,7 +373,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UnbindFunc == null) {
                     _UnbindFunc =
                         (_Unbind)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_unbind"), typeof(_Unbind));
                 }
@@ -401,7 +401,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_BindHoldFunc == null) {
                     _BindHoldFunc =
                         (_BindHold)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_bindHold"), typeof(_BindHold));
                 }
@@ -430,7 +430,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_BindContextFunc == null) {
                     _BindContextFunc =
                         (_BindContext)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_bindContext"), typeof(_BindContext));
                 }
@@ -459,7 +459,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_BindCmdFunc == null) {
                     _BindCmdFunc =
                         (_BindCmd)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_bindCmd"), typeof(_BindCmd));
                 }
@@ -476,7 +476,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_BindObjFunc == null) {
                     _BindObjFunc =
                         (_BindObj)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_bindObj"), typeof(_BindObj));
                 }
@@ -493,7 +493,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_BindFunc == null) {
                     _BindFunc =
                         (_Bind)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_bind"), typeof(_Bind));
                 }
@@ -513,7 +513,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_staticGetType"), typeof(_StaticGetType));
                 }
@@ -533,7 +533,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_create"), typeof(_Create));
                 }

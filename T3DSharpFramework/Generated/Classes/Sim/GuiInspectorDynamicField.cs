@@ -75,7 +75,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RenameFieldFunc == null) {
                     _RenameFieldFunc =
                         (_RenameField)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorDynamicField_renameField"), typeof(_RenameField));
                 }
@@ -95,7 +95,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorDynamicField_staticGetType"), typeof(_StaticGetType));
                 }
@@ -115,7 +115,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorDynamicField_create"), typeof(_Create));
                 }

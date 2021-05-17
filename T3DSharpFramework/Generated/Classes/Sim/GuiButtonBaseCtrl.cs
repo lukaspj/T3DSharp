@@ -81,7 +81,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ResetStateFunc == null) {
                     _ResetStateFunc =
                         (_ResetState)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiButtonBaseCtrl_resetState"), typeof(_ResetState));
                 }
@@ -103,7 +103,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetStateOnFunc == null) {
                     _SetStateOnFunc =
                         (_SetStateOn)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiButtonBaseCtrl_setStateOn"), typeof(_SetStateOn));
                 }
@@ -124,7 +124,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetTextFunc == null) {
                     _GetTextFunc =
                         (_GetText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiButtonBaseCtrl_getText"), typeof(_GetText));
                 }
@@ -146,7 +146,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetTextIDFunc == null) {
                     _SetTextIDFunc =
                         (_SetTextID)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiButtonBaseCtrl_setTextID"), typeof(_SetTextID));
                 }
@@ -168,7 +168,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetTextFunc == null) {
                     _SetTextFunc =
                         (_SetText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiButtonBaseCtrl_setText"), typeof(_SetText));
                 }
@@ -188,7 +188,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PerformClickFunc == null) {
                     _PerformClickFunc =
                         (_PerformClick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiButtonBaseCtrl_performClick"), typeof(_PerformClick));
                 }
@@ -208,7 +208,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseDraggedFunc == null) {
                     _OnMouseDraggedFunc =
                         (_OnMouseDragged)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiButtonBaseCtrl_onMouseDragged"), typeof(_OnMouseDragged));
                 }
@@ -228,7 +228,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseLeaveFunc == null) {
                     _OnMouseLeaveFunc =
                         (_OnMouseLeave)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiButtonBaseCtrl_onMouseLeave"), typeof(_OnMouseLeave));
                 }
@@ -248,7 +248,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseEnterFunc == null) {
                     _OnMouseEnterFunc =
                         (_OnMouseEnter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiButtonBaseCtrl_onMouseEnter"), typeof(_OnMouseEnter));
                 }
@@ -268,7 +268,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnRightClickFunc == null) {
                     _OnRightClickFunc =
                         (_OnRightClick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiButtonBaseCtrl_onRightClick"), typeof(_OnRightClick));
                 }
@@ -288,7 +288,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnDoubleClickFunc == null) {
                     _OnDoubleClickFunc =
                         (_OnDoubleClick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiButtonBaseCtrl_onDoubleClick"), typeof(_OnDoubleClick));
                 }
@@ -308,7 +308,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnClickFunc == null) {
                     _OnClickFunc =
                         (_OnClick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiButtonBaseCtrl_onClick"), typeof(_OnClick));
                 }
@@ -328,7 +328,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseUpFunc == null) {
                     _OnMouseUpFunc =
                         (_OnMouseUp)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiButtonBaseCtrl_onMouseUp"), typeof(_OnMouseUp));
                 }
@@ -348,7 +348,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseDownFunc == null) {
                     _OnMouseDownFunc =
                         (_OnMouseDown)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiButtonBaseCtrl_onMouseDown"), typeof(_OnMouseDown));
                 }
@@ -368,7 +368,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiButtonBaseCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -388,7 +388,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiButtonBaseCtrl_create"), typeof(_Create));
                 }

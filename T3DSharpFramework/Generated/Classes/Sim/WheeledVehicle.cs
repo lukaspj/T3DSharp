@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetWheelCountFunc == null) {
                     _GetWheelCountFunc =
                         (_GetWheelCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWheeledVehicle_getWheelCount"), typeof(_GetWheelCount));
                 }
@@ -96,7 +96,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetWheelSpringFunc == null) {
                     _SetWheelSpringFunc =
                         (_SetWheelSpring)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWheeledVehicle_setWheelSpring"), typeof(_SetWheelSpring));
                 }
@@ -119,7 +119,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetWheelTireFunc == null) {
                     _SetWheelTireFunc =
                         (_SetWheelTire)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWheeledVehicle_setWheelTire"), typeof(_SetWheelTire));
                 }
@@ -143,7 +143,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetWheelPoweredFunc == null) {
                     _SetWheelPoweredFunc =
                         (_SetWheelPowered)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWheeledVehicle_setWheelPowered"), typeof(_SetWheelPowered));
                 }
@@ -166,7 +166,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetWheelSteeringFunc == null) {
                     _SetWheelSteeringFunc =
                         (_SetWheelSteering)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWheeledVehicle_setWheelSteering"), typeof(_SetWheelSteering));
                 }
@@ -186,7 +186,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWheeledVehicle_staticGetType"), typeof(_StaticGetType));
                 }
@@ -206,7 +206,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWheeledVehicle_create"), typeof(_Create));
                 }

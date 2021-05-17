@@ -78,7 +78,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ToggleFunc == null) {
                     _ToggleFunc =
                         (_Toggle)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRenderPassStateToken_toggle"), typeof(_Toggle));
                 }
@@ -98,7 +98,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DisableFunc == null) {
                     _DisableFunc =
                         (_Disable)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRenderPassStateToken_disable"), typeof(_Disable));
                 }
@@ -118,7 +118,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_EnableFunc == null) {
                     _EnableFunc =
                         (_Enable)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRenderPassStateToken_enable"), typeof(_Enable));
                 }
@@ -138,7 +138,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRenderPassStateToken_staticGetType"), typeof(_StaticGetType));
                 }
@@ -158,7 +158,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRenderPassStateToken_create"), typeof(_Create));
                 }

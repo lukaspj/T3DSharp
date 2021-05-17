@@ -113,7 +113,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetTurbulenceFunc == null) {
                     _SetTurbulenceFunc =
                         (_SetTurbulence)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPrecipitation_setTurbulence"), typeof(_SetTurbulence));
                 }
@@ -135,7 +135,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ModifyStormFunc == null) {
                     _ModifyStormFunc =
                         (_ModifyStorm)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPrecipitation_modifyStorm"), typeof(_ModifyStorm));
                 }
@@ -156,7 +156,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetPercentageFunc == null) {
                     _SetPercentageFunc =
                         (_SetPercentage)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPrecipitation_setPercentage"), typeof(_SetPercentage));
                 }
@@ -176,7 +176,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPrecipitation_staticGetType"), typeof(_StaticGetType));
                 }
@@ -196,7 +196,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPrecipitation_create"), typeof(_Create));
                 }

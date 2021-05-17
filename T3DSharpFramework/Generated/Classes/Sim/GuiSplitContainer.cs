@@ -104,7 +104,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSplitPointFunc == null) {
                     _SetSplitPointFunc =
                         (_SetSplitPoint)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiSplitContainer_setSplitPoint"), typeof(_SetSplitPoint));
                 }
@@ -124,7 +124,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiSplitContainer_staticGetType"), typeof(_StaticGetType));
                 }
@@ -144,7 +144,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiSplitContainer_create"), typeof(_Create));
                 }

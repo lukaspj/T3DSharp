@@ -47,12 +47,8 @@ namespace T3DSharpFramework.Interop
 
         public static string LibraryName;
         public static IntPtr Torque3DLibHandle;
-        public static IDllLoadUtils DllLoadUtils;
 
         public static void Initialize(string[] args, Libraries libraryNames) {
-            DllLoadUtils = Platform.IsLinux()
-                ? (IDllLoadUtils) new DllLoadUtilsLinux()
-                : new DllLoadUtilsWindows();
 
             string platformMain;
             if (Platform.IsLinux()) {
@@ -71,17 +67,17 @@ namespace T3DSharpFramework.Interop
                 LibraryName = IntPtr.Size == 8 ? libraryNames.Windows64bit : libraryNames.Windows32bit;
             }
 
-            Torque3DLibHandle = DllLoadUtils.LoadLibrary(LibraryName);
+            Torque3DLibHandle = NativeLibrary.Load(LibraryName);
             if (Torque3DLibHandle == IntPtr.Zero) {
                 throw new Exception("Unable to load " + (IntPtr.Size == 8 ? "64" : "32") + " bit dll: " + LibraryName + ", in directory: " + Directory.GetCurrentDirectory());
             }
-
-            var mainHandle = DllLoadUtils.GetProcAddress(Torque3DLibHandle, platformMain);
-            var setCallbacksHandle = DllLoadUtils.GetProcAddress(Torque3DLibHandle, "SetCallbacks");
-            var engineInitHandle = DllLoadUtils.GetProcAddress(Torque3DLibHandle, "torque_engineinit");
-            var engineTickHandle = DllLoadUtils.GetProcAddress(Torque3DLibHandle, "torque_enginetick");
-            var getReturnStatusHandle = DllLoadUtils.GetProcAddress(Torque3DLibHandle, "torque_getreturnstatus");
-            var engineShutdownHandle = DllLoadUtils.GetProcAddress(Torque3DLibHandle, "torque_engineshutdown");
+            
+            var mainHandle = NativeLibrary.GetExport(Torque3DLibHandle, platformMain);
+            var setCallbacksHandle = NativeLibrary.GetExport(Torque3DLibHandle, "SetCallbacks");
+            var engineInitHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_engineinit");
+            var engineTickHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_enginetick");
+            var getReturnStatusHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_getreturnstatus");
+            var engineShutdownHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_engineshutdown");
 
             var setCallbacks = (SetCallbacks) Marshal.GetDelegateForFunctionPointer(
                 setCallbacksHandle, typeof(SetCallbacks));
@@ -126,7 +122,7 @@ namespace T3DSharpFramework.Interop
 
             SimDictionary.Shutdown();
 
-            DllLoadUtils.FreeLibrary(Torque3DLibHandle);
+            NativeLibrary.Free(Torque3DLibHandle);
         }
 
         public static string CallFunctionDelegate(IntPtr nameSpace, IntPtr name, IntPtr argv, int argc,

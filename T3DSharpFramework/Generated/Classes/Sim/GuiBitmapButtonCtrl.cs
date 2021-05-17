@@ -92,7 +92,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetBitmapFunc == null) {
                     _SetBitmapFunc =
                         (_SetBitmap)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiBitmapButtonCtrl_setBitmap"), typeof(_SetBitmap));
                 }
@@ -112,7 +112,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnShiftClickFunc == null) {
                     _OnShiftClickFunc =
                         (_OnShiftClick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiBitmapButtonCtrl_onShiftClick"), typeof(_OnShiftClick));
                 }
@@ -132,7 +132,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnAltClickFunc == null) {
                     _OnAltClickFunc =
                         (_OnAltClick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiBitmapButtonCtrl_onAltClick"), typeof(_OnAltClick));
                 }
@@ -152,7 +152,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnCtrlClickFunc == null) {
                     _OnCtrlClickFunc =
                         (_OnCtrlClick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiBitmapButtonCtrl_onCtrlClick"), typeof(_OnCtrlClick));
                 }
@@ -172,7 +172,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnDefaultClickFunc == null) {
                     _OnDefaultClickFunc =
                         (_OnDefaultClick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiBitmapButtonCtrl_onDefaultClick"), typeof(_OnDefaultClick));
                 }
@@ -192,7 +192,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiBitmapButtonCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -212,7 +212,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiBitmapButtonCtrl_create"), typeof(_Create));
                 }

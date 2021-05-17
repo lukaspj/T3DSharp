@@ -74,7 +74,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddInspectorFieldFunc == null) {
                     _AddInspectorFieldFunc =
                         (_AddInspectorField)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorVariableGroup_addInspectorField"), typeof(_AddInspectorField));
                 }
@@ -94,7 +94,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateInspectorFieldFunc == null) {
                     _CreateInspectorFieldFunc =
                         (_CreateInspectorField)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorVariableGroup_createInspectorField"), typeof(_CreateInspectorField));
                 }
@@ -114,7 +114,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorVariableGroup_staticGetType"), typeof(_StaticGetType));
                 }
@@ -134,7 +134,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorVariableGroup_create"), typeof(_Create));
                 }

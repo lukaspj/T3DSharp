@@ -74,7 +74,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddObjectFunc == null) {
                     _AddObjectFunc =
                         (_AddObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMECreateUndoAction_addObject"), typeof(_AddObject));
                 }
@@ -94,7 +94,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMECreateUndoAction_staticGetType"), typeof(_StaticGetType));
                 }
@@ -114,7 +114,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMECreateUndoAction_create"), typeof(_Create));
                 }

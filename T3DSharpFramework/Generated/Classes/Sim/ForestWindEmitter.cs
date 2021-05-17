@@ -97,7 +97,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AttachToObjectFunc == null) {
                     _AttachToObjectFunc =
                         (_AttachToObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestWindEmitter_attachToObject"), typeof(_AttachToObject));
                 }
@@ -117,7 +117,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestWindEmitter_staticGetType"), typeof(_StaticGetType));
                 }
@@ -137,7 +137,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestWindEmitter_create"), typeof(_Create));
                 }

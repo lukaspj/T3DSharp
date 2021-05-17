@@ -95,7 +95,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RefreshFunc == null) {
                     _RefreshFunc =
                         (_Refresh)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDynamicCtrlArrayControl_refresh"), typeof(_Refresh));
                 }
@@ -115,7 +115,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDynamicCtrlArrayControl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -135,7 +135,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDynamicCtrlArrayControl_create"), typeof(_Create));
                 }

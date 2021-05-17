@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetFreeTargetStyleFunc == null) {
                     _GetFreeTargetStyleFunc =
                         (_GetFreeTargetStyle)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellButton_getFreeTargetStyle"), typeof(_GetFreeTargetStyle));
                 }
@@ -94,7 +94,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UseFreeTargetingFunc == null) {
                     _UseFreeTargetingFunc =
                         (_UseFreeTargeting)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellButton_useFreeTargeting"), typeof(_UseFreeTargeting));
                 }
@@ -114,7 +114,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSpellRPGDataBlockFunc == null) {
                     _GetSpellRPGDataBlockFunc =
                         (_GetSpellRPGDataBlock)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellButton_getSpellRPGDataBlock"), typeof(_GetSpellRPGDataBlock));
                 }
@@ -134,7 +134,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSpellDataBlockFunc == null) {
                     _GetSpellDataBlockFunc =
                         (_GetSpellDataBlock)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellButton_getSpellDataBlock"), typeof(_GetSpellDataBlock));
                 }
@@ -155,7 +155,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSpellDescriptionFunc == null) {
                     _GetSpellDescriptionFunc =
                         (_GetSpellDescription)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellButton_getSpellDescription"), typeof(_GetSpellDescription));
                 }
@@ -176,7 +176,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnTurnPageFunc == null) {
                     _OnTurnPageFunc =
                         (_OnTurnPage)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellButton_onTurnPage"), typeof(_OnTurnPage));
                 }
@@ -198,7 +198,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnSpellbookChangeFunc == null) {
                     _OnSpellbookChangeFunc =
                         (_OnSpellbookChange)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellButton_onSpellbookChange"), typeof(_OnSpellbookChange));
                 }
@@ -218,7 +218,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellButton_staticGetType"), typeof(_StaticGetType));
                 }
@@ -238,7 +238,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellButton_create"), typeof(_Create));
                 }

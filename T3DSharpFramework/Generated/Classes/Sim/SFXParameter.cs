@@ -108,7 +108,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ResetFunc == null) {
                     _ResetFunc =
                         (_Reset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXParameter_reset"), typeof(_Reset));
                 }
@@ -129,7 +129,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetParameterNameFunc == null) {
                     _GetParameterNameFunc =
                         (_GetParameterName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXParameter_getParameterName"), typeof(_GetParameterName));
                 }
@@ -149,7 +149,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnUpdateFunc == null) {
                     _OnUpdateFunc =
                         (_OnUpdate)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbSFXParameter_onUpdate"), typeof(_OnUpdate));
                 }
@@ -169,7 +169,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXParameter_staticGetType"), typeof(_StaticGetType));
                 }
@@ -189,7 +189,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXParameter_create"), typeof(_Create));
                 }

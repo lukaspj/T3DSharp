@@ -88,7 +88,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UpdateStackFunc == null) {
                     _UpdateStackFunc =
                         (_UpdateStack)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiStackControl_updateStack"), typeof(_UpdateStack));
                 }
@@ -110,7 +110,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FreezeFunc == null) {
                     _FreezeFunc =
                         (_Freeze)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiStackControl_freeze"), typeof(_Freeze));
                 }
@@ -131,7 +131,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsFrozenFunc == null) {
                     _IsFrozenFunc =
                         (_IsFrozen)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiStackControl_isFrozen"), typeof(_IsFrozen));
                 }
@@ -151,7 +151,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiStackControl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -171,7 +171,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiStackControl_create"), typeof(_Create));
                 }

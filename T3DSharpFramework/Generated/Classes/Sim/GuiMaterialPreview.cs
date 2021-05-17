@@ -74,7 +74,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetAmbientLightColorFunc == null) {
                     _SetAmbientLightColorFunc =
                         (_SetAmbientLightColor)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMaterialPreview_setAmbientLightColor"), typeof(_SetAmbientLightColor));
                 }
@@ -95,7 +95,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetLightColorFunc == null) {
                     _SetLightColorFunc =
                         (_SetLightColor)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMaterialPreview_setLightColor"), typeof(_SetLightColor));
                 }
@@ -115,7 +115,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ResetFunc == null) {
                     _ResetFunc =
                         (_Reset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMaterialPreview_reset"), typeof(_Reset));
                 }
@@ -136,7 +136,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetOrbitDistanceFunc == null) {
                     _SetOrbitDistanceFunc =
                         (_SetOrbitDistance)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMaterialPreview_setOrbitDistance"), typeof(_SetOrbitDistance));
                 }
@@ -156,7 +156,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteModelFunc == null) {
                     _DeleteModelFunc =
                         (_DeleteModel)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMaterialPreview_deleteModel"), typeof(_DeleteModel));
                 }
@@ -178,7 +178,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetModelFunc == null) {
                     _SetModelFunc =
                         (_SetModel)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMaterialPreview_setModel"), typeof(_SetModel));
                 }
@@ -198,7 +198,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMaterialPreview_staticGetType"), typeof(_StaticGetType));
                 }
@@ -218,7 +218,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMaterialPreview_create"), typeof(_Create));
                 }

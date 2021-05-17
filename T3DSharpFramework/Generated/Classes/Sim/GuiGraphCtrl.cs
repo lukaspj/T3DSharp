@@ -87,7 +87,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_MatchScaleFunc == null) {
                     _MatchScaleFunc =
                         (_MatchScale)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGraphCtrl_matchScale"), typeof(_MatchScale));
                 }
@@ -109,7 +109,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetGraphTypeFunc == null) {
                     _SetGraphTypeFunc =
                         (_SetGraphType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGraphCtrl_setGraphType"), typeof(_SetGraphType));
                 }
@@ -130,7 +130,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveAutoPlotFunc == null) {
                     _RemoveAutoPlotFunc =
                         (_RemoveAutoPlot)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGraphCtrl_removeAutoPlot"), typeof(_RemoveAutoPlot));
                 }
@@ -154,7 +154,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddAutoPlotFunc == null) {
                     _AddAutoPlotFunc =
                         (_AddAutoPlot)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGraphCtrl_addAutoPlot"), typeof(_AddAutoPlot));
                 }
@@ -176,7 +176,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDatumFunc == null) {
                     _GetDatumFunc =
                         (_GetDatum)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGraphCtrl_getDatum"), typeof(_GetDatum));
                 }
@@ -198,7 +198,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddDatumFunc == null) {
                     _AddDatumFunc =
                         (_AddDatum)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGraphCtrl_addDatum"), typeof(_AddDatum));
                 }
@@ -218,7 +218,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGraphCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -238,7 +238,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGraphCtrl_create"), typeof(_Create));
                 }

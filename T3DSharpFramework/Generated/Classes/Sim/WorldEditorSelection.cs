@@ -74,7 +74,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SubtractFunc == null) {
                     _SubtractFunc =
                         (_Subtract)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditorSelection_subtract"), typeof(_Subtract));
                 }
@@ -95,7 +95,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UnionFunc == null) {
                     _UnionFunc =
                         (_Union)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditorSelection_union"), typeof(_Union));
                 }
@@ -117,7 +117,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OffsetFunc == null) {
                     _OffsetFunc =
                         (_Offset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditorSelection_offset"), typeof(_Offset));
                 }
@@ -137,7 +137,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetBoxCentroidFunc == null) {
                     _GetBoxCentroidFunc =
                         (_GetBoxCentroid)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditorSelection_getBoxCentroid"), typeof(_GetBoxCentroid));
                 }
@@ -157,7 +157,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetCentroidFunc == null) {
                     _GetCentroidFunc =
                         (_GetCentroid)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditorSelection_getCentroid"), typeof(_GetCentroid));
                 }
@@ -178,7 +178,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ContainsGlobalBoundsFunc == null) {
                     _ContainsGlobalBoundsFunc =
                         (_ContainsGlobalBounds)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditorSelection_containsGlobalBounds"), typeof(_ContainsGlobalBounds));
                 }
@@ -198,7 +198,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditorSelection_staticGetType"), typeof(_StaticGetType));
                 }
@@ -218,7 +218,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditorSelection_create"), typeof(_Create));
                 }

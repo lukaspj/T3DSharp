@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetCapacityFunc == null) {
                     _GetCapacityFunc =
                         (_GetCapacity)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellBookData_getCapacity"), typeof(_GetCapacity));
                 }
@@ -94,7 +94,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetPageSlotIndexFunc == null) {
                     _GetPageSlotIndexFunc =
                         (_GetPageSlotIndex)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellBookData_getPageSlotIndex"), typeof(_GetPageSlotIndex));
                 }
@@ -114,7 +114,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellBookData_staticGetType"), typeof(_StaticGetType));
                 }
@@ -134,7 +134,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxSpellBookData_create"), typeof(_Create));
                 }

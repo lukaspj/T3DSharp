@@ -75,7 +75,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAspectFunc == null) {
                     _GetAspectFunc =
                         (_GetAspect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_getAspect"), typeof(_GetAspect));
                 }
@@ -95,7 +95,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMinExtentFunc == null) {
                     _GetMinExtentFunc =
                         (_GetMinExtent)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_getMinExtent"), typeof(_GetMinExtent));
                 }
@@ -119,7 +119,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetExtentFunc == null) {
                     _SetExtentFunc =
                         (_SetExtent)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_setExtent"), typeof(_SetExtent));
                 }
@@ -139,7 +139,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetExtentFunc == null) {
                     _GetExtentFunc =
                         (_GetExtent)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_getExtent"), typeof(_GetExtent));
                 }
@@ -161,7 +161,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetPositionFunc == null) {
                     _SetPositionFunc =
                         (_SetPosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_setPosition"), typeof(_SetPosition));
                 }
@@ -183,7 +183,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetPositionGlobalFunc == null) {
                     _SetPositionGlobalFunc =
                         (_SetPositionGlobal)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_setPositionGlobal"), typeof(_SetPositionGlobal));
                 }
@@ -203,7 +203,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetGlobalPositionFunc == null) {
                     _GetGlobalPositionFunc =
                         (_GetGlobalPosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_getGlobalPosition"), typeof(_GetGlobalPosition));
                 }
@@ -223,7 +223,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetGlobalCenterFunc == null) {
                     _GetGlobalCenterFunc =
                         (_GetGlobalCenter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_getGlobalCenter"), typeof(_GetGlobalCenter));
                 }
@@ -245,7 +245,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetCenterFunc == null) {
                     _SetCenterFunc =
                         (_SetCenter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_setCenter"), typeof(_SetCenter));
                 }
@@ -265,7 +265,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetCenterFunc == null) {
                     _GetCenterFunc =
                         (_GetCenter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_getCenter"), typeof(_GetCenter));
                 }
@@ -285,7 +285,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetPositionFunc == null) {
                     _GetPositionFunc =
                         (_GetPosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_getPosition"), typeof(_GetPosition));
                 }
@@ -309,7 +309,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ResizeFunc == null) {
                     _ResizeFunc =
                         (_Resize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_resize"), typeof(_Resize));
                 }
@@ -330,7 +330,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetProfileFunc == null) {
                     _SetProfileFunc =
                         (_SetProfile)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_setProfile"), typeof(_SetProfile));
                 }
@@ -351,7 +351,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsAwakeFunc == null) {
                     _IsAwakeFunc =
                         (_IsAwake)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_isAwake"), typeof(_IsAwake));
                 }
@@ -373,7 +373,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetVisibleFunc == null) {
                     _SetVisibleFunc =
                         (_SetVisible)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_setVisible"), typeof(_SetVisible));
                 }
@@ -394,7 +394,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsVisibleFunc == null) {
                     _IsVisibleFunc =
                         (_IsVisible)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_isVisible"), typeof(_IsVisible));
                 }
@@ -416,7 +416,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetActiveFunc == null) {
                     _SetActiveFunc =
                         (_SetActive)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_setActive"), typeof(_SetActive));
                 }
@@ -437,7 +437,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsActiveFunc == null) {
                     _IsActiveFunc =
                         (_IsActive)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_isActive"), typeof(_IsActive));
                 }
@@ -459,7 +459,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_MakeFirstResponderFunc == null) {
                     _MakeFirstResponderFunc =
                         (_MakeFirstResponder)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_makeFirstResponder"), typeof(_MakeFirstResponder));
                 }
@@ -480,7 +480,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetValueFunc == null) {
                     _GetValueFunc =
                         (_GetValue)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_getValue"), typeof(_GetValue));
                 }
@@ -502,7 +502,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetValueFunc == null) {
                     _SetValueFunc =
                         (_SetValue)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_setValue"), typeof(_SetValue));
                 }
@@ -523,7 +523,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsMouseLockedFunc == null) {
                     _IsMouseLockedFunc =
                         (_IsMouseLocked)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_isMouseLocked"), typeof(_IsMouseLocked));
                 }
@@ -543,7 +543,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetParentFunc == null) {
                     _GetParentFunc =
                         (_GetParent)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_getParent"), typeof(_GetParent));
                 }
@@ -563,7 +563,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetRootFunc == null) {
                     _GetRootFunc =
                         (_GetRoot)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_getRoot"), typeof(_GetRoot));
                 }
@@ -584,7 +584,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddGuiControlFunc == null) {
                     _AddGuiControlFunc =
                         (_AddGuiControl)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_addGuiControl"), typeof(_AddGuiControl));
                 }
@@ -607,7 +607,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PointInControlFunc == null) {
                     _PointInControlFunc =
                         (_PointInControl)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_pointInControl"), typeof(_PointInControl));
                 }
@@ -629,7 +629,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearFirstResponderFunc == null) {
                     _ClearFirstResponderFunc =
                         (_ClearFirstResponder)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_clearFirstResponder"), typeof(_ClearFirstResponder));
                 }
@@ -649,7 +649,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetFirstResponderFunc == null) {
                     _GetFirstResponderFunc =
                         (_GetFirstResponder)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_getFirstResponder"), typeof(_GetFirstResponder));
                 }
@@ -669,7 +669,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetFirstResponderFunc == null) {
                     _SetFirstResponderFunc =
                         (_SetFirstResponder)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_setFirstResponder"), typeof(_SetFirstResponder));
                 }
@@ -690,7 +690,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsFirstResponderFunc == null) {
                     _IsFirstResponderFunc =
                         (_IsFirstResponder)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_isFirstResponder"), typeof(_IsFirstResponder));
                 }
@@ -712,7 +712,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ControlIsChildFunc == null) {
                     _ControlIsChildFunc =
                         (_ControlIsChild)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_controlIsChild"), typeof(_ControlIsChild));
                 }
@@ -737,7 +737,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindHitControlsFunc == null) {
                     _FindHitControlsFunc =
                         (_FindHitControls)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_findHitControls"), typeof(_FindHitControls));
                 }
@@ -759,7 +759,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindHitControlFunc == null) {
                     _FindHitControlFunc =
                         (_FindHitControl)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_findHitControl"), typeof(_FindHitControl));
                 }
@@ -781,7 +781,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnControlDroppedFunc == null) {
                     _OnControlDroppedFunc =
                         (_OnControlDropped)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onControlDropped"), typeof(_OnControlDropped));
                 }
@@ -803,7 +803,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnControlDraggedFunc == null) {
                     _OnControlDraggedFunc =
                         (_OnControlDragged)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onControlDragged"), typeof(_OnControlDragged));
                 }
@@ -825,7 +825,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnControlDragExitFunc == null) {
                     _OnControlDragExitFunc =
                         (_OnControlDragExit)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onControlDragExit"), typeof(_OnControlDragExit));
                 }
@@ -847,7 +847,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnControlDragEnterFunc == null) {
                     _OnControlDragEnterFunc =
                         (_OnControlDragEnter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onControlDragEnter"), typeof(_OnControlDragEnter));
                 }
@@ -867,7 +867,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnDialogPopFunc == null) {
                     _OnDialogPopFunc =
                         (_OnDialogPop)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onDialogPop"), typeof(_OnDialogPop));
                 }
@@ -887,7 +887,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnDialogPushFunc == null) {
                     _OnDialogPushFunc =
                         (_OnDialogPush)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onDialogPush"), typeof(_OnDialogPush));
                 }
@@ -909,7 +909,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnActiveFunc == null) {
                     _OnActiveFunc =
                         (_OnActive)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onActive"), typeof(_OnActive));
                 }
@@ -931,7 +931,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnVisibleFunc == null) {
                     _OnVisibleFunc =
                         (_OnVisible)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onVisible"), typeof(_OnVisible));
                 }
@@ -951,7 +951,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnActionFunc == null) {
                     _OnActionFunc =
                         (_OnAction)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onAction"), typeof(_OnAction));
                 }
@@ -971,7 +971,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnLoseFirstResponderFunc == null) {
                     _OnLoseFirstResponderFunc =
                         (_OnLoseFirstResponder)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onLoseFirstResponder"), typeof(_OnLoseFirstResponder));
                 }
@@ -991,7 +991,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnGainFirstResponderFunc == null) {
                     _OnGainFirstResponderFunc =
                         (_OnGainFirstResponder)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onGainFirstResponder"), typeof(_OnGainFirstResponder));
                 }
@@ -1011,7 +1011,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnSleepFunc == null) {
                     _OnSleepFunc =
                         (_OnSleep)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onSleep"), typeof(_OnSleep));
                 }
@@ -1031,7 +1031,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnWakeFunc == null) {
                     _OnWakeFunc =
                         (_OnWake)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onWake"), typeof(_OnWake));
                 }
@@ -1051,7 +1051,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnRemoveFunc == null) {
                     _OnRemoveFunc =
                         (_OnRemove)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onRemove"), typeof(_OnRemove));
                 }
@@ -1071,7 +1071,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnAddFunc == null) {
                     _OnAddFunc =
                         (_OnAdd)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiControl_onAdd"), typeof(_OnAdd));
                 }
@@ -1091,7 +1091,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -1111,7 +1111,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiControl_create"), typeof(_Create));
                 }

@@ -95,7 +95,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetCurrentSlotFunc == null) {
                     _SetCurrentSlotFunc =
                         (_SetCurrentSlot)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXController_setCurrentSlot"), typeof(_SetCurrentSlot));
                 }
@@ -115,7 +115,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetCurrentSlotFunc == null) {
                     _GetCurrentSlotFunc =
                         (_GetCurrentSlot)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXController_getCurrentSlot"), typeof(_GetCurrentSlot));
                 }
@@ -135,7 +135,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXController_staticGetType"), typeof(_StaticGetType));
                 }
@@ -155,7 +155,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXController_create"), typeof(_Create));
                 }

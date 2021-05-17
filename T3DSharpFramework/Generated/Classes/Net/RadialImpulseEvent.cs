@@ -51,7 +51,7 @@ namespace T3DSharpFramework.Generated.Classes.Net {
                 if (_SendFunc == null) {
                     _SendFunc =
                         (_Send)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRadialImpulseEvent_send"), typeof(_Send));
                 }
@@ -71,7 +71,7 @@ namespace T3DSharpFramework.Generated.Classes.Net {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRadialImpulseEvent_staticGetType"), typeof(_StaticGetType));
                 }
@@ -91,7 +91,7 @@ namespace T3DSharpFramework.Generated.Classes.Net {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRadialImpulseEvent_create"), typeof(_Create));
                 }

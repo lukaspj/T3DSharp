@@ -78,7 +78,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AutoMaterialLayerFunc == null) {
                     _AutoMaterialLayerFunc =
                         (_AutoMaterialLayer)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_autoMaterialLayer"), typeof(_AutoMaterialLayer));
                 }
@@ -99,7 +99,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSlopeLimitMaxAngleFunc == null) {
                     _SetSlopeLimitMaxAngleFunc =
                         (_SetSlopeLimitMaxAngle)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_setSlopeLimitMaxAngle"), typeof(_SetSlopeLimitMaxAngle));
                 }
@@ -119,7 +119,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSlopeLimitMaxAngleFunc == null) {
                     _GetSlopeLimitMaxAngleFunc =
                         (_GetSlopeLimitMaxAngle)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getSlopeLimitMaxAngle"), typeof(_GetSlopeLimitMaxAngle));
                 }
@@ -140,7 +140,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSlopeLimitMinAngleFunc == null) {
                     _SetSlopeLimitMinAngleFunc =
                         (_SetSlopeLimitMinAngle)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_setSlopeLimitMinAngle"), typeof(_SetSlopeLimitMinAngle));
                 }
@@ -160,7 +160,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSlopeLimitMinAngleFunc == null) {
                     _GetSlopeLimitMinAngleFunc =
                         (_GetSlopeLimitMinAngle)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getSlopeLimitMinAngle"), typeof(_GetSlopeLimitMinAngle));
                 }
@@ -186,7 +186,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetTerrainUnderWorldPointFunc == null) {
                     _GetTerrainUnderWorldPointFunc =
                         (_GetTerrainUnderWorldPoint)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getTerrainUnderWorldPoint"), typeof(_GetTerrainUnderWorldPoint));
                 }
@@ -208,7 +208,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ReorderMaterialFunc == null) {
                     _ReorderMaterialFunc =
                         (_ReorderMaterial)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_reorderMaterial"), typeof(_ReorderMaterial));
                 }
@@ -230,7 +230,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMaterialIndexFunc == null) {
                     _GetMaterialIndexFunc =
                         (_GetMaterialIndex)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getMaterialIndex"), typeof(_GetMaterialIndex));
                 }
@@ -252,7 +252,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMaterialNameFunc == null) {
                     _GetMaterialNameFunc =
                         (_GetMaterialName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getMaterialName"), typeof(_GetMaterialName));
                 }
@@ -273,7 +273,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMaterialsFunc == null) {
                     _GetMaterialsFunc =
                         (_GetMaterials)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getMaterials"), typeof(_GetMaterials));
                 }
@@ -293,7 +293,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMaterialCountFunc == null) {
                     _GetMaterialCountFunc =
                         (_GetMaterialCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getMaterialCount"), typeof(_GetMaterialCount));
                 }
@@ -314,7 +314,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveMaterialFunc == null) {
                     _RemoveMaterialFunc =
                         (_RemoveMaterial)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_removeMaterial"), typeof(_RemoveMaterial));
                 }
@@ -336,7 +336,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddMaterialFunc == null) {
                     _AddMaterialFunc =
                         (_AddMaterial)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_addMaterial"), typeof(_AddMaterial));
                 }
@@ -360,7 +360,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UpdateMaterialFunc == null) {
                     _UpdateMaterialFunc =
                         (_UpdateMaterial)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_updateMaterial"), typeof(_UpdateMaterial));
                 }
@@ -382,7 +382,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetTerraformOverlayFunc == null) {
                     _SetTerraformOverlayFunc =
                         (_SetTerraformOverlay)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_setTerraformOverlay"), typeof(_SetTerraformOverlay));
                 }
@@ -403,7 +403,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_MirrorTerrainFunc == null) {
                     _MirrorTerrainFunc =
                         (_MirrorTerrain)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_mirrorTerrain"), typeof(_MirrorTerrain));
                 }
@@ -423,7 +423,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_MarkEmptySquaresFunc == null) {
                     _MarkEmptySquaresFunc =
                         (_MarkEmptySquares)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_markEmptySquares"), typeof(_MarkEmptySquares));
                 }
@@ -443,7 +443,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNumTexturesFunc == null) {
                     _GetNumTexturesFunc =
                         (_GetNumTextures)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getNumTextures"), typeof(_GetNumTextures));
                 }
@@ -463,7 +463,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetActiveTerrainFunc == null) {
                     _GetActiveTerrainFunc =
                         (_GetActiveTerrain)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getActiveTerrain"), typeof(_GetActiveTerrain));
                 }
@@ -485,7 +485,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ProcessActionFunc == null) {
                     _ProcessActionFunc =
                         (_ProcessAction)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_processAction"), typeof(_ProcessAction));
                 }
@@ -505,7 +505,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearSelectionFunc == null) {
                     _ClearSelectionFunc =
                         (_ClearSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_clearSelection"), typeof(_ClearSelection));
                 }
@@ -527,7 +527,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ResetSelWeightsFunc == null) {
                     _ResetSelWeightsFunc =
                         (_ResetSelWeights)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_resetSelWeights"), typeof(_ResetSelWeights));
                 }
@@ -548,7 +548,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetCurrentActionFunc == null) {
                     _GetCurrentActionFunc =
                         (_GetCurrentAction)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getCurrentAction"), typeof(_GetCurrentAction));
                 }
@@ -568,7 +568,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNumActionsFunc == null) {
                     _GetNumActionsFunc =
                         (_GetNumActions)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getNumActions"), typeof(_GetNumActions));
                 }
@@ -590,7 +590,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetActionNameFunc == null) {
                     _GetActionNameFunc =
                         (_GetActionName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getActionName"), typeof(_GetActionName));
                 }
@@ -612,7 +612,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetActionFunc == null) {
                     _SetActionFunc =
                         (_SetAction)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_setAction"), typeof(_SetAction));
                 }
@@ -633,7 +633,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetBrushPosFunc == null) {
                     _SetBrushPosFunc =
                         (_SetBrushPos)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_setBrushPos"), typeof(_SetBrushPos));
                 }
@@ -654,7 +654,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetBrushPosFunc == null) {
                     _GetBrushPosFunc =
                         (_GetBrushPos)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getBrushPos"), typeof(_GetBrushPos));
                 }
@@ -674,7 +674,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetBrushSoftnessFunc == null) {
                     _GetBrushSoftnessFunc =
                         (_GetBrushSoftness)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getBrushSoftness"), typeof(_GetBrushSoftness));
                 }
@@ -695,7 +695,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetBrushSoftnessFunc == null) {
                     _SetBrushSoftnessFunc =
                         (_SetBrushSoftness)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_setBrushSoftness"), typeof(_SetBrushSoftness));
                 }
@@ -715,7 +715,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetBrushPressureFunc == null) {
                     _GetBrushPressureFunc =
                         (_GetBrushPressure)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getBrushPressure"), typeof(_GetBrushPressure));
                 }
@@ -736,7 +736,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetBrushPressureFunc == null) {
                     _SetBrushPressureFunc =
                         (_SetBrushPressure)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_setBrushPressure"), typeof(_SetBrushPressure));
                 }
@@ -757,7 +757,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetBrushSizeFunc == null) {
                     _GetBrushSizeFunc =
                         (_GetBrushSize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getBrushSize"), typeof(_GetBrushSize));
                 }
@@ -779,7 +779,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetBrushSizeFunc == null) {
                     _SetBrushSizeFunc =
                         (_SetBrushSize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_setBrushSize"), typeof(_SetBrushSize));
                 }
@@ -800,7 +800,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetBrushTypeFunc == null) {
                     _GetBrushTypeFunc =
                         (_GetBrushType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getBrushType"), typeof(_GetBrushType));
                 }
@@ -822,7 +822,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetBrushTypeFunc == null) {
                     _SetBrushTypeFunc =
                         (_SetBrushType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_setBrushType"), typeof(_SetBrushType));
                 }
@@ -843,7 +843,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetTerrainBlocksMaterialListFunc == null) {
                     _GetTerrainBlocksMaterialListFunc =
                         (_GetTerrainBlocksMaterialList)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getTerrainBlocksMaterialList"), typeof(_GetTerrainBlocksMaterialList));
                 }
@@ -864,7 +864,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetTerrainBlockFunc == null) {
                     _GetTerrainBlockFunc =
                         (_GetTerrainBlock)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getTerrainBlock"), typeof(_GetTerrainBlock));
                 }
@@ -884,7 +884,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetTerrainBlockCountFunc == null) {
                     _GetTerrainBlockCountFunc =
                         (_GetTerrainBlockCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_getTerrainBlockCount"), typeof(_GetTerrainBlockCount));
                 }
@@ -906,7 +906,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AttachTerrainFunc == null) {
                     _AttachTerrainFunc =
                         (_AttachTerrain)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_attachTerrain"), typeof(_AttachTerrain));
                 }
@@ -926,7 +926,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_staticGetType"), typeof(_StaticGetType));
                 }
@@ -946,7 +946,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTerrainEditor_create"), typeof(_Create));
                 }

@@ -86,7 +86,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AttachFunc == null) {
                     _AttachFunc =
                         (_Attach)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiWindowCtrl_attach"), typeof(_Attach));
                 }
@@ -107,7 +107,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AttachToFunc == null) {
                     _AttachToFunc =
                         (_AttachTo)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiWindowCtrl_attachTo"), typeof(_AttachTo));
                 }
@@ -127,7 +127,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ToggleCollapseGroupFunc == null) {
                     _ToggleCollapseGroupFunc =
                         (_ToggleCollapseGroup)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiWindowCtrl_toggleCollapseGroup"), typeof(_ToggleCollapseGroup));
                 }
@@ -149,7 +149,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetCollapseGroupFunc == null) {
                     _SetCollapseGroupFunc =
                         (_SetCollapseGroup)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiWindowCtrl_setCollapseGroup"), typeof(_SetCollapseGroup));
                 }
@@ -169,7 +169,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SelectWindowFunc == null) {
                     _SelectWindowFunc =
                         (_SelectWindow)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiWindowCtrl_selectWindow"), typeof(_SelectWindow));
                 }
@@ -189,7 +189,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnRestoreFunc == null) {
                     _OnRestoreFunc =
                         (_OnRestore)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiWindowCtrl_onRestore"), typeof(_OnRestore));
                 }
@@ -209,7 +209,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnCollapseFunc == null) {
                     _OnCollapseFunc =
                         (_OnCollapse)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiWindowCtrl_onCollapse"), typeof(_OnCollapse));
                 }
@@ -229,7 +229,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMaximizeFunc == null) {
                     _OnMaximizeFunc =
                         (_OnMaximize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiWindowCtrl_onMaximize"), typeof(_OnMaximize));
                 }
@@ -249,7 +249,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMinimizeFunc == null) {
                     _OnMinimizeFunc =
                         (_OnMinimize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiWindowCtrl_onMinimize"), typeof(_OnMinimize));
                 }
@@ -269,7 +269,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnCloseFunc == null) {
                     _OnCloseFunc =
                         (_OnClose)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiWindowCtrl_onClose"), typeof(_OnClose));
                 }
@@ -289,7 +289,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiWindowCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -309,7 +309,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiWindowCtrl_create"), typeof(_Create));
                 }

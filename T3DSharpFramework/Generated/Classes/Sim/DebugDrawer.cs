@@ -81,7 +81,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ToggleDrawingFunc == null) {
                     _ToggleDrawingFunc =
                         (_ToggleDrawing)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDebugDrawer_toggleDrawing"), typeof(_ToggleDrawing));
                 }
@@ -101,7 +101,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ToggleFreezeFunc == null) {
                     _ToggleFreezeFunc =
                         (_ToggleFreeze)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDebugDrawer_toggleFreeze"), typeof(_ToggleFreeze));
                 }
@@ -123,7 +123,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetLastZTestFunc == null) {
                     _SetLastZTestFunc =
                         (_SetLastZTest)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDebugDrawer_setLastZTest"), typeof(_SetLastZTest));
                 }
@@ -144,7 +144,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetLastTTLFunc == null) {
                     _SetLastTTLFunc =
                         (_SetLastTTL)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDebugDrawer_setLastTTL"), typeof(_SetLastTTL));
                 }
@@ -167,7 +167,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DrawBoxFunc == null) {
                     _DrawBoxFunc =
                         (_DrawBox)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDebugDrawer_drawBox"), typeof(_DrawBox));
                 }
@@ -190,7 +190,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DrawLineFunc == null) {
                     _DrawLineFunc =
                         (_DrawLine)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDebugDrawer_drawLine"), typeof(_DrawLine));
                 }
@@ -210,7 +210,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDebugDrawer_staticGetType"), typeof(_StaticGetType));
                 }
@@ -230,7 +230,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDebugDrawer_create"), typeof(_Create));
                 }

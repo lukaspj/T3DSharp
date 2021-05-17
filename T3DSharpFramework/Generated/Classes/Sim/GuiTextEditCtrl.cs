@@ -91,7 +91,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsValidTextFunc == null) {
                     _IsValidTextFunc =
                         (_IsValidText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_isValidText"), typeof(_IsValidText));
                 }
@@ -111,7 +111,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ValidTextFunc == null) {
                     _ValidTextFunc =
                         (_ValidText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_validText"), typeof(_ValidText));
                 }
@@ -133,7 +133,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_InvalidTextFunc == null) {
                     _InvalidTextFunc =
                         (_InvalidText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_invalidText"), typeof(_InvalidText));
                 }
@@ -153,7 +153,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ForceValidateTextFunc == null) {
                     _ForceValidateTextFunc =
                         (_ForceValidateText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_forceValidateText"), typeof(_ForceValidateText));
                 }
@@ -173,7 +173,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearSelectedTextFunc == null) {
                     _ClearSelectedTextFunc =
                         (_ClearSelectedText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_clearSelectedText"), typeof(_ClearSelectedText));
                 }
@@ -193,7 +193,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SelectAllTextFunc == null) {
                     _SelectAllTextFunc =
                         (_SelectAllText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_selectAllText"), typeof(_SelectAllText));
                 }
@@ -214,7 +214,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsAllTextSelectedFunc == null) {
                     _IsAllTextSelectedFunc =
                         (_IsAllTextSelected)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_isAllTextSelected"), typeof(_IsAllTextSelected));
                 }
@@ -235,7 +235,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetCursorPosFunc == null) {
                     _SetCursorPosFunc =
                         (_SetCursorPos)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_setCursorPos"), typeof(_SetCursorPos));
                 }
@@ -255,7 +255,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetCursorPosFunc == null) {
                     _GetCursorPosFunc =
                         (_GetCursorPos)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_getCursorPos"), typeof(_GetCursorPos));
                 }
@@ -277,7 +277,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetTextFunc == null) {
                     _SetTextFunc =
                         (_SetText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_setText"), typeof(_SetText));
                 }
@@ -298,7 +298,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetTextFunc == null) {
                     _GetTextFunc =
                         (_GetText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_getText"), typeof(_GetText));
                 }
@@ -318,7 +318,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnValidateFunc == null) {
                     _OnValidateFunc =
                         (_OnValidate)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiTextEditCtrl_onValidate"), typeof(_OnValidate));
                 }
@@ -338,7 +338,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnReturnFunc == null) {
                     _OnReturnFunc =
                         (_OnReturn)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiTextEditCtrl_onReturn"), typeof(_OnReturn));
                 }
@@ -360,7 +360,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnTabCompleteFunc == null) {
                     _OnTabCompleteFunc =
                         (_OnTabComplete)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiTextEditCtrl_onTabComplete"), typeof(_OnTabComplete));
                 }
@@ -380,7 +380,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -400,7 +400,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextEditCtrl_create"), typeof(_Create));
                 }

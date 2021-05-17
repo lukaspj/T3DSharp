@@ -95,7 +95,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UpdateSizesFunc == null) {
                     _UpdateSizesFunc =
                         (_UpdateSizes)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_updateSizes"), typeof(_UpdateSizes));
                 }
@@ -117,7 +117,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetRowOffsetFunc == null) {
                     _SetRowOffsetFunc =
                         (_SetRowOffset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_setRowOffset"), typeof(_SetRowOffset));
                 }
@@ -139,7 +139,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetColumnOffsetFunc == null) {
                     _SetColumnOffsetFunc =
                         (_SetColumnOffset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_setColumnOffset"), typeof(_SetColumnOffset));
                 }
@@ -160,7 +160,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetRowOffsetFunc == null) {
                     _GetRowOffsetFunc =
                         (_GetRowOffset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_getRowOffset"), typeof(_GetRowOffset));
                 }
@@ -181,7 +181,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetColumnOffsetFunc == null) {
                     _GetColumnOffsetFunc =
                         (_GetColumnOffset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_getColumnOffset"), typeof(_GetColumnOffset));
                 }
@@ -201,7 +201,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetRowCountFunc == null) {
                     _GetRowCountFunc =
                         (_GetRowCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_getRowCount"), typeof(_GetRowCount));
                 }
@@ -221,7 +221,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetColumnCountFunc == null) {
                     _GetColumnCountFunc =
                         (_GetColumnCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_getColumnCount"), typeof(_GetColumnCount));
                 }
@@ -241,7 +241,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveRowFunc == null) {
                     _RemoveRowFunc =
                         (_RemoveRow)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_removeRow"), typeof(_RemoveRow));
                 }
@@ -261,7 +261,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveColumnFunc == null) {
                     _RemoveColumnFunc =
                         (_RemoveColumn)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_removeColumn"), typeof(_RemoveColumn));
                 }
@@ -281,7 +281,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddRowFunc == null) {
                     _AddRowFunc =
                         (_AddRow)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_addRow"), typeof(_AddRow));
                 }
@@ -301,7 +301,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddColumnFunc == null) {
                     _AddColumnFunc =
                         (_AddColumn)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_addColumn"), typeof(_AddColumn));
                 }
@@ -322,7 +322,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetFramePaddingFunc == null) {
                     _GetFramePaddingFunc =
                         (_GetFramePadding)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_getFramePadding"), typeof(_GetFramePadding));
                 }
@@ -344,7 +344,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FramePaddingFunc == null) {
                     _FramePaddingFunc =
                         (_FramePadding)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_framePadding"), typeof(_FramePadding));
                 }
@@ -367,7 +367,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FrameMinExtentFunc == null) {
                     _FrameMinExtentFunc =
                         (_FrameMinExtent)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_frameMinExtent"), typeof(_FrameMinExtent));
                 }
@@ -390,7 +390,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FrameMovableFunc == null) {
                     _FrameMovableFunc =
                         (_FrameMovable)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_frameMovable"), typeof(_FrameMovable));
                 }
@@ -413,7 +413,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FrameBorderFunc == null) {
                     _FrameBorderFunc =
                         (_FrameBorder)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_frameBorder"), typeof(_FrameBorder));
                 }
@@ -433,7 +433,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -453,7 +453,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFrameSetCtrl_create"), typeof(_Create));
                 }

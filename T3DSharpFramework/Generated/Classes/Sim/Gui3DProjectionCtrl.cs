@@ -70,7 +70,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAttachedToFunc == null) {
                     _GetAttachedToFunc =
                         (_GetAttachedTo)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGui3DProjectionCtrl_getAttachedTo"), typeof(_GetAttachedTo));
                 }
@@ -91,7 +91,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetAttachedToFunc == null) {
                     _SetAttachedToFunc =
                         (_SetAttachedTo)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGui3DProjectionCtrl_setAttachedTo"), typeof(_SetAttachedTo));
                 }
@@ -111,7 +111,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGui3DProjectionCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -131,7 +131,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGui3DProjectionCtrl_create"), typeof(_Create));
                 }

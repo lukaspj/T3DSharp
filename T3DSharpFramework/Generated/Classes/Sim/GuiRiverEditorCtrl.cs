@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RegenerateFunc == null) {
                     _RegenerateFunc =
                         (_Regenerate)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_regenerate"), typeof(_Regenerate));
                 }
@@ -93,7 +93,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedRiverFunc == null) {
                     _GetSelectedRiverFunc =
                         (_GetSelectedRiver)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_getSelectedRiver"), typeof(_GetSelectedRiver));
                 }
@@ -115,7 +115,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectedRiverFunc == null) {
                     _SetSelectedRiverFunc =
                         (_SetSelectedRiver)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_setSelectedRiver"), typeof(_SetSelectedRiver));
                 }
@@ -136,7 +136,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetNodeNormalFunc == null) {
                     _SetNodeNormalFunc =
                         (_SetNodeNormal)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_setNodeNormal"), typeof(_SetNodeNormal));
                 }
@@ -156,7 +156,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNodeNormalFunc == null) {
                     _GetNodeNormalFunc =
                         (_GetNodeNormal)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_getNodeNormal"), typeof(_GetNodeNormal));
                 }
@@ -177,7 +177,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetNodePositionFunc == null) {
                     _SetNodePositionFunc =
                         (_SetNodePosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_setNodePosition"), typeof(_SetNodePosition));
                 }
@@ -197,7 +197,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNodePositionFunc == null) {
                     _GetNodePositionFunc =
                         (_GetNodePosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_getNodePosition"), typeof(_GetNodePosition));
                 }
@@ -218,7 +218,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetNodeDepthFunc == null) {
                     _SetNodeDepthFunc =
                         (_SetNodeDepth)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_setNodeDepth"), typeof(_SetNodeDepth));
                 }
@@ -238,7 +238,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNodeDepthFunc == null) {
                     _GetNodeDepthFunc =
                         (_GetNodeDepth)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_getNodeDepth"), typeof(_GetNodeDepth));
                 }
@@ -259,7 +259,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetNodeWidthFunc == null) {
                     _SetNodeWidthFunc =
                         (_SetNodeWidth)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_setNodeWidth"), typeof(_SetNodeWidth));
                 }
@@ -279,7 +279,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNodeWidthFunc == null) {
                     _GetNodeWidthFunc =
                         (_GetNodeWidth)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_getNodeWidth"), typeof(_GetNodeWidth));
                 }
@@ -301,7 +301,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetModeFunc == null) {
                     _SetModeFunc =
                         (_SetMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_setMode"), typeof(_SetMode));
                 }
@@ -322,7 +322,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetModeFunc == null) {
                     _GetModeFunc =
                         (_GetMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_getMode"), typeof(_GetMode));
                 }
@@ -342,7 +342,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteNodeFunc == null) {
                     _DeleteNodeFunc =
                         (_DeleteNode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_deleteNode"), typeof(_DeleteNode));
                 }
@@ -362,7 +362,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -382,7 +382,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRiverEditorCtrl_create"), typeof(_Create));
                 }

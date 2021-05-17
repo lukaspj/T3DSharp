@@ -70,7 +70,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UnloadDependenciesFunc == null) {
                     _UnloadDependenciesFunc =
                         (_UnloadDependencies)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLevelAsset_unloadDependencies"), typeof(_UnloadDependencies));
                 }
@@ -90,7 +90,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_LoadDependenciesFunc == null) {
                     _LoadDependenciesFunc =
                         (_LoadDependencies)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLevelAsset_loadDependencies"), typeof(_LoadDependencies));
                 }
@@ -111,7 +111,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDecalsPathFunc == null) {
                     _GetDecalsPathFunc =
                         (_GetDecalsPath)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLevelAsset_getDecalsPath"), typeof(_GetDecalsPath));
                 }
@@ -132,7 +132,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetPostFXPresetPathFunc == null) {
                     _GetPostFXPresetPathFunc =
                         (_GetPostFXPresetPath)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLevelAsset_getPostFXPresetPath"), typeof(_GetPostFXPresetPath));
                 }
@@ -153,7 +153,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLevelPathFunc == null) {
                     _GetLevelPathFunc =
                         (_GetLevelPath)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLevelAsset_getLevelPath"), typeof(_GetLevelPath));
                 }
@@ -173,7 +173,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLevelAsset_staticGetType"), typeof(_StaticGetType));
                 }
@@ -193,7 +193,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLevelAsset_create"), typeof(_Create));
                 }

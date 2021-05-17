@@ -76,7 +76,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetStereoGuiFunc == null) {
                     _SetStereoGuiFunc =
                         (_SetStereoGui)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTSCtrl_setStereoGui"), typeof(_SetStereoGui));
                 }
@@ -97,7 +97,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CalculateViewDistanceFunc == null) {
                     _CalculateViewDistanceFunc =
                         (_CalculateViewDistance)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTSCtrl_calculateViewDistance"), typeof(_CalculateViewDistance));
                 }
@@ -117,7 +117,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetWorldToScreenScaleFunc == null) {
                     _GetWorldToScreenScaleFunc =
                         (_GetWorldToScreenScale)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTSCtrl_getWorldToScreenScale"), typeof(_GetWorldToScreenScale));
                 }
@@ -138,7 +138,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ProjectFunc == null) {
                     _ProjectFunc =
                         (_Project)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTSCtrl_project"), typeof(_Project));
                 }
@@ -159,7 +159,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UnprojectFunc == null) {
                     _UnprojectFunc =
                         (_Unproject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTSCtrl_unproject"), typeof(_Unproject));
                 }
@@ -179,7 +179,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTSCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -199,7 +199,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTSCtrl_create"), typeof(_Create));
                 }

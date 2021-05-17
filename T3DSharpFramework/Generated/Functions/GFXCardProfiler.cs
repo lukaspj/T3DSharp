@@ -30,7 +30,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetBestDepthFormatFunc == null) {
                     _GetBestDepthFormatFunc =
                         (_GetBestDepthFormat)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXCardProfilerAPI_getBestDepthFormat"), typeof(_GetBestDepthFormat));
                 }
@@ -53,7 +53,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_QueryProfileFunc == null) {
                     _QueryProfileFunc =
                         (_QueryProfile)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXCardProfilerAPI_queryProfile"), typeof(_QueryProfile));
                 }
@@ -76,7 +76,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_SetCapabilityFunc == null) {
                     _SetCapabilityFunc =
                         (_SetCapability)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXCardProfilerAPI_setCapability"), typeof(_SetCapability));
                 }
@@ -96,7 +96,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetVideoMemoryMBFunc == null) {
                     _GetVideoMemoryMBFunc =
                         (_GetVideoMemoryMB)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXCardProfilerAPI_getVideoMemoryMB"), typeof(_GetVideoMemoryMB));
                 }
@@ -117,7 +117,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetRendererFunc == null) {
                     _GetRendererFunc =
                         (_GetRenderer)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXCardProfilerAPI_getRenderer"), typeof(_GetRenderer));
                 }
@@ -138,7 +138,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetVendorFunc == null) {
                     _GetVendorFunc =
                         (_GetVendor)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXCardProfilerAPI_getVendor"), typeof(_GetVendor));
                 }
@@ -159,7 +159,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetCardFunc == null) {
                     _GetCardFunc =
                         (_GetCard)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXCardProfilerAPI_getCard"), typeof(_GetCard));
                 }
@@ -180,7 +180,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetVersionFunc == null) {
                     _GetVersionFunc =
                         (_GetVersion)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXCardProfilerAPI_getVersion"), typeof(_GetVersion));
                 }

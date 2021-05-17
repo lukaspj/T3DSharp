@@ -74,7 +74,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearOptionsFunc == null) {
                     _ClearOptionsFunc =
                         (_ClearOptions)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGameListOptionsCtrl_clearOptions"), typeof(_ClearOptions));
                 }
@@ -97,7 +97,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetOptionsFunc == null) {
                     _SetOptionsFunc =
                         (_SetOptions)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGameListOptionsCtrl_setOptions"), typeof(_SetOptions));
                 }
@@ -121,7 +121,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SelectOptionFunc == null) {
                     _SelectOptionFunc =
                         (_SelectOption)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGameListOptionsCtrl_selectOption"), typeof(_SelectOption));
                 }
@@ -143,7 +143,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetCurrentOptionFunc == null) {
                     _GetCurrentOptionFunc =
                         (_GetCurrentOption)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGameListOptionsCtrl_getCurrentOption"), typeof(_GetCurrentOption));
                 }
@@ -175,7 +175,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddRowFunc == null) {
                     _AddRowFunc =
                         (_AddRow)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGameListOptionsCtrl_addRow"), typeof(_AddRow));
                 }
@@ -195,7 +195,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGameListOptionsCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -215,7 +215,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiGameListOptionsCtrl_create"), typeof(_Create));
                 }

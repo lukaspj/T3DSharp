@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMouse3DPosFunc == null) {
                     _GetMouse3DPosFunc =
                         (_GetMouse3DPos)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxTSCtrl_getMouse3DPos"), typeof(_GetMouse3DPos));
                 }
@@ -93,7 +93,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMouse3DVecFunc == null) {
                     _GetMouse3DVecFunc =
                         (_GetMouse3DVec)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxTSCtrl_getMouse3DVec"), typeof(_GetMouse3DVec));
                 }
@@ -113,7 +113,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetTargetingModeFunc == null) {
                     _GetTargetingModeFunc =
                         (_GetTargetingMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxTSCtrl_getTargetingMode"), typeof(_GetTargetingMode));
                 }
@@ -133,7 +133,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PopTargetingModeFunc == null) {
                     _PopTargetingModeFunc =
                         (_PopTargetingMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxTSCtrl_popTargetingMode"), typeof(_PopTargetingMode));
                 }
@@ -155,7 +155,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PushTargetingModeFunc == null) {
                     _PushTargetingModeFunc =
                         (_PushTargetingMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxTSCtrl_pushTargetingMode"), typeof(_PushTargetingMode));
                 }
@@ -176,7 +176,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSpellBookFunc == null) {
                     _SetSpellBookFunc =
                         (_SetSpellBook)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxTSCtrl_setSpellBook"), typeof(_SetSpellBook));
                 }
@@ -196,7 +196,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxTSCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -216,7 +216,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxTSCtrl_create"), typeof(_Create));
                 }

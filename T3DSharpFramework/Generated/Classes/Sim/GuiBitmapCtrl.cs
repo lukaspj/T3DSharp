@@ -88,7 +88,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetNamedTextureFunc == null) {
                     _SetNamedTextureFunc =
                         (_SetNamedTexture)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiBitmapCtrl_setNamedTexture"), typeof(_SetNamedTexture));
                 }
@@ -112,7 +112,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetBitmapFunc == null) {
                     _SetBitmapFunc =
                         (_SetBitmap)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiBitmapCtrl_setBitmap"), typeof(_SetBitmap));
                 }
@@ -134,7 +134,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetValueFunc == null) {
                     _SetValueFunc =
                         (_SetValue)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiBitmapCtrl_setValue"), typeof(_SetValue));
                 }
@@ -154,7 +154,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiBitmapCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -174,7 +174,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiBitmapCtrl_create"), typeof(_Create));
                 }

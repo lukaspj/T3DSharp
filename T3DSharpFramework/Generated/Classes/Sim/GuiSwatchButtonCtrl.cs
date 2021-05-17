@@ -88,7 +88,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetColorFunc == null) {
                     _SetColorFunc =
                         (_SetColor)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiSwatchButtonCtrl_setColor"), typeof(_SetColor));
                 }
@@ -108,7 +108,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiSwatchButtonCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -128,7 +128,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiSwatchButtonCtrl_create"), typeof(_Create));
                 }

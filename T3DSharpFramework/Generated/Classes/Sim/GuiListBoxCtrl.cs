@@ -87,7 +87,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveFilteredItemFunc == null) {
                     _RemoveFilteredItemFunc =
                         (_RemoveFilteredItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_removeFilteredItem"), typeof(_RemoveFilteredItem));
                 }
@@ -109,7 +109,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddFilteredItemFunc == null) {
                     _AddFilteredItemFunc =
                         (_AddFilteredItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_addFilteredItem"), typeof(_AddFilteredItem));
                 }
@@ -129,7 +129,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DoMirrorFunc == null) {
                     _DoMirrorFunc =
                         (_DoMirror)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_doMirror"), typeof(_DoMirror));
                 }
@@ -149,7 +149,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLastClickItemFunc == null) {
                     _GetLastClickItemFunc =
                         (_GetLastClickItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_getLastClickItem"), typeof(_GetLastClickItem));
                 }
@@ -172,7 +172,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetItemTooltipFunc == null) {
                     _SetItemTooltipFunc =
                         (_SetItemTooltip)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_setItemTooltip"), typeof(_SetItemTooltip));
                 }
@@ -195,7 +195,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetItemTextFunc == null) {
                     _SetItemTextFunc =
                         (_SetItemText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_setItemText"), typeof(_SetItemText));
                 }
@@ -217,7 +217,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetItemObjectFunc == null) {
                     _GetItemObjectFunc =
                         (_GetItemObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_getItemObject"), typeof(_GetItemObject));
                 }
@@ -239,7 +239,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetItemTextFunc == null) {
                     _GetItemTextFunc =
                         (_GetItemText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_getItemText"), typeof(_GetItemText));
                 }
@@ -260,7 +260,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteItemFunc == null) {
                     _DeleteItemFunc =
                         (_DeleteItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_deleteItem"), typeof(_DeleteItem));
                 }
@@ -283,7 +283,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_InsertItemFunc == null) {
                     _InsertItemFunc =
                         (_InsertItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_insertItem"), typeof(_InsertItem));
                 }
@@ -304,7 +304,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearItemColorFunc == null) {
                     _ClearItemColorFunc =
                         (_ClearItemColor)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_clearItemColor"), typeof(_ClearItemColor));
                 }
@@ -326,7 +326,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetItemColorFunc == null) {
                     _SetItemColorFunc =
                         (_SetItemColor)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_setItemColor"), typeof(_SetItemColor));
                 }
@@ -350,7 +350,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddItemFunc == null) {
                     _AddItemFunc =
                         (_AddItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_addItem"), typeof(_AddItem));
                 }
@@ -372,7 +372,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetCurSelRangeFunc == null) {
                     _SetCurSelRangeFunc =
                         (_SetCurSelRange)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_setCurSelRange"), typeof(_SetCurSelRange));
                 }
@@ -393,7 +393,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetCurSelFunc == null) {
                     _SetCurSelFunc =
                         (_SetCurSel)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_setCurSel"), typeof(_SetCurSel));
                 }
@@ -417,7 +417,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindItemTextFunc == null) {
                     _FindItemTextFunc =
                         (_FindItemText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_findItemText"), typeof(_FindItemText));
                 }
@@ -438,7 +438,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedItemsFunc == null) {
                     _GetSelectedItemsFunc =
                         (_GetSelectedItems)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_getSelectedItems"), typeof(_GetSelectedItems));
                 }
@@ -458,7 +458,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedItemFunc == null) {
                     _GetSelectedItemFunc =
                         (_GetSelectedItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_getSelectedItem"), typeof(_GetSelectedItem));
                 }
@@ -478,7 +478,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelCountFunc == null) {
                     _GetSelCountFunc =
                         (_GetSelCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_getSelCount"), typeof(_GetSelCount));
                 }
@@ -498,7 +498,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetItemCountFunc == null) {
                     _GetItemCountFunc =
                         (_GetItemCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_getItemCount"), typeof(_GetItemCount));
                 }
@@ -521,7 +521,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectedFunc == null) {
                     _SetSelectedFunc =
                         (_SetSelected)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_setSelected"), typeof(_SetSelected));
                 }
@@ -541,7 +541,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearSelectionFunc == null) {
                     _ClearSelectionFunc =
                         (_ClearSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_clearSelection"), typeof(_ClearSelection));
                 }
@@ -561,7 +561,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearItemsFunc == null) {
                     _ClearItemsFunc =
                         (_ClearItems)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_clearItems"), typeof(_ClearItems));
                 }
@@ -583,7 +583,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetMultipleSelectionFunc == null) {
                     _SetMultipleSelectionFunc =
                         (_SetMultipleSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_setMultipleSelection"), typeof(_SetMultipleSelection));
                 }
@@ -606,7 +606,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsObjectMirroredFunc == null) {
                     _IsObjectMirroredFunc =
                         (_IsObjectMirrored)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiListBoxCtrl_isObjectMirrored"), typeof(_IsObjectMirrored));
                 }
@@ -626,7 +626,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnDeleteKeyFunc == null) {
                     _OnDeleteKeyFunc =
                         (_OnDeleteKey)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiListBoxCtrl_onDeleteKey"), typeof(_OnDeleteKey));
                 }
@@ -648,7 +648,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseUpFunc == null) {
                     _OnMouseUpFunc =
                         (_OnMouseUp)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiListBoxCtrl_onMouseUp"), typeof(_OnMouseUp));
                 }
@@ -668,7 +668,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnDoubleClickFunc == null) {
                     _OnDoubleClickFunc =
                         (_OnDoubleClick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiListBoxCtrl_onDoubleClick"), typeof(_OnDoubleClick));
                 }
@@ -691,7 +691,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnSelectFunc == null) {
                     _OnSelectFunc =
                         (_OnSelect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiListBoxCtrl_onSelect"), typeof(_OnSelect));
                 }
@@ -714,7 +714,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnUnSelectFunc == null) {
                     _OnUnSelectFunc =
                         (_OnUnSelect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiListBoxCtrl_onUnSelect"), typeof(_OnUnSelect));
                 }
@@ -734,7 +734,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnClearSelectionFunc == null) {
                     _OnClearSelectionFunc =
                         (_OnClearSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiListBoxCtrl_onClearSelection"), typeof(_OnClearSelection));
                 }
@@ -754,7 +754,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseDraggedFunc == null) {
                     _OnMouseDraggedFunc =
                         (_OnMouseDragged)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiListBoxCtrl_onMouseDragged"), typeof(_OnMouseDragged));
                 }
@@ -774,7 +774,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -794,7 +794,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiListBoxCtrl_create"), typeof(_Create));
                 }

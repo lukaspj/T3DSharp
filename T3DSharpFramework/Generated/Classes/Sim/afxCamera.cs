@@ -74,7 +74,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetModeFunc == null) {
                     _GetModeFunc =
                         (_GetMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_getMode"), typeof(_GetMode));
                 }
@@ -94,7 +94,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetThirdPersonSnapFunc == null) {
                     _SetThirdPersonSnapFunc =
                         (_SetThirdPersonSnap)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_setThirdPersonSnap"), typeof(_SetThirdPersonSnap));
                 }
@@ -114,7 +114,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetThirdPersonModeFunc == null) {
                     _SetThirdPersonModeFunc =
                         (_SetThirdPersonMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_setThirdPersonMode"), typeof(_SetThirdPersonMode));
                 }
@@ -134,7 +134,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetThirdPersonCOIOffsetFunc == null) {
                     _GetThirdPersonCOIOffsetFunc =
                         (_GetThirdPersonCOIOffset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_getThirdPersonCOIOffset"), typeof(_GetThirdPersonCOIOffset));
                 }
@@ -154,7 +154,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetThirdPersonOffsetFunc == null) {
                     _GetThirdPersonOffsetFunc =
                         (_GetThirdPersonOffset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_getThirdPersonOffset"), typeof(_GetThirdPersonOffset));
                 }
@@ -176,7 +176,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetThirdPersonOffsetFunc == null) {
                     _SetThirdPersonOffsetFunc =
                         (_SetThirdPersonOffset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_setThirdPersonOffset"), typeof(_SetThirdPersonOffset));
                 }
@@ -196,7 +196,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetThirdPersonAngleFunc == null) {
                     _GetThirdPersonAngleFunc =
                         (_GetThirdPersonAngle)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_getThirdPersonAngle"), typeof(_GetThirdPersonAngle));
                 }
@@ -218,7 +218,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetThirdPersonAngleFunc == null) {
                     _SetThirdPersonAngleFunc =
                         (_SetThirdPersonAngle)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_setThirdPersonAngle"), typeof(_SetThirdPersonAngle));
                 }
@@ -238,7 +238,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetThirdPersonDistanceFunc == null) {
                     _GetThirdPersonDistanceFunc =
                         (_GetThirdPersonDistance)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_getThirdPersonDistance"), typeof(_GetThirdPersonDistance));
                 }
@@ -260,7 +260,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetThirdPersonDistanceFunc == null) {
                     _SetThirdPersonDistanceFunc =
                         (_SetThirdPersonDistance)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_setThirdPersonDistance"), typeof(_SetThirdPersonDistance));
                 }
@@ -282,7 +282,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetCameraSubjectFunc == null) {
                     _SetCameraSubjectFunc =
                         (_SetCameraSubject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_setCameraSubject"), typeof(_SetCameraSubject));
                 }
@@ -302,7 +302,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetPositionFunc == null) {
                     _GetPositionFunc =
                         (_GetPosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_getPosition"), typeof(_GetPosition));
                 }
@@ -322,7 +322,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetFlyModeFunc == null) {
                     _SetFlyModeFunc =
                         (_SetFlyMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_setFlyMode"), typeof(_SetFlyMode));
                 }
@@ -338,7 +338,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetOrbitModeFunc == null) {
                     _SetOrbitModeFunc =
                         (_SetOrbitMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_setOrbitMode"), typeof(_SetOrbitMode));
                 }
@@ -358,7 +358,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_staticGetType"), typeof(_StaticGetType));
                 }
@@ -378,7 +378,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxCamera_create"), typeof(_Create));
                 }

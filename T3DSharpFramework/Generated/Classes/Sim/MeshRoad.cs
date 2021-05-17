@@ -77,7 +77,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PostApplyFunc == null) {
                     _PostApplyFunc =
                         (_PostApply)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMeshRoad_postApply"), typeof(_PostApply));
                 }
@@ -97,7 +97,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RegenerateFunc == null) {
                     _RegenerateFunc =
                         (_Regenerate)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMeshRoad_regenerate"), typeof(_Regenerate));
                 }
@@ -119,7 +119,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetNodeDepthFunc == null) {
                     _SetNodeDepthFunc =
                         (_SetNodeDepth)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMeshRoad_setNodeDepth"), typeof(_SetNodeDepth));
                 }
@@ -139,7 +139,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMeshRoad_staticGetType"), typeof(_StaticGetType));
                 }
@@ -159,7 +159,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMeshRoad_create"), typeof(_Create));
                 }

@@ -90,7 +90,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveFieldFunc == null) {
                     _RemoveFieldFunc =
                         (_RemoveField)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_removeField"), typeof(_RemoveField));
                 }
@@ -114,7 +114,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveObjectFromFileFunc == null) {
                     _RemoveObjectFromFileFunc =
                         (_RemoveObjectFromFile)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_removeObjectFromFile"), typeof(_RemoveObjectFromFile));
                 }
@@ -134,7 +134,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearAllFunc == null) {
                     _ClearAllFunc =
                         (_ClearAll)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_clearAll"), typeof(_ClearAll));
                 }
@@ -157,7 +157,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SaveDirtyObjectFunc == null) {
                     _SaveDirtyObjectFunc =
                         (_SaveDirtyObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_saveDirtyObject"), typeof(_SaveDirtyObject));
                 }
@@ -178,7 +178,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SaveDirtyFunc == null) {
                     _SaveDirtyFunc =
                         (_SaveDirty)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_saveDirty"), typeof(_SaveDirty));
                 }
@@ -198,7 +198,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ListDirtyFunc == null) {
                     _ListDirtyFunc =
                         (_ListDirty)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_listDirty"), typeof(_ListDirty));
                 }
@@ -219,7 +219,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDirtyObjectFunc == null) {
                     _GetDirtyObjectFunc =
                         (_GetDirtyObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_getDirtyObject"), typeof(_GetDirtyObject));
                 }
@@ -239,7 +239,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDirtyObjectCountFunc == null) {
                     _GetDirtyObjectCountFunc =
                         (_GetDirtyObjectCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_getDirtyObjectCount"), typeof(_GetDirtyObjectCount));
                 }
@@ -260,7 +260,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_HasDirtyFunc == null) {
                     _HasDirtyFunc =
                         (_HasDirty)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_hasDirty"), typeof(_HasDirty));
                 }
@@ -283,7 +283,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsDirtyFunc == null) {
                     _IsDirtyFunc =
                         (_IsDirty)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_isDirty"), typeof(_IsDirty));
                 }
@@ -305,7 +305,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveDirtyFunc == null) {
                     _RemoveDirtyFunc =
                         (_RemoveDirty)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_removeDirty"), typeof(_RemoveDirty));
                 }
@@ -329,7 +329,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetDirtyFunc == null) {
                     _SetDirtyFunc =
                         (_SetDirty)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_setDirty"), typeof(_SetDirty));
                 }
@@ -351,7 +351,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteObjectsFromFileFunc == null) {
                     _DeleteObjectsFromFileFunc =
                         (_DeleteObjectsFromFile)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_deleteObjectsFromFile"), typeof(_DeleteObjectsFromFile));
                 }
@@ -371,7 +371,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_staticGetType"), typeof(_StaticGetType));
                 }
@@ -391,7 +391,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPersistenceManager_create"), typeof(_Create));
                 }

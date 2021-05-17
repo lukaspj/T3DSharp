@@ -29,7 +29,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_CreateNullDeviceFunc == null) {
                     _CreateNullDeviceFunc =
                         (_CreateNullDevice)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXInit_createNullDevice"), typeof(_CreateNullDevice));
                 }
@@ -52,7 +52,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetAdapterModeFunc == null) {
                     _GetAdapterModeFunc =
                         (_GetAdapterMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXInit_getAdapterMode"), typeof(_GetAdapterMode));
                 }
@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetAdapterModeCountFunc == null) {
                     _GetAdapterModeCountFunc =
                         (_GetAdapterModeCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXInit_getAdapterModeCount"), typeof(_GetAdapterModeCount));
                 }
@@ -93,7 +93,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetDefaultAdapterIndexFunc == null) {
                     _GetDefaultAdapterIndexFunc =
                         (_GetDefaultAdapterIndex)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXInit_getDefaultAdapterIndex"), typeof(_GetDefaultAdapterIndex));
                 }
@@ -114,7 +114,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetAdapterShaderModelFunc == null) {
                     _GetAdapterShaderModelFunc =
                         (_GetAdapterShaderModel)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXInit_getAdapterShaderModel"), typeof(_GetAdapterShaderModel));
                 }
@@ -135,7 +135,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetAdapterTypeFunc == null) {
                     _GetAdapterTypeFunc =
                         (_GetAdapterType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXInit_getAdapterType"), typeof(_GetAdapterType));
                 }
@@ -157,7 +157,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetAdapterOutputNameFunc == null) {
                     _GetAdapterOutputNameFunc =
                         (_GetAdapterOutputName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXInit_getAdapterOutputName"), typeof(_GetAdapterOutputName));
                 }
@@ -179,7 +179,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetAdapterNameFunc == null) {
                     _GetAdapterNameFunc =
                         (_GetAdapterName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXInit_getAdapterName"), typeof(_GetAdapterName));
                 }
@@ -199,7 +199,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetAdapterCountFunc == null) {
                     _GetAdapterCountFunc =
                         (_GetAdapterCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGFXInit_getAdapterCount"), typeof(_GetAdapterCount));
                 }

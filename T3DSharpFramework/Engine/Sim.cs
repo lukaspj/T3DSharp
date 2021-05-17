@@ -41,7 +41,7 @@ namespace T3DSharpFramework.Engine
             if (_FindObjectByIdFunc == null)
             {
                _FindObjectByIdFunc =
-                  (_FindObjectById)Marshal.GetDelegateForFunctionPointer(Torque3D.DllLoadUtils.GetProcAddress(Torque3D.Torque3DLibHandle,
+                  (_FindObjectById)Marshal.GetDelegateForFunctionPointer(NativeLibrary.GetExport(Torque3D.Torque3DLibHandle,
                      "fnFindObjectById"), typeof(_FindObjectById));
             }
 
@@ -56,7 +56,7 @@ namespace T3DSharpFramework.Engine
             if (_FindObjectByNameFunc == null)
             {
                _FindObjectByNameFunc =
-                  (_FindObjectByName)Marshal.GetDelegateForFunctionPointer(Torque3D.DllLoadUtils.GetProcAddress(Torque3D.Torque3DLibHandle,
+                  (_FindObjectByName)Marshal.GetDelegateForFunctionPointer(NativeLibrary.GetExport(Torque3D.Torque3DLibHandle,
                      "fnFindObjectByName"), typeof(_FindObjectByName));
             }
 
@@ -71,7 +71,7 @@ namespace T3DSharpFramework.Engine
             if (_FindDataBlockByNameFunc == null)
             {
                _FindDataBlockByNameFunc =
-                  (_FindDataBlockByName)Marshal.GetDelegateForFunctionPointer(Torque3D.DllLoadUtils.GetProcAddress(Torque3D.Torque3DLibHandle,
+                  (_FindDataBlockByName)Marshal.GetDelegateForFunctionPointer(NativeLibrary.GetExport(Torque3D.Torque3DLibHandle,
                      "fnFindDataBlockByName"), typeof(_FindDataBlockByName));
             }
 
@@ -86,7 +86,7 @@ namespace T3DSharpFramework.Engine
             if (_Sim_WrapObjectFunc == null)
             {
                _Sim_WrapObjectFunc =
-                  (_Sim_WrapObject)Marshal.GetDelegateForFunctionPointer(Torque3D.DllLoadUtils.GetProcAddress(Torque3D.Torque3DLibHandle,
+                  (_Sim_WrapObject)Marshal.GetDelegateForFunctionPointer(NativeLibrary.GetExport(Torque3D.Torque3DLibHandle,
                      "fnWrapObject"), typeof(_Sim_WrapObject));
             }
 
@@ -101,7 +101,7 @@ namespace T3DSharpFramework.Engine
             if (_Sim_DeleteObjectPtrFunc == null)
             {
                _Sim_DeleteObjectPtrFunc =
-                  (_Sim_DeleteObjectPtr)Marshal.GetDelegateForFunctionPointer(Torque3D.DllLoadUtils.GetProcAddress(Torque3D.Torque3DLibHandle,
+                  (_Sim_DeleteObjectPtr)Marshal.GetDelegateForFunctionPointer(NativeLibrary.GetExport(Torque3D.Torque3DLibHandle,
                      "fnDeleteObjectPtr"), typeof(_Sim_DeleteObjectPtr));
             }
 

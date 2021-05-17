@@ -98,7 +98,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetActiveFunc == null) {
                     _SetActiveFunc =
                         (_SetActive)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnParticleEmitterNode_setActive"), typeof(_SetActive));
                 }
@@ -119,7 +119,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetEmitterDataBlockFunc == null) {
                     _SetEmitterDataBlockFunc =
                         (_SetEmitterDataBlock)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnParticleEmitterNode_setEmitterDataBlock"), typeof(_SetEmitterDataBlock));
                 }
@@ -139,7 +139,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnParticleEmitterNode_staticGetType"), typeof(_StaticGetType));
                 }
@@ -159,7 +159,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnParticleEmitterNode_create"), typeof(_Create));
                 }

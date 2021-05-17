@@ -75,7 +75,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsProcessingTicksFunc == null) {
                     _IsProcessingTicksFunc =
                         (_IsProcessingTicks)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnScriptTickObject_isProcessingTicks"), typeof(_IsProcessingTicks));
                 }
@@ -97,7 +97,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetProcessTicksFunc == null) {
                     _SetProcessTicksFunc =
                         (_SetProcessTicks)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnScriptTickObject_setProcessTicks"), typeof(_SetProcessTicks));
                 }
@@ -118,7 +118,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnAdvanceTimeFunc == null) {
                     _OnAdvanceTimeFunc =
                         (_OnAdvanceTime)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptTickObject_onAdvanceTime"), typeof(_OnAdvanceTime));
                 }
@@ -138,7 +138,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnProcessTickFunc == null) {
                     _OnProcessTickFunc =
                         (_OnProcessTick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptTickObject_onProcessTick"), typeof(_OnProcessTick));
                 }
@@ -159,7 +159,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnInterpolateTickFunc == null) {
                     _OnInterpolateTickFunc =
                         (_OnInterpolateTick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptTickObject_onInterpolateTick"), typeof(_OnInterpolateTick));
                 }
@@ -179,7 +179,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnScriptTickObject_staticGetType"), typeof(_StaticGetType));
                 }
@@ -199,7 +199,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnScriptTickObject_create"), typeof(_Create));
                 }

@@ -76,7 +76,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindStringFunc == null) {
                     _FindStringFunc =
                         (_FindString)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDbgFileView_findString"), typeof(_FindString));
                 }
@@ -97,7 +97,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveBreakFunc == null) {
                     _RemoveBreakFunc =
                         (_RemoveBreak)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDbgFileView_removeBreak"), typeof(_RemoveBreak));
                 }
@@ -118,7 +118,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetBreakFunc == null) {
                     _SetBreakFunc =
                         (_SetBreak)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDbgFileView_setBreak"), typeof(_SetBreak));
                 }
@@ -139,7 +139,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetBreakPositionFunc == null) {
                     _SetBreakPositionFunc =
                         (_SetBreakPosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDbgFileView_setBreakPosition"), typeof(_SetBreakPosition));
                 }
@@ -159,7 +159,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearBreakPositionsFunc == null) {
                     _ClearBreakPositionsFunc =
                         (_ClearBreakPositions)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDbgFileView_clearBreakPositions"), typeof(_ClearBreakPositions));
                 }
@@ -182,7 +182,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OpenFunc == null) {
                     _OpenFunc =
                         (_Open)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDbgFileView_open"), typeof(_Open));
                 }
@@ -203,7 +203,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetCurrentLineFunc == null) {
                     _GetCurrentLineFunc =
                         (_GetCurrentLine)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDbgFileView_getCurrentLine"), typeof(_GetCurrentLine));
                 }
@@ -226,7 +226,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetCurrentLineFunc == null) {
                     _SetCurrentLineFunc =
                         (_SetCurrentLine)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDbgFileView_setCurrentLine"), typeof(_SetCurrentLine));
                 }
@@ -246,7 +246,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDbgFileView_staticGetType"), typeof(_StaticGetType));
                 }
@@ -266,7 +266,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnDbgFileView_create"), typeof(_Create));
                 }

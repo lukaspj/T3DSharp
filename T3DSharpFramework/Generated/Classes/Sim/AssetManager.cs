@@ -70,7 +70,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_staticGetType"), typeof(_StaticGetType));
                 }
@@ -90,7 +90,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_create"), typeof(_Create));
                 }
@@ -110,7 +110,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DumpDeclaredAssetsFunc == null) {
                     _DumpDeclaredAssetsFunc =
                         (_DumpDeclaredAssets)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_dumpDeclaredAssets"), typeof(_DumpDeclaredAssets));
                 }
@@ -131,7 +131,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMaxLoadedExternalAssetCountFunc == null) {
                     _GetMaxLoadedExternalAssetCountFunc =
                         (_GetMaxLoadedExternalAssetCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getMaxLoadedExternalAssetCount"), typeof(_GetMaxLoadedExternalAssetCount));
                 }
@@ -152,7 +152,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLoadedExternalAssetCountFunc == null) {
                     _GetLoadedExternalAssetCountFunc =
                         (_GetLoadedExternalAssetCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getLoadedExternalAssetCount"), typeof(_GetLoadedExternalAssetCount));
                 }
@@ -173,7 +173,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMaxLoadedInternalAssetCountFunc == null) {
                     _GetMaxLoadedInternalAssetCountFunc =
                         (_GetMaxLoadedInternalAssetCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getMaxLoadedInternalAssetCount"), typeof(_GetMaxLoadedInternalAssetCount));
                 }
@@ -194,7 +194,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLoadedInternalAssetCountFunc == null) {
                     _GetLoadedInternalAssetCountFunc =
                         (_GetLoadedInternalAssetCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getLoadedInternalAssetCount"), typeof(_GetLoadedInternalAssetCount));
                 }
@@ -215,7 +215,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetReferencedAssetCountFunc == null) {
                     _GetReferencedAssetCountFunc =
                         (_GetReferencedAssetCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getReferencedAssetCount"), typeof(_GetReferencedAssetCount));
                 }
@@ -236,7 +236,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDeclaredAssetCountFunc == null) {
                     _GetDeclaredAssetCountFunc =
                         (_GetDeclaredAssetCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getDeclaredAssetCount"), typeof(_GetDeclaredAssetCount));
                 }
@@ -262,7 +262,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindAssetLooseFileFunc == null) {
                     _FindAssetLooseFileFunc =
                         (_FindAssetLooseFile)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_findAssetLooseFile"), typeof(_FindAssetLooseFile));
                 }
@@ -288,7 +288,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindTaggedAssetsFunc == null) {
                     _FindTaggedAssetsFunc =
                         (_FindTaggedAssets)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_findTaggedAssets"), typeof(_FindTaggedAssets));
                 }
@@ -310,7 +310,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindInvalidAssetReferencesFunc == null) {
                     _FindInvalidAssetReferencesFunc =
                         (_FindInvalidAssetReferences)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_findInvalidAssetReferences"), typeof(_FindInvalidAssetReferences));
                 }
@@ -334,7 +334,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindAssetIsDependedOnFunc == null) {
                     _FindAssetIsDependedOnFunc =
                         (_FindAssetIsDependedOn)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_findAssetIsDependedOn"), typeof(_FindAssetIsDependedOn));
                 }
@@ -358,7 +358,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindAssetDependsOnFunc == null) {
                     _FindAssetDependsOnFunc =
                         (_FindAssetDependsOn)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_findAssetDependsOn"), typeof(_FindAssetDependsOn));
                 }
@@ -384,7 +384,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindAssetTypeFunc == null) {
                     _FindAssetTypeFunc =
                         (_FindAssetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_findAssetType"), typeof(_FindAssetType));
                 }
@@ -410,7 +410,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindAssetPrivateFunc == null) {
                     _FindAssetPrivateFunc =
                         (_FindAssetPrivate)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_findAssetPrivate"), typeof(_FindAssetPrivate));
                 }
@@ -436,7 +436,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindAssetInternalFunc == null) {
                     _FindAssetInternalFunc =
                         (_FindAssetInternal)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_findAssetInternal"), typeof(_FindAssetInternal));
                 }
@@ -462,7 +462,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindAssetAutoUnloadFunc == null) {
                     _FindAssetAutoUnloadFunc =
                         (_FindAssetAutoUnload)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_findAssetAutoUnload"), typeof(_FindAssetAutoUnload));
                 }
@@ -488,7 +488,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindAssetCategoryFunc == null) {
                     _FindAssetCategoryFunc =
                         (_FindAssetCategory)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_findAssetCategory"), typeof(_FindAssetCategory));
                 }
@@ -514,7 +514,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindAssetNameFunc == null) {
                     _FindAssetNameFunc =
                         (_FindAssetName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_findAssetName"), typeof(_FindAssetName));
                 }
@@ -540,7 +540,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindAllAssetsFunc == null) {
                     _FindAllAssetsFunc =
                         (_FindAllAssets)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_findAllAssets"), typeof(_FindAllAssets));
                 }
@@ -560,7 +560,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAssetTagsFunc == null) {
                     _GetAssetTagsFunc =
                         (_GetAssetTags)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getAssetTags"), typeof(_GetAssetTags));
                 }
@@ -581,7 +581,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RestoreAssetTagsFunc == null) {
                     _RestoreAssetTagsFunc =
                         (_RestoreAssetTags)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_restoreAssetTags"), typeof(_RestoreAssetTags));
                 }
@@ -602,7 +602,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SaveAssetTagsFunc == null) {
                     _SaveAssetTagsFunc =
                         (_SaveAssetTags)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_saveAssetTags"), typeof(_SaveAssetTags));
                 }
@@ -624,7 +624,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RefreshAllAssetsFunc == null) {
                     _RefreshAllAssetsFunc =
                         (_RefreshAllAssets)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_refreshAllAssets"), typeof(_RefreshAllAssets));
                 }
@@ -646,7 +646,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RefreshAssetFunc == null) {
                     _RefreshAssetFunc =
                         (_RefreshAsset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_refreshAsset"), typeof(_RefreshAsset));
                 }
@@ -673,7 +673,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteAssetFunc == null) {
                     _DeleteAssetFunc =
                         (_DeleteAsset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_deleteAsset"), typeof(_DeleteAsset));
                 }
@@ -693,7 +693,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PurgeAssetsFunc == null) {
                     _PurgeAssetsFunc =
                         (_PurgeAssets)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_purgeAssets"), typeof(_PurgeAssets));
                 }
@@ -716,7 +716,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ReleaseAssetFunc == null) {
                     _ReleaseAssetFunc =
                         (_ReleaseAsset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_releaseAsset"), typeof(_ReleaseAsset));
                 }
@@ -741,7 +741,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AcquireAssetFunc == null) {
                     _AcquireAssetFunc =
                         (_AcquireAsset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_acquireAsset"), typeof(_AcquireAsset));
                 }
@@ -766,7 +766,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RenameReferencedAssetFunc == null) {
                     _RenameReferencedAssetFunc =
                         (_RenameReferencedAsset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_renameReferencedAsset"), typeof(_RenameReferencedAsset));
                 }
@@ -791,7 +791,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RenameDeclaredAssetFunc == null) {
                     _RenameDeclaredAssetFunc =
                         (_RenameDeclaredAsset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_renameDeclaredAsset"), typeof(_RenameDeclaredAsset));
                 }
@@ -814,7 +814,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsReferencedAssetFunc == null) {
                     _IsReferencedAssetFunc =
                         (_IsReferencedAsset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_isReferencedAsset"), typeof(_IsReferencedAsset));
                 }
@@ -837,7 +837,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsDeclaredAssetFunc == null) {
                     _IsDeclaredAssetFunc =
                         (_IsDeclaredAsset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_isDeclaredAsset"), typeof(_IsDeclaredAsset));
                 }
@@ -860,7 +860,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsAssetLoadedFunc == null) {
                     _IsAssetLoadedFunc =
                         (_IsAssetLoaded)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_isAssetLoaded"), typeof(_IsAssetLoaded));
                 }
@@ -883,7 +883,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsAssetAutoUnloadFunc == null) {
                     _IsAssetAutoUnloadFunc =
                         (_IsAssetAutoUnload)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_isAssetAutoUnload"), typeof(_IsAssetAutoUnload));
                 }
@@ -906,7 +906,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsAssetPrivateFunc == null) {
                     _IsAssetPrivateFunc =
                         (_IsAssetPrivate)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_isAssetPrivate"), typeof(_IsAssetPrivate));
                 }
@@ -929,7 +929,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsAssetInternalFunc == null) {
                     _IsAssetInternalFunc =
                         (_IsAssetInternal)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_isAssetInternal"), typeof(_IsAssetInternal));
                 }
@@ -952,7 +952,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAssetModuleFunc == null) {
                     _GetAssetModuleFunc =
                         (_GetAssetModule)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getAssetModule"), typeof(_GetAssetModule));
                 }
@@ -975,7 +975,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAssetPathFunc == null) {
                     _GetAssetPathFunc =
                         (_GetAssetPath)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getAssetPath"), typeof(_GetAssetPath));
                 }
@@ -998,7 +998,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAssetFilePathFunc == null) {
                     _GetAssetFilePathFunc =
                         (_GetAssetFilePath)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getAssetFilePath"), typeof(_GetAssetFilePath));
                 }
@@ -1021,7 +1021,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAssetTypeFunc == null) {
                     _GetAssetTypeFunc =
                         (_GetAssetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getAssetType"), typeof(_GetAssetType));
                 }
@@ -1044,7 +1044,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAssetCategoryFunc == null) {
                     _GetAssetCategoryFunc =
                         (_GetAssetCategory)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getAssetCategory"), typeof(_GetAssetCategory));
                 }
@@ -1067,7 +1067,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAssetDescriptionFunc == null) {
                     _GetAssetDescriptionFunc =
                         (_GetAssetDescription)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getAssetDescription"), typeof(_GetAssetDescription));
                 }
@@ -1090,7 +1090,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAssetNameFunc == null) {
                     _GetAssetNameFunc =
                         (_GetAssetName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_getAssetName"), typeof(_GetAssetName));
                 }
@@ -1113,7 +1113,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveDeclaredAssetFunc == null) {
                     _RemoveDeclaredAssetFunc =
                         (_RemoveDeclaredAsset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_removeDeclaredAsset"), typeof(_RemoveDeclaredAsset));
                 }
@@ -1136,7 +1136,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveDeclaredAssetsFunc == null) {
                     _RemoveDeclaredAssetsFunc =
                         (_RemoveDeclaredAssets)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_removeDeclaredAssets"), typeof(_RemoveDeclaredAssets));
                 }
@@ -1159,7 +1159,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddPrivateAssetFunc == null) {
                     _AddPrivateAssetFunc =
                         (_AddPrivateAsset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_addPrivateAsset"), typeof(_AddPrivateAsset));
                 }
@@ -1184,7 +1184,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddDeclaredAssetFunc == null) {
                     _AddDeclaredAssetFunc =
                         (_AddDeclaredAsset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_addDeclaredAsset"), typeof(_AddDeclaredAsset));
                 }
@@ -1207,7 +1207,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddModuleDeclaredAssetsFunc == null) {
                     _AddModuleDeclaredAssetsFunc =
                         (_AddModuleDeclaredAssets)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_addModuleDeclaredAssets"), typeof(_AddModuleDeclaredAssets));
                 }
@@ -1230,7 +1230,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CompileReferencedAssetsFunc == null) {
                     _CompileReferencedAssetsFunc =
                         (_CompileReferencedAssets)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAssetManager_compileReferencedAssets"), typeof(_CompileReferencedAssets));
                 }

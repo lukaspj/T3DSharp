@@ -77,7 +77,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveManagerFunc == null) {
                     _RemoveManagerFunc =
                         (_RemoveManager)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRenderPassManager_removeManager"), typeof(_RemoveManager));
                 }
@@ -98,7 +98,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddManagerFunc == null) {
                     _AddManagerFunc =
                         (_AddManager)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRenderPassManager_addManager"), typeof(_AddManager));
                 }
@@ -119,7 +119,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetManagerFunc == null) {
                     _GetManagerFunc =
                         (_GetManager)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRenderPassManager_getManager"), typeof(_GetManager));
                 }
@@ -139,7 +139,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetManagerCountFunc == null) {
                     _GetManagerCountFunc =
                         (_GetManagerCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRenderPassManager_getManagerCount"), typeof(_GetManagerCount));
                 }
@@ -159,7 +159,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRenderPassManager_staticGetType"), typeof(_StaticGetType));
                 }
@@ -179,7 +179,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnRenderPassManager_create"), typeof(_Create));
                 }

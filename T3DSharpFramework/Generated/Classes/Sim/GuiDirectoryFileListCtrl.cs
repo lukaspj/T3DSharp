@@ -82,7 +82,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedFileFunc == null) {
                     _GetSelectedFileFunc =
                         (_GetSelectedFile)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDirectoryFileListCtrl_getSelectedFile"), typeof(_GetSelectedFile));
                 }
@@ -103,7 +103,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedFilesFunc == null) {
                     _GetSelectedFilesFunc =
                         (_GetSelectedFiles)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDirectoryFileListCtrl_getSelectedFiles"), typeof(_GetSelectedFiles));
                 }
@@ -128,7 +128,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetPathFunc == null) {
                     _SetPathFunc =
                         (_SetPath)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDirectoryFileListCtrl_setPath"), typeof(_SetPath));
                 }
@@ -148,7 +148,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ReloadFunc == null) {
                     _ReloadFunc =
                         (_Reload)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDirectoryFileListCtrl_reload"), typeof(_Reload));
                 }
@@ -170,7 +170,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetFilterFunc == null) {
                     _SetFilterFunc =
                         (_SetFilter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDirectoryFileListCtrl_setFilter"), typeof(_SetFilter));
                 }
@@ -190,7 +190,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDirectoryFileListCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -210,7 +210,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDirectoryFileListCtrl_create"), typeof(_Create));
                 }

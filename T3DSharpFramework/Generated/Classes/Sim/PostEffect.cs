@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearShaderMacrosFunc == null) {
                     _ClearShaderMacrosFunc =
                         (_ClearShaderMacros)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_clearShaderMacros"), typeof(_ClearShaderMacros));
                 }
@@ -95,7 +95,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveShaderMacroFunc == null) {
                     _RemoveShaderMacroFunc =
                         (_RemoveShaderMacro)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_removeShaderMacro"), typeof(_RemoveShaderMacro));
                 }
@@ -119,7 +119,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetShaderMacroFunc == null) {
                     _SetShaderMacroFunc =
                         (_SetShaderMacro)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_setShaderMacro"), typeof(_SetShaderMacro));
                 }
@@ -140,7 +140,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DumpShaderDisassemblyFunc == null) {
                     _DumpShaderDisassemblyFunc =
                         (_DumpShaderDisassembly)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_dumpShaderDisassembly"), typeof(_DumpShaderDisassembly));
                 }
@@ -160,7 +160,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAspectRatioFunc == null) {
                     _GetAspectRatioFunc =
                         (_GetAspectRatio)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_getAspectRatio"), typeof(_GetAspectRatio));
                 }
@@ -184,7 +184,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetShaderConstFunc == null) {
                     _SetShaderConstFunc =
                         (_SetShaderConst)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_setShaderConst"), typeof(_SetShaderConst));
                 }
@@ -207,7 +207,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetTextureFunc == null) {
                     _SetTextureFunc =
                         (_SetTexture)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_setTexture"), typeof(_SetTexture));
                 }
@@ -228,7 +228,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsEnabledFunc == null) {
                     _IsEnabledFunc =
                         (_IsEnabled)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_isEnabled"), typeof(_IsEnabled));
                 }
@@ -249,7 +249,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ToggleFunc == null) {
                     _ToggleFunc =
                         (_Toggle)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_toggle"), typeof(_Toggle));
                 }
@@ -269,7 +269,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DisableFunc == null) {
                     _DisableFunc =
                         (_Disable)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_disable"), typeof(_Disable));
                 }
@@ -289,7 +289,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_EnableFunc == null) {
                     _EnableFunc =
                         (_Enable)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_enable"), typeof(_Enable));
                 }
@@ -309,7 +309,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ReloadFunc == null) {
                     _ReloadFunc =
                         (_Reload)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_reload"), typeof(_Reload));
                 }
@@ -329,7 +329,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_staticGetType"), typeof(_StaticGetType));
                 }
@@ -349,7 +349,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPostEffect_create"), typeof(_Create));
                 }
@@ -369,7 +369,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnDisabledFunc == null) {
                     _OnDisabledFunc =
                         (_OnDisabled)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbPostEffect_onDisabled"), typeof(_OnDisabled));
                 }
@@ -390,7 +390,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnEnabledFunc == null) {
                     _OnEnabledFunc =
                         (_OnEnabled)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbPostEffect_onEnabled"), typeof(_OnEnabled));
                 }
@@ -410,7 +410,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetShaderConstsFunc == null) {
                     _SetShaderConstsFunc =
                         (_SetShaderConsts)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbPostEffect_setShaderConsts"), typeof(_SetShaderConsts));
                 }
@@ -430,7 +430,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PreProcessFunc == null) {
                     _PreProcessFunc =
                         (_PreProcess)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbPostEffect_preProcess"), typeof(_PreProcess));
                 }
@@ -450,7 +450,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnAddFunc == null) {
                     _OnAddFunc =
                         (_OnAdd)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbPostEffect_onAdd"), typeof(_OnAdd));
                 }

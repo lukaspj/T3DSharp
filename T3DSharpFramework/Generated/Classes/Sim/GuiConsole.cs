@@ -80,7 +80,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RefreshFunc == null) {
                     _RefreshFunc =
                         (_Refresh)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConsole_refresh"), typeof(_Refresh));
                 }
@@ -100,7 +100,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ToggleNormalFilterFunc == null) {
                     _ToggleNormalFilterFunc =
                         (_ToggleNormalFilter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConsole_toggleNormalFilter"), typeof(_ToggleNormalFilter));
                 }
@@ -120,7 +120,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ToggleWarnFilterFunc == null) {
                     _ToggleWarnFilterFunc =
                         (_ToggleWarnFilter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConsole_toggleWarnFilter"), typeof(_ToggleWarnFilter));
                 }
@@ -140,7 +140,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ToggleErrorFilterFunc == null) {
                     _ToggleErrorFilterFunc =
                         (_ToggleErrorFilter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConsole_toggleErrorFilter"), typeof(_ToggleErrorFilter));
                 }
@@ -161,7 +161,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNormalFilterFunc == null) {
                     _GetNormalFilterFunc =
                         (_GetNormalFilter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConsole_getNormalFilter"), typeof(_GetNormalFilter));
                 }
@@ -182,7 +182,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetWarnFilterFunc == null) {
                     _GetWarnFilterFunc =
                         (_GetWarnFilter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConsole_getWarnFilter"), typeof(_GetWarnFilter));
                 }
@@ -203,7 +203,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetErrorFilterFunc == null) {
                     _GetErrorFilterFunc =
                         (_GetErrorFilter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConsole_getErrorFilter"), typeof(_GetErrorFilter));
                 }
@@ -229,7 +229,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetDisplayFiltersFunc == null) {
                     _SetDisplayFiltersFunc =
                         (_SetDisplayFilters)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConsole_setDisplayFilters"), typeof(_SetDisplayFilters));
                 }
@@ -252,7 +252,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnNewMessageFunc == null) {
                     _OnNewMessageFunc =
                         (_OnNewMessage)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiConsole_onNewMessage"), typeof(_OnNewMessage));
                 }
@@ -275,7 +275,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMessageSelectedFunc == null) {
                     _OnMessageSelectedFunc =
                         (_OnMessageSelected)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiConsole_onMessageSelected"), typeof(_OnMessageSelected));
                 }
@@ -295,7 +295,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConsole_staticGetType"), typeof(_StaticGetType));
                 }
@@ -315,7 +315,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiConsole_create"), typeof(_Create));
                 }

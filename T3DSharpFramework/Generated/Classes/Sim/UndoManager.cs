@@ -75,7 +75,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PopCompoundFunc == null) {
                     _PopCompoundFunc =
                         (_PopCompound)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_popCompound"), typeof(_PopCompound));
                 }
@@ -98,7 +98,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PushCompoundFunc == null) {
                     _PushCompoundFunc =
                         (_PushCompound)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_pushCompound"), typeof(_PushCompound));
                 }
@@ -119,7 +119,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNextRedoNameFunc == null) {
                     _GetNextRedoNameFunc =
                         (_GetNextRedoName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_getNextRedoName"), typeof(_GetNextRedoName));
                 }
@@ -140,7 +140,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNextUndoNameFunc == null) {
                     _GetNextUndoNameFunc =
                         (_GetNextUndoName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_getNextUndoName"), typeof(_GetNextUndoName));
                 }
@@ -160,7 +160,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RedoFunc == null) {
                     _RedoFunc =
                         (_Redo)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_redo"), typeof(_Redo));
                 }
@@ -180,7 +180,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UndoFunc == null) {
                     _UndoFunc =
                         (_Undo)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_undo"), typeof(_Undo));
                 }
@@ -201,7 +201,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetRedoActionFunc == null) {
                     _GetRedoActionFunc =
                         (_GetRedoAction)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_getRedoAction"), typeof(_GetRedoAction));
                 }
@@ -223,7 +223,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetRedoNameFunc == null) {
                     _GetRedoNameFunc =
                         (_GetRedoName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_getRedoName"), typeof(_GetRedoName));
                 }
@@ -243,7 +243,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetRedoCountFunc == null) {
                     _GetRedoCountFunc =
                         (_GetRedoCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_getRedoCount"), typeof(_GetRedoCount));
                 }
@@ -264,7 +264,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetUndoActionFunc == null) {
                     _GetUndoActionFunc =
                         (_GetUndoAction)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_getUndoAction"), typeof(_GetUndoAction));
                 }
@@ -286,7 +286,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetUndoNameFunc == null) {
                     _GetUndoNameFunc =
                         (_GetUndoName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_getUndoName"), typeof(_GetUndoName));
                 }
@@ -306,7 +306,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetUndoCountFunc == null) {
                     _GetUndoCountFunc =
                         (_GetUndoCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_getUndoCount"), typeof(_GetUndoCount));
                 }
@@ -326,7 +326,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearAllFunc == null) {
                     _ClearAllFunc =
                         (_ClearAll)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_clearAll"), typeof(_ClearAll));
                 }
@@ -346,7 +346,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_staticGetType"), typeof(_StaticGetType));
                 }
@@ -366,7 +366,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnUndoManager_create"), typeof(_Create));
                 }

@@ -71,7 +71,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DoRespawnFunc == null) {
                     _DoRespawnFunc =
                         (_DoRespawn)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTurretShape_doRespawn"), typeof(_DoRespawn));
                 }
@@ -92,7 +92,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetTurretEulerRotationFunc == null) {
                     _SetTurretEulerRotationFunc =
                         (_SetTurretEulerRotation)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTurretShape_setTurretEulerRotation"), typeof(_SetTurretEulerRotation));
                 }
@@ -112,7 +112,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetTurretEulerRotationFunc == null) {
                     _GetTurretEulerRotationFunc =
                         (_GetTurretEulerRotation)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTurretShape_getTurretEulerRotation"), typeof(_GetTurretEulerRotation));
                 }
@@ -133,7 +133,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetStateFunc == null) {
                     _GetStateFunc =
                         (_GetState)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTurretShape_getState"), typeof(_GetState));
                 }
@@ -155,7 +155,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetAllowManualFireFunc == null) {
                     _SetAllowManualFireFunc =
                         (_SetAllowManualFire)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTurretShape_setAllowManualFire"), typeof(_SetAllowManualFire));
                 }
@@ -176,7 +176,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAllowManualFireFunc == null) {
                     _GetAllowManualFireFunc =
                         (_GetAllowManualFire)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTurretShape_getAllowManualFire"), typeof(_GetAllowManualFire));
                 }
@@ -198,7 +198,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetAllowManualRotationFunc == null) {
                     _SetAllowManualRotationFunc =
                         (_SetAllowManualRotation)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTurretShape_setAllowManualRotation"), typeof(_SetAllowManualRotation));
                 }
@@ -219,7 +219,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAllowManualRotationFunc == null) {
                     _GetAllowManualRotationFunc =
                         (_GetAllowManualRotation)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTurretShape_getAllowManualRotation"), typeof(_GetAllowManualRotation));
                 }
@@ -239,7 +239,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTurretShape_staticGetType"), typeof(_StaticGetType));
                 }
@@ -259,7 +259,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTurretShape_create"), typeof(_Create));
                 }

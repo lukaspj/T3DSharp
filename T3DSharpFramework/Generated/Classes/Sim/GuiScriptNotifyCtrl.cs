@@ -84,7 +84,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnGainFirstResponderFunc == null) {
                     _OnGainFirstResponderFunc =
                         (_OnGainFirstResponder)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiScriptNotifyCtrl_onGainFirstResponder"), typeof(_OnGainFirstResponder));
                 }
@@ -105,7 +105,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnLoseFirstResponderFunc == null) {
                     _OnLoseFirstResponderFunc =
                         (_OnLoseFirstResponder)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiScriptNotifyCtrl_onLoseFirstResponder"), typeof(_OnLoseFirstResponder));
                 }
@@ -126,7 +126,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnParentResizedFunc == null) {
                     _OnParentResizedFunc =
                         (_OnParentResized)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiScriptNotifyCtrl_onParentResized"), typeof(_OnParentResized));
                 }
@@ -148,7 +148,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnChildResizedFunc == null) {
                     _OnChildResizedFunc =
                         (_OnChildResized)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiScriptNotifyCtrl_onChildResized"), typeof(_OnChildResized));
                 }
@@ -170,7 +170,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnChildRemovedFunc == null) {
                     _OnChildRemovedFunc =
                         (_OnChildRemoved)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiScriptNotifyCtrl_onChildRemoved"), typeof(_OnChildRemoved));
                 }
@@ -192,7 +192,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnChildAddedFunc == null) {
                     _OnChildAddedFunc =
                         (_OnChildAdded)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiScriptNotifyCtrl_onChildAdded"), typeof(_OnChildAdded));
                 }
@@ -213,7 +213,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnResizeFunc == null) {
                     _OnResizeFunc =
                         (_OnResize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiScriptNotifyCtrl_onResize"), typeof(_OnResize));
                 }
@@ -233,7 +233,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiScriptNotifyCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -253,7 +253,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiScriptNotifyCtrl_create"), typeof(_Create));
                 }

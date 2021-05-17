@@ -81,7 +81,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDurationFunc == null) {
                     _GetDurationFunc =
                         (_GetDuration)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXSound_getDuration"), typeof(_GetDuration));
                 }
@@ -102,7 +102,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetPositionFunc == null) {
                     _SetPositionFunc =
                         (_SetPosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXSound_setPosition"), typeof(_SetPosition));
                 }
@@ -122,7 +122,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetPositionFunc == null) {
                     _GetPositionFunc =
                         (_GetPosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXSound_getPosition"), typeof(_GetPosition));
                 }
@@ -143,7 +143,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsReadyFunc == null) {
                     _IsReadyFunc =
                         (_IsReady)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXSound_isReady"), typeof(_IsReady));
                 }
@@ -163,7 +163,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXSound_staticGetType"), typeof(_StaticGetType));
                 }
@@ -183,7 +183,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSFXSound_create"), typeof(_Create));
                 }

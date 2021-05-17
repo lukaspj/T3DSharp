@@ -31,7 +31,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_ExportFunc == null) {
                     _ExportFunc =
                         (_Export)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnBanList_export"), typeof(_Export));
                 }
@@ -55,7 +55,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_IsBannedFunc == null) {
                     _IsBannedFunc =
                         (_IsBanned)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnBanList_isBanned"), typeof(_IsBanned));
                 }
@@ -78,7 +78,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_RemoveBanFunc == null) {
                     _RemoveBanFunc =
                         (_RemoveBan)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnBanList_removeBan"), typeof(_RemoveBan));
                 }
@@ -102,7 +102,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_AddFunc == null) {
                     _AddFunc =
                         (_Add)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnBanList_add"), typeof(_Add));
                 }
@@ -126,7 +126,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_AddAbsoluteFunc == null) {
                     _AddAbsoluteFunc =
                         (_AddAbsolute)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnBanList_addAbsolute"), typeof(_AddAbsolute));
                 }

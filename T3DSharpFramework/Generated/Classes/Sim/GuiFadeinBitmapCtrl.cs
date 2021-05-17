@@ -84,7 +84,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnDoneFunc == null) {
                     _OnDoneFunc =
                         (_OnDone)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiFadeinBitmapCtrl_onDone"), typeof(_OnDone));
                 }
@@ -104,7 +104,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClickFunc == null) {
                     _ClickFunc =
                         (_Click)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiFadeinBitmapCtrl_click"), typeof(_Click));
                 }
@@ -124,7 +124,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFadeinBitmapCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -144,7 +144,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiFadeinBitmapCtrl_create"), typeof(_Create));
                 }

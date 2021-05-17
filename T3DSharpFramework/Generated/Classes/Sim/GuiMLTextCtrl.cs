@@ -87,7 +87,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetAlphaFunc == null) {
                     _SetAlphaFunc =
                         (_SetAlpha)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMLTextCtrl_setAlpha"), typeof(_SetAlpha));
                 }
@@ -107,7 +107,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ForceReflowFunc == null) {
                     _ForceReflowFunc =
                         (_ForceReflow)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMLTextCtrl_forceReflow"), typeof(_ForceReflow));
                 }
@@ -127,7 +127,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ScrollToBottomFunc == null) {
                     _ScrollToBottomFunc =
                         (_ScrollToBottom)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMLTextCtrl_scrollToBottom"), typeof(_ScrollToBottom));
                 }
@@ -147,7 +147,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ScrollToTopFunc == null) {
                     _ScrollToTopFunc =
                         (_ScrollToTop)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMLTextCtrl_scrollToTop"), typeof(_ScrollToTop));
                 }
@@ -168,7 +168,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ScrollToTagFunc == null) {
                     _ScrollToTagFunc =
                         (_ScrollToTag)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMLTextCtrl_scrollToTag"), typeof(_ScrollToTag));
                 }
@@ -190,7 +190,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetCursorPositionFunc == null) {
                     _SetCursorPositionFunc =
                         (_SetCursorPosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMLTextCtrl_setCursorPosition"), typeof(_SetCursorPosition));
                 }
@@ -214,7 +214,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddTextFunc == null) {
                     _AddTextFunc =
                         (_AddText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMLTextCtrl_addText"), typeof(_AddText));
                 }
@@ -235,7 +235,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetTextFunc == null) {
                     _GetTextFunc =
                         (_GetText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMLTextCtrl_getText"), typeof(_GetText));
                 }
@@ -257,7 +257,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetTextFunc == null) {
                     _SetTextFunc =
                         (_SetText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMLTextCtrl_setText"), typeof(_SetText));
                 }
@@ -279,7 +279,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnResizeFunc == null) {
                     _OnResizeFunc =
                         (_OnResize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMLTextCtrl_onResize"), typeof(_OnResize));
                 }
@@ -301,7 +301,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnURLFunc == null) {
                     _OnURLFunc =
                         (_OnURL)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMLTextCtrl_onURL"), typeof(_OnURL));
                 }
@@ -321,7 +321,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMLTextCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -341,7 +341,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMLTextCtrl_create"), typeof(_Create));
                 }

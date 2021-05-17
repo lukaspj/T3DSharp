@@ -98,7 +98,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnAxisEventFunc == null) {
                     _OnAxisEventFunc =
                         (_OnAxisEvent)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiInputCtrl_onAxisEvent"), typeof(_OnAxisEvent));
                 }
@@ -124,7 +124,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnInputEventFunc == null) {
                     _OnInputEventFunc =
                         (_OnInputEvent)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiInputCtrl_onInputEvent"), typeof(_OnInputEvent));
                 }
@@ -144,7 +144,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInputCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -164,7 +164,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInputCtrl_create"), typeof(_Create));
                 }

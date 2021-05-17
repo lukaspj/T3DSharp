@@ -76,7 +76,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_HasFeatureFunc == null) {
                     _HasFeatureFunc =
                         (_HasFeature)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnCustomShaderFeatureData_hasFeature"), typeof(_HasFeature));
                 }
@@ -92,7 +92,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_WriteLineFunc == null) {
                     _WriteLineFunc =
                         (_WriteLine)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnCustomShaderFeatureData_writeLine"), typeof(_WriteLine));
                 }
@@ -114,7 +114,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddVertTexCoordFunc == null) {
                     _AddVertTexCoordFunc =
                         (_AddVertTexCoord)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnCustomShaderFeatureData_addVertTexCoord"), typeof(_AddVertTexCoord));
                 }
@@ -140,7 +140,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddConnectorFunc == null) {
                     _AddConnectorFunc =
                         (_AddConnector)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnCustomShaderFeatureData_addConnector"), typeof(_AddConnector));
                 }
@@ -167,7 +167,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddTextureFunc == null) {
                     _AddTextureFunc =
                         (_AddTexture)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnCustomShaderFeatureData_addTexture"), typeof(_AddTexture));
                 }
@@ -190,7 +190,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddSamplerFunc == null) {
                     _AddSamplerFunc =
                         (_AddSampler)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnCustomShaderFeatureData_addSampler"), typeof(_AddSampler));
                 }
@@ -217,7 +217,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddUniformFunc == null) {
                     _AddUniformFunc =
                         (_AddUniform)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnCustomShaderFeatureData_addUniform"), typeof(_AddUniform));
                 }
@@ -243,7 +243,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddVariableFunc == null) {
                     _AddVariableFunc =
                         (_AddVariable)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnCustomShaderFeatureData_addVariable"), typeof(_AddVariable));
                 }
@@ -263,7 +263,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnCustomShaderFeatureData_staticGetType"), typeof(_StaticGetType));
                 }
@@ -283,7 +283,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnCustomShaderFeatureData_create"), typeof(_Create));
                 }

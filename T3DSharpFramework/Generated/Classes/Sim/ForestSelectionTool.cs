@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PasteSelectionFunc == null) {
                     _PasteSelectionFunc =
                         (_PasteSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestSelectionTool_pasteSelection"), typeof(_PasteSelection));
                 }
@@ -93,7 +93,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CopySelectionFunc == null) {
                     _CopySelectionFunc =
                         (_CopySelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestSelectionTool_copySelection"), typeof(_CopySelection));
                 }
@@ -113,7 +113,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CutSelectionFunc == null) {
                     _CutSelectionFunc =
                         (_CutSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestSelectionTool_cutSelection"), typeof(_CutSelection));
                 }
@@ -133,7 +133,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearSelectionFunc == null) {
                     _ClearSelectionFunc =
                         (_ClearSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestSelectionTool_clearSelection"), typeof(_ClearSelection));
                 }
@@ -153,7 +153,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteSelectionFunc == null) {
                     _DeleteSelectionFunc =
                         (_DeleteSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestSelectionTool_deleteSelection"), typeof(_DeleteSelection));
                 }
@@ -173,7 +173,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectionCountFunc == null) {
                     _GetSelectionCountFunc =
                         (_GetSelectionCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestSelectionTool_getSelectionCount"), typeof(_GetSelectionCount));
                 }
@@ -193,7 +193,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestSelectionTool_staticGetType"), typeof(_StaticGetType));
                 }
@@ -213,7 +213,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestSelectionTool_create"), typeof(_Create));
                 }

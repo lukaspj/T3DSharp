@@ -38,7 +38,7 @@
                 if (_{{ functionName }}Func == null) {
                     _{{ functionName }}Func =
                         (_{{ functionName }})Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "{{function.symbol}}"), typeof(_{{ functionName }}));
                 }

@@ -70,7 +70,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnModuleDefinition_staticGetType"), typeof(_StaticGetType));
                 }
@@ -90,7 +90,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnModuleDefinition_create"), typeof(_Create));
                 }
@@ -113,7 +113,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveDependencyFunc == null) {
                     _RemoveDependencyFunc =
                         (_RemoveDependency)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnModuleDefinition_removeDependency"), typeof(_RemoveDependency));
                 }
@@ -137,7 +137,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddDependencyFunc == null) {
                     _AddDependencyFunc =
                         (_AddDependency)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnModuleDefinition_addDependency"), typeof(_AddDependency));
                 }
@@ -159,7 +159,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDependencyFunc == null) {
                     _GetDependencyFunc =
                         (_GetDependency)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnModuleDefinition_getDependency"), typeof(_GetDependency));
                 }
@@ -179,7 +179,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDependencyCountFunc == null) {
                     _GetDependencyCountFunc =
                         (_GetDependencyCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnModuleDefinition_getDependencyCount"), typeof(_GetDependencyCount));
                 }
@@ -199,7 +199,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetModuleManagerFunc == null) {
                     _GetModuleManagerFunc =
                         (_GetModuleManager)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnModuleDefinition_getModuleManager"), typeof(_GetModuleManager));
                 }
@@ -220,7 +220,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SaveFunc == null) {
                     _SaveFunc =
                         (_Save)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnModuleDefinition_save"), typeof(_Save));
                 }

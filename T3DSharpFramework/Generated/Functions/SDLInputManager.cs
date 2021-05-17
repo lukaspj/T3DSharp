@@ -31,7 +31,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GameControllerMappingForIndexFunc == null) {
                     _GameControllerMappingForIndexFunc =
                         (_GameControllerMappingForIndex)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_GameControllerMappingForIndex"), typeof(_GameControllerMappingForIndex));
                 }
@@ -51,7 +51,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GameControllerNumMappingsFunc == null) {
                     _GameControllerNumMappingsFunc =
                         (_GameControllerNumMappings)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_GameControllerNumMappings"), typeof(_GameControllerNumMappings));
                 }
@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GameControllerAddMappingsFromFileFunc == null) {
                     _GameControllerAddMappingsFromFileFunc =
                         (_GameControllerAddMappingsFromFile)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_GameControllerAddMappingsFromFile"), typeof(_GameControllerAddMappingsFromFile));
                 }
@@ -95,7 +95,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GameControllerAddMappingFunc == null) {
                     _GameControllerAddMappingFunc =
                         (_GameControllerAddMapping)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_GameControllerAddMapping"), typeof(_GameControllerAddMapping));
                 }
@@ -118,7 +118,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GameControllerMappingForGUIDFunc == null) {
                     _GameControllerMappingForGUIDFunc =
                         (_GameControllerMappingForGUID)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_GameControllerMappingForGUID"), typeof(_GameControllerMappingForGUID));
                 }
@@ -140,7 +140,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GameControllerMappingFunc == null) {
                     _GameControllerMappingFunc =
                         (_GameControllerMapping)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_GameControllerMapping"), typeof(_GameControllerMapping));
                 }
@@ -162,7 +162,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_ControllerGetButtonsFunc == null) {
                     _ControllerGetButtonsFunc =
                         (_ControllerGetButtons)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_ControllerGetButtons"), typeof(_ControllerGetButtons));
                 }
@@ -184,7 +184,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_ControllerGetAxesFunc == null) {
                     _ControllerGetAxesFunc =
                         (_ControllerGetAxes)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_ControllerGetAxes"), typeof(_ControllerGetAxes));
                 }
@@ -206,7 +206,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_JoystickGetHatsFunc == null) {
                     _JoystickGetHatsFunc =
                         (_JoystickGetHats)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_JoystickGetHats"), typeof(_JoystickGetHats));
                 }
@@ -228,7 +228,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_JoystickGetButtonsFunc == null) {
                     _JoystickGetButtonsFunc =
                         (_JoystickGetButtons)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_JoystickGetButtons"), typeof(_JoystickGetButtons));
                 }
@@ -250,7 +250,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_JoystickGetAxesFunc == null) {
                     _JoystickGetAxesFunc =
                         (_JoystickGetAxes)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_JoystickGetAxes"), typeof(_JoystickGetAxes));
                 }
@@ -272,7 +272,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_JoystickGetSpecsFunc == null) {
                     _JoystickGetSpecsFunc =
                         (_JoystickGetSpecs)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_JoystickGetSpecs"), typeof(_JoystickGetSpecs));
                 }
@@ -293,7 +293,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_JoystickPowerLevelFunc == null) {
                     _JoystickPowerLevelFunc =
                         (_JoystickPowerLevel)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_JoystickPowerLevel"), typeof(_JoystickPowerLevel));
                 }
@@ -315,7 +315,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_JoystickIsHapticFunc == null) {
                     _JoystickIsHapticFunc =
                         (_JoystickIsHaptic)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_JoystickIsHaptic"), typeof(_JoystickIsHaptic));
                 }
@@ -337,7 +337,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_IsGameControllerFunc == null) {
                     _IsGameControllerFunc =
                         (_IsGameController)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_IsGameController"), typeof(_IsGameController));
                 }
@@ -358,7 +358,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_JoystickNumHatsFunc == null) {
                     _JoystickNumHatsFunc =
                         (_JoystickNumHats)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_JoystickNumHats"), typeof(_JoystickNumHats));
                 }
@@ -379,7 +379,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_JoystickNumButtonsFunc == null) {
                     _JoystickNumButtonsFunc =
                         (_JoystickNumButtons)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_JoystickNumButtons"), typeof(_JoystickNumButtons));
                 }
@@ -400,7 +400,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_JoystickNumBallsFunc == null) {
                     _JoystickNumBallsFunc =
                         (_JoystickNumBalls)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_JoystickNumBalls"), typeof(_JoystickNumBalls));
                 }
@@ -421,7 +421,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_JoystickNumAxesFunc == null) {
                     _JoystickNumAxesFunc =
                         (_JoystickNumAxes)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_JoystickNumAxes"), typeof(_JoystickNumAxes));
                 }
@@ -442,7 +442,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetDeviceTypeFunc == null) {
                     _GetDeviceTypeFunc =
                         (_GetDeviceType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_GetDeviceType"), typeof(_GetDeviceType));
                 }
@@ -463,7 +463,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetProductVersionFunc == null) {
                     _GetProductVersionFunc =
                         (_GetProductVersion)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_GetProductVersion"), typeof(_GetProductVersion));
                 }
@@ -484,7 +484,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetProductFunc == null) {
                     _GetProductFunc =
                         (_GetProduct)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_GetProduct"), typeof(_GetProduct));
                 }
@@ -505,7 +505,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetVendorFunc == null) {
                     _GetVendorFunc =
                         (_GetVendor)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_GetVendor"), typeof(_GetVendor));
                 }
@@ -527,7 +527,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_JoystickGetGUIDFunc == null) {
                     _JoystickGetGUIDFunc =
                         (_JoystickGetGUID)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_JoystickGetGUID"), typeof(_JoystickGetGUID));
                 }
@@ -549,7 +549,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_ControllerNameForIndexFunc == null) {
                     _ControllerNameForIndexFunc =
                         (_ControllerNameForIndex)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_ControllerNameForIndex"), typeof(_ControllerNameForIndex));
                 }
@@ -571,7 +571,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_JoystickNameForIndexFunc == null) {
                     _JoystickNameForIndexFunc =
                         (_JoystickNameForIndex)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_JoystickNameForIndex"), typeof(_JoystickNameForIndex));
                 }
@@ -593,7 +593,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetTorqueInstFromDeviceFunc == null) {
                     _GetTorqueInstFromDeviceFunc =
                         (_GetTorqueInstFromDevice)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_getTorqueInstFromDevice"), typeof(_GetTorqueInstFromDevice));
                 }
@@ -614,7 +614,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_CloseDeviceFunc == null) {
                     _CloseDeviceFunc =
                         (_CloseDevice)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_closeDevice"), typeof(_CloseDevice));
                 }
@@ -636,7 +636,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_OpenAsControllerFunc == null) {
                     _OpenAsControllerFunc =
                         (_OpenAsController)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_openAsController"), typeof(_OpenAsController));
                 }
@@ -658,7 +658,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_OpenAsJoystickFunc == null) {
                     _OpenAsJoystickFunc =
                         (_OpenAsJoystick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_openAsJoystick"), typeof(_OpenAsJoystick));
                 }
@@ -679,7 +679,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_GetDeviceOpenStateFunc == null) {
                     _GetDeviceOpenStateFunc =
                         (_GetDeviceOpenState)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_getDeviceOpenState"), typeof(_GetDeviceOpenState));
                 }
@@ -699,7 +699,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_NumJoysticksFunc == null) {
                     _NumJoysticksFunc =
                         (_NumJoysticks)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSDLInputManager_numJoysticks"), typeof(_NumJoysticks));
                 }

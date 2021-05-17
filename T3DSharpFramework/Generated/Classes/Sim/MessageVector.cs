@@ -99,7 +99,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLineTagFunc == null) {
                     _GetLineTagFunc =
                         (_GetLineTag)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_getLineTag"), typeof(_GetLineTag));
                 }
@@ -121,7 +121,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLineTextFunc == null) {
                     _GetLineTextFunc =
                         (_GetLineText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_getLineText"), typeof(_GetLineText));
                 }
@@ -142,7 +142,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLineIndexByTagFunc == null) {
                     _GetLineIndexByTagFunc =
                         (_GetLineIndexByTag)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_getLineIndexByTag"), typeof(_GetLineIndexByTag));
                 }
@@ -164,7 +164,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLineTextByTagFunc == null) {
                     _GetLineTextByTagFunc =
                         (_GetLineTextByTag)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_getLineTextByTag"), typeof(_GetLineTextByTag));
                 }
@@ -184,7 +184,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNumLinesFunc == null) {
                     _GetNumLinesFunc =
                         (_GetNumLines)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_getNumLines"), typeof(_GetNumLines));
                 }
@@ -208,7 +208,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DumpFunc == null) {
                     _DumpFunc =
                         (_Dump)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_dump"), typeof(_Dump));
                 }
@@ -230,7 +230,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteLineFunc == null) {
                     _DeleteLineFunc =
                         (_DeleteLine)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_deleteLine"), typeof(_DeleteLine));
                 }
@@ -255,7 +255,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_InsertLineFunc == null) {
                     _InsertLineFunc =
                         (_InsertLine)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_insertLine"), typeof(_InsertLine));
                 }
@@ -276,7 +276,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PopFrontLineFunc == null) {
                     _PopFrontLineFunc =
                         (_PopFrontLine)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_popFrontLine"), typeof(_PopFrontLine));
                 }
@@ -299,7 +299,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PushFrontLineFunc == null) {
                     _PushFrontLineFunc =
                         (_PushFrontLine)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_pushFrontLine"), typeof(_PushFrontLine));
                 }
@@ -320,7 +320,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PopBackLineFunc == null) {
                     _PopBackLineFunc =
                         (_PopBackLine)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_popBackLine"), typeof(_PopBackLine));
                 }
@@ -343,7 +343,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PushBackLineFunc == null) {
                     _PushBackLineFunc =
                         (_PushBackLine)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_pushBackLine"), typeof(_PushBackLine));
                 }
@@ -363,7 +363,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearFunc == null) {
                     _ClearFunc =
                         (_Clear)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_clear"), typeof(_Clear));
                 }
@@ -383,7 +383,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_staticGetType"), typeof(_StaticGetType));
                 }
@@ -403,7 +403,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnMessageVector_create"), typeof(_Create));
                 }

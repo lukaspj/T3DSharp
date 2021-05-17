@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetNodeOrientationModeFunc == null) {
                     _SetNodeOrientationModeFunc =
                         (_SetNodeOrientationMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVPathEditor_setNodeOrientationMode"), typeof(_SetNodeOrientationMode));
                 }
@@ -94,7 +94,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetNodeWeightFunc == null) {
                     _SetNodeWeightFunc =
                         (_SetNodeWeight)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVPathEditor_setNodeWeight"), typeof(_SetNodeWeight));
                 }
@@ -115,7 +115,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetNodeRotationFunc == null) {
                     _SetNodeRotationFunc =
                         (_SetNodeRotation)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVPathEditor_setNodeRotation"), typeof(_SetNodeRotation));
                 }
@@ -136,7 +136,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetNodePositionFunc == null) {
                     _SetNodePositionFunc =
                         (_SetNodePosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVPathEditor_setNodePosition"), typeof(_SetNodePosition));
                 }
@@ -156,7 +156,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteSelectionFunc == null) {
                     _DeleteSelectionFunc =
                         (_DeleteSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVPathEditor_deleteSelection"), typeof(_DeleteSelection));
                 }
@@ -176,7 +176,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedNodeFunc == null) {
                     _GetSelectedNodeFunc =
                         (_GetSelectedNode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVPathEditor_getSelectedNode"), typeof(_GetSelectedNode));
                 }
@@ -196,7 +196,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedPathFunc == null) {
                     _GetSelectedPathFunc =
                         (_GetSelectedPath)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVPathEditor_getSelectedPath"), typeof(_GetSelectedPath));
                 }
@@ -217,7 +217,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsValidSelectionFunc == null) {
                     _IsValidSelectionFunc =
                         (_IsValidSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVPathEditor_isValidSelection"), typeof(_IsValidSelection));
                 }
@@ -239,7 +239,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectionFunc == null) {
                     _SetSelectionFunc =
                         (_SetSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVPathEditor_setSelection"), typeof(_SetSelection));
                 }
@@ -259,7 +259,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearSelectionFunc == null) {
                     _ClearSelectionFunc =
                         (_ClearSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVPathEditor_clearSelection"), typeof(_ClearSelection));
                 }
@@ -279,7 +279,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVPathEditor_staticGetType"), typeof(_StaticGetType));
                 }
@@ -299,7 +299,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVPathEditor_create"), typeof(_Create));
                 }

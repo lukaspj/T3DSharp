@@ -98,7 +98,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAiPoseFunc == null) {
                     _GetAiPoseFunc =
                         (_GetAiPose)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_getAiPose"), typeof(_GetAiPose));
                 }
@@ -119,7 +119,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetAiPoseFunc == null) {
                     _SetAiPoseFunc =
                         (_SetAiPose)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_setAiPose"), typeof(_SetAiPose));
                 }
@@ -142,7 +142,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetTargetDistanceFunc == null) {
                     _GetTargetDistanceFunc =
                         (_GetTargetDistance)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_getTargetDistance"), typeof(_GetTargetDistance));
                 }
@@ -162,7 +162,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearMoveTriggersFunc == null) {
                     _ClearMoveTriggersFunc =
                         (_ClearMoveTriggers)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_clearMoveTriggers"), typeof(_ClearMoveTriggers));
                 }
@@ -184,7 +184,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMoveTriggerFunc == null) {
                     _GetMoveTriggerFunc =
                         (_GetMoveTrigger)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_getMoveTrigger"), typeof(_GetMoveTrigger));
                 }
@@ -205,7 +205,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearMoveTriggerFunc == null) {
                     _ClearMoveTriggerFunc =
                         (_ClearMoveTrigger)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_clearMoveTrigger"), typeof(_ClearMoveTrigger));
                 }
@@ -226,7 +226,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetMoveTriggerFunc == null) {
                     _SetMoveTriggerFunc =
                         (_SetMoveTrigger)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_setMoveTrigger"), typeof(_SetMoveTrigger));
                 }
@@ -251,7 +251,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CheckInFoVFunc == null) {
                     _CheckInFoVFunc =
                         (_CheckInFoV)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_checkInFoV"), typeof(_CheckInFoV));
                 }
@@ -277,7 +277,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CheckInLosFunc == null) {
                     _CheckInLosFunc =
                         (_CheckInLos)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_checkInLos"), typeof(_CheckInLos));
                 }
@@ -297,7 +297,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAimObjectFunc == null) {
                     _GetAimObjectFunc =
                         (_GetAimObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_getAimObject"), typeof(_GetAimObject));
                 }
@@ -320,7 +320,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetAimObjectFunc == null) {
                     _SetAimObjectFunc =
                         (_SetAimObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_setAimObject"), typeof(_SetAimObject));
                 }
@@ -340,7 +340,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetAimLocationFunc == null) {
                     _GetAimLocationFunc =
                         (_GetAimLocation)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_getAimLocation"), typeof(_GetAimLocation));
                 }
@@ -361,7 +361,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetAimLocationFunc == null) {
                     _SetAimLocationFunc =
                         (_SetAimLocation)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_setAimLocation"), typeof(_SetAimLocation));
                 }
@@ -381,7 +381,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMoveDestinationFunc == null) {
                     _GetMoveDestinationFunc =
                         (_GetMoveDestination)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_getMoveDestination"), typeof(_GetMoveDestination));
                 }
@@ -404,7 +404,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetMoveDestinationFunc == null) {
                     _SetMoveDestinationFunc =
                         (_SetMoveDestination)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_setMoveDestination"), typeof(_SetMoveDestination));
                 }
@@ -424,7 +424,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMoveSpeedFunc == null) {
                     _GetMoveSpeedFunc =
                         (_GetMoveSpeed)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_getMoveSpeed"), typeof(_GetMoveSpeed));
                 }
@@ -445,7 +445,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetMoveSpeedFunc == null) {
                     _SetMoveSpeedFunc =
                         (_SetMoveSpeed)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_setMoveSpeed"), typeof(_SetMoveSpeed));
                 }
@@ -465,7 +465,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearAimFunc == null) {
                     _ClearAimFunc =
                         (_ClearAim)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_clearAim"), typeof(_ClearAim));
                 }
@@ -485,7 +485,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StopFunc == null) {
                     _StopFunc =
                         (_Stop)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_stop"), typeof(_Stop));
                 }
@@ -506,7 +506,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNavSizeFunc == null) {
                     _GetNavSizeFunc =
                         (_GetNavSize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_getNavSize"), typeof(_GetNavSize));
                 }
@@ -528,7 +528,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetNavSizeFunc == null) {
                     _SetNavSizeFunc =
                         (_SetNavSize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_setNavSize"), typeof(_SetNavSize));
                 }
@@ -548,7 +548,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNavMeshFunc == null) {
                     _GetNavMeshFunc =
                         (_GetNavMesh)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_getNavMesh"), typeof(_GetNavMesh));
                 }
@@ -568,7 +568,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindNavMeshFunc == null) {
                     _FindNavMeshFunc =
                         (_FindNavMesh)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_findNavMesh"), typeof(_FindNavMesh));
                 }
@@ -590,7 +590,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindCoverFunc == null) {
                     _FindCoverFunc =
                         (_FindCover)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_findCover"), typeof(_FindCover));
                 }
@@ -610,7 +610,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RepathFunc == null) {
                     _RepathFunc =
                         (_Repath)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_repath"), typeof(_Repath));
                 }
@@ -632,7 +632,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FollowObjectFunc == null) {
                     _FollowObjectFunc =
                         (_FollowObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_followObject"), typeof(_FollowObject));
                 }
@@ -653,7 +653,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FollowNavPathFunc == null) {
                     _FollowNavPathFunc =
                         (_FollowNavPath)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_followNavPath"), typeof(_FollowNavPath));
                 }
@@ -673,7 +673,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetPathDestinationFunc == null) {
                     _GetPathDestinationFunc =
                         (_GetPathDestination)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_getPathDestination"), typeof(_GetPathDestination));
                 }
@@ -695,7 +695,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetPathDestinationFunc == null) {
                     _SetPathDestinationFunc =
                         (_SetPathDestination)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_setPathDestination"), typeof(_SetPathDestination));
                 }
@@ -715,7 +715,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_staticGetType"), typeof(_StaticGetType));
                 }
@@ -735,7 +735,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnAIPlayer_create"), typeof(_Create));
                 }

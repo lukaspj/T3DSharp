@@ -75,7 +75,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PasteFieldsFunc == null) {
                     _PasteFieldsFunc =
                         (_PasteFields)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnFieldBrushObject_pasteFields"), typeof(_PasteFields));
                 }
@@ -99,7 +99,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CopyFieldsFunc == null) {
                     _CopyFieldsFunc =
                         (_CopyFields)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnFieldBrushObject_copyFields"), typeof(_CopyFields));
                 }
@@ -124,7 +124,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_QueryFieldsFunc == null) {
                     _QueryFieldsFunc =
                         (_QueryFields)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnFieldBrushObject_queryFields"), typeof(_QueryFields));
                 }
@@ -147,7 +147,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_QueryGroupsFunc == null) {
                     _QueryGroupsFunc =
                         (_QueryGroups)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnFieldBrushObject_queryGroups"), typeof(_QueryGroups));
                 }
@@ -167,7 +167,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnFieldBrushObject_staticGetType"), typeof(_StaticGetType));
                 }
@@ -187,7 +187,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnFieldBrushObject_create"), typeof(_Create));
                 }

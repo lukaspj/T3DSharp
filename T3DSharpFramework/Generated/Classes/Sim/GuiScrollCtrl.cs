@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ComputeSizesFunc == null) {
                     _ComputeSizesFunc =
                         (_ComputeSizes)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiScrollCtrl_computeSizes"), typeof(_ComputeSizes));
                 }
@@ -93,7 +93,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetScrollPositionYFunc == null) {
                     _GetScrollPositionYFunc =
                         (_GetScrollPositionY)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiScrollCtrl_getScrollPositionY"), typeof(_GetScrollPositionY));
                 }
@@ -113,7 +113,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetScrollPositionXFunc == null) {
                     _GetScrollPositionXFunc =
                         (_GetScrollPositionX)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiScrollCtrl_getScrollPositionX"), typeof(_GetScrollPositionX));
                 }
@@ -133,7 +133,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetScrollPositionFunc == null) {
                     _GetScrollPositionFunc =
                         (_GetScrollPosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiScrollCtrl_getScrollPosition"), typeof(_GetScrollPosition));
                 }
@@ -154,7 +154,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ScrollToObjectFunc == null) {
                     _ScrollToObjectFunc =
                         (_ScrollToObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiScrollCtrl_scrollToObject"), typeof(_ScrollToObject));
                 }
@@ -176,7 +176,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetScrollPositionFunc == null) {
                     _SetScrollPositionFunc =
                         (_SetScrollPosition)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiScrollCtrl_setScrollPosition"), typeof(_SetScrollPosition));
                 }
@@ -196,7 +196,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ScrollToBottomFunc == null) {
                     _ScrollToBottomFunc =
                         (_ScrollToBottom)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiScrollCtrl_scrollToBottom"), typeof(_ScrollToBottom));
                 }
@@ -216,7 +216,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ScrollToTopFunc == null) {
                     _ScrollToTopFunc =
                         (_ScrollToTop)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiScrollCtrl_scrollToTop"), typeof(_ScrollToTop));
                 }
@@ -236,7 +236,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnScrollFunc == null) {
                     _OnScrollFunc =
                         (_OnScroll)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiScrollCtrl_onScroll"), typeof(_OnScroll));
                 }
@@ -256,7 +256,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiScrollCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -276,7 +276,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiScrollCtrl_create"), typeof(_Create));
                 }

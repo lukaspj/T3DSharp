@@ -85,7 +85,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsRowActiveFunc == null) {
                     _IsRowActiveFunc =
                         (_IsRowActive)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_isRowActive"), typeof(_IsRowActive));
                 }
@@ -108,7 +108,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetRowActiveFunc == null) {
                     _SetRowActiveFunc =
                         (_SetRowActive)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_setRowActive"), typeof(_SetRowActive));
                 }
@@ -130,7 +130,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindTextIndexFunc == null) {
                     _FindTextIndexFunc =
                         (_FindTextIndex)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_findTextIndex"), typeof(_FindTextIndex));
                 }
@@ -151,7 +151,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ScrollVisibleFunc == null) {
                     _ScrollVisibleFunc =
                         (_ScrollVisible)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_scrollVisible"), typeof(_ScrollVisible));
                 }
@@ -172,7 +172,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveRowFunc == null) {
                     _RemoveRowFunc =
                         (_RemoveRow)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_removeRow"), typeof(_RemoveRow));
                 }
@@ -193,7 +193,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveRowByIdFunc == null) {
                     _RemoveRowByIdFunc =
                         (_RemoveRowById)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_removeRowById"), typeof(_RemoveRowById));
                 }
@@ -215,7 +215,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetRowTextFunc == null) {
                     _GetRowTextFunc =
                         (_GetRowText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_getRowText"), typeof(_GetRowText));
                 }
@@ -236,7 +236,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetRowNumByIdFunc == null) {
                     _GetRowNumByIdFunc =
                         (_GetRowNumById)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_getRowNumById"), typeof(_GetRowNumById));
                 }
@@ -258,7 +258,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetRowTextByIdFunc == null) {
                     _GetRowTextByIdFunc =
                         (_GetRowTextById)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_getRowTextById"), typeof(_GetRowTextById));
                 }
@@ -279,7 +279,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetRowIdFunc == null) {
                     _GetRowIdFunc =
                         (_GetRowId)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_getRowId"), typeof(_GetRowId));
                 }
@@ -299,7 +299,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RowCountFunc == null) {
                     _RowCountFunc =
                         (_RowCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_rowCount"), typeof(_RowCount));
                 }
@@ -319,7 +319,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearFunc == null) {
                     _ClearFunc =
                         (_Clear)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_clear"), typeof(_Clear));
                 }
@@ -342,7 +342,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SortNumericalFunc == null) {
                     _SortNumericalFunc =
                         (_SortNumerical)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_sortNumerical"), typeof(_SortNumerical));
                 }
@@ -365,7 +365,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SortFunc == null) {
                     _SortFunc =
                         (_Sort)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_sort"), typeof(_Sort));
                 }
@@ -388,7 +388,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetRowByIdFunc == null) {
                     _SetRowByIdFunc =
                         (_SetRowById)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_setRowById"), typeof(_SetRowById));
                 }
@@ -412,7 +412,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddRowFunc == null) {
                     _AddRowFunc =
                         (_AddRow)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_addRow"), typeof(_AddRow));
                 }
@@ -432,7 +432,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearSelectionFunc == null) {
                     _ClearSelectionFunc =
                         (_ClearSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_clearSelection"), typeof(_ClearSelection));
                 }
@@ -452,7 +452,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedRowFunc == null) {
                     _GetSelectedRowFunc =
                         (_GetSelectedRow)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_getSelectedRow"), typeof(_GetSelectedRow));
                 }
@@ -473,7 +473,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectedRowFunc == null) {
                     _SetSelectedRowFunc =
                         (_SetSelectedRow)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_setSelectedRow"), typeof(_SetSelectedRow));
                 }
@@ -494,7 +494,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectedByIdFunc == null) {
                     _SetSelectedByIdFunc =
                         (_SetSelectedById)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_setSelectedById"), typeof(_SetSelectedById));
                 }
@@ -514,7 +514,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedIdFunc == null) {
                     _GetSelectedIdFunc =
                         (_GetSelectedId)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_getSelectedId"), typeof(_GetSelectedId));
                 }
@@ -535,7 +535,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnDeleteKeyFunc == null) {
                     _OnDeleteKeyFunc =
                         (_OnDeleteKey)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiTextListCtrl_onDeleteKey"), typeof(_OnDeleteKey));
                 }
@@ -558,7 +558,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnSelectFunc == null) {
                     _OnSelectFunc =
                         (_OnSelect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiTextListCtrl_onSelect"), typeof(_OnSelect));
                 }
@@ -578,7 +578,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -598,7 +598,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTextListCtrl_create"), typeof(_Create));
                 }

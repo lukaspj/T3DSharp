@@ -86,7 +86,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeactivateFunc == null) {
                     _DeactivateFunc =
                         (_Deactivate)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPhysicalZone_deactivate"), typeof(_Deactivate));
                 }
@@ -106,7 +106,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ActivateFunc == null) {
                     _ActivateFunc =
                         (_Activate)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPhysicalZone_activate"), typeof(_Activate));
                 }
@@ -126,7 +126,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPhysicalZone_staticGetType"), typeof(_StaticGetType));
                 }
@@ -146,7 +146,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPhysicalZone_create"), typeof(_Create));
                 }

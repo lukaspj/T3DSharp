@@ -23,7 +23,7 @@ namespace T3DSharpGenerator
             if (_evalFunc == null)
             {
                 _evalFunc =
-                    (_eval)Marshal.GetDelegateForFunctionPointer(Torque3D.DllLoadUtils.GetProcAddress(Torque3D.Torque3DLibHandle,
+                    (_eval)Marshal.GetDelegateForFunctionPointer(NativeLibrary.GetExport(Torque3D.Torque3DLibHandle,
                         "fneval"), typeof(_eval));
             }
          

@@ -45,7 +45,7 @@ namespace T3DSharpFramework.Generated.Classes.Net {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetEvent_staticGetType"), typeof(_StaticGetType));
                 }

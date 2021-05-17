@@ -85,7 +85,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnRightMouseDraggedFunc == null) {
                     _OnRightMouseDraggedFunc =
                         (_OnRightMouseDragged)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMouseEventCtrl_onRightMouseDragged"), typeof(_OnRightMouseDragged));
                 }
@@ -108,7 +108,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnRightMouseUpFunc == null) {
                     _OnRightMouseUpFunc =
                         (_OnRightMouseUp)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMouseEventCtrl_onRightMouseUp"), typeof(_OnRightMouseUp));
                 }
@@ -131,7 +131,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnRightMouseDownFunc == null) {
                     _OnRightMouseDownFunc =
                         (_OnRightMouseDown)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMouseEventCtrl_onRightMouseDown"), typeof(_OnRightMouseDown));
                 }
@@ -154,7 +154,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseLeaveFunc == null) {
                     _OnMouseLeaveFunc =
                         (_OnMouseLeave)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMouseEventCtrl_onMouseLeave"), typeof(_OnMouseLeave));
                 }
@@ -177,7 +177,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseEnterFunc == null) {
                     _OnMouseEnterFunc =
                         (_OnMouseEnter)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMouseEventCtrl_onMouseEnter"), typeof(_OnMouseEnter));
                 }
@@ -200,7 +200,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseDraggedFunc == null) {
                     _OnMouseDraggedFunc =
                         (_OnMouseDragged)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMouseEventCtrl_onMouseDragged"), typeof(_OnMouseDragged));
                 }
@@ -223,7 +223,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseMoveFunc == null) {
                     _OnMouseMoveFunc =
                         (_OnMouseMove)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMouseEventCtrl_onMouseMove"), typeof(_OnMouseMove));
                 }
@@ -246,7 +246,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseUpFunc == null) {
                     _OnMouseUpFunc =
                         (_OnMouseUp)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMouseEventCtrl_onMouseUp"), typeof(_OnMouseUp));
                 }
@@ -269,7 +269,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseDownFunc == null) {
                     _OnMouseDownFunc =
                         (_OnMouseDown)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMouseEventCtrl_onMouseDown"), typeof(_OnMouseDown));
                 }
@@ -289,7 +289,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMouseEventCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -309,7 +309,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMouseEventCtrl_create"), typeof(_Create));
                 }

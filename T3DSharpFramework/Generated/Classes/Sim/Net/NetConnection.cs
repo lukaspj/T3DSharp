@@ -93,7 +93,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_ResolveGhostFunc == null) {
                     _ResolveGhostFunc =
                         (_ResolveGhost)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_ResolveGhost"), typeof(_ResolveGhost));
                 }
@@ -114,7 +114,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_GetGhostIndexFunc == null) {
                     _GetGhostIndexFunc =
                         (_GetGhostIndex)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_GetGhostIndex"), typeof(_GetGhostIndex));
                 }
@@ -134,7 +134,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_GetGhostsActiveFunc == null) {
                     _GetGhostsActiveFunc =
                         (_GetGhostsActive)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_getGhostsActive"), typeof(_GetGhostsActive));
                 }
@@ -155,7 +155,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_ConnectLocalFunc == null) {
                     _ConnectLocalFunc =
                         (_ConnectLocal)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_connectLocal"), typeof(_ConnectLocal));
                 }
@@ -177,7 +177,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_ConnectFunc == null) {
                     _ConnectFunc =
                         (_Connect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_connect"), typeof(_Connect));
                 }
@@ -198,7 +198,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_GetGhostIDFunc == null) {
                     _GetGhostIDFunc =
                         (_GetGhostID)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_getGhostID"), typeof(_GetGhostID));
                 }
@@ -219,7 +219,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_ResolveObjectFromGhostIndexFunc == null) {
                     _ResolveObjectFromGhostIndexFunc =
                         (_ResolveObjectFromGhostIndex)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_resolveObjectFromGhostIndex"), typeof(_ResolveObjectFromGhostIndex));
                 }
@@ -240,7 +240,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_ResolveGhostIDFunc == null) {
                     _ResolveGhostIDFunc =
                         (_ResolveGhostID)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_resolveGhostID"), typeof(_ResolveGhostID));
                 }
@@ -260,7 +260,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_CheckMaxRateFunc == null) {
                     _CheckMaxRateFunc =
                         (_CheckMaxRate)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_checkMaxRate"), typeof(_CheckMaxRate));
                 }
@@ -280,7 +280,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_GetPacketLossFunc == null) {
                     _GetPacketLossFunc =
                         (_GetPacketLoss)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_getPacketLoss"), typeof(_GetPacketLoss));
                 }
@@ -300,7 +300,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_GetPingFunc == null) {
                     _GetPingFunc =
                         (_GetPing)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_getPing"), typeof(_GetPing));
                 }
@@ -322,7 +322,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_SetSimulatedNetParamsFunc == null) {
                     _SetSimulatedNetParamsFunc =
                         (_SetSimulatedNetParams)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_setSimulatedNetParams"), typeof(_SetSimulatedNetParams));
                 }
@@ -343,7 +343,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_GetAddressFunc == null) {
                     _GetAddressFunc =
                         (_GetAddress)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_getAddress"), typeof(_GetAddress));
                 }
@@ -363,7 +363,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_ClearPathsFunc == null) {
                     _ClearPathsFunc =
                         (_ClearPaths)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_clearPaths"), typeof(_ClearPaths));
                 }
@@ -383,7 +383,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_TransmitPathsFunc == null) {
                     _TransmitPathsFunc =
                         (_TransmitPaths)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_transmitPaths"), typeof(_TransmitPaths));
                 }
@@ -403,7 +403,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_staticGetType"), typeof(_StaticGetType));
                 }
@@ -423,7 +423,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNetConnection_create"), typeof(_Create));
                 }

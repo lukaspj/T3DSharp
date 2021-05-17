@@ -92,7 +92,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FindMenuFunc == null) {
                     _FindMenuFunc =
                         (_FindMenu)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMenuBar_findMenu"), typeof(_FindMenu));
                 }
@@ -114,7 +114,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_InsertFunc == null) {
                     _InsertFunc =
                         (_Insert)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMenuBar_insert"), typeof(_Insert));
                 }
@@ -135,7 +135,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMenuFunc == null) {
                     _GetMenuFunc =
                         (_GetMenu)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMenuBar_getMenu"), typeof(_GetMenu));
                 }
@@ -155,7 +155,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMenuCountFunc == null) {
                     _GetMenuCountFunc =
                         (_GetMenuCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMenuBar_getMenuCount"), typeof(_GetMenuCount));
                 }
@@ -175,7 +175,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveFromCanvasFunc == null) {
                     _RemoveFromCanvasFunc =
                         (_RemoveFromCanvas)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMenuBar_removeFromCanvas"), typeof(_RemoveFromCanvas));
                 }
@@ -198,7 +198,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AttachToCanvasFunc == null) {
                     _AttachToCanvasFunc =
                         (_AttachToCanvas)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMenuBar_attachToCanvas"), typeof(_AttachToCanvas));
                 }
@@ -224,7 +224,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMenuItemSelectFunc == null) {
                     _OnMenuItemSelectFunc =
                         (_OnMenuItemSelect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMenuBar_onMenuItemSelect"), typeof(_OnMenuItemSelect));
                 }
@@ -247,7 +247,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMenuSelectFunc == null) {
                     _OnMenuSelectFunc =
                         (_OnMenuSelect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMenuBar_onMenuSelect"), typeof(_OnMenuSelect));
                 }
@@ -269,7 +269,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMouseInMenuFunc == null) {
                     _OnMouseInMenuFunc =
                         (_OnMouseInMenu)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiMenuBar_onMouseInMenu"), typeof(_OnMouseInMenu));
                 }
@@ -289,7 +289,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMenuBar_staticGetType"), typeof(_StaticGetType));
                 }
@@ -309,7 +309,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiMenuBar_create"), typeof(_Create));
                 }

@@ -74,7 +74,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetNumLangFunc == null) {
                     _GetNumLangFunc =
                         (_GetNumLang)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLangTable_getNumLang"), typeof(_GetNumLang));
                 }
@@ -96,7 +96,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLangNameFunc == null) {
                     _GetLangNameFunc =
                         (_GetLangName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLangTable_getLangName"), typeof(_GetLangName));
                 }
@@ -116,7 +116,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetCurrentLanguageFunc == null) {
                     _GetCurrentLanguageFunc =
                         (_GetCurrentLanguage)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLangTable_getCurrentLanguage"), typeof(_GetCurrentLanguage));
                 }
@@ -137,7 +137,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetCurrentLanguageFunc == null) {
                     _SetCurrentLanguageFunc =
                         (_SetCurrentLanguage)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLangTable_setCurrentLanguage"), typeof(_SetCurrentLanguage));
                 }
@@ -158,7 +158,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetDefaultLanguageFunc == null) {
                     _SetDefaultLanguageFunc =
                         (_SetDefaultLanguage)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLangTable_setDefaultLanguage"), typeof(_SetDefaultLanguage));
                 }
@@ -180,7 +180,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetStringFunc == null) {
                     _GetStringFunc =
                         (_GetString)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLangTable_getString"), typeof(_GetString));
                 }
@@ -204,7 +204,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddLanguageFunc == null) {
                     _AddLanguageFunc =
                         (_AddLanguage)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLangTable_addLanguage"), typeof(_AddLanguage));
                 }
@@ -224,7 +224,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLangTable_staticGetType"), typeof(_StaticGetType));
                 }
@@ -244,7 +244,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnLangTable_create"), typeof(_Create));
                 }

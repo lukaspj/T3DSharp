@@ -30,7 +30,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_OnWindowClosedFunc == null) {
                     _OnWindowClosedFunc =
                         (_OnWindowClosed)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPfxVis_onWindowClosed"), typeof(_OnWindowClosed));
                 }
@@ -50,7 +50,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_ShowFunc == null) {
                     _ShowFunc =
                         (_Show)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPfxVis_show"), typeof(_Show));
                 }
@@ -70,7 +70,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_HideFunc == null) {
                     _HideFunc =
                         (_Hide)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPfxVis_hide"), typeof(_Hide));
                 }
@@ -93,7 +93,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_OpenFunc == null) {
                     _OpenFunc =
                         (_Open)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPfxVis_open"), typeof(_Open));
                 }
@@ -113,7 +113,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_ClearFunc == null) {
                     _ClearFunc =
                         (_Clear)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPfxVis_clear"), typeof(_Clear));
                 }

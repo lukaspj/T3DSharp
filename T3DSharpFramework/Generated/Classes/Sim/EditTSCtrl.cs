@@ -74,7 +74,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsMiddleMouseDownFunc == null) {
                     _IsMiddleMouseDownFunc =
                         (_IsMiddleMouseDown)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_isMiddleMouseDown"), typeof(_IsMiddleMouseDown));
                 }
@@ -94,7 +94,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetGizmoFunc == null) {
                     _GetGizmoFunc =
                         (_GetGizmo)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_getGizmo"), typeof(_GetGizmo));
                 }
@@ -117,7 +117,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RenderLineFunc == null) {
                     _RenderLineFunc =
                         (_RenderLine)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_renderLine"), typeof(_RenderLine));
                 }
@@ -140,7 +140,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RenderTriangleFunc == null) {
                     _RenderTriangleFunc =
                         (_RenderTriangle)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_renderTriangle"), typeof(_RenderTriangle));
                 }
@@ -164,7 +164,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RenderCircleFunc == null) {
                     _RenderCircleFunc =
                         (_RenderCircle)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_renderCircle"), typeof(_RenderCircle));
                 }
@@ -187,7 +187,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RenderSphereFunc == null) {
                     _RenderSphereFunc =
                         (_RenderSphere)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_renderSphere"), typeof(_RenderSphere));
                 }
@@ -209,7 +209,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RenderBoxFunc == null) {
                     _RenderBoxFunc =
                         (_RenderBox)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_renderBox"), typeof(_RenderBox));
                 }
@@ -230,7 +230,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetOrthoFOVFunc == null) {
                     _SetOrthoFOVFunc =
                         (_SetOrthoFOV)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_setOrthoFOV"), typeof(_SetOrthoFOV));
                 }
@@ -250,7 +250,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetOrthoFOVFunc == null) {
                     _GetOrthoFOVFunc =
                         (_GetOrthoFOV)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_getOrthoFOV"), typeof(_GetOrthoFOV));
                 }
@@ -271,7 +271,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetDisplayTypeFunc == null) {
                     _SetDisplayTypeFunc =
                         (_SetDisplayType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_setDisplayType"), typeof(_SetDisplayType));
                 }
@@ -291,7 +291,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDisplayTypeFunc == null) {
                     _GetDisplayTypeFunc =
                         (_GetDisplayType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_getDisplayType"), typeof(_GetDisplayType));
                 }
@@ -311,7 +311,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -331,7 +331,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditTSCtrl_create"), typeof(_Create));
                 }

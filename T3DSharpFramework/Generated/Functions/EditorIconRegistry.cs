@@ -31,7 +31,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_FindIconBySimObjectFunc == null) {
                     _FindIconBySimObjectFunc =
                         (_FindIconBySimObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditorIconRegistry_findIconBySimObject"), typeof(_FindIconBySimObject));
                 }
@@ -54,7 +54,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_FindIconByClassNameFunc == null) {
                     _FindIconByClassNameFunc =
                         (_FindIconByClassName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditorIconRegistry_findIconByClassName"), typeof(_FindIconByClassName));
                 }
@@ -74,7 +74,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_ClearFunc == null) {
                     _ClearFunc =
                         (_Clear)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditorIconRegistry_clear"), typeof(_Clear));
                 }
@@ -98,7 +98,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_LoadFromPathFunc == null) {
                     _LoadFromPathFunc =
                         (_LoadFromPath)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditorIconRegistry_loadFromPath"), typeof(_LoadFromPath));
                 }
@@ -124,7 +124,7 @@ namespace T3DSharpFramework.Generated.Functions {
                 if (_AddFunc == null) {
                     _AddFunc =
                         (_Add)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnEditorIconRegistry_add"), typeof(_Add));
                 }

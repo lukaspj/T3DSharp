@@ -46,7 +46,7 @@ namespace T3DSharpFramework.Generated.Classes.Global {
                 if (_GetObjectFunc == null) {
                     _GetObjectFunc =
                         (_GetObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimPersistID_getObject"), typeof(_GetObject));
                 }
@@ -66,7 +66,7 @@ namespace T3DSharpFramework.Generated.Classes.Global {
                 if (_GetUUIDFunc == null) {
                     _GetUUIDFunc =
                         (_GetUUID)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimPersistID_getUUID"), typeof(_GetUUID));
                 }
@@ -86,7 +86,7 @@ namespace T3DSharpFramework.Generated.Classes.Global {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimPersistID_staticGetType"), typeof(_StaticGetType));
                 }
@@ -106,7 +106,7 @@ namespace T3DSharpFramework.Generated.Classes.Global {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimPersistID_create"), typeof(_Create));
                 }

@@ -87,7 +87,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SelectWithinFunc == null) {
                     _SelectWithinFunc =
                         (_SelectWithin)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZone_selectWithin"), typeof(_SelectWithin));
                 }
@@ -109,7 +109,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DumpZoneStateFunc == null) {
                     _DumpZoneStateFunc =
                         (_DumpZoneState)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZone_dumpZoneState"), typeof(_DumpZoneState));
                 }
@@ -129,7 +129,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetZoneIdFunc == null) {
                     _GetZoneIdFunc =
                         (_GetZoneId)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZone_getZoneId"), typeof(_GetZoneId));
                 }
@@ -149,7 +149,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZone_staticGetType"), typeof(_StaticGetType));
                 }
@@ -169,7 +169,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZone_create"), typeof(_Create));
                 }

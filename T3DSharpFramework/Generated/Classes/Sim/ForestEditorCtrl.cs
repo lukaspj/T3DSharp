@@ -75,7 +75,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetActiveForestFunc == null) {
                     _SetActiveForestFunc =
                         (_SetActiveForest)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestEditorCtrl_setActiveForest"), typeof(_SetActiveForest));
                 }
@@ -96,7 +96,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsDirtyFunc == null) {
                     _IsDirtyFunc =
                         (_IsDirty)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestEditorCtrl_isDirty"), typeof(_IsDirty));
                 }
@@ -118,7 +118,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteMeshSafeFunc == null) {
                     _DeleteMeshSafeFunc =
                         (_DeleteMeshSafe)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestEditorCtrl_deleteMeshSafe"), typeof(_DeleteMeshSafe));
                 }
@@ -138,7 +138,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetActiveToolFunc == null) {
                     _GetActiveToolFunc =
                         (_GetActiveTool)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestEditorCtrl_getActiveTool"), typeof(_GetActiveTool));
                 }
@@ -160,7 +160,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetActiveToolFunc == null) {
                     _SetActiveToolFunc =
                         (_SetActiveTool)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestEditorCtrl_setActiveTool"), typeof(_SetActiveTool));
                 }
@@ -180,7 +180,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UpdateActiveForestFunc == null) {
                     _UpdateActiveForestFunc =
                         (_UpdateActiveForest)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestEditorCtrl_updateActiveForest"), typeof(_UpdateActiveForest));
                 }
@@ -200,7 +200,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestEditorCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -220,7 +220,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnForestEditorCtrl_create"), typeof(_Create));
                 }

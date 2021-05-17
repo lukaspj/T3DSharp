@@ -70,7 +70,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SaveFunc == null) {
                     _SaveFunc =
                         (_Save)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_save"), typeof(_Save));
                 }
@@ -91,7 +91,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_LoadFunc == null) {
                     _LoadFunc =
                         (_Load)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_load"), typeof(_Load));
                 }
@@ -112,7 +112,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateCoverPointsFunc == null) {
                     _CreateCoverPointsFunc =
                         (_CreateCoverPoints)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_createCoverPoints"), typeof(_CreateCoverPoints));
                 }
@@ -132,7 +132,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteCoverPointsFunc == null) {
                     _DeleteCoverPointsFunc =
                         (_DeleteCoverPoints)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_deleteCoverPoints"), typeof(_DeleteCoverPoints));
                 }
@@ -152,7 +152,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_BuildLinksFunc == null) {
                     _BuildLinksFunc =
                         (_BuildLinks)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_buildLinks"), typeof(_BuildLinks));
                 }
@@ -173,7 +173,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_BuildTilesFunc == null) {
                     _BuildTilesFunc =
                         (_BuildTiles)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_buildTiles"), typeof(_BuildTiles));
                 }
@@ -193,7 +193,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CancelBuildFunc == null) {
                     _CancelBuildFunc =
                         (_CancelBuild)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_cancelBuild"), typeof(_CancelBuild));
                 }
@@ -218,7 +218,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_BuildFunc == null) {
                     _BuildFunc =
                         (_Build)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_build"), typeof(_Build));
                 }
@@ -238,7 +238,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteLinksFunc == null) {
                     _DeleteLinksFunc =
                         (_DeleteLinks)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_deleteLinks"), typeof(_DeleteLinks));
                 }
@@ -259,7 +259,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteLinkFunc == null) {
                     _DeleteLinkFunc =
                         (_DeleteLink)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_deleteLink"), typeof(_DeleteLink));
                 }
@@ -280,7 +280,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLinkEndFunc == null) {
                     _GetLinkEndFunc =
                         (_GetLinkEnd)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_getLinkEnd"), typeof(_GetLinkEnd));
                 }
@@ -301,7 +301,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLinkStartFunc == null) {
                     _GetLinkStartFunc =
                         (_GetLinkStart)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_getLinkStart"), typeof(_GetLinkStart));
                 }
@@ -323,7 +323,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetLinkFlagsFunc == null) {
                     _SetLinkFlagsFunc =
                         (_SetLinkFlags)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_setLinkFlags"), typeof(_SetLinkFlags));
                 }
@@ -344,7 +344,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLinkFlagsFunc == null) {
                     _GetLinkFlagsFunc =
                         (_GetLinkFlags)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_getLinkFlags"), typeof(_GetLinkFlags));
                 }
@@ -364,7 +364,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLinkCountFunc == null) {
                     _GetLinkCountFunc =
                         (_GetLinkCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_getLinkCount"), typeof(_GetLinkCount));
                 }
@@ -385,7 +385,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetLinkFunc == null) {
                     _GetLinkFunc =
                         (_GetLink)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_getLink"), typeof(_GetLink));
                 }
@@ -408,7 +408,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddLinkFunc == null) {
                     _AddLinkFunc =
                         (_AddLink)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_addLink"), typeof(_AddLink));
                 }
@@ -428,7 +428,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_staticGetType"), typeof(_StaticGetType));
                 }
@@ -448,7 +448,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnNavMesh_create"), typeof(_Create));
                 }

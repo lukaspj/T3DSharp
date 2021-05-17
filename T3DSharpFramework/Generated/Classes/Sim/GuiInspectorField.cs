@@ -74,7 +74,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetEditControlFunc == null) {
                     _SetEditControlFunc =
                         (_SetEditControl)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorField_setEditControl"), typeof(_SetEditControl));
                 }
@@ -97,7 +97,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetHeightOverrideFunc == null) {
                     _SetHeightOverrideFunc =
                         (_SetHeightOverride)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorField_setHeightOverride"), typeof(_SetHeightOverride));
                 }
@@ -119,7 +119,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetCaptionFunc == null) {
                     _SetCaptionFunc =
                         (_SetCaption)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorField_setCaption"), typeof(_SetCaption));
                 }
@@ -139,7 +139,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ResetFunc == null) {
                     _ResetFunc =
                         (_Reset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorField_reset"), typeof(_Reset));
                 }
@@ -160,7 +160,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDataFunc == null) {
                     _GetDataFunc =
                         (_GetData)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorField_getData"), typeof(_GetData));
                 }
@@ -182,7 +182,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ApplyWithoutUndoFunc == null) {
                     _ApplyWithoutUndoFunc =
                         (_ApplyWithoutUndo)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorField_applyWithoutUndo"), typeof(_ApplyWithoutUndo));
                 }
@@ -206,7 +206,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ApplyFunc == null) {
                     _ApplyFunc =
                         (_Apply)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorField_apply"), typeof(_Apply));
                 }
@@ -227,7 +227,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetInspectedFieldTypeFunc == null) {
                     _GetInspectedFieldTypeFunc =
                         (_GetInspectedFieldType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorField_getInspectedFieldType"), typeof(_GetInspectedFieldType));
                 }
@@ -248,7 +248,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetInspectedFieldNameFunc == null) {
                     _GetInspectedFieldNameFunc =
                         (_GetInspectedFieldName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorField_getInspectedFieldName"), typeof(_GetInspectedFieldName));
                 }
@@ -268,7 +268,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetInspectorFunc == null) {
                     _GetInspectorFunc =
                         (_GetInspector)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorField_getInspector"), typeof(_GetInspector));
                 }
@@ -288,7 +288,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorField_staticGetType"), typeof(_StaticGetType));
                 }
@@ -308,7 +308,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiInspectorField_create"), typeof(_Create));
                 }

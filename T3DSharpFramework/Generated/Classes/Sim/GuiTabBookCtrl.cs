@@ -80,7 +80,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedPageFunc == null) {
                     _GetSelectedPageFunc =
                         (_GetSelectedPage)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTabBookCtrl_getSelectedPage"), typeof(_GetSelectedPage));
                 }
@@ -101,7 +101,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SelectPageFunc == null) {
                     _SelectPageFunc =
                         (_SelectPage)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTabBookCtrl_selectPage"), typeof(_SelectPage));
                 }
@@ -123,7 +123,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddPageFunc == null) {
                     _AddPageFunc =
                         (_AddPage)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTabBookCtrl_addPage"), typeof(_AddPage));
                 }
@@ -146,7 +146,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnTabRightClickFunc == null) {
                     _OnTabRightClickFunc =
                         (_OnTabRightClick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiTabBookCtrl_onTabRightClick"), typeof(_OnTabRightClick));
                 }
@@ -169,7 +169,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnTabSelectedFunc == null) {
                     _OnTabSelectedFunc =
                         (_OnTabSelected)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiTabBookCtrl_onTabSelected"), typeof(_OnTabSelected));
                 }
@@ -189,7 +189,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTabBookCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -209,7 +209,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiTabBookCtrl_create"), typeof(_Create));
                 }

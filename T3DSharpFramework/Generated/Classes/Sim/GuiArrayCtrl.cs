@@ -81,7 +81,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnCellHighlightedFunc == null) {
                     _OnCellHighlightedFunc =
                         (_OnCellHighlighted)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiArrayCtrl_onCellHighlighted"), typeof(_OnCellHighlighted));
                 }
@@ -102,7 +102,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnCellSelectedFunc == null) {
                     _OnCellSelectedFunc =
                         (_OnCellSelected)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiArrayCtrl_onCellSelected"), typeof(_OnCellSelected));
                 }
@@ -122,7 +122,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiArrayCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -142,7 +142,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiArrayCtrl_create"), typeof(_Create));
                 }

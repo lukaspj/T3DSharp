@@ -76,7 +76,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnStickyCollisionFunc == null) {
                     _OnStickyCollisionFunc =
                         (_OnStickyCollision)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbTurretShapeData_onStickyCollision"), typeof(_OnStickyCollision));
                 }
@@ -98,7 +98,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnUnmountObjectFunc == null) {
                     _OnUnmountObjectFunc =
                         (_OnUnmountObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbTurretShapeData_onUnmountObject"), typeof(_OnUnmountObject));
                 }
@@ -121,7 +121,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMountObjectFunc == null) {
                     _OnMountObjectFunc =
                         (_OnMountObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbTurretShapeData_onMountObject"), typeof(_OnMountObject));
                 }
@@ -141,7 +141,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTurretShapeData_staticGetType"), typeof(_StaticGetType));
                 }
@@ -161,7 +161,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnTurretShapeData_create"), typeof(_Create));
                 }

@@ -107,7 +107,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsInsideFogFunc == null) {
                     _IsInsideFogFunc =
                         (_IsInsideFog)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVolumetricFog_isInsideFog"), typeof(_IsInsideFog));
                 }
@@ -130,7 +130,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetFogLightrayFunc == null) {
                     _SetFogLightrayFunc =
                         (_SetFogLightray)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVolumetricFog_SetFogLightray"), typeof(_SetFogLightray));
                 }
@@ -153,7 +153,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetFogGlowFunc == null) {
                     _SetFogGlowFunc =
                         (_SetFogGlow)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVolumetricFog_SetFogGlow"), typeof(_SetFogGlow));
                 }
@@ -176,7 +176,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetFogModulationFunc == null) {
                     _SetFogModulationFunc =
                         (_SetFogModulation)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVolumetricFog_SetFogModulation"), typeof(_SetFogModulation));
                 }
@@ -197,7 +197,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetFogDensityFunc == null) {
                     _SetFogDensityFunc =
                         (_SetFogDensity)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVolumetricFog_SetFogDensity"), typeof(_SetFogDensity));
                 }
@@ -218,7 +218,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetFogColorFunc == null) {
                     _SetFogColorFunc =
                         (_SetFogColor)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVolumetricFog_SetFogColor"), typeof(_SetFogColor));
                 }
@@ -239,7 +239,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetFogColorFFunc == null) {
                     _SetFogColorFFunc =
                         (_SetFogColorF)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVolumetricFog_SetFogColorF"), typeof(_SetFogColorF));
                 }
@@ -260,7 +260,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnLeaveFogFunc == null) {
                     _OnLeaveFogFunc =
                         (_OnLeaveFog)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbVolumetricFog_onLeaveFog"), typeof(_OnLeaveFog));
                 }
@@ -281,7 +281,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnEnterFogFunc == null) {
                     _OnEnterFogFunc =
                         (_OnEnterFog)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbVolumetricFog_onEnterFog"), typeof(_OnEnterFog));
                 }
@@ -301,7 +301,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVolumetricFog_staticGetType"), typeof(_StaticGetType));
                 }
@@ -321,7 +321,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnVolumetricFog_create"), typeof(_Create));
                 }

@@ -80,7 +80,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ShowPopupFunc == null) {
                     _ShowPopupFunc =
                         (_ShowPopup)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_showPopup"), typeof(_ShowPopup));
                 }
@@ -100,7 +100,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearItemsFunc == null) {
                     _ClearItemsFunc =
                         (_ClearItems)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_clearItems"), typeof(_ClearItems));
                 }
@@ -120,7 +120,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetItemCountFunc == null) {
                     _GetItemCountFunc =
                         (_GetItemCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_getItemCount"), typeof(_GetItemCount));
                 }
@@ -142,7 +142,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsItemCheckedFunc == null) {
                     _IsItemCheckedFunc =
                         (_IsItemChecked)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_isItemChecked"), typeof(_IsItemChecked));
                 }
@@ -165,7 +165,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CheckRadioItemFunc == null) {
                     _CheckRadioItemFunc =
                         (_CheckRadioItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_checkRadioItem"), typeof(_CheckRadioItem));
                 }
@@ -187,7 +187,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetItemTextFunc == null) {
                     _GetItemTextFunc =
                         (_GetItemText)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_getItemText"), typeof(_GetItemText));
                 }
@@ -210,7 +210,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CheckItemFunc == null) {
                     _CheckItemFunc =
                         (_CheckItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_checkItem"), typeof(_CheckItem));
                 }
@@ -233,7 +233,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_EnableItemFunc == null) {
                     _EnableItemFunc =
                         (_EnableItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_enableItem"), typeof(_EnableItem));
                 }
@@ -261,7 +261,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetItemFunc == null) {
                     _SetItemFunc =
                         (_SetItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_setItem"), typeof(_SetItem));
                 }
@@ -286,7 +286,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_InsertSubMenuFunc == null) {
                     _InsertSubMenuFunc =
                         (_InsertSubMenu)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_insertSubMenu"), typeof(_InsertSubMenu));
                 }
@@ -307,7 +307,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveItemFunc == null) {
                     _RemoveItemFunc =
                         (_RemoveItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_removeItem"), typeof(_RemoveItem));
                 }
@@ -335,7 +335,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_InsertItemFunc == null) {
                     _InsertItemFunc =
                         (_InsertItem)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_insertItem"), typeof(_InsertItem));
                 }
@@ -355,7 +355,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_staticGetType"), typeof(_StaticGetType));
                 }
@@ -375,7 +375,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnPopupMenu_create"), typeof(_Create));
                 }

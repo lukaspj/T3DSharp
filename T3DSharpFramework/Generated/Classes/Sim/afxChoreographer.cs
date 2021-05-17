@@ -77,7 +77,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemapConstraintFunc == null) {
                     _RemapConstraintFunc =
                         (_RemapConstraint)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxChoreographer_remapConstraint"), typeof(_RemapConstraint));
                 }
@@ -99,7 +99,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_TestTriggerBitFunc == null) {
                     _TestTriggerBitFunc =
                         (_TestTriggerBit)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxChoreographer_testTriggerBit"), typeof(_TestTriggerBit));
                 }
@@ -120,7 +120,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearTriggerBitFunc == null) {
                     _ClearTriggerBitFunc =
                         (_ClearTriggerBit)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxChoreographer_clearTriggerBit"), typeof(_ClearTriggerBit));
                 }
@@ -141,7 +141,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetTriggerBitFunc == null) {
                     _SetTriggerBitFunc =
                         (_SetTriggerBit)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxChoreographer_setTriggerBit"), typeof(_SetTriggerBit));
                 }
@@ -162,7 +162,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddExplicitClientFunc == null) {
                     _AddExplicitClientFunc =
                         (_AddExplicitClient)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxChoreographer_addExplicitClient"), typeof(_AddExplicitClient));
                 }
@@ -186,7 +186,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddConstraintFunc == null) {
                     _AddConstraintFunc =
                         (_AddConstraint)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxChoreographer_addConstraint"), typeof(_AddConstraint));
                 }
@@ -207,7 +207,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetExecConditionsFunc == null) {
                     _SetExecConditionsFunc =
                         (_SetExecConditions)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxChoreographer_setExecConditions"), typeof(_SetExecConditions));
                 }
@@ -228,7 +228,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetLevelOfDetailFunc == null) {
                     _SetLevelOfDetailFunc =
                         (_SetLevelOfDetail)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxChoreographer_setLevelOfDetail"), typeof(_SetLevelOfDetail));
                 }
@@ -249,7 +249,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetRankingFunc == null) {
                     _SetRankingFunc =
                         (_SetRanking)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxChoreographer_setRanking"), typeof(_SetRanking));
                 }
@@ -269,7 +269,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxChoreographer_staticGetType"), typeof(_StaticGetType));
                 }
@@ -289,7 +289,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxChoreographer_create"), typeof(_Create));
                 }

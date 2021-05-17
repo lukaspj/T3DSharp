@@ -89,7 +89,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetFileEntryFunc == null) {
                     _GetFileEntryFunc =
                         (_GetFileEntry)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZipObject_getFileEntry"), typeof(_GetFileEntry));
                 }
@@ -109,7 +109,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetFileEntryCountFunc == null) {
                     _GetFileEntryCountFunc =
                         (_GetFileEntryCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZipObject_getFileEntryCount"), typeof(_GetFileEntryCount));
                 }
@@ -132,7 +132,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteFileFunc == null) {
                     _DeleteFileFunc =
                         (_DeleteFile)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZipObject_deleteFile"), typeof(_DeleteFile));
                 }
@@ -157,7 +157,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ExtractFileFunc == null) {
                     _ExtractFileFunc =
                         (_ExtractFile)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZipObject_extractFile"), typeof(_ExtractFile));
                 }
@@ -184,7 +184,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddFileFunc == null) {
                     _AddFileFunc =
                         (_AddFile)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZipObject_addFile"), typeof(_AddFile));
                 }
@@ -205,7 +205,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CloseFileFunc == null) {
                     _CloseFileFunc =
                         (_CloseFile)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZipObject_closeFile"), typeof(_CloseFile));
                 }
@@ -227,7 +227,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OpenFileForWriteFunc == null) {
                     _OpenFileForWriteFunc =
                         (_OpenFileForWrite)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZipObject_openFileForWrite"), typeof(_OpenFileForWrite));
                 }
@@ -249,7 +249,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OpenFileForReadFunc == null) {
                     _OpenFileForReadFunc =
                         (_OpenFileForRead)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZipObject_openFileForRead"), typeof(_OpenFileForRead));
                 }
@@ -269,7 +269,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CloseArchiveFunc == null) {
                     _CloseArchiveFunc =
                         (_CloseArchive)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZipObject_closeArchive"), typeof(_CloseArchive));
                 }
@@ -294,7 +294,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OpenArchiveFunc == null) {
                     _OpenArchiveFunc =
                         (_OpenArchive)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZipObject_openArchive"), typeof(_OpenArchive));
                 }
@@ -314,7 +314,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZipObject_staticGetType"), typeof(_StaticGetType));
                 }
@@ -334,7 +334,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnZipObject_create"), typeof(_Create));
                 }

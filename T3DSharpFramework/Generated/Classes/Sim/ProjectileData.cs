@@ -105,7 +105,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnCollisionFunc == null) {
                     _OnCollisionFunc =
                         (_OnCollision)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbProjectileData_onCollision"), typeof(_OnCollision));
                 }
@@ -128,7 +128,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnExplodeFunc == null) {
                     _OnExplodeFunc =
                         (_OnExplode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbProjectileData_onExplode"), typeof(_OnExplode));
                 }
@@ -148,7 +148,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnProjectileData_staticGetType"), typeof(_StaticGetType));
                 }
@@ -168,7 +168,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnProjectileData_create"), typeof(_Create));
                 }

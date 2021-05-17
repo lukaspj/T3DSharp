@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetActiveEditorToolFunc == null) {
                     _GetActiveEditorToolFunc =
                         (_GetActiveEditorTool)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_getActiveEditorTool"), typeof(_GetActiveEditorTool));
                 }
@@ -94,7 +94,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetEditorToolFunc == null) {
                     _SetEditorToolFunc =
                         (_SetEditorTool)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_setEditorTool"), typeof(_SetEditorTool));
                 }
@@ -115,7 +115,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateConvexShapeFromFunc == null) {
                     _CreateConvexShapeFromFunc =
                         (_CreateConvexShapeFrom)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_createConvexShapeFrom"), typeof(_CreateConvexShapeFrom));
                 }
@@ -138,7 +138,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreatePolyhedralObjectFunc == null) {
                     _CreatePolyhedralObjectFunc =
                         (_CreatePolyhedralObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_createPolyhedralObject"), typeof(_CreatePolyhedralObject));
                 }
@@ -160,7 +160,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_MountRelativeFunc == null) {
                     _MountRelativeFunc =
                         (_MountRelative)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_mountRelative"), typeof(_MountRelative));
                 }
@@ -183,7 +183,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_MakeSelectionAMeshFunc == null) {
                     _MakeSelectionAMeshFunc =
                         (_MakeSelectionAMesh)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_makeSelectionAMesh"), typeof(_MakeSelectionAMesh));
                 }
@@ -203,7 +203,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ExplodeSelectedPrefabFunc == null) {
                     _ExplodeSelectedPrefabFunc =
                         (_ExplodeSelectedPrefab)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_explodeSelectedPrefab"), typeof(_ExplodeSelectedPrefab));
                 }
@@ -227,7 +227,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_MakeSelectionPrefabFunc == null) {
                     _MakeSelectionPrefabFunc =
                         (_MakeSelectionPrefab)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_makeSelectionPrefab"), typeof(_MakeSelectionPrefab));
                 }
@@ -249,7 +249,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ColladaExportSelectionFunc == null) {
                     _ColladaExportSelectionFunc =
                         (_ColladaExportSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_colladaExportSelection"), typeof(_ColladaExportSelection));
                 }
@@ -287,7 +287,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_TransformSelectionFunc == null) {
                     _TransformSelectionFunc =
                         (_TransformSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_transformSelection"), typeof(_TransformSelection));
                 }
@@ -308,7 +308,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetTerrainSnapAlignmentFunc == null) {
                     _SetTerrainSnapAlignmentFunc =
                         (_SetTerrainSnapAlignment)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_setTerrainSnapAlignment"), typeof(_SetTerrainSnapAlignment));
                 }
@@ -328,7 +328,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetTerrainSnapAlignmentFunc == null) {
                     _GetTerrainSnapAlignmentFunc =
                         (_GetTerrainSnapAlignment)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_getTerrainSnapAlignment"), typeof(_GetTerrainSnapAlignment));
                 }
@@ -349,7 +349,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SoftSnapDebugRenderFunc == null) {
                     _SoftSnapDebugRenderFunc =
                         (_SoftSnapDebugRender)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_softSnapDebugRender"), typeof(_SoftSnapDebugRender));
                 }
@@ -370,7 +370,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SoftSnapRenderTriangleFunc == null) {
                     _SoftSnapRenderTriangleFunc =
                         (_SoftSnapRenderTriangle)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_softSnapRenderTriangle"), typeof(_SoftSnapRenderTriangle));
                 }
@@ -391,7 +391,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SoftSnapRenderFunc == null) {
                     _SoftSnapRenderFunc =
                         (_SoftSnapRender)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_softSnapRender"), typeof(_SoftSnapRender));
                 }
@@ -412,7 +412,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSoftSnapBackfaceToleranceFunc == null) {
                     _SetSoftSnapBackfaceToleranceFunc =
                         (_SetSoftSnapBackfaceTolerance)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_setSoftSnapBackfaceTolerance"), typeof(_SetSoftSnapBackfaceTolerance));
                 }
@@ -432,7 +432,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSoftSnapBackfaceToleranceFunc == null) {
                     _GetSoftSnapBackfaceToleranceFunc =
                         (_GetSoftSnapBackfaceTolerance)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_getSoftSnapBackfaceTolerance"), typeof(_GetSoftSnapBackfaceTolerance));
                 }
@@ -454,7 +454,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SoftSnapSizeByBoundsFunc == null) {
                     _SoftSnapSizeByBoundsFunc =
                         (_SoftSnapSizeByBounds)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_softSnapSizeByBounds"), typeof(_SoftSnapSizeByBounds));
                 }
@@ -475,7 +475,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSoftSnapAlignmentFunc == null) {
                     _SetSoftSnapAlignmentFunc =
                         (_SetSoftSnapAlignment)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_setSoftSnapAlignment"), typeof(_SetSoftSnapAlignment));
                 }
@@ -495,7 +495,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSoftSnapAlignmentFunc == null) {
                     _GetSoftSnapAlignmentFunc =
                         (_GetSoftSnapAlignment)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_getSoftSnapAlignment"), typeof(_GetSoftSnapAlignment));
                 }
@@ -516,7 +516,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSoftSnapSizeFunc == null) {
                     _SetSoftSnapSizeFunc =
                         (_SetSoftSnapSize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_setSoftSnapSize"), typeof(_SetSoftSnapSize));
                 }
@@ -536,7 +536,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSoftSnapSizeFunc == null) {
                     _GetSoftSnapSizeFunc =
                         (_GetSoftSnapSize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_getSoftSnapSize"), typeof(_GetSoftSnapSize));
                 }
@@ -558,7 +558,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSoftSnapFunc == null) {
                     _SetSoftSnapFunc =
                         (_SetSoftSnap)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_setSoftSnap"), typeof(_SetSoftSnap));
                 }
@@ -579,7 +579,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSoftSnapFunc == null) {
                     _GetSoftSnapFunc =
                         (_GetSoftSnap)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_getSoftSnap"), typeof(_GetSoftSnap));
                 }
@@ -599,7 +599,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddUndoStateFunc == null) {
                     _AddUndoStateFunc =
                         (_AddUndoState)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_addUndoState"), typeof(_AddUndoState));
                 }
@@ -620,7 +620,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RedirectConsoleFunc == null) {
                     _RedirectConsoleFunc =
                         (_RedirectConsole)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_redirectConsole"), typeof(_RedirectConsole));
                 }
@@ -640,7 +640,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ResetSelectedScaleFunc == null) {
                     _ResetSelectedScaleFunc =
                         (_ResetSelectedScale)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_resetSelectedScale"), typeof(_ResetSelectedScale));
                 }
@@ -660,7 +660,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ResetSelectedRotationFunc == null) {
                     _ResetSelectedRotationFunc =
                         (_ResetSelectedRotation)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_resetSelectedRotation"), typeof(_ResetSelectedRotation));
                 }
@@ -681,7 +681,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AlignByAxisFunc == null) {
                     _AlignByAxisFunc =
                         (_AlignByAxis)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_alignByAxis"), typeof(_AlignByAxis));
                 }
@@ -702,7 +702,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AlignByBoundsFunc == null) {
                     _AlignByBoundsFunc =
                         (_AlignByBounds)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_alignByBounds"), typeof(_AlignByBounds));
                 }
@@ -724,7 +724,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_LockSelectionFunc == null) {
                     _LockSelectionFunc =
                         (_LockSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_lockSelection"), typeof(_LockSelection));
                 }
@@ -746,7 +746,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_HideSelectionFunc == null) {
                     _HideSelectionFunc =
                         (_HideSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_hideSelection"), typeof(_HideSelection));
                 }
@@ -769,7 +769,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_HideObjectFunc == null) {
                     _HideObjectFunc =
                         (_HideObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_hideObject"), typeof(_HideObject));
                 }
@@ -790,7 +790,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CanPasteSelectionFunc == null) {
                     _CanPasteSelectionFunc =
                         (_CanPasteSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_canPasteSelection"), typeof(_CanPasteSelection));
                 }
@@ -810,7 +810,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PasteSelectionFunc == null) {
                     _PasteSelectionFunc =
                         (_PasteSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_pasteSelection"), typeof(_PasteSelection));
                 }
@@ -830,7 +830,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CopySelectionFunc == null) {
                     _CopySelectionFunc =
                         (_CopySelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_copySelection"), typeof(_CopySelection));
                 }
@@ -850,7 +850,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CutSelectionFunc == null) {
                     _CutSelectionFunc =
                         (_CutSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_cutSelection"), typeof(_CutSelection));
                 }
@@ -872,7 +872,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DropSelectionFunc == null) {
                     _DropSelectionFunc =
                         (_DropSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_dropSelection"), typeof(_DropSelection));
                 }
@@ -892,7 +892,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectionExtentFunc == null) {
                     _GetSelectionExtentFunc =
                         (_GetSelectionExtent)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_getSelectionExtent"), typeof(_GetSelectionExtent));
                 }
@@ -912,7 +912,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectionCentroidFunc == null) {
                     _GetSelectionCentroidFunc =
                         (_GetSelectionCentroid)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_getSelectionCentroid"), typeof(_GetSelectionCentroid));
                 }
@@ -932,7 +932,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectionRadiusFunc == null) {
                     _GetSelectionRadiusFunc =
                         (_GetSelectionRadius)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_getSelectionRadius"), typeof(_GetSelectionRadius));
                 }
@@ -953,7 +953,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedObjectFunc == null) {
                     _GetSelectedObjectFunc =
                         (_GetSelectedObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_getSelectedObject"), typeof(_GetSelectedObject));
                 }
@@ -973,7 +973,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectionSizeFunc == null) {
                     _GetSelectionSizeFunc =
                         (_GetSelectionSize)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_getSelectionSize"), typeof(_GetSelectionSize));
                 }
@@ -993,7 +993,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_InvalidateSelectionCentroidFunc == null) {
                     _InvalidateSelectionCentroidFunc =
                         (_InvalidateSelectionCentroid)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_invalidateSelectionCentroid"), typeof(_InvalidateSelectionCentroid));
                 }
@@ -1014,7 +1014,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UnselectObjectFunc == null) {
                     _UnselectObjectFunc =
                         (_UnselectObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_unselectObject"), typeof(_UnselectObject));
                 }
@@ -1035,7 +1035,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SelectObjectFunc == null) {
                     _SelectObjectFunc =
                         (_SelectObject)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_selectObject"), typeof(_SelectObject));
                 }
@@ -1056,7 +1056,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetActiveSelectionFunc == null) {
                     _SetActiveSelectionFunc =
                         (_SetActiveSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_setActiveSelection"), typeof(_SetActiveSelection));
                 }
@@ -1076,7 +1076,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetActiveSelectionFunc == null) {
                     _GetActiveSelectionFunc =
                         (_GetActiveSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_getActiveSelection"), typeof(_GetActiveSelection));
                 }
@@ -1096,7 +1096,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearSelectionFunc == null) {
                     _ClearSelectionFunc =
                         (_ClearSelection)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_clearSelection"), typeof(_ClearSelection));
                 }
@@ -1116,7 +1116,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearIgnoreListFunc == null) {
                     _ClearIgnoreListFunc =
                         (_ClearIgnoreList)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_clearIgnoreList"), typeof(_ClearIgnoreList));
                 }
@@ -1132,7 +1132,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IgnoreObjClassFunc == null) {
                     _IgnoreObjClassFunc =
                         (_IgnoreObjClass)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_ignoreObjClass"), typeof(_IgnoreObjClass));
                 }
@@ -1152,7 +1152,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_staticGetType"), typeof(_StaticGetType));
                 }
@@ -1172,7 +1172,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnWorldEditor_create"), typeof(_Create));
                 }

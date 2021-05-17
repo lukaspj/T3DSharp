@@ -78,7 +78,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SizeToContentsFunc == null) {
                     _SizeToContentsFunc =
                         (_SizeToContents)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRolloutCtrl_sizeToContents"), typeof(_SizeToContents));
                 }
@@ -98,7 +98,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_InstantExpandFunc == null) {
                     _InstantExpandFunc =
                         (_InstantExpand)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRolloutCtrl_instantExpand"), typeof(_InstantExpand));
                 }
@@ -118,7 +118,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_InstantCollapseFunc == null) {
                     _InstantCollapseFunc =
                         (_InstantCollapse)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRolloutCtrl_instantCollapse"), typeof(_InstantCollapse));
                 }
@@ -140,7 +140,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ToggleExpandedFunc == null) {
                     _ToggleExpandedFunc =
                         (_ToggleExpanded)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRolloutCtrl_toggleExpanded"), typeof(_ToggleExpanded));
                 }
@@ -160,7 +160,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ToggleCollapseFunc == null) {
                     _ToggleCollapseFunc =
                         (_ToggleCollapse)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRolloutCtrl_toggleCollapse"), typeof(_ToggleCollapse));
                 }
@@ -180,7 +180,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ExpandFunc == null) {
                     _ExpandFunc =
                         (_Expand)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRolloutCtrl_expand"), typeof(_Expand));
                 }
@@ -200,7 +200,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CollapseFunc == null) {
                     _CollapseFunc =
                         (_Collapse)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRolloutCtrl_collapse"), typeof(_Collapse));
                 }
@@ -221,7 +221,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsExpandedFunc == null) {
                     _IsExpandedFunc =
                         (_IsExpanded)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRolloutCtrl_isExpanded"), typeof(_IsExpanded));
                 }
@@ -241,7 +241,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnCollapsedFunc == null) {
                     _OnCollapsedFunc =
                         (_OnCollapsed)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiRolloutCtrl_onCollapsed"), typeof(_OnCollapsed));
                 }
@@ -261,7 +261,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnExpandedFunc == null) {
                     _OnExpandedFunc =
                         (_OnExpanded)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiRolloutCtrl_onExpanded"), typeof(_OnExpanded));
                 }
@@ -281,7 +281,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnHeaderRightClickFunc == null) {
                     _OnHeaderRightClickFunc =
                         (_OnHeaderRightClick)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiRolloutCtrl_onHeaderRightClick"), typeof(_OnHeaderRightClick));
                 }
@@ -301,7 +301,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRolloutCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -321,7 +321,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiRolloutCtrl_create"), typeof(_Create));
                 }

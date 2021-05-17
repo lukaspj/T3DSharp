@@ -74,7 +74,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PushLingerEffectFunc == null) {
                     _PushLingerEffectFunc =
                         (_PushLingerEffect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxMagicSpellData_pushLingerEffect"), typeof(_PushLingerEffect));
                 }
@@ -95,7 +95,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PushImpactEffectFunc == null) {
                     _PushImpactEffectFunc =
                         (_PushImpactEffect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxMagicSpellData_pushImpactEffect"), typeof(_PushImpactEffect));
                 }
@@ -116,7 +116,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PushDeliveryEffectFunc == null) {
                     _PushDeliveryEffectFunc =
                         (_PushDeliveryEffect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxMagicSpellData_pushDeliveryEffect"), typeof(_PushDeliveryEffect));
                 }
@@ -137,7 +137,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PushLaunchEffectFunc == null) {
                     _PushLaunchEffectFunc =
                         (_PushLaunchEffect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxMagicSpellData_pushLaunchEffect"), typeof(_PushLaunchEffect));
                 }
@@ -158,7 +158,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_PushCastingEffectFunc == null) {
                     _PushCastingEffectFunc =
                         (_PushCastingEffect)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxMagicSpellData_pushCastingEffect"), typeof(_PushCastingEffect));
                 }
@@ -178,7 +178,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ResetFunc == null) {
                     _ResetFunc =
                         (_Reset)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxMagicSpellData_reset"), typeof(_Reset));
                 }
@@ -201,7 +201,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnActivateFunc == null) {
                     _OnActivateFunc =
                         (_OnActivate)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbafxMagicSpellData_onActivate"), typeof(_OnActivate));
                 }
@@ -226,7 +226,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnPreactivateFunc == null) {
                     _OnPreactivateFunc =
                         (_OnPreactivate)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbafxMagicSpellData_onPreactivate"), typeof(_OnPreactivate));
                 }
@@ -251,7 +251,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnImpactFunc == null) {
                     _OnImpactFunc =
                         (_OnImpact)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbafxMagicSpellData_onImpact"), typeof(_OnImpact));
                 }
@@ -275,7 +275,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnLaunchFunc == null) {
                     _OnLaunchFunc =
                         (_OnLaunch)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbafxMagicSpellData_onLaunch"), typeof(_OnLaunch));
                 }
@@ -297,7 +297,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnInterruptFunc == null) {
                     _OnInterruptFunc =
                         (_OnInterrupt)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbafxMagicSpellData_onInterrupt"), typeof(_OnInterrupt));
                 }
@@ -318,7 +318,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnDeactivateFunc == null) {
                     _OnDeactivateFunc =
                         (_OnDeactivate)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbafxMagicSpellData_onDeactivate"), typeof(_OnDeactivate));
                 }
@@ -350,7 +350,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnDamageFunc == null) {
                     _OnDamageFunc =
                         (_OnDamage)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbafxMagicSpellData_onDamage"), typeof(_OnDamage));
                 }
@@ -370,7 +370,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxMagicSpellData_staticGetType"), typeof(_StaticGetType));
                 }
@@ -390,7 +390,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnafxMagicSpellData_create"), typeof(_Create));
                 }

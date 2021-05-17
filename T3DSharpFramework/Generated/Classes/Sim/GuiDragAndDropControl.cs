@@ -184,7 +184,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StartDraggingFunc == null) {
                     _StartDraggingFunc =
                         (_StartDragging)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDragAndDropControl_startDragging"), typeof(_StartDragging));
                 }
@@ -204,7 +204,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnControlDragCancelledFunc == null) {
                     _OnControlDragCancelledFunc =
                         (_OnControlDragCancelled)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiDragAndDropControl_onControlDragCancelled"), typeof(_OnControlDragCancelled));
                 }
@@ -224,7 +224,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDragAndDropControl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -244,7 +244,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDragAndDropControl_create"), typeof(_Create));
                 }

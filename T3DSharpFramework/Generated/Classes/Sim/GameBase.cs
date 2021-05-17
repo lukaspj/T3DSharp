@@ -75,7 +75,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DetachChildFunc == null) {
                     _DetachChildFunc =
                         (_DetachChild)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGameBase_detachChild"), typeof(_DetachChild));
                 }
@@ -97,7 +97,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AttachChildFunc == null) {
                     _AttachChildFunc =
                         (_AttachChild)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGameBase_attachChild"), typeof(_AttachChild));
                 }
@@ -120,7 +120,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ApplyRadialImpulseFunc == null) {
                     _ApplyRadialImpulseFunc =
                         (_ApplyRadialImpulse)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGameBase_applyRadialImpulse"), typeof(_ApplyRadialImpulse));
                 }
@@ -143,7 +143,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ApplyImpulseFunc == null) {
                     _ApplyImpulseFunc =
                         (_ApplyImpulse)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGameBase_applyImpulse"), typeof(_ApplyImpulse));
                 }
@@ -165,7 +165,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetDataBlockFunc == null) {
                     _SetDataBlockFunc =
                         (_SetDataBlock)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGameBase_setDataBlock"), typeof(_SetDataBlock));
                 }
@@ -185,7 +185,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDataBlockFunc == null) {
                     _GetDataBlockFunc =
                         (_GetDataBlock)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGameBase_getDataBlock"), typeof(_GetDataBlock));
                 }
@@ -205,7 +205,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGameBase_staticGetType"), typeof(_StaticGetType));
                 }
@@ -225,7 +225,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGameBase_create"), typeof(_Create));
                 }
@@ -247,7 +247,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetControlFunc == null) {
                     _SetControlFunc =
                         (_SetControl)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGameBase_setControl"), typeof(_SetControl));
                 }

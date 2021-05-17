@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ResetSelectedPointFunc == null) {
                     _ResetSelectedPointFunc =
                         (_ResetSelectedPoint)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_resetSelectedPoint"), typeof(_ResetSelectedPoint));
                 }
@@ -96,7 +96,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetGraphNameFunc == null) {
                     _SetGraphNameFunc =
                         (_SetGraphName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setGraphName"), typeof(_SetGraphName));
                 }
@@ -118,7 +118,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetRenderGraphTooltipFunc == null) {
                     _SetRenderGraphTooltipFunc =
                         (_SetRenderGraphTooltip)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setRenderGraphTooltip"), typeof(_SetRenderGraphTooltip));
                 }
@@ -140,7 +140,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetPointXMovementClampedFunc == null) {
                     _SetPointXMovementClampedFunc =
                         (_SetPointXMovementClamped)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setPointXMovementClamped"), typeof(_SetPointXMovementClamped));
                 }
@@ -162,7 +162,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetRenderAllFunc == null) {
                     _SetRenderAllFunc =
                         (_SetRenderAll)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setRenderAll"), typeof(_SetRenderAll));
                 }
@@ -184,7 +184,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetAutoRemoveFunc == null) {
                     _SetAutoRemoveFunc =
                         (_SetAutoRemove)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setAutoRemove"), typeof(_SetAutoRemove));
                 }
@@ -206,7 +206,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetAutoGraphMaxFunc == null) {
                     _SetAutoGraphMaxFunc =
                         (_SetAutoGraphMax)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setAutoGraphMax"), typeof(_SetAutoGraphMax));
                 }
@@ -229,7 +229,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetGraphHiddenFunc == null) {
                     _SetGraphHiddenFunc =
                         (_SetGraphHidden)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setGraphHidden"), typeof(_SetGraphHidden));
                 }
@@ -251,7 +251,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetGraphMaxYFunc == null) {
                     _SetGraphMaxYFunc =
                         (_SetGraphMaxY)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setGraphMaxY"), typeof(_SetGraphMaxY));
                 }
@@ -273,7 +273,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetGraphMaxXFunc == null) {
                     _SetGraphMaxXFunc =
                         (_SetGraphMaxX)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setGraphMaxX"), typeof(_SetGraphMaxX));
                 }
@@ -296,7 +296,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetGraphMaxFunc == null) {
                     _SetGraphMaxFunc =
                         (_SetGraphMax)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setGraphMax"), typeof(_SetGraphMax));
                 }
@@ -318,7 +318,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetGraphMinYFunc == null) {
                     _SetGraphMinYFunc =
                         (_SetGraphMinY)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setGraphMinY"), typeof(_SetGraphMinY));
                 }
@@ -340,7 +340,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetGraphMinXFunc == null) {
                     _SetGraphMinXFunc =
                         (_SetGraphMinX)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setGraphMinX"), typeof(_SetGraphMinX));
                 }
@@ -363,7 +363,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetGraphMinFunc == null) {
                     _SetGraphMinFunc =
                         (_SetGraphMin)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setGraphMin"), typeof(_SetGraphMin));
                 }
@@ -385,7 +385,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetGraphNameFunc == null) {
                     _GetGraphNameFunc =
                         (_GetGraphName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_getGraphName"), typeof(_GetGraphName));
                 }
@@ -406,7 +406,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetGraphMaxFunc == null) {
                     _GetGraphMaxFunc =
                         (_GetGraphMax)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_getGraphMax"), typeof(_GetGraphMax));
                 }
@@ -427,7 +427,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetGraphMinFunc == null) {
                     _GetGraphMinFunc =
                         (_GetGraphMin)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_getGraphMin"), typeof(_GetGraphMin));
                 }
@@ -448,7 +448,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetGraphColorFunc == null) {
                     _GetGraphColorFunc =
                         (_GetGraphColor)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_getGraphColor"), typeof(_GetGraphColor));
                 }
@@ -471,7 +471,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetPlotIndexFunc == null) {
                     _GetPlotIndexFunc =
                         (_GetPlotIndex)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_getPlotIndex"), typeof(_GetPlotIndex));
                 }
@@ -493,7 +493,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetPlotPointFunc == null) {
                     _GetPlotPointFunc =
                         (_GetPlotPoint)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_getPlotPoint"), typeof(_GetPlotPoint));
                 }
@@ -516,7 +516,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_IsExistingPointFunc == null) {
                     _IsExistingPointFunc =
                         (_IsExistingPoint)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_isExistingPoint"), typeof(_IsExistingPoint));
                 }
@@ -536,7 +536,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedPointFunc == null) {
                     _GetSelectedPointFunc =
                         (_GetSelectedPoint)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_getSelectedPoint"), typeof(_GetSelectedPoint));
                 }
@@ -556,7 +556,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectedPlotFunc == null) {
                     _GetSelectedPlotFunc =
                         (_GetSelectedPlot)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_getSelectedPlot"), typeof(_GetSelectedPlot));
                 }
@@ -580,7 +580,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ChangePlotPointFunc == null) {
                     _ChangePlotPointFunc =
                         (_ChangePlotPoint)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_changePlotPoint"), typeof(_ChangePlotPoint));
                 }
@@ -604,7 +604,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_InsertPlotPointFunc == null) {
                     _InsertPlotPointFunc =
                         (_InsertPlotPoint)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_insertPlotPoint"), typeof(_InsertPlotPoint));
                 }
@@ -629,7 +629,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddPlotPointFunc == null) {
                     _AddPlotPointFunc =
                         (_AddPlotPoint)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_addPlotPoint"), typeof(_AddPlotPoint));
                 }
@@ -649,7 +649,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearAllGraphsFunc == null) {
                     _ClearAllGraphsFunc =
                         (_ClearAllGraphs)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_clearAllGraphs"), typeof(_ClearAllGraphs));
                 }
@@ -670,7 +670,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ClearGraphFunc == null) {
                     _ClearGraphFunc =
                         (_ClearGraph)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_clearGraph"), typeof(_ClearGraph));
                 }
@@ -691,7 +691,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectedPlotFunc == null) {
                     _SetSelectedPlotFunc =
                         (_SetSelectedPlot)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setSelectedPlot"), typeof(_SetSelectedPlot));
                 }
@@ -712,7 +712,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetSelectedPointFunc == null) {
                     _SetSelectedPointFunc =
                         (_SetSelectedPoint)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_setSelectedPoint"), typeof(_SetSelectedPoint));
                 }
@@ -732,7 +732,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -752,7 +752,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiParticleGraphCtrl_create"), typeof(_Create));
                 }

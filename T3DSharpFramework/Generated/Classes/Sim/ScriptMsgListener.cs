@@ -72,7 +72,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnRemoveFromQueueFunc == null) {
                     _OnRemoveFromQueueFunc =
                         (_OnRemoveFromQueue)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptMsgListener_onRemoveFromQueue"), typeof(_OnRemoveFromQueue));
                 }
@@ -94,7 +94,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnAddToQueueFunc == null) {
                     _OnAddToQueueFunc =
                         (_OnAddToQueue)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptMsgListener_onAddToQueue"), typeof(_OnAddToQueue));
                 }
@@ -118,7 +118,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMessageObjectReceivedFunc == null) {
                     _OnMessageObjectReceivedFunc =
                         (_OnMessageObjectReceived)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptMsgListener_onMessageObjectReceived"), typeof(_OnMessageObjectReceived));
                 }
@@ -145,7 +145,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnMessageReceivedFunc == null) {
                     _OnMessageReceivedFunc =
                         (_OnMessageReceived)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptMsgListener_onMessageReceived"), typeof(_OnMessageReceived));
                 }
@@ -165,7 +165,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnRemoveFunc == null) {
                     _OnRemoveFunc =
                         (_OnRemove)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptMsgListener_onRemove"), typeof(_OnRemove));
                 }
@@ -185,7 +185,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnAddFunc == null) {
                     _OnAddFunc =
                         (_OnAdd)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptMsgListener_onAdd"), typeof(_OnAdd));
                 }
@@ -205,7 +205,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnScriptMsgListener_staticGetType"), typeof(_StaticGetType));
                 }
@@ -225,7 +225,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnScriptMsgListener_create"), typeof(_Create));
                 }

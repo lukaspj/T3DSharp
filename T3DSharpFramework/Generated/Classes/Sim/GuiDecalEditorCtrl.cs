@@ -77,7 +77,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RetargetDecalDatablockFunc == null) {
                     _RetargetDecalDatablockFunc =
                         (_RetargetDecalDatablock)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_retargetDecalDatablock"), typeof(_RetargetDecalDatablock));
                 }
@@ -97,7 +97,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetSelectionCountFunc == null) {
                     _GetSelectionCountFunc =
                         (_GetSelectionCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_getSelectionCount"), typeof(_GetSelectionCount));
                 }
@@ -121,7 +121,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_EditDecalDetailsFunc == null) {
                     _EditDecalDetailsFunc =
                         (_EditDecalDetails)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_editDecalDetails"), typeof(_EditDecalDetails));
                 }
@@ -142,7 +142,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SelectDecalFunc == null) {
                     _SelectDecalFunc =
                         (_SelectDecal)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_selectDecal"), typeof(_SelectDecal));
                 }
@@ -164,7 +164,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDecalLookupNameFunc == null) {
                     _GetDecalLookupNameFunc =
                         (_GetDecalLookupName)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_getDecalLookupName"), typeof(_GetDecalLookupName));
                 }
@@ -186,7 +186,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDecalTransformFunc == null) {
                     _GetDecalTransformFunc =
                         (_GetDecalTransform)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_getDecalTransform"), typeof(_GetDecalTransform));
                 }
@@ -206,7 +206,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetDecalCountFunc == null) {
                     _GetDecalCountFunc =
                         (_GetDecalCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_getDecalCount"), typeof(_GetDecalCount));
                 }
@@ -227,7 +227,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetModeFunc == null) {
                     _GetModeFunc =
                         (_GetMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_getMode"), typeof(_GetMode));
                 }
@@ -249,7 +249,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetModeFunc == null) {
                     _SetModeFunc =
                         (_SetMode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_setMode"), typeof(_SetMode));
                 }
@@ -271,7 +271,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteDecalDatablockFunc == null) {
                     _DeleteDecalDatablockFunc =
                         (_DeleteDecalDatablock)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_deleteDecalDatablock"), typeof(_DeleteDecalDatablock));
                 }
@@ -291,7 +291,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_DeleteSelectedDecalFunc == null) {
                     _DeleteSelectedDecalFunc =
                         (_DeleteSelectedDecal)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_deleteSelectedDecal"), typeof(_DeleteSelectedDecal));
                 }
@@ -311,7 +311,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_staticGetType"), typeof(_StaticGetType));
                 }
@@ -331,7 +331,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiDecalEditorCtrl_create"), typeof(_Create));
                 }

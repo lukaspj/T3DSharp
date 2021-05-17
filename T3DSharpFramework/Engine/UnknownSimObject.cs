@@ -137,7 +137,7 @@ namespace T3DSharpFramework.Engine
             {
                _SetFieldValueFunc =
                    (_SetFieldValue)Marshal.GetDelegateForFunctionPointer(
-                       Torque3D.DllLoadUtils.GetProcAddress(
+                       NativeLibrary.GetExport(
                            Torque3D.Torque3DLibHandle,
                            "fnSimObject_setFieldValue"), typeof(_SetFieldValue));
             }
@@ -163,7 +163,7 @@ namespace T3DSharpFramework.Engine
             {
                _GetFieldValueFunc =
                    (_GetFieldValue)Marshal.GetDelegateForFunctionPointer(
-                       Torque3D.DllLoadUtils.GetProcAddress(
+                       NativeLibrary.GetExport(
                            Torque3D.Torque3DLibHandle,
                            "fnSimObject_getFieldValue"), typeof(_GetFieldValue));
             }
@@ -186,7 +186,7 @@ namespace T3DSharpFramework.Engine
             {
                _GetClassNamespaceFunc =
                    (_GetClassNamespace)Marshal.GetDelegateForFunctionPointer(
-                       Torque3D.DllLoadUtils.GetProcAddress(
+                       NativeLibrary.GetExport(
                            Torque3D.Torque3DLibHandle,
                            "fnSimObject_getClassNamespace"), typeof(_GetClassNamespace));
             }
@@ -209,7 +209,7 @@ namespace T3DSharpFramework.Engine
             {
                _GetClassNameFunc =
                    (_GetClassName)Marshal.GetDelegateForFunctionPointer(
-                       Torque3D.DllLoadUtils.GetProcAddress(
+                       NativeLibrary.GetExport(
                            Torque3D.Torque3DLibHandle,
                            "fnSimObject_getClassName"), typeof(_GetClassName));
             }
@@ -232,7 +232,7 @@ namespace T3DSharpFramework.Engine
             {
                _GetNameFunc =
                    (_GetName)Marshal.GetDelegateForFunctionPointer(
-                       Torque3D.DllLoadUtils.GetProcAddress(
+                       NativeLibrary.GetExport(
                            Torque3D.Torque3DLibHandle,
                            "fnSimObject_getName"), typeof(_GetName));
             }
@@ -254,7 +254,7 @@ namespace T3DSharpFramework.Engine
             {
                _GetIdFunc =
                    (_GetId)Marshal.GetDelegateForFunctionPointer(
-                       Torque3D.DllLoadUtils.GetProcAddress(
+                       NativeLibrary.GetExport(
                            Torque3D.Torque3DLibHandle,
                            "fnSimObject_getId"), typeof(_GetId));
             }

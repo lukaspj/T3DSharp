@@ -73,7 +73,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UnmountAllFunc == null) {
                     _UnmountAllFunc =
                         (_UnmountAll)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_unmountAll"), typeof(_UnmountAll));
                 }
@@ -94,7 +94,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UnmountShapeFunc == null) {
                     _UnmountShapeFunc =
                         (_UnmountShape)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_unmountShape"), typeof(_UnmountShape));
                 }
@@ -116,7 +116,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetMountThreadDirFunc == null) {
                     _SetMountThreadDirFunc =
                         (_SetMountThreadDir)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_setMountThreadDir"), typeof(_SetMountThreadDir));
                 }
@@ -137,7 +137,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMountThreadDirFunc == null) {
                     _GetMountThreadDirFunc =
                         (_GetMountThreadDir)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_getMountThreadDir"), typeof(_GetMountThreadDir));
                 }
@@ -159,7 +159,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetMountThreadPosFunc == null) {
                     _SetMountThreadPosFunc =
                         (_SetMountThreadPos)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_setMountThreadPos"), typeof(_SetMountThreadPos));
                 }
@@ -180,7 +180,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMountThreadPosFunc == null) {
                     _GetMountThreadPosFunc =
                         (_GetMountThreadPos)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_getMountThreadPos"), typeof(_GetMountThreadPos));
                 }
@@ -203,7 +203,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetMountThreadSequenceFunc == null) {
                     _SetMountThreadSequenceFunc =
                         (_SetMountThreadSequence)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_setMountThreadSequence"), typeof(_SetMountThreadSequence));
                 }
@@ -225,7 +225,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMountThreadSequenceFunc == null) {
                     _GetMountThreadSequenceFunc =
                         (_GetMountThreadSequence)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_getMountThreadSequence"), typeof(_GetMountThreadSequence));
                 }
@@ -248,7 +248,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetMountNodeFunc == null) {
                     _SetMountNodeFunc =
                         (_SetMountNode)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_setMountNode"), typeof(_SetMountNode));
                 }
@@ -276,7 +276,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_MountShapeFunc == null) {
                     _MountShapeFunc =
                         (_MountShape)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_mountShape"), typeof(_MountShape));
                 }
@@ -296,7 +296,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RefreshThreadSequencesFunc == null) {
                     _RefreshThreadSequencesFunc =
                         (_RefreshThreadSequences)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_refreshThreadSequences"), typeof(_RefreshThreadSequences));
                 }
@@ -317,7 +317,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetThreadSequenceFunc == null) {
                     _GetThreadSequenceFunc =
                         (_GetThreadSequence)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_getThreadSequence"), typeof(_GetThreadSequence));
                 }
@@ -343,7 +343,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetThreadSequenceFunc == null) {
                     _SetThreadSequenceFunc =
                         (_SetThreadSequence)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_setThreadSequence"), typeof(_SetThreadSequence));
                 }
@@ -364,7 +364,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetTimeScaleFunc == null) {
                     _SetTimeScaleFunc =
                         (_SetTimeScale)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_setTimeScale"), typeof(_SetTimeScale));
                 }
@@ -384,7 +384,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetThreadCountFunc == null) {
                     _GetThreadCountFunc =
                         (_GetThreadCount)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_getThreadCount"), typeof(_GetThreadCount));
                 }
@@ -405,7 +405,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RemoveThreadFunc == null) {
                     _RemoveThreadFunc =
                         (_RemoveThread)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_removeThread"), typeof(_RemoveThread));
                 }
@@ -425,7 +425,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_AddThreadFunc == null) {
                     _AddThreadFunc =
                         (_AddThread)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_addThread"), typeof(_AddThread));
                 }
@@ -447,7 +447,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ExportToColladaFunc == null) {
                     _ExportToColladaFunc =
                         (_ExportToCollada)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_exportToCollada"), typeof(_ExportToCollada));
                 }
@@ -469,7 +469,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetAllMeshesHiddenFunc == null) {
                     _SetAllMeshesHiddenFunc =
                         (_SetAllMeshesHidden)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_setAllMeshesHidden"), typeof(_SetAllMeshesHidden));
                 }
@@ -493,7 +493,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetMeshHiddenFunc == null) {
                     _SetMeshHiddenFunc =
                         (_SetMeshHidden)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_setMeshHidden"), typeof(_SetMeshHidden));
                 }
@@ -516,7 +516,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_GetMeshHiddenFunc == null) {
                     _GetMeshHiddenFunc =
                         (_GetMeshHidden)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_getMeshHidden"), typeof(_GetMeshHidden));
                 }
@@ -536,7 +536,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_ComputeShapeBoundsFunc == null) {
                     _ComputeShapeBoundsFunc =
                         (_ComputeShapeBounds)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_computeShapeBounds"), typeof(_ComputeShapeBounds));
                 }
@@ -556,7 +556,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_UpdateNodeTransformsFunc == null) {
                     _UpdateNodeTransformsFunc =
                         (_UpdateNodeTransforms)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_updateNodeTransforms"), typeof(_UpdateNodeTransforms));
                 }
@@ -576,7 +576,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_RefreshShapeFunc == null) {
                     _RefreshShapeFunc =
                         (_RefreshShape)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_refreshShape"), typeof(_RefreshShape));
                 }
@@ -596,7 +596,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_FitToShapeFunc == null) {
                     _FitToShapeFunc =
                         (_FitToShape)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_fitToShape"), typeof(_FitToShape));
                 }
@@ -619,7 +619,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetModelFunc == null) {
                     _SetModelFunc =
                         (_SetModel)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_setModel"), typeof(_SetModel));
                 }
@@ -640,7 +640,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_SetOrbitPosFunc == null) {
                     _SetOrbitPosFunc =
                         (_SetOrbitPos)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_setOrbitPos"), typeof(_SetOrbitPos));
                 }
@@ -663,7 +663,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_OnThreadPosChangedFunc == null) {
                     _OnThreadPosChangedFunc =
                         (_OnThreadPosChanged)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "cbGuiShapeEdPreview_onThreadPosChanged"), typeof(_OnThreadPosChanged));
                 }
@@ -683,7 +683,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_StaticGetTypeFunc == null) {
                     _StaticGetTypeFunc =
                         (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_staticGetType"), typeof(_StaticGetType));
                 }
@@ -703,7 +703,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                 if (_CreateFunc == null) {
                     _CreateFunc =
                         (_Create)Marshal.GetDelegateForFunctionPointer(
-                            Torque3D.DllLoadUtils.GetProcAddress(
+                            NativeLibrary.GetExport(
                                 Torque3D.Torque3DLibHandle,
                                 "fnGuiShapeEdPreview_create"), typeof(_Create));
                 }
