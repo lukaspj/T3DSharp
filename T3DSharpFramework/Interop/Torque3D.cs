@@ -49,21 +49,13 @@ namespace T3DSharpFramework.Interop
         public static IntPtr Torque3DLibHandle;
 
         public static void Initialize(string[] args, Libraries libraryNames) {
-
-            string platformMain;
             if (Platform.IsLinux()) {
-                //platformMain = "torque_unixmain";
-                platformMain = "TorqueMain";
                 LibraryName = IntPtr.Size == 8 ? libraryNames.Linux64bit : libraryNames.Linux32bit;
             }
             else if (Platform.IsOSX()) {
-                //platformMain = "torque_macmain";
-                platformMain = "TorqueMain";
                 LibraryName = IntPtr.Size == 8 ? libraryNames.OSX64bit : libraryNames.OSX32bit;
             }
             else {
-                //platformMain = "torque_winmain";
-                platformMain = "TorqueMain";
                 LibraryName = IntPtr.Size == 8 ? libraryNames.Windows64bit : libraryNames.Windows32bit;
             }
 
@@ -72,27 +64,19 @@ namespace T3DSharpFramework.Interop
                 throw new Exception("Unable to load " + (IntPtr.Size == 8 ? "64" : "32") + " bit dll: " + LibraryName + ", in directory: " + Directory.GetCurrentDirectory());
             }
             
-            var mainHandle = NativeLibrary.GetExport(Torque3DLibHandle, platformMain);
             var setCallbacksHandle = NativeLibrary.GetExport(Torque3DLibHandle, "SetCallbacks");
             var engineInitHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_engineinit");
             var engineTickHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_enginetick");
-            var getReturnStatusHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_getreturnstatus");
             var engineShutdownHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_engineshutdown");
 
             var setCallbacks = (SetCallbacks) Marshal.GetDelegateForFunctionPointer(
                 setCallbacksHandle, typeof(SetCallbacks));
-
-            //var main = (TorqueMain)Marshal.GetDelegateForFunctionPointer(
-            //   mainHandle, typeof(TorqueMain));
 
             var engineInit = (torque_engineinit) Marshal.GetDelegateForFunctionPointer(
                 engineInitHandle, typeof(torque_engineinit));
 
             var engineTick = (torque_enginetick) Marshal.GetDelegateForFunctionPointer(
                 engineTickHandle, typeof(torque_enginetick));
-
-            //var engineGetReturnStatus = (torque_getreturnstatus)Marshal.GetDelegateForFunctionPointer(
-            //   getReturnStatusHandle, typeof(torque_getreturnstatus));
 
             var engineShutdown = (torque_engineshutdown) Marshal.GetDelegateForFunctionPointer(
                 engineShutdownHandle, typeof(torque_engineshutdown));
