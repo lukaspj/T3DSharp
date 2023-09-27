@@ -1,154 +1,127 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
 
-namespace T3DSharpFramework.Interop
-{
-    public static class Torque3D
-    {
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate string CallFunction(
-            IntPtr nameSpace, IntPtr name, IntPtr argv, int argc, [MarshalAs(UnmanagedType.I1)] out bool result);
+namespace T3DSharpFramework.Interop {
+   public static class Torque3D {
+      [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+      public delegate string Exec(
+         IntPtr nameSpace, IntPtr name, int argc, IntPtr argv, [MarshalAs(UnmanagedType.I1)] out bool result);
 
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate string CallMethod(IntPtr className
-            , IntPtr classNamespace
-            , uint obj
-            , IntPtr name
-            , IntPtr argv
-            , int argc
-            , [MarshalAs(UnmanagedType.I1)] out bool result);
+      [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+      public delegate bool AddFunctionDelegate(IntPtr ns, IntPtr fnName, uint offset, IntPtr docstring);
 
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate bool IsMethod(IntPtr className, IntPtr methodName);
+      private static AddFunctionDelegate _AddFunction;
 
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void MainEntryPoint();
+      public static AddFunctionDelegate AddFunction =>
+         _AddFunction ??= (AddFunctionDelegate)Marshal.GetDelegateForFunctionPointer(
+            NativeLibrary.GetExport(
+               Torque3D.Torque3DLibHandle,
+               "csharp_add_function"), typeof(AddFunctionDelegate));
 
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate int TorqueMain(int pArgc, string[] pArgv, IntPtr pHInstance);
+      [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+      public delegate void MainEntryPoint();
 
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate bool torque_engineinit(int argc, string[] argv);
+      [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+      public delegate bool torque_engineinit(int argc, string[] argv);
 
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate int torque_enginetick();
+      [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+      public delegate int torque_enginetick();
 
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate int torque_getreturnstatus();
+      [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+      public delegate bool torque_engineshutdown();
 
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate bool torque_engineshutdown();
+      [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+      public delegate void SetCallbacks(IntPtr pExecPtr);
 
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void SetCallbacks(
-            IntPtr pFunctionPtr, IntPtr pMethodPtr, IntPtr pIsMethodPtr, IntPtr pMainPtr);
+      public static string LibraryName;
+      public static IntPtr Torque3DLibHandle;
 
-        public static string LibraryName;
-        public static IntPtr Torque3DLibHandle;
+      public static void Initialize(string[] args, Libraries libraryNames) {
+         if (Platform.IsLinux()) {
+            LibraryName = IntPtr.Size == 8 ? libraryNames.Linux64bit : libraryNames.Linux32bit;
+         } else if (Platform.IsOSX()) {
+            LibraryName = IntPtr.Size == 8 ? libraryNames.OSX64bit : libraryNames.OSX32bit;
+         } else {
+            LibraryName = IntPtr.Size == 8 ? libraryNames.Windows64bit : libraryNames.Windows32bit;
+         }
 
-        public static void Initialize(string[] args, Libraries libraryNames) {
-            if (Platform.IsLinux()) {
-                LibraryName = IntPtr.Size == 8 ? libraryNames.Linux64bit : libraryNames.Linux32bit;
-            }
-            else if (Platform.IsOSX()) {
-                LibraryName = IntPtr.Size == 8 ? libraryNames.OSX64bit : libraryNames.OSX32bit;
-            }
-            else {
-                LibraryName = IntPtr.Size == 8 ? libraryNames.Windows64bit : libraryNames.Windows32bit;
-            }
+         Torque3DLibHandle = NativeLibrary.Load(LibraryName);
+         if (Torque3DLibHandle == IntPtr.Zero) {
+            throw new Exception("Unable to load " + (IntPtr.Size == 8 ? "64" : "32") + " bit dll: " + LibraryName +
+                                ", in directory: " + Directory.GetCurrentDirectory());
+         }
 
-            Torque3DLibHandle = NativeLibrary.Load(LibraryName);
-            if (Torque3DLibHandle == IntPtr.Zero) {
-                throw new Exception("Unable to load " + (IntPtr.Size == 8 ? "64" : "32") + " bit dll: " + LibraryName + ", in directory: " + Directory.GetCurrentDirectory());
-            }
-            
-            var setCallbacksHandle = NativeLibrary.GetExport(Torque3DLibHandle, "SetCallbacks");
-            var engineInitHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_engineinit");
-            var engineTickHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_enginetick");
-            var engineShutdownHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_engineshutdown");
+         var setCallbacksHandle = NativeLibrary.GetExport(Torque3DLibHandle, "csharp_set_callbacks");
+         var engineInitHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_engineinit");
+         var engineTickHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_enginetick");
+         var engineShutdownHandle = NativeLibrary.GetExport(Torque3DLibHandle, "torque_engineshutdown");
 
-            var setCallbacks = (SetCallbacks) Marshal.GetDelegateForFunctionPointer(
-                setCallbacksHandle, typeof(SetCallbacks));
 
-            var engineInit = (torque_engineinit) Marshal.GetDelegateForFunctionPointer(
-                engineInitHandle, typeof(torque_engineinit));
+         var setCallbacks = (SetCallbacks)Marshal.GetDelegateForFunctionPointer(
+            setCallbacksHandle, typeof(SetCallbacks));
 
-            var engineTick = (torque_enginetick) Marshal.GetDelegateForFunctionPointer(
-                engineTickHandle, typeof(torque_enginetick));
+         var engineInit = (torque_engineinit)Marshal.GetDelegateForFunctionPointer(
+            engineInitHandle, typeof(torque_engineinit));
 
-            var engineShutdown = (torque_engineshutdown) Marshal.GetDelegateForFunctionPointer(
-                engineShutdownHandle, typeof(torque_engineshutdown));
+         var engineTick = (torque_enginetick)Marshal.GetDelegateForFunctionPointer(
+            engineTickHandle, typeof(torque_enginetick));
 
-            CallFunction callDelegate = CallFunctionDelegate;
-            CallMethod methodDelegate = CallMethodDelegate;
-            IsMethod isMethodDelegate = IsMethodDelegate;
-            IntPtr mainEntryPointPtr = IntPtr.Zero;
-            if (Initializer.GetScriptEntry() != null)
-                mainEntryPointPtr =
-                    Marshal.GetFunctionPointerForDelegate(
-                        (MainEntryPoint) Initializer.GetScriptEntry().CreateDelegate(typeof(MainEntryPoint)));
+         var engineShutdown = (torque_engineshutdown)Marshal.GetDelegateForFunctionPointer(
+            engineShutdownHandle, typeof(torque_engineshutdown));
 
-            setCallbacks(Marshal.GetFunctionPointerForDelegate(callDelegate)
-                , Marshal.GetFunctionPointerForDelegate(methodDelegate)
-                , Marshal.GetFunctionPointerForDelegate(isMethodDelegate)
-                , mainEntryPointPtr);
+         Exec execDelegate = ExecDelegate;
 
-            if (!engineInit(args.Length, args)) return;
+         setCallbacks(Marshal.GetFunctionPointerForDelegate(execDelegate));
 
-            while (engineTick() > 0) {
-            }
+         if (!engineInit(args.Length, args)) return;
 
-            SimDictionary.Shutdown();
+         foreach (var function in EngineCallbacks.GetFunctions()) {
+            AddFunction(IntPtr.Zero, StringMarshal.Utf8StringToIntPtr(function.Key), 1, IntPtr.Zero);
+         }
 
-            engineShutdown();
+         foreach (var type in EngineCallbacks.GetTypes()) {
+               type.Value
+                  .GetMethods(BindingFlags.Default | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly |
+                              BindingFlags.IgnoreCase)
+                  .ToList()
+                  .ForEach(cb =>
+                     AddFunction(StringMarshal.Utf8StringToIntPtr(type.Key), StringMarshal.Utf8StringToIntPtr(cb.Name), 1, IntPtr.Zero));
+         }
 
-            SimDictionary.Shutdown();
+         Initializer.GetScriptEntry().Invoke(null, null);
 
-            NativeLibrary.Free(Torque3DLibHandle);
-        }
+         while (engineTick() > 0) { }
 
-        public static string CallFunctionDelegate(IntPtr nameSpace, IntPtr name, IntPtr argv, int argc,
-            out bool result) {
-            string _nameSpace = Marshal.PtrToStringAnsi(nameSpace);
-            string _name = Marshal.PtrToStringAnsi(name);
-            string[] strings = null;
-            if (argv != IntPtr.Zero)
-                strings = StringMarshal.IntPtrToAnsiStringArray(argv, argc);
-            return EngineCallbacks.CallScriptFunction(_nameSpace, _name, strings, out result);
-        }
+         SimDictionary.Shutdown();
 
-        public static string CallMethodDelegate(IntPtr className, IntPtr classNamespace, uint obj, IntPtr name,
-            IntPtr argv, int argc,
-            out bool result) {
-            string _className = Marshal.PtrToStringAnsi(className);
-            string _classNamespace = Marshal.PtrToStringAnsi(classNamespace);
-            string _name = Marshal.PtrToStringAnsi(name);
+         engineShutdown();
 
-            UnknownSimObject objectBaseWrapper = Sim.FindObjectById<UnknownSimObject>(obj);
-            string[] strings = { };
-            if (argv != IntPtr.Zero)
-                strings = StringMarshal.IntPtrToAnsiStringArray(argv, argc);
-            string strRes = EngineCallbacks.CallScriptMethod(_className, _classNamespace, objectBaseWrapper, _name, strings,
-                out result);
-            return strRes;
-        }
+         SimDictionary.Shutdown();
 
-        public static bool IsMethodDelegate(IntPtr className, IntPtr methodName) {
-            string _className = Marshal.PtrToStringAnsi(className);
-            string _methodName = Marshal.PtrToStringAnsi(methodName);
-            return EngineCallbacks.IsMethod(_className, _methodName);
-        }
+         NativeLibrary.Free(Torque3DLibHandle);
+      }
 
-        public struct Libraries
-        {
-            public string Linux32bit;
-            public string Linux64bit;
-            public string Windows32bit;
-            public string Windows64bit;
-            public string OSX32bit;
-            public string OSX64bit;
-        }
-    }
+      public static string ExecDelegate(IntPtr nameSpace, IntPtr name, int argc, IntPtr argv, out bool result) {
+         string _nameSpace = Marshal.PtrToStringAnsi(nameSpace);
+         string _name = Marshal.PtrToStringAnsi(name);
+         string[] strings = null;
+         if (argv != IntPtr.Zero)
+            strings = StringMarshal.IntPtrToAnsiStringArray(argv, argc);
+         return EngineCallbacks.CallScriptFunction(_nameSpace, _name, strings, out result);
+      }
+
+      public struct Libraries {
+         public string Linux32bit;
+         public string Linux64bit;
+         public string Windows32bit;
+         public string Windows64bit;
+         public string OSX32bit;
+         public string OSX64bit;
+      }
+   }
 }

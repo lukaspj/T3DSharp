@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-   
+
    <PropertyGroup>
       <OutputType>Exe</OutputType>
       <TargetFramework>net5.0</TargetFramework>
@@ -7,21 +7,17 @@
       <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
       <PublishTrimmed>true</PublishTrimmed>
       <PlatformTarget>x64</PlatformTarget>
-      <OutputPath>@projectOutDir@</OutputPath>
+      <OutputPath>@TORQUE_APP_GAME_REL_DIRECTORY@</OutputPath>
 	  <Configurations>@CMAKE_CONFIGURATION_TYPES@</Configurations>
    </PropertyGroup>
-   
+
    <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' "></PropertyGroup>
-   
+
    @CSHARP_DEFINE_CONSTANTS@
-   
+
    <ItemGroup>
       <ProjectReference Include="@CSHARP_FRAMEWORK_REL_PATH@" />
 	  @GAME_INCLUDES@
    </ItemGroup>
-   
-   <ItemGroup>
-      <Compile Include="@projectOutDir@/Program.cs" />
-   </ItemGroup>
-   
+
 </Project>

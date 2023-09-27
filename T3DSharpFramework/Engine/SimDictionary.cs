@@ -6,23 +6,26 @@ namespace T3DSharpFramework.Engine
 {
     internal unsafe class SimDictionary
     {
-        private static readonly Dictionary<int, ISimObject> ObjectDictionary =
-            new Dictionary<int, ISimObject>();
+        private static readonly Dictionary<int, ISimObject> ObjectDictionary = new();
 
-        private static readonly Dictionary<string, int> ObjectNameDictionary = new Dictionary<string, int>();
-        private static readonly Dictionary<IntPtr, IntPtr> ObjectWrapperDictionary = new Dictionary<IntPtr, IntPtr>();
-        private static readonly Dictionary<IntPtr, int> ObjectWrapperCountDictionary = new Dictionary<IntPtr, int>();
+        private static readonly Dictionary<string, int> ObjectNameDictionary = new();
+        private static readonly Dictionary<IntPtr, IntPtr> ObjectWrapperDictionary = new();
+        private static readonly Dictionary<IntPtr, int> ObjectWrapperCountDictionary = new();
 
         public static object CreateInstance(Type type, ISimObject objectBaseWrapper) {
-            if (!ObjectDictionary.ContainsKey(objectBaseWrapper.GetId())
-                || !(type.IsInstanceOfType(ObjectDictionary[objectBaseWrapper.GetId()]))) {
+           return CreateInstance(type, objectBaseWrapper.GetId(), objectBaseWrapper.ObjectPtr);
+        }
+
+        public static object CreateInstance(Type type, int id, IntPtr ptr) {
+            if (!ObjectDictionary.ContainsKey(id)
+                || !(type.IsInstanceOfType(ObjectDictionary[id]))) {
                 ISimObject obj = (ISimObject) FormatterServices.GetUninitializedObject(type);
-                obj.SetPointerFromObject(objectBaseWrapper);
+                obj.SetPointer(ptr);
                 RegisterObject(obj);
-                ObjectDictionary[objectBaseWrapper.GetId()] = obj;
+                ObjectDictionary[id] = obj;
             }
 
-            ISimObject dicObjectBase = ObjectDictionary[objectBaseWrapper.GetId()];
+            ISimObject dicObjectBase = ObjectDictionary[id];
             if (!string.IsNullOrEmpty(dicObjectBase.Name)) {
                 ObjectNameDictionary[dicObjectBase.Name] = dicObjectBase.GetId();
             }

@@ -17,43 +17,45 @@ using T3DSharpFramework.Interop;
 namespace T3DSharpFramework.Generated.Classes.Sim {
     /// <summary>Base class for almost all objects involved in the simulation.</summary>
     /// <description>
-    /// 
+    ///
     /// </description>
     public unsafe class SimObject : ConsoleObject, ISimObject {
-        public SimObject(bool pRegister = false) 
+        public SimObject(bool pRegister = false)
             : base(pRegister) {
+           // Always set the Class Namespace to the C# class name
+           ClassName = ((object)this).GetType().Name;
         }
-        
-        public SimObject(string pName, bool pRegister) 
+
+        public SimObject(string pName, bool pRegister)
             : this(false) {
             Name = pName;
             if (pRegister) {
                 RegisterObject();
             }
         }
-        
-        public SimObject(string pName) 
+
+        public SimObject(string pName)
             : this(pName, false) {
         }
-        
-        public SimObject(string pName, string pParent, bool pRegister = false) 
+
+        public SimObject(string pName, string pParent, bool pRegister = false)
             : this(pName, pRegister) {
             CopyFrom(Engine.Sim.FindObject<SimObject>(pParent));
         }
-        
-        public SimObject(string pName, SimObject pParent, bool pRegister = false) 
+
+        public SimObject(string pName, SimObject pParent, bool pRegister = false)
             : this(pName, pRegister) {
             CopyFrom(pParent);
         }
-        
-        public SimObject(SimObject pObj) 
+
+        public SimObject(SimObject pObj)
             : base(pObj) {
         }
-        
-        public SimObject(IntPtr pObj) 
+
+        public SimObject(IntPtr pObj)
             : base(pObj) {
         }
-        
+
 		protected override void CreateObjectPtr()
 		{
 			ObjectPtr = InternalUnsafeMethods.Create()(new InternalUnsafeMethods.Create__Args());
@@ -83,11 +85,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
             throw new NotImplementedException();
         }
-        
+
         public static implicit operator string(SimObject simObject) {
             return GenericMarshal.ToString((ISimObject)simObject);
         }
-        
+
         public bool RegisterObject() {
 			InternalUnsafeMethods.RegisterObject__Args _args = new InternalUnsafeMethods.RegisterObject__Args()
 			{
@@ -120,7 +122,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_InspectPostApply"), typeof(_InspectPostApply));
                 }
-                
+
                 return _InspectPostApplyFunc;
             }
 
@@ -140,7 +142,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_InspectPreApply"), typeof(_InspectPreApply));
                 }
-                
+
                 return _InspectPreApplyFunc;
             }
 
@@ -161,7 +163,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_IsLocked"), typeof(_IsLocked));
                 }
-                
+
                 return _IsLockedFunc;
             }
 
@@ -185,7 +187,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_SetMods"), typeof(_SetMods));
                 }
-                
+
                 return _SetModsFunc;
             }
 
@@ -206,7 +208,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_CopyFrom"), typeof(_CopyFrom));
                 }
-                
+
                 return _CopyFromFunc;
             }
 
@@ -227,7 +229,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_RegisterObject"), typeof(_RegisterObject));
                 }
-                
+
                 return _RegisterObjectFunc;
             }
 
@@ -247,7 +249,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getDebugInfo"), typeof(_GetDebugInfo));
                 }
-                
+
                 return _GetDebugInfoFunc;
             }
 
@@ -258,7 +260,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetField(IntPtr _this, GetField__Args args);
             private static _GetField _GetFieldFunc;
             internal static _GetField GetField() {
@@ -269,7 +271,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getField"), typeof(_GetField));
                 }
-                
+
                 return _GetFieldFunc;
             }
 
@@ -289,7 +291,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getFieldCount"), typeof(_GetFieldCount));
                 }
-                
+
                 return _GetFieldCountFunc;
             }
 
@@ -300,7 +302,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetDynamicField(IntPtr _this, GetDynamicField__Args args);
             private static _GetDynamicField _GetDynamicFieldFunc;
             internal static _GetDynamicField GetDynamicField() {
@@ -311,7 +313,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getDynamicField"), typeof(_GetDynamicField));
                 }
-                
+
                 return _GetDynamicFieldFunc;
             }
 
@@ -331,7 +333,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getDynamicFieldCount"), typeof(_GetDynamicFieldCount));
                 }
-                
+
                 return _GetDynamicFieldCountFunc;
             }
 
@@ -347,7 +349,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_schedule"), typeof(_Schedule));
                 }
-                
+
                 return _ScheduleFunc;
             }
 
@@ -367,7 +369,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_delete"), typeof(_Delete));
                 }
-                
+
                 return _DeleteFunc;
             }
 
@@ -387,7 +389,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getGroup"), typeof(_GetGroup));
                 }
-                
+
                 return _GetGroupFunc;
             }
 
@@ -407,7 +409,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getId"), typeof(_GetId));
                 }
-                
+
                 return _GetIdFunc;
             }
 
@@ -430,7 +432,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_isInNamespaceHierarchy"), typeof(_IsInNamespaceHierarchy));
                 }
-                
+
                 return _IsInNamespaceHierarchyFunc;
             }
 
@@ -453,7 +455,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_isMemberOfClass"), typeof(_IsMemberOfClass));
                 }
-                
+
                 return _IsMemberOfClassFunc;
             }
 
@@ -473,7 +475,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_dumpClassHierarchy"), typeof(_DumpClassHierarchy));
                 }
-                
+
                 return _DumpClassHierarchyFunc;
             }
 
@@ -483,7 +485,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetInternalName(IntPtr _this, GetInternalName__Args args);
             private static _GetInternalName _GetInternalNameFunc;
             internal static _GetInternalName GetInternalName() {
@@ -494,7 +496,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getInternalName"), typeof(_GetInternalName));
                 }
-                
+
                 return _GetInternalNameFunc;
             }
 
@@ -516,13 +518,13 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setInternalName"), typeof(_SetInternalName));
                 }
-                
+
                 return _SetInternalNameFunc;
             }
 
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _Call(IntPtr _this, ref StringVector.InternalStruct args);
             private static _Call _CallFunc;
             internal static _Call Call() {
@@ -533,7 +535,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_call"), typeof(_Call));
                 }
-                
+
                 return _CallFunc;
             }
 
@@ -557,7 +559,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setFieldType"), typeof(_SetFieldType));
                 }
-                
+
                 return _SetFieldTypeFunc;
             }
 
@@ -569,7 +571,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetFieldType(IntPtr _this, GetFieldType__Args args);
             private static _GetFieldType _GetFieldTypeFunc;
             internal static _GetFieldType GetFieldType() {
@@ -580,7 +582,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getFieldType"), typeof(_GetFieldType));
                 }
-                
+
                 return _GetFieldTypeFunc;
             }
 
@@ -606,7 +608,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setFieldValue"), typeof(_SetFieldValue));
                 }
-                
+
                 return _SetFieldValueFunc;
             }
 
@@ -619,7 +621,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetFieldValue(IntPtr _this, GetFieldValue__Args args);
             private static _GetFieldValue _GetFieldValueFunc;
             internal static _GetFieldValue GetFieldValue() {
@@ -630,7 +632,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getFieldValue"), typeof(_GetFieldValue));
                 }
-                
+
                 return _GetFieldValueFunc;
             }
 
@@ -653,7 +655,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_isField"), typeof(_IsField));
                 }
-                
+
                 return _IsFieldFunc;
             }
 
@@ -663,7 +665,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetClassName(IntPtr _this, GetClassName__Args args);
             private static _GetClassName _GetClassNameFunc;
             internal static _GetClassName GetClassName() {
@@ -674,7 +676,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getClassName"), typeof(_GetClassName));
                 }
-                
+
                 return _GetClassNameFunc;
             }
 
@@ -684,7 +686,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetName(IntPtr _this, GetName__Args args);
             private static _GetName _GetNameFunc;
             internal static _GetName GetName() {
@@ -695,7 +697,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getName"), typeof(_GetName));
                 }
-                
+
                 return _GetNameFunc;
             }
 
@@ -717,7 +719,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setName"), typeof(_SetName));
                 }
-                
+
                 return _SetNameFunc;
             }
 
@@ -744,7 +746,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_save"), typeof(_Save));
                 }
-                
+
                 return _SaveFunc;
             }
 
@@ -766,7 +768,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_dump"), typeof(_Dump));
                 }
-                
+
                 return _DumpFunc;
             }
 
@@ -786,7 +788,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_dumpMethods"), typeof(_DumpMethods));
                 }
-                
+
                 return _DumpMethodsFunc;
             }
 
@@ -808,7 +810,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setHidden"), typeof(_SetHidden));
                 }
-                
+
                 return _SetHiddenFunc;
             }
 
@@ -830,7 +832,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setLocked"), typeof(_SetLocked));
                 }
-                
+
                 return _SetLockedFunc;
             }
 
@@ -850,7 +852,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_deepClone"), typeof(_DeepClone));
                 }
-                
+
                 return _DeepCloneFunc;
             }
 
@@ -870,7 +872,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_clone"), typeof(_Clone));
                 }
-                
+
                 return _CloneFunc;
             }
 
@@ -892,7 +894,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setNameChangeAllowed"), typeof(_SetNameChangeAllowed));
                 }
-                
+
                 return _SetNameChangeAllowedFunc;
             }
 
@@ -913,7 +915,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_isNameChangeAllowed"), typeof(_IsNameChangeAllowed));
                 }
-                
+
                 return _IsNameChangeAllowedFunc;
             }
 
@@ -935,7 +937,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setEditorOnly"), typeof(_SetEditorOnly));
                 }
-                
+
                 return _SetEditorOnlyFunc;
             }
 
@@ -956,7 +958,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_isEditorOnly"), typeof(_IsEditorOnly));
                 }
-                
+
                 return _IsEditorOnlyFunc;
             }
 
@@ -978,7 +980,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setCanSave"), typeof(_SetCanSave));
                 }
-                
+
                 return _SetCanSaveFunc;
             }
 
@@ -999,7 +1001,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getCanSave"), typeof(_GetCanSave));
                 }
-                
+
                 return _GetCanSaveFunc;
             }
 
@@ -1019,7 +1021,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_assignPersistentId"), typeof(_AssignPersistentId));
                 }
-                
+
                 return _AssignPersistentIdFunc;
             }
 
@@ -1040,7 +1042,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_assignFieldsFrom"), typeof(_AssignFieldsFrom));
                 }
-                
+
                 return _AssignFieldsFromFunc;
             }
 
@@ -1060,7 +1062,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getDeclarationLine"), typeof(_GetDeclarationLine));
                 }
-                
+
                 return _GetDeclarationLineFunc;
             }
 
@@ -1082,7 +1084,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setFilename"), typeof(_SetFilename));
                 }
-                
+
                 return _SetFilenameFunc;
             }
 
@@ -1092,7 +1094,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetFilename(IntPtr _this, GetFilename__Args args);
             private static _GetFilename _GetFilenameFunc;
             internal static _GetFilename GetFilename() {
@@ -1103,7 +1105,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getFilename"), typeof(_GetFilename));
                 }
-                
+
                 return _GetFilenameFunc;
             }
 
@@ -1125,7 +1127,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setIsExpanded"), typeof(_SetIsExpanded));
                 }
-                
+
                 return _SetIsExpandedFunc;
             }
 
@@ -1146,7 +1148,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_isExpanded"), typeof(_IsExpanded));
                 }
-                
+
                 return _IsExpandedFunc;
             }
 
@@ -1168,7 +1170,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setIsSelected"), typeof(_SetIsSelected));
                 }
-                
+
                 return _SetIsSelectedFunc;
             }
 
@@ -1189,7 +1191,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_isSelected"), typeof(_IsSelected));
                 }
-                
+
                 return _IsSelectedFunc;
             }
 
@@ -1211,7 +1213,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setSuperClassNamespace"), typeof(_SetSuperClassNamespace));
                 }
-                
+
                 return _SetSuperClassNamespaceFunc;
             }
 
@@ -1233,7 +1235,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_setClassNamespace"), typeof(_SetClassNamespace));
                 }
-                
+
                 return _SetClassNamespaceFunc;
             }
 
@@ -1243,7 +1245,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetSuperClassNamespace(IntPtr _this, GetSuperClassNamespace__Args args);
             private static _GetSuperClassNamespace _GetSuperClassNamespaceFunc;
             internal static _GetSuperClassNamespace GetSuperClassNamespace() {
@@ -1254,7 +1256,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getSuperClassNamespace"), typeof(_GetSuperClassNamespace));
                 }
-                
+
                 return _GetSuperClassNamespaceFunc;
             }
 
@@ -1264,7 +1266,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetClassNamespace(IntPtr _this, GetClassNamespace__Args args);
             private static _GetClassNamespace _GetClassNamespaceFunc;
             internal static _GetClassNamespace GetClassNamespace() {
@@ -1275,7 +1277,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_getClassNamespace"), typeof(_GetClassNamespace));
                 }
-                
+
                 return _GetClassNamespaceFunc;
             }
 
@@ -1297,7 +1299,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_isChildOfGroup"), typeof(_IsChildOfGroup));
                 }
-                
+
                 return _IsChildOfGroupFunc;
             }
 
@@ -1320,7 +1322,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_isMethod"), typeof(_IsMethod));
                 }
-                
+
                 return _IsMethodFunc;
             }
 
@@ -1340,7 +1342,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_dumpGroupHierarchy"), typeof(_DumpGroupHierarchy));
                 }
-                
+
                 return _DumpGroupHierarchyFunc;
             }
 
@@ -1361,7 +1363,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "cbSimObject_onInspectPostApply"), typeof(_OnInspectPostApply));
                 }
-                
+
                 return _OnInspectPostApplyFunc;
             }
 
@@ -1381,7 +1383,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_staticGetType"), typeof(_StaticGetType));
                 }
-                
+
                 return _StaticGetTypeFunc;
             }
 
@@ -1401,27 +1403,27 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnSimObject_create"), typeof(_Create));
                 }
-                
+
                 return _CreateFunc;
             }
         }
         #endregion
 
-        /// 
+        ///
         public void InspectPostApply() {
              InternalUnsafeMethods.InspectPostApply__Args _args = new InternalUnsafeMethods.InspectPostApply__Args() {
              };
              InternalUnsafeMethods.InspectPostApply()(ObjectPtr, _args);
         }
 
-        /// 
+        ///
         public void InspectPreApply() {
              InternalUnsafeMethods.InspectPreApply__Args _args = new InternalUnsafeMethods.InspectPreApply__Args() {
              };
              InternalUnsafeMethods.InspectPreApply()(ObjectPtr, _args);
         }
 
-        /// 
+        ///
         public bool IsLocked() {
              InternalUnsafeMethods.IsLocked__Args _args = new InternalUnsafeMethods.IsLocked__Args() {
              };
@@ -1429,7 +1431,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
              return _engineResult;
         }
 
-        /// 
+        ///
         public void SetMods(bool modStaticFields, bool modDynamicFields) {
              InternalUnsafeMethods.SetMods__Args _args = new InternalUnsafeMethods.SetMods__Args() {
                 modStaticFields = modStaticFields,
@@ -1438,7 +1440,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
              InternalUnsafeMethods.SetMods()(ObjectPtr, _args);
         }
 
-        /// 
+        ///
         public void CopyFrom(SimObject parent) {
              InternalUnsafeMethods.CopyFrom__Args _args = new InternalUnsafeMethods.CopyFrom__Args() {
                 parent = parent.ObjectPtr,
@@ -1512,7 +1514,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
         /// <param name="method">The method to call.</param>
         /// <param name="args">The arguments with which to call the method.</param>
         /// <returns>The numeric ID of the created schedule.  Can be used to cancel the call.</returns>
-        public int Schedule(params string[] args) { 
+        public int Schedule(params string[] args) {
             List<string> _argList = new List<string>() {"", ""};
             _argList.AddRange(args);
 
@@ -1626,7 +1628,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
         /// <param name="method">Name of method to call.</param>
         /// <param name="args">Zero or more arguments for the method.</param>
         /// <returns>The result of the method call.</returns>
-        public string Call(params string[] args) { 
+        public string Call(params string[] args) {
             List<string> _argList = new List<string>() {"", ""};
             _argList.AddRange(args);
 
@@ -1777,14 +1779,14 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
 
         /// <description>
         /// List the methods defined on this object.
-        /// 
+        ///
         /// Each description is a newline-separated vector with the following elements:
         /// - Minimum number of arguments.
         /// - Maximum number of arguments.
         /// - Prototype string.
         /// - Full script file path (if script method).
         /// - Line number of method definition in script (if script method).
-        /// 
+        ///
         /// - Documentation string (not including prototype).  This takes up the remainder of the vector.
         /// </description>
         /// <returns>An ArrayObject populated with (name,description) pairs of all methods defined on the object.</returns>

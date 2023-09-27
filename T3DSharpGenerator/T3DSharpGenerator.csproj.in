@@ -7,11 +7,10 @@
       <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
       <PublishTrimmed>true</PublishTrimmed>
       <PlatformTarget>x64</PlatformTarget>
-      <OutputPath>@projectOutDir@</OutputPath>
    </PropertyGroup>
-   
+
    <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' "></PropertyGroup>
-   
+
    <ItemGroup>
       <ProjectReference Include="@CSHARP_FRAMEWORK_REL_PATH@" />
    </ItemGroup>
