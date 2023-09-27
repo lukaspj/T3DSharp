@@ -1,4 +1,3 @@
-return()
 cmake_minimum_required(VERSION 3.14)
 
 torqueAddSourceDirectories("${POSSIBLE_PROJECT_ABSOLUTEPATH}/source")

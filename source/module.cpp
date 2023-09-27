@@ -31,8 +31,6 @@ namespace Csharp
 
    Con::EvalResult CsharpModule::exec(U32 offset, const char* fnName, Namespace* ns, U32 argc, ConsoleValue* argv, bool noCalls, StringTableEntry packageName, S32 setFrame)
    {
-      Con::printf("[C#] exec");
-      Con::printf("[C#] exec %s(%s,...[%d total])", fnName, argv[0].getString(), argc);
       ConsoleValueToStringArrayWrapper args(argc - 1, argv + 1);
       bool result = false;
       const char* execResult = Csharp::gExecCallback(ns->getName(), fnName, args.count(), args, &result);
