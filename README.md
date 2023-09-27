@@ -20,4 +20,4 @@ with the `TORQUE_DYNAMIC_LIBRARY` flag set to true.
 CMake will generate necessary templates to inject the project name and relevant paths in, then it will
 find all `*.csproj` files and add them to a solution that will be created in this folder.
 
-See the [wiki](./wiki) for more information.
+See the [wiki](https://github.com/lukaspj/T3DSharp/wiki) for more information.
