@@ -27,8 +27,15 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
         }
 
         public SimObject(string pName, bool pRegister)
-            : this(false) {
+            : base(false) {
             Name = pName;
+            // Handle the case where the class name refers to the name of
+            // the object, and thus only meant to be used for that specific object,
+            // not encompassing an actual type
+            var managedClassName = ((object)this).GetType().Name;
+            if (managedClassName != Name) {
+               ClassName = managedClassName;
+            }
             if (pRegister) {
                 RegisterObject();
             }

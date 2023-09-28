@@ -78,7 +78,11 @@ namespace T3DSharpFramework.Interop {
 
          setCallbacks(Marshal.GetFunctionPointerForDelegate(execDelegate));
 
-         if (!engineInit(args.Length, args)) return;
+         List<string> _args = args.ToList();
+         _args.Insert(0, Assembly.GetExecutingAssembly().Location);
+         _args.Insert(1, "SkipMainCs");
+
+         if (!engineInit(_args.Count, _args.ToArray())) return;
 
          foreach (var function in EngineCallbacks.GetFunctions()) {
             AddFunction(IntPtr.Zero, StringMarshal.Utf8StringToIntPtr(function.Key), 1, IntPtr.Zero);
@@ -112,6 +116,7 @@ namespace T3DSharpFramework.Interop {
          string[] strings = null;
          if (argv != IntPtr.Zero)
             strings = StringMarshal.IntPtrToAnsiStringArray(argv, argc);
+
          return EngineCallbacks.CallScriptFunction(_nameSpace, _name, strings, out result);
       }
 
