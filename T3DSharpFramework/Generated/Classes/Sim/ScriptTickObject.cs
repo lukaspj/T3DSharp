@@ -21,40 +21,36 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
     /// </description>
     /// <see cref="ScriptObject" />
     public unsafe class ScriptTickObject : ScriptObject {
-        public ScriptTickObject(bool pRegister = false) 
+        public ScriptTickObject(bool pRegister = false)
             : base(pRegister) {
         }
-        
-        public ScriptTickObject(string pName, bool pRegister) 
-            : this(false) {
-            Name = pName;
-            if (pRegister) {
-                RegisterObject();
-            }
+
+        public ScriptTickObject(string pName, bool pRegister)
+            : base(pName, pRegister) {
         }
-        
-        public ScriptTickObject(string pName) 
+
+        public ScriptTickObject(string pName)
             : this(pName, false) {
         }
-        
-        public ScriptTickObject(string pName, string pParent, bool pRegister = false) 
+
+        public ScriptTickObject(string pName, string pParent, bool pRegister = false)
             : this(pName, pRegister) {
             CopyFrom(Engine.Sim.FindObject<SimObject>(pParent));
         }
-        
-        public ScriptTickObject(string pName, SimObject pParent, bool pRegister = false) 
+
+        public ScriptTickObject(string pName, SimObject pParent, bool pRegister = false)
             : this(pName, pRegister) {
             CopyFrom(pParent);
         }
-        
-        public ScriptTickObject(SimObject pObj) 
+
+        public ScriptTickObject(SimObject pObj)
             : base(pObj) {
         }
-        
-        public ScriptTickObject(IntPtr pObj) 
+
+        public ScriptTickObject(IntPtr pObj)
             : base(pObj) {
         }
-        
+
 		protected override void CreateObjectPtr()
 		{
 			ObjectPtr = InternalUnsafeMethods.Create()(new InternalUnsafeMethods.Create__Args());
@@ -79,7 +75,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnScriptTickObject_isProcessingTicks"), typeof(_IsProcessingTicks));
                 }
-                
+
                 return _IsProcessingTicksFunc;
             }
 
@@ -101,7 +97,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnScriptTickObject_setProcessTicks"), typeof(_SetProcessTicks));
                 }
-                
+
                 return _SetProcessTicksFunc;
             }
 
@@ -122,7 +118,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptTickObject_onAdvanceTime"), typeof(_OnAdvanceTime));
                 }
-                
+
                 return _OnAdvanceTimeFunc;
             }
 
@@ -142,7 +138,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptTickObject_onProcessTick"), typeof(_OnProcessTick));
                 }
-                
+
                 return _OnProcessTickFunc;
             }
 
@@ -163,7 +159,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptTickObject_onInterpolateTick"), typeof(_OnInterpolateTick));
                 }
-                
+
                 return _OnInterpolateTickFunc;
             }
 
@@ -183,7 +179,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnScriptTickObject_staticGetType"), typeof(_StaticGetType));
                 }
-                
+
                 return _StaticGetTypeFunc;
             }
 
@@ -203,7 +199,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnScriptTickObject_create"), typeof(_Create));
                 }
-                
+
                 return _CreateFunc;
             }
         }
@@ -223,7 +219,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
 
         /// <summary>Sets this object as either tick processing or not.</summary>
         /// <description>
-        /// 
+        ///
         /// </description>
         /// <param name="tick">This object's onInterpolateTick() and onProcessTick() callbacks are called if set to true.</param>
         public void SetProcessTicks(bool tick) {

@@ -30,40 +30,36 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
     /// </code>
     /// <see cref="SimObject" />
     public unsafe class ScriptObject : SimObject {
-        public ScriptObject(bool pRegister = false) 
+        public ScriptObject(bool pRegister = false)
             : base(pRegister) {
         }
-        
-        public ScriptObject(string pName, bool pRegister) 
-            : this(false) {
-            Name = pName;
-            if (pRegister) {
-                RegisterObject();
-            }
+
+        public ScriptObject(string pName, bool pRegister)
+            : base(pName, pRegister) {
         }
-        
-        public ScriptObject(string pName) 
+
+        public ScriptObject(string pName)
             : this(pName, false) {
         }
-        
-        public ScriptObject(string pName, string pParent, bool pRegister = false) 
+
+        public ScriptObject(string pName, string pParent, bool pRegister = false)
             : this(pName, pRegister) {
             CopyFrom(Engine.Sim.FindObject<SimObject>(pParent));
         }
-        
-        public ScriptObject(string pName, SimObject pParent, bool pRegister = false) 
+
+        public ScriptObject(string pName, SimObject pParent, bool pRegister = false)
             : this(pName, pRegister) {
             CopyFrom(pParent);
         }
-        
-        public ScriptObject(SimObject pObj) 
+
+        public ScriptObject(SimObject pObj)
             : base(pObj) {
         }
-        
-        public ScriptObject(IntPtr pObj) 
+
+        public ScriptObject(IntPtr pObj)
             : base(pObj) {
         }
-        
+
 		protected override void CreateObjectPtr()
 		{
 			ObjectPtr = InternalUnsafeMethods.Create()(new InternalUnsafeMethods.Create__Args());
@@ -88,7 +84,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptObject_onRemove"), typeof(_OnRemove));
                 }
-                
+
                 return _OnRemoveFunc;
             }
 
@@ -109,7 +105,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "cbScriptObject_onAdd"), typeof(_OnAdd));
                 }
-                
+
                 return _OnAddFunc;
             }
 
@@ -129,7 +125,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnScriptObject_staticGetType"), typeof(_StaticGetType));
                 }
-                
+
                 return _StaticGetTypeFunc;
             }
 
@@ -149,7 +145,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnScriptObject_create"), typeof(_Create));
                 }
-                
+
                 return _CreateFunc;
             }
         }

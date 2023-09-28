@@ -35,7 +35,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
     ///    else
     ///     echo("Key was released");
     /// }
-    /// 
+    ///
     /// // Bind the 'K' key to the testInput function
     /// moveMap.bind(keyboard, "k", testInput);
     /// </code>
@@ -45,13 +45,13 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
     /// {
     ///    echo("Space bar down!");
     /// }
-    /// 
+    ///
     /// // Print to the console when the spacebar is released
     /// function onSpaceUp()
     /// {
     ///    echo("Space bar up!");
     /// }
-    /// 
+    ///
     /// // Bind the commands onSpaceDown and onSpaceUp to spacebar events
     /// moveMap.bindCmd(keyboard, "space", "onSpaceDown();", "onSpaceUp();");
     /// </code>
@@ -60,7 +60,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
     /// if ( isObject( moveMap ) )
     ///   moveMap.delete();
     /// new ActionMap(moveMap);
-    /// 
+    ///
     /// if ( isObject( carMap ) )
     ///   carMap.delete();
     /// new ActionMap(carMap);
@@ -72,7 +72,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
     ///    if(%val)
     ///     echo("Player jumping!");
     /// }
-    /// 
+    ///
     /// // Print to the console the vehicle is charging
     /// function turboCharge()
     /// {
@@ -84,7 +84,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
     /// // Bind the spacebar to the playerJump function
     /// // when moveMap is the active ActionMap
     /// moveMap.bind(keyboard, "space", playerJump);
-    /// 
+    ///
     /// // Bind the spacebar to the turboCharge function
     /// // when carMap is the active ActionMap
     /// carMap.bind(keyboard, "space", turboCharge);
@@ -97,45 +97,41 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
     /// <code>
     /// // Deactivate moveMap
     /// moveMap.pop();
-    /// 
+    ///
     /// // Activate carMap
     /// carMap.push();
     /// </code>
     public unsafe class ActionMap : SimObject {
-        public ActionMap(bool pRegister = false) 
+        public ActionMap(bool pRegister = false)
             : base(pRegister) {
         }
-        
-        public ActionMap(string pName, bool pRegister) 
-            : this(false) {
-            Name = pName;
-            if (pRegister) {
-                RegisterObject();
-            }
+
+        public ActionMap(string pName, bool pRegister)
+            : base(pName, pRegister) {
         }
-        
-        public ActionMap(string pName) 
+
+        public ActionMap(string pName)
             : this(pName, false) {
         }
-        
-        public ActionMap(string pName, string pParent, bool pRegister = false) 
+
+        public ActionMap(string pName, string pParent, bool pRegister = false)
             : this(pName, pRegister) {
             CopyFrom(Engine.Sim.FindObject<SimObject>(pParent));
         }
-        
-        public ActionMap(string pName, SimObject pParent, bool pRegister = false) 
+
+        public ActionMap(string pName, SimObject pParent, bool pRegister = false)
             : this(pName, pRegister) {
             CopyFrom(pParent);
         }
-        
-        public ActionMap(SimObject pObj) 
+
+        public ActionMap(SimObject pObj)
             : base(pObj) {
         }
-        
-        public ActionMap(IntPtr pObj) 
+
+        public ActionMap(IntPtr pObj)
             : base(pObj) {
         }
-        
+
 		protected override void CreateObjectPtr()
 		{
 			ObjectPtr = InternalUnsafeMethods.Create()(new InternalUnsafeMethods.Create__Args());
@@ -153,7 +149,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetDeadZone(IntPtr _this, GetDeadZone__Args args);
             private static _GetDeadZone _GetDeadZoneFunc;
             internal static _GetDeadZone GetDeadZone() {
@@ -164,7 +160,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_getDeadZone"), typeof(_GetDeadZone));
                 }
-                
+
                 return _GetDeadZoneFunc;
             }
 
@@ -188,7 +184,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_getScale"), typeof(_GetScale));
                 }
-                
+
                 return _GetScaleFunc;
             }
 
@@ -213,7 +209,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_isInverted"), typeof(_IsInverted));
                 }
-                
+
                 return _IsInvertedFunc;
             }
 
@@ -227,7 +223,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetCommand(IntPtr _this, GetCommand__Args args);
             private static _GetCommand _GetCommandFunc;
             internal static _GetCommand GetCommand() {
@@ -238,7 +234,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_getCommand"), typeof(_GetCommand));
                 }
-                
+
                 return _GetCommandFunc;
             }
 
@@ -250,7 +246,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
             }
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            
+
             internal delegate IntPtr _GetBinding(IntPtr _this, GetBinding__Args args);
             private static _GetBinding _GetBindingFunc;
             internal static _GetBinding GetBinding() {
@@ -261,7 +257,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_getBinding"), typeof(_GetBinding));
                 }
-                
+
                 return _GetBindingFunc;
             }
 
@@ -281,7 +277,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_pop"), typeof(_Pop));
                 }
-                
+
                 return _PopFunc;
             }
 
@@ -301,7 +297,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_push"), typeof(_Push));
                 }
-                
+
                 return _PushFunc;
             }
 
@@ -325,7 +321,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_save"), typeof(_Save));
                 }
-                
+
                 return _SaveFunc;
             }
 
@@ -352,7 +348,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_unbindObj"), typeof(_UnbindObj));
                 }
-                
+
                 return _UnbindObjFunc;
             }
 
@@ -377,7 +373,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_unbind"), typeof(_Unbind));
                 }
-                
+
                 return _UnbindFunc;
             }
 
@@ -405,7 +401,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_bindHold"), typeof(_BindHold));
                 }
-                
+
                 return _BindHoldFunc;
             }
 
@@ -434,7 +430,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_bindContext"), typeof(_BindContext));
                 }
-                
+
                 return _BindContextFunc;
             }
 
@@ -463,7 +459,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_bindCmd"), typeof(_BindCmd));
                 }
-                
+
                 return _BindCmdFunc;
             }
 
@@ -480,7 +476,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_bindObj"), typeof(_BindObj));
                 }
-                
+
                 return _BindObjFunc;
             }
 
@@ -497,7 +493,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_bind"), typeof(_Bind));
                 }
-                
+
                 return _BindFunc;
             }
 
@@ -517,7 +513,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_staticGetType"), typeof(_StaticGetType));
                 }
-                
+
                 return _StaticGetTypeFunc;
             }
 
@@ -537,7 +533,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
                                 Torque3D.Torque3DLibHandle,
                                 "fnActionMap_create"), typeof(_Create));
                 }
-                
+
                 return _CreateFunc;
             }
         }
@@ -545,7 +541,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
 
         /// <summary>Gets the Dead zone for the specified device and action.</summary>
         /// <description>
-        /// 
+        ///
         /// </description>
         /// <param name="device">The device that was bound.  Can be a keyboard, mouse, joystick or a gamepad.</param>
         /// <param name="action">The device action that was bound. The action is dependant upon the device. Specify a key for keyboards.</param>
@@ -564,7 +560,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
 
         /// <summary>Get any scaling on the specified device and action.</summary>
         /// <description>
-        /// 
+        ///
         /// </description>
         /// <param name="device">The device that was bound. Can be keyboard, mouse, joystick or gamepad.</param>
         /// <param name="action">The device action that was bound. The action is dependant upon the device. Specify a key for keyboards.</param>
@@ -603,7 +599,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
 
         /// <summary>Gets ActionMap command for the device and action.</summary>
         /// <description>
-        /// 
+        ///
         /// </description>
         /// <param name="device">The device that was bound. Can be a keyboard, mouse, joystick or a gamepad.</param>
         /// <param name="action">The device action that was bound.  The action is dependant upon the device. Specify a key for keyboards.</param>
@@ -612,7 +608,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
         /// // Find what function is bound to a device's action
         /// // In this example, "jump()" was assigned to the space key in another script
         /// %command = moveMap.getCommand("keyboard", "space");
-        /// 
+        ///
         /// // Should print "jump" in the console
         /// echo(%command)
         /// </code>
@@ -634,12 +630,12 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
         /// <code>
         /// // Find what the function "jump()" is bound to in moveMap
         /// %bind = moveMap.getBinding( "jump" );
-        /// 
+        ///
         /// if ( %bind !$= "" )
         /// {
         /// // Find out what device is used in the binding
         ///   %device = getField( %bind, 0 );
-        /// 
+        ///
         /// // Find out what action (such as a key) is used in the binding
         ///   %action = getField( %bind, 1 );
         /// }
@@ -685,7 +681,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
 
         /// <summary>Saves the ActionMap to a file or dumps it to the console.</summary>
         /// <description>
-        /// 
+        ///
         /// </description>
         /// <param name="fileName">The file path to save the ActionMap to. If a filename is not specified  the ActionMap will be dumped to the console.</param>
         /// <param name="append">Whether to write the ActionMap at the end of the file or overwrite it.</param>
@@ -703,7 +699,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
 
         /// <summary>Remove any object-binding on an input device and action.</summary>
         /// <description>
-        /// 
+        ///
         /// </description>
         /// <param name="device">The device to bind to.  Can be keyboard, mouse, joystick or gamepad.</param>
         /// <param name="action">The device action to unbind from. The action is dependant upon the device. Specify a key for keyboards.</param>
@@ -724,7 +720,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
 
         /// <summary>Removes the binding on an input device and action.</summary>
         /// <description>
-        /// 
+        ///
         /// </description>
         /// <param name="device">The device to unbind from. Can be a keyboard, mouse, joystick or a gamepad.</param>
         /// <param name="action">The device action to unbind from. The action is dependant upon the device. Specify a key for keyboards.</param>
@@ -783,15 +779,15 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
         /// {
         ///    echo("Space bar down!");
         /// }
-        /// 
+        ///
         /// // Print to the console when the spacebar is released
         /// function onSpaceUp()
         /// {
         ///    echo("Space bar up!");
         /// }
-        /// 
+        ///
         /// // Bind the commands onSpaceDown() and onSpaceUp() to spacebar events
-        /// 
+        ///
         /// moveMap.bindCmd(keyboard, "space", "onSpaceDown();", "onSpaceUp();");
         /// </code>
         public bool BindCmd(string device, string action, string makeCmd, string breakCmd = "") {
@@ -808,7 +804,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
         /// <description>
         /// (device, action, [modifier, spec, mod...], command, object)
         /// </description>
-        public bool BindObj(params string[] args) { 
+        public bool BindObj(params string[] args) {
             List<string> _argList = new List<string>() {"", ""};
             _argList.AddRange(args);
 
@@ -827,7 +823,7 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
         /// <description>
         /// actionMap.bind( device, action, [modifier, spec, mod...], command )
         /// </description>
-        public bool Bind(params string[] args) { 
+        public bool Bind(params string[] args) {
             List<string> _argList = new List<string>() {"", ""};
             _argList.AddRange(args);
 
