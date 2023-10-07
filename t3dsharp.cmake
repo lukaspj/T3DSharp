@@ -1,0 +1,3 @@
+﻿add_subdirectory(T3DSharpFramework)
+add_subdirectory(T3DSharpGenerator)
+add_subdirectory(T3DSharpGame)

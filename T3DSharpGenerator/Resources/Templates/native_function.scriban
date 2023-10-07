@@ -3,8 +3,8 @@
     if function.is_static
         parameters = ""
     else
-        parameters = "IntPtr _this, " 
-    end 
+        parameters = "IntPtr _this, "
+    end
 ~}}
 {{~ if function.is_variadic ~}}
     {{~
@@ -35,13 +35,7 @@
             internal delegate {{ function.return_type.native_return_type }} _{{ functionName }}({{ parameters }});
             private static _{{ functionName }} _{{ functionName }}Func;
             internal static _{{ functionName }} {{ functionName }}() {
-                if (_{{ functionName }}Func == null) {
-                    _{{ functionName }}Func =
-                        (_{{ functionName }})Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "{{function.symbol}}"), typeof(_{{ functionName }}));
-                }
-                
+               _{{ functionName }}Func ??= Torque3D.LookupEngineFunction<_{{ functionName }}>("{{function.symbol}}");
+
                 return _{{ functionName }}Func;
             }

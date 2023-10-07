@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
 using T3DSharpFramework.Engine.Util;
+using T3DSharpFramework.Generated.Classes.Console;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Reflection;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Enums.Reflection;
@@ -20,7 +22,7 @@ namespace T3DSharpFramework.Generated.Classes.Net {
     /// 
     /// </description>
     /// <see cref="RadialImpulseEvent::send" />
-    public unsafe class RadialImpulseEvent : NetEvent {
+    public class RadialImpulseEvent : NetEvent {
         public RadialImpulseEvent(bool pRegister = false) 
             : base(pRegister) {
         }
@@ -48,16 +50,11 @@ namespace T3DSharpFramework.Generated.Classes.Net {
             internal delegate void _Send(Send__Args args);
             private static _Send _SendFunc;
             internal static _Send Send() {
-                if (_SendFunc == null) {
-                    _SendFunc =
-                        (_Send)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnRadialImpulseEvent_send"), typeof(_Send));
-                }
-                
+               _SendFunc ??= Torque3D.LookupEngineFunction<_Send>("fnRadialImpulseEvent_send");
+
                 return _SendFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct StaticGetType__Args
@@ -68,16 +65,11 @@ namespace T3DSharpFramework.Generated.Classes.Net {
             internal delegate IntPtr _StaticGetType(StaticGetType__Args args);
             private static _StaticGetType _StaticGetTypeFunc;
             internal static _StaticGetType StaticGetType() {
-                if (_StaticGetTypeFunc == null) {
-                    _StaticGetTypeFunc =
-                        (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnRadialImpulseEvent_staticGetType"), typeof(_StaticGetType));
-                }
-                
+               _StaticGetTypeFunc ??= Torque3D.LookupEngineFunction<_StaticGetType>("fnRadialImpulseEvent_staticGetType");
+
                 return _StaticGetTypeFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct Create__Args
@@ -88,16 +80,11 @@ namespace T3DSharpFramework.Generated.Classes.Net {
             internal delegate IntPtr _Create(Create__Args args);
             private static _Create _CreateFunc;
             internal static _Create Create() {
-                if (_CreateFunc == null) {
-                    _CreateFunc =
-                        (_Create)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnRadialImpulseEvent_create"), typeof(_Create));
-                }
-                
+               _CreateFunc ??= Torque3D.LookupEngineFunction<_Create>("fnRadialImpulseEvent_create");
+
                 return _CreateFunc;
             }
+
         }
         #endregion
 

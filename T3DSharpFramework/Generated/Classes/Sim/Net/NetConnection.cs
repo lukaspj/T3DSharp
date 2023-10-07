@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
 using T3DSharpFramework.Engine.Util;
+using T3DSharpFramework.Generated.Classes.Console;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Reflection;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Enums.Reflection;
@@ -38,45 +40,55 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
     /// The NetConnection also has the concept of local connections.  These are used when the client and server reside in the same process.  A local connection is typically required to use the standard Torque world building tools.  A local connection is also required when building a single player game.
     /// </description>
     /// <see cref="" />
-    public unsafe class NetConnection : SimGroup {
-        public NetConnection(bool pRegister = false) 
+    public class NetConnection : SimGroup {
+        public NetConnection(bool pRegister = false)
             : base(pRegister) {
+           // Always set the Class Namespace to the C# class name
+           ClassName = ((object)this).GetType().Name;
         }
-        
-        public NetConnection(string pName, bool pRegister) 
-            : this(false) {
+
+        public NetConnection(string pName, bool pRegister)
+            : base(false) {
             Name = pName;
+            // Handle the case where the class name refers to the name of
+            // the object, and thus only meant to be used for that specific object,
+            // not encompassing an actual type
+            var managedClassName = ((object)this).GetType().Name;
+            if (managedClassName != Name) {
+               ClassName = managedClassName;
+            }
             if (pRegister) {
                 RegisterObject();
             }
         }
-        
-        public NetConnection(string pName) 
+
+        public NetConnection(string pName)
             : this(pName, false) {
         }
-        
-        public NetConnection(string pName, string pParent, bool pRegister = false) 
+
+        public NetConnection(string pName, string pParent, bool pRegister = false)
             : this(pName, pRegister) {
             CopyFrom(Engine.Sim.FindObject<SimObject>(pParent));
         }
-        
-        public NetConnection(string pName, SimObject pParent, bool pRegister = false) 
+
+        public NetConnection(string pName, SimObject pParent, bool pRegister = false)
             : this(pName, pRegister) {
             CopyFrom(pParent);
         }
-        
-        public NetConnection(SimObject pObj) 
+
+        public NetConnection(SimObject pObj)
             : base(pObj) {
         }
-        
-        public NetConnection(IntPtr pObj) 
+
+        public NetConnection(IntPtr pObj)
             : base(pObj) {
         }
-        
+
 		protected override void CreateObjectPtr()
 		{
 			ObjectPtr = InternalUnsafeMethods.Create()(new InternalUnsafeMethods.Create__Args());
 		}
+
 
         #region UnsafeNativeMethods
         new internal struct InternalUnsafeMethods {
@@ -90,16 +102,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate int _ResolveGhost(IntPtr _this, ResolveGhost__Args args);
             private static _ResolveGhost _ResolveGhostFunc;
             internal static _ResolveGhost ResolveGhost() {
-                if (_ResolveGhostFunc == null) {
-                    _ResolveGhostFunc =
-                        (_ResolveGhost)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_ResolveGhost"), typeof(_ResolveGhost));
-                }
-                
+               _ResolveGhostFunc ??= Torque3D.LookupEngineFunction<_ResolveGhost>("fnNetConnection_ResolveGhost");
+
                 return _ResolveGhostFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetGhostIndex__Args
@@ -111,16 +118,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate int _GetGhostIndex(IntPtr _this, GetGhostIndex__Args args);
             private static _GetGhostIndex _GetGhostIndexFunc;
             internal static _GetGhostIndex GetGhostIndex() {
-                if (_GetGhostIndexFunc == null) {
-                    _GetGhostIndexFunc =
-                        (_GetGhostIndex)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_GetGhostIndex"), typeof(_GetGhostIndex));
-                }
-                
+               _GetGhostIndexFunc ??= Torque3D.LookupEngineFunction<_GetGhostIndex>("fnNetConnection_GetGhostIndex");
+
                 return _GetGhostIndexFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetGhostsActive__Args
@@ -131,16 +133,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate int _GetGhostsActive(IntPtr _this, GetGhostsActive__Args args);
             private static _GetGhostsActive _GetGhostsActiveFunc;
             internal static _GetGhostsActive GetGhostsActive() {
-                if (_GetGhostsActiveFunc == null) {
-                    _GetGhostsActiveFunc =
-                        (_GetGhostsActive)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_getGhostsActive"), typeof(_GetGhostsActive));
-                }
-                
+               _GetGhostsActiveFunc ??= Torque3D.LookupEngineFunction<_GetGhostsActive>("fnNetConnection_getGhostsActive");
+
                 return _GetGhostsActiveFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct ConnectLocal__Args
@@ -152,16 +149,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate IntPtr _ConnectLocal(IntPtr _this, ConnectLocal__Args args);
             private static _ConnectLocal _ConnectLocalFunc;
             internal static _ConnectLocal ConnectLocal() {
-                if (_ConnectLocalFunc == null) {
-                    _ConnectLocalFunc =
-                        (_ConnectLocal)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_connectLocal"), typeof(_ConnectLocal));
-                }
-                
+               _ConnectLocalFunc ??= Torque3D.LookupEngineFunction<_ConnectLocal>("fnNetConnection_connectLocal");
+
                 return _ConnectLocalFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct Connect__Args
@@ -174,16 +166,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate void _Connect(IntPtr _this, Connect__Args args);
             private static _Connect _ConnectFunc;
             internal static _Connect Connect() {
-                if (_ConnectFunc == null) {
-                    _ConnectFunc =
-                        (_Connect)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_connect"), typeof(_Connect));
-                }
-                
+               _ConnectFunc ??= Torque3D.LookupEngineFunction<_Connect>("fnNetConnection_connect");
+
                 return _ConnectFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetGhostID__Args
@@ -195,16 +182,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate int _GetGhostID(IntPtr _this, GetGhostID__Args args);
             private static _GetGhostID _GetGhostIDFunc;
             internal static _GetGhostID GetGhostID() {
-                if (_GetGhostIDFunc == null) {
-                    _GetGhostIDFunc =
-                        (_GetGhostID)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_getGhostID"), typeof(_GetGhostID));
-                }
-                
+               _GetGhostIDFunc ??= Torque3D.LookupEngineFunction<_GetGhostID>("fnNetConnection_getGhostID");
+
                 return _GetGhostIDFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct ResolveObjectFromGhostIndex__Args
@@ -216,16 +198,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate int _ResolveObjectFromGhostIndex(IntPtr _this, ResolveObjectFromGhostIndex__Args args);
             private static _ResolveObjectFromGhostIndex _ResolveObjectFromGhostIndexFunc;
             internal static _ResolveObjectFromGhostIndex ResolveObjectFromGhostIndex() {
-                if (_ResolveObjectFromGhostIndexFunc == null) {
-                    _ResolveObjectFromGhostIndexFunc =
-                        (_ResolveObjectFromGhostIndex)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_resolveObjectFromGhostIndex"), typeof(_ResolveObjectFromGhostIndex));
-                }
-                
+               _ResolveObjectFromGhostIndexFunc ??= Torque3D.LookupEngineFunction<_ResolveObjectFromGhostIndex>("fnNetConnection_resolveObjectFromGhostIndex");
+
                 return _ResolveObjectFromGhostIndexFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct ResolveGhostID__Args
@@ -237,16 +214,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate int _ResolveGhostID(IntPtr _this, ResolveGhostID__Args args);
             private static _ResolveGhostID _ResolveGhostIDFunc;
             internal static _ResolveGhostID ResolveGhostID() {
-                if (_ResolveGhostIDFunc == null) {
-                    _ResolveGhostIDFunc =
-                        (_ResolveGhostID)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_resolveGhostID"), typeof(_ResolveGhostID));
-                }
-                
+               _ResolveGhostIDFunc ??= Torque3D.LookupEngineFunction<_ResolveGhostID>("fnNetConnection_resolveGhostID");
+
                 return _ResolveGhostIDFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct CheckMaxRate__Args
@@ -257,16 +229,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate void _CheckMaxRate(IntPtr _this, CheckMaxRate__Args args);
             private static _CheckMaxRate _CheckMaxRateFunc;
             internal static _CheckMaxRate CheckMaxRate() {
-                if (_CheckMaxRateFunc == null) {
-                    _CheckMaxRateFunc =
-                        (_CheckMaxRate)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_checkMaxRate"), typeof(_CheckMaxRate));
-                }
-                
+               _CheckMaxRateFunc ??= Torque3D.LookupEngineFunction<_CheckMaxRate>("fnNetConnection_checkMaxRate");
+
                 return _CheckMaxRateFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetPacketLoss__Args
@@ -277,16 +244,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate int _GetPacketLoss(IntPtr _this, GetPacketLoss__Args args);
             private static _GetPacketLoss _GetPacketLossFunc;
             internal static _GetPacketLoss GetPacketLoss() {
-                if (_GetPacketLossFunc == null) {
-                    _GetPacketLossFunc =
-                        (_GetPacketLoss)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_getPacketLoss"), typeof(_GetPacketLoss));
-                }
-                
+               _GetPacketLossFunc ??= Torque3D.LookupEngineFunction<_GetPacketLoss>("fnNetConnection_getPacketLoss");
+
                 return _GetPacketLossFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetPing__Args
@@ -297,16 +259,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate int _GetPing(IntPtr _this, GetPing__Args args);
             private static _GetPing _GetPingFunc;
             internal static _GetPing GetPing() {
-                if (_GetPingFunc == null) {
-                    _GetPingFunc =
-                        (_GetPing)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_getPing"), typeof(_GetPing));
-                }
-                
+               _GetPingFunc ??= Torque3D.LookupEngineFunction<_GetPing>("fnNetConnection_getPing");
+
                 return _GetPingFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct SetSimulatedNetParams__Args
@@ -319,16 +276,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate void _SetSimulatedNetParams(IntPtr _this, SetSimulatedNetParams__Args args);
             private static _SetSimulatedNetParams _SetSimulatedNetParamsFunc;
             internal static _SetSimulatedNetParams SetSimulatedNetParams() {
-                if (_SetSimulatedNetParamsFunc == null) {
-                    _SetSimulatedNetParamsFunc =
-                        (_SetSimulatedNetParams)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_setSimulatedNetParams"), typeof(_SetSimulatedNetParams));
-                }
-                
+               _SetSimulatedNetParamsFunc ??= Torque3D.LookupEngineFunction<_SetSimulatedNetParams>("fnNetConnection_setSimulatedNetParams");
+
                 return _SetSimulatedNetParamsFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetAddress__Args
@@ -340,16 +292,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate IntPtr _GetAddress(IntPtr _this, GetAddress__Args args);
             private static _GetAddress _GetAddressFunc;
             internal static _GetAddress GetAddress() {
-                if (_GetAddressFunc == null) {
-                    _GetAddressFunc =
-                        (_GetAddress)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_getAddress"), typeof(_GetAddress));
-                }
-                
+               _GetAddressFunc ??= Torque3D.LookupEngineFunction<_GetAddress>("fnNetConnection_getAddress");
+
                 return _GetAddressFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct ClearPaths__Args
@@ -360,16 +307,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate void _ClearPaths(IntPtr _this, ClearPaths__Args args);
             private static _ClearPaths _ClearPathsFunc;
             internal static _ClearPaths ClearPaths() {
-                if (_ClearPathsFunc == null) {
-                    _ClearPathsFunc =
-                        (_ClearPaths)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_clearPaths"), typeof(_ClearPaths));
-                }
-                
+               _ClearPathsFunc ??= Torque3D.LookupEngineFunction<_ClearPaths>("fnNetConnection_clearPaths");
+
                 return _ClearPathsFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct TransmitPaths__Args
@@ -380,16 +322,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate void _TransmitPaths(IntPtr _this, TransmitPaths__Args args);
             private static _TransmitPaths _TransmitPathsFunc;
             internal static _TransmitPaths TransmitPaths() {
-                if (_TransmitPathsFunc == null) {
-                    _TransmitPathsFunc =
-                        (_TransmitPaths)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_transmitPaths"), typeof(_TransmitPaths));
-                }
-                
+               _TransmitPathsFunc ??= Torque3D.LookupEngineFunction<_TransmitPaths>("fnNetConnection_transmitPaths");
+
                 return _TransmitPathsFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct StaticGetType__Args
@@ -400,16 +337,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate IntPtr _StaticGetType(StaticGetType__Args args);
             private static _StaticGetType _StaticGetTypeFunc;
             internal static _StaticGetType StaticGetType() {
-                if (_StaticGetTypeFunc == null) {
-                    _StaticGetTypeFunc =
-                        (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_staticGetType"), typeof(_StaticGetType));
-                }
-                
+               _StaticGetTypeFunc ??= Torque3D.LookupEngineFunction<_StaticGetType>("fnNetConnection_staticGetType");
+
                 return _StaticGetTypeFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct Create__Args
@@ -420,16 +352,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate IntPtr _Create(Create__Args args);
             private static _Create _CreateFunc;
             internal static _Create Create() {
-                if (_CreateFunc == null) {
-                    _CreateFunc =
-                        (_Create)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnNetConnection_create"), typeof(_Create));
-                }
-                
+               _CreateFunc ??= Torque3D.LookupEngineFunction<_Create>("fnNetConnection_create");
+
                 return _CreateFunc;
             }
+
         }
         #endregion
 

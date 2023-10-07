@@ -1,5 +1,8 @@
 ﻿#ifndef _CSHARP_MODULE_H_
 #define _CSHARP_MODULE_H_
+#include <coreclr_delegates.h>
+#include <hostfxr.h>
+
 #include "console/module.h"
 #include "console/runtime.h"
 

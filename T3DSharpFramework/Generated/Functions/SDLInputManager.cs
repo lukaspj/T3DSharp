@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Net;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Structs.Global;
@@ -13,7 +14,7 @@ using T3DSharpFramework.Interop;
 
 namespace T3DSharpFramework.Generated.Functions {
 
-    public static unsafe class SDLInputManager {
+    public static class SDLInputManager {
 
         #region UnsafeNativeMethods
         new internal struct InternalUnsafeMethods {
@@ -28,16 +29,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _GameControllerMappingForIndex(GameControllerMappingForIndex__Args args);
             private static _GameControllerMappingForIndex _GameControllerMappingForIndexFunc;
             internal static _GameControllerMappingForIndex GameControllerMappingForIndex() {
-                if (_GameControllerMappingForIndexFunc == null) {
-                    _GameControllerMappingForIndexFunc =
-                        (_GameControllerMappingForIndex)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_GameControllerMappingForIndex"), typeof(_GameControllerMappingForIndex));
-                }
-                
+               _GameControllerMappingForIndexFunc ??= Torque3D.LookupEngineFunction<_GameControllerMappingForIndex>("fnSDLInputManager_GameControllerMappingForIndex");
+
                 return _GameControllerMappingForIndexFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GameControllerNumMappings__Args
@@ -48,16 +44,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GameControllerNumMappings(GameControllerNumMappings__Args args);
             private static _GameControllerNumMappings _GameControllerNumMappingsFunc;
             internal static _GameControllerNumMappings GameControllerNumMappings() {
-                if (_GameControllerNumMappingsFunc == null) {
-                    _GameControllerNumMappingsFunc =
-                        (_GameControllerNumMappings)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_GameControllerNumMappings"), typeof(_GameControllerNumMappings));
-                }
-                
+               _GameControllerNumMappingsFunc ??= Torque3D.LookupEngineFunction<_GameControllerNumMappings>("fnSDLInputManager_GameControllerNumMappings");
+
                 return _GameControllerNumMappingsFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GameControllerAddMappingsFromFile__Args
@@ -70,16 +61,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GameControllerAddMappingsFromFile(GameControllerAddMappingsFromFile__Args args);
             private static _GameControllerAddMappingsFromFile _GameControllerAddMappingsFromFileFunc;
             internal static _GameControllerAddMappingsFromFile GameControllerAddMappingsFromFile() {
-                if (_GameControllerAddMappingsFromFileFunc == null) {
-                    _GameControllerAddMappingsFromFileFunc =
-                        (_GameControllerAddMappingsFromFile)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_GameControllerAddMappingsFromFile"), typeof(_GameControllerAddMappingsFromFile));
-                }
-                
+               _GameControllerAddMappingsFromFileFunc ??= Torque3D.LookupEngineFunction<_GameControllerAddMappingsFromFile>("fnSDLInputManager_GameControllerAddMappingsFromFile");
+
                 return _GameControllerAddMappingsFromFileFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GameControllerAddMapping__Args
@@ -92,16 +78,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GameControllerAddMapping(GameControllerAddMapping__Args args);
             private static _GameControllerAddMapping _GameControllerAddMappingFunc;
             internal static _GameControllerAddMapping GameControllerAddMapping() {
-                if (_GameControllerAddMappingFunc == null) {
-                    _GameControllerAddMappingFunc =
-                        (_GameControllerAddMapping)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_GameControllerAddMapping"), typeof(_GameControllerAddMapping));
-                }
-                
+               _GameControllerAddMappingFunc ??= Torque3D.LookupEngineFunction<_GameControllerAddMapping>("fnSDLInputManager_GameControllerAddMapping");
+
                 return _GameControllerAddMappingFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GameControllerMappingForGUID__Args
@@ -115,16 +96,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _GameControllerMappingForGUID(GameControllerMappingForGUID__Args args);
             private static _GameControllerMappingForGUID _GameControllerMappingForGUIDFunc;
             internal static _GameControllerMappingForGUID GameControllerMappingForGUID() {
-                if (_GameControllerMappingForGUIDFunc == null) {
-                    _GameControllerMappingForGUIDFunc =
-                        (_GameControllerMappingForGUID)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_GameControllerMappingForGUID"), typeof(_GameControllerMappingForGUID));
-                }
-                
+               _GameControllerMappingForGUIDFunc ??= Torque3D.LookupEngineFunction<_GameControllerMappingForGUID>("fnSDLInputManager_GameControllerMappingForGUID");
+
                 return _GameControllerMappingForGUIDFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GameControllerMapping__Args
@@ -137,16 +113,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _GameControllerMapping(GameControllerMapping__Args args);
             private static _GameControllerMapping _GameControllerMappingFunc;
             internal static _GameControllerMapping GameControllerMapping() {
-                if (_GameControllerMappingFunc == null) {
-                    _GameControllerMappingFunc =
-                        (_GameControllerMapping)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_GameControllerMapping"), typeof(_GameControllerMapping));
-                }
-                
+               _GameControllerMappingFunc ??= Torque3D.LookupEngineFunction<_GameControllerMapping>("fnSDLInputManager_GameControllerMapping");
+
                 return _GameControllerMappingFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct ControllerGetButtons__Args
@@ -159,16 +130,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _ControllerGetButtons(ControllerGetButtons__Args args);
             private static _ControllerGetButtons _ControllerGetButtonsFunc;
             internal static _ControllerGetButtons ControllerGetButtons() {
-                if (_ControllerGetButtonsFunc == null) {
-                    _ControllerGetButtonsFunc =
-                        (_ControllerGetButtons)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_ControllerGetButtons"), typeof(_ControllerGetButtons));
-                }
-                
+               _ControllerGetButtonsFunc ??= Torque3D.LookupEngineFunction<_ControllerGetButtons>("fnSDLInputManager_ControllerGetButtons");
+
                 return _ControllerGetButtonsFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct ControllerGetAxes__Args
@@ -181,16 +147,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _ControllerGetAxes(ControllerGetAxes__Args args);
             private static _ControllerGetAxes _ControllerGetAxesFunc;
             internal static _ControllerGetAxes ControllerGetAxes() {
-                if (_ControllerGetAxesFunc == null) {
-                    _ControllerGetAxesFunc =
-                        (_ControllerGetAxes)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_ControllerGetAxes"), typeof(_ControllerGetAxes));
-                }
-                
+               _ControllerGetAxesFunc ??= Torque3D.LookupEngineFunction<_ControllerGetAxes>("fnSDLInputManager_ControllerGetAxes");
+
                 return _ControllerGetAxesFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct JoystickGetHats__Args
@@ -203,16 +164,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _JoystickGetHats(JoystickGetHats__Args args);
             private static _JoystickGetHats _JoystickGetHatsFunc;
             internal static _JoystickGetHats JoystickGetHats() {
-                if (_JoystickGetHatsFunc == null) {
-                    _JoystickGetHatsFunc =
-                        (_JoystickGetHats)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_JoystickGetHats"), typeof(_JoystickGetHats));
-                }
-                
+               _JoystickGetHatsFunc ??= Torque3D.LookupEngineFunction<_JoystickGetHats>("fnSDLInputManager_JoystickGetHats");
+
                 return _JoystickGetHatsFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct JoystickGetButtons__Args
@@ -225,16 +181,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _JoystickGetButtons(JoystickGetButtons__Args args);
             private static _JoystickGetButtons _JoystickGetButtonsFunc;
             internal static _JoystickGetButtons JoystickGetButtons() {
-                if (_JoystickGetButtonsFunc == null) {
-                    _JoystickGetButtonsFunc =
-                        (_JoystickGetButtons)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_JoystickGetButtons"), typeof(_JoystickGetButtons));
-                }
-                
+               _JoystickGetButtonsFunc ??= Torque3D.LookupEngineFunction<_JoystickGetButtons>("fnSDLInputManager_JoystickGetButtons");
+
                 return _JoystickGetButtonsFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct JoystickGetAxes__Args
@@ -247,16 +198,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _JoystickGetAxes(JoystickGetAxes__Args args);
             private static _JoystickGetAxes _JoystickGetAxesFunc;
             internal static _JoystickGetAxes JoystickGetAxes() {
-                if (_JoystickGetAxesFunc == null) {
-                    _JoystickGetAxesFunc =
-                        (_JoystickGetAxes)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_JoystickGetAxes"), typeof(_JoystickGetAxes));
-                }
-                
+               _JoystickGetAxesFunc ??= Torque3D.LookupEngineFunction<_JoystickGetAxes>("fnSDLInputManager_JoystickGetAxes");
+
                 return _JoystickGetAxesFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct JoystickGetSpecs__Args
@@ -269,16 +215,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _JoystickGetSpecs(JoystickGetSpecs__Args args);
             private static _JoystickGetSpecs _JoystickGetSpecsFunc;
             internal static _JoystickGetSpecs JoystickGetSpecs() {
-                if (_JoystickGetSpecsFunc == null) {
-                    _JoystickGetSpecsFunc =
-                        (_JoystickGetSpecs)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_JoystickGetSpecs"), typeof(_JoystickGetSpecs));
-                }
-                
+               _JoystickGetSpecsFunc ??= Torque3D.LookupEngineFunction<_JoystickGetSpecs>("fnSDLInputManager_JoystickGetSpecs");
+
                 return _JoystickGetSpecsFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct JoystickPowerLevel__Args
@@ -290,16 +231,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _JoystickPowerLevel(JoystickPowerLevel__Args args);
             private static _JoystickPowerLevel _JoystickPowerLevelFunc;
             internal static _JoystickPowerLevel JoystickPowerLevel() {
-                if (_JoystickPowerLevelFunc == null) {
-                    _JoystickPowerLevelFunc =
-                        (_JoystickPowerLevel)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_JoystickPowerLevel"), typeof(_JoystickPowerLevel));
-                }
-                
+               _JoystickPowerLevelFunc ??= Torque3D.LookupEngineFunction<_JoystickPowerLevel>("fnSDLInputManager_JoystickPowerLevel");
+
                 return _JoystickPowerLevelFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct JoystickIsHaptic__Args
@@ -312,16 +248,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate bool _JoystickIsHaptic(JoystickIsHaptic__Args args);
             private static _JoystickIsHaptic _JoystickIsHapticFunc;
             internal static _JoystickIsHaptic JoystickIsHaptic() {
-                if (_JoystickIsHapticFunc == null) {
-                    _JoystickIsHapticFunc =
-                        (_JoystickIsHaptic)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_JoystickIsHaptic"), typeof(_JoystickIsHaptic));
-                }
-                
+               _JoystickIsHapticFunc ??= Torque3D.LookupEngineFunction<_JoystickIsHaptic>("fnSDLInputManager_JoystickIsHaptic");
+
                 return _JoystickIsHapticFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct IsGameController__Args
@@ -334,16 +265,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate bool _IsGameController(IsGameController__Args args);
             private static _IsGameController _IsGameControllerFunc;
             internal static _IsGameController IsGameController() {
-                if (_IsGameControllerFunc == null) {
-                    _IsGameControllerFunc =
-                        (_IsGameController)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_IsGameController"), typeof(_IsGameController));
-                }
-                
+               _IsGameControllerFunc ??= Torque3D.LookupEngineFunction<_IsGameController>("fnSDLInputManager_IsGameController");
+
                 return _IsGameControllerFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct JoystickNumHats__Args
@@ -355,16 +281,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _JoystickNumHats(JoystickNumHats__Args args);
             private static _JoystickNumHats _JoystickNumHatsFunc;
             internal static _JoystickNumHats JoystickNumHats() {
-                if (_JoystickNumHatsFunc == null) {
-                    _JoystickNumHatsFunc =
-                        (_JoystickNumHats)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_JoystickNumHats"), typeof(_JoystickNumHats));
-                }
-                
+               _JoystickNumHatsFunc ??= Torque3D.LookupEngineFunction<_JoystickNumHats>("fnSDLInputManager_JoystickNumHats");
+
                 return _JoystickNumHatsFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct JoystickNumButtons__Args
@@ -376,16 +297,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _JoystickNumButtons(JoystickNumButtons__Args args);
             private static _JoystickNumButtons _JoystickNumButtonsFunc;
             internal static _JoystickNumButtons JoystickNumButtons() {
-                if (_JoystickNumButtonsFunc == null) {
-                    _JoystickNumButtonsFunc =
-                        (_JoystickNumButtons)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_JoystickNumButtons"), typeof(_JoystickNumButtons));
-                }
-                
+               _JoystickNumButtonsFunc ??= Torque3D.LookupEngineFunction<_JoystickNumButtons>("fnSDLInputManager_JoystickNumButtons");
+
                 return _JoystickNumButtonsFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct JoystickNumBalls__Args
@@ -397,16 +313,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _JoystickNumBalls(JoystickNumBalls__Args args);
             private static _JoystickNumBalls _JoystickNumBallsFunc;
             internal static _JoystickNumBalls JoystickNumBalls() {
-                if (_JoystickNumBallsFunc == null) {
-                    _JoystickNumBallsFunc =
-                        (_JoystickNumBalls)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_JoystickNumBalls"), typeof(_JoystickNumBalls));
-                }
-                
+               _JoystickNumBallsFunc ??= Torque3D.LookupEngineFunction<_JoystickNumBalls>("fnSDLInputManager_JoystickNumBalls");
+
                 return _JoystickNumBallsFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct JoystickNumAxes__Args
@@ -418,16 +329,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _JoystickNumAxes(JoystickNumAxes__Args args);
             private static _JoystickNumAxes _JoystickNumAxesFunc;
             internal static _JoystickNumAxes JoystickNumAxes() {
-                if (_JoystickNumAxesFunc == null) {
-                    _JoystickNumAxesFunc =
-                        (_JoystickNumAxes)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_JoystickNumAxes"), typeof(_JoystickNumAxes));
-                }
-                
+               _JoystickNumAxesFunc ??= Torque3D.LookupEngineFunction<_JoystickNumAxes>("fnSDLInputManager_JoystickNumAxes");
+
                 return _JoystickNumAxesFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetDeviceType__Args
@@ -439,16 +345,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GetDeviceType(GetDeviceType__Args args);
             private static _GetDeviceType _GetDeviceTypeFunc;
             internal static _GetDeviceType GetDeviceType() {
-                if (_GetDeviceTypeFunc == null) {
-                    _GetDeviceTypeFunc =
-                        (_GetDeviceType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_GetDeviceType"), typeof(_GetDeviceType));
-                }
-                
+               _GetDeviceTypeFunc ??= Torque3D.LookupEngineFunction<_GetDeviceType>("fnSDLInputManager_GetDeviceType");
+
                 return _GetDeviceTypeFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetProductVersion__Args
@@ -460,16 +361,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GetProductVersion(GetProductVersion__Args args);
             private static _GetProductVersion _GetProductVersionFunc;
             internal static _GetProductVersion GetProductVersion() {
-                if (_GetProductVersionFunc == null) {
-                    _GetProductVersionFunc =
-                        (_GetProductVersion)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_GetProductVersion"), typeof(_GetProductVersion));
-                }
-                
+               _GetProductVersionFunc ??= Torque3D.LookupEngineFunction<_GetProductVersion>("fnSDLInputManager_GetProductVersion");
+
                 return _GetProductVersionFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetProduct__Args
@@ -481,16 +377,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GetProduct(GetProduct__Args args);
             private static _GetProduct _GetProductFunc;
             internal static _GetProduct GetProduct() {
-                if (_GetProductFunc == null) {
-                    _GetProductFunc =
-                        (_GetProduct)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_GetProduct"), typeof(_GetProduct));
-                }
-                
+               _GetProductFunc ??= Torque3D.LookupEngineFunction<_GetProduct>("fnSDLInputManager_GetProduct");
+
                 return _GetProductFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetVendor__Args
@@ -502,16 +393,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GetVendor(GetVendor__Args args);
             private static _GetVendor _GetVendorFunc;
             internal static _GetVendor GetVendor() {
-                if (_GetVendorFunc == null) {
-                    _GetVendorFunc =
-                        (_GetVendor)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_GetVendor"), typeof(_GetVendor));
-                }
-                
+               _GetVendorFunc ??= Torque3D.LookupEngineFunction<_GetVendor>("fnSDLInputManager_GetVendor");
+
                 return _GetVendorFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct JoystickGetGUID__Args
@@ -524,16 +410,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _JoystickGetGUID(JoystickGetGUID__Args args);
             private static _JoystickGetGUID _JoystickGetGUIDFunc;
             internal static _JoystickGetGUID JoystickGetGUID() {
-                if (_JoystickGetGUIDFunc == null) {
-                    _JoystickGetGUIDFunc =
-                        (_JoystickGetGUID)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_JoystickGetGUID"), typeof(_JoystickGetGUID));
-                }
-                
+               _JoystickGetGUIDFunc ??= Torque3D.LookupEngineFunction<_JoystickGetGUID>("fnSDLInputManager_JoystickGetGUID");
+
                 return _JoystickGetGUIDFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct ControllerNameForIndex__Args
@@ -546,16 +427,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _ControllerNameForIndex(ControllerNameForIndex__Args args);
             private static _ControllerNameForIndex _ControllerNameForIndexFunc;
             internal static _ControllerNameForIndex ControllerNameForIndex() {
-                if (_ControllerNameForIndexFunc == null) {
-                    _ControllerNameForIndexFunc =
-                        (_ControllerNameForIndex)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_ControllerNameForIndex"), typeof(_ControllerNameForIndex));
-                }
-                
+               _ControllerNameForIndexFunc ??= Torque3D.LookupEngineFunction<_ControllerNameForIndex>("fnSDLInputManager_ControllerNameForIndex");
+
                 return _ControllerNameForIndexFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct JoystickNameForIndex__Args
@@ -568,16 +444,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _JoystickNameForIndex(JoystickNameForIndex__Args args);
             private static _JoystickNameForIndex _JoystickNameForIndexFunc;
             internal static _JoystickNameForIndex JoystickNameForIndex() {
-                if (_JoystickNameForIndexFunc == null) {
-                    _JoystickNameForIndexFunc =
-                        (_JoystickNameForIndex)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_JoystickNameForIndex"), typeof(_JoystickNameForIndex));
-                }
-                
+               _JoystickNameForIndexFunc ??= Torque3D.LookupEngineFunction<_JoystickNameForIndex>("fnSDLInputManager_JoystickNameForIndex");
+
                 return _JoystickNameForIndexFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetTorqueInstFromDevice__Args
@@ -590,16 +461,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _GetTorqueInstFromDevice(GetTorqueInstFromDevice__Args args);
             private static _GetTorqueInstFromDevice _GetTorqueInstFromDeviceFunc;
             internal static _GetTorqueInstFromDevice GetTorqueInstFromDevice() {
-                if (_GetTorqueInstFromDeviceFunc == null) {
-                    _GetTorqueInstFromDeviceFunc =
-                        (_GetTorqueInstFromDevice)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_getTorqueInstFromDevice"), typeof(_GetTorqueInstFromDevice));
-                }
-                
+               _GetTorqueInstFromDeviceFunc ??= Torque3D.LookupEngineFunction<_GetTorqueInstFromDevice>("fnSDLInputManager_getTorqueInstFromDevice");
+
                 return _GetTorqueInstFromDeviceFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct CloseDevice__Args
@@ -611,16 +477,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate void _CloseDevice(CloseDevice__Args args);
             private static _CloseDevice _CloseDeviceFunc;
             internal static _CloseDevice CloseDevice() {
-                if (_CloseDeviceFunc == null) {
-                    _CloseDeviceFunc =
-                        (_CloseDevice)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_closeDevice"), typeof(_CloseDevice));
-                }
-                
+               _CloseDeviceFunc ??= Torque3D.LookupEngineFunction<_CloseDevice>("fnSDLInputManager_closeDevice");
+
                 return _CloseDeviceFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct OpenAsController__Args
@@ -633,16 +494,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _OpenAsController(OpenAsController__Args args);
             private static _OpenAsController _OpenAsControllerFunc;
             internal static _OpenAsController OpenAsController() {
-                if (_OpenAsControllerFunc == null) {
-                    _OpenAsControllerFunc =
-                        (_OpenAsController)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_openAsController"), typeof(_OpenAsController));
-                }
-                
+               _OpenAsControllerFunc ??= Torque3D.LookupEngineFunction<_OpenAsController>("fnSDLInputManager_openAsController");
+
                 return _OpenAsControllerFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct OpenAsJoystick__Args
@@ -655,16 +511,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _OpenAsJoystick(OpenAsJoystick__Args args);
             private static _OpenAsJoystick _OpenAsJoystickFunc;
             internal static _OpenAsJoystick OpenAsJoystick() {
-                if (_OpenAsJoystickFunc == null) {
-                    _OpenAsJoystickFunc =
-                        (_OpenAsJoystick)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_openAsJoystick"), typeof(_OpenAsJoystick));
-                }
-                
+               _OpenAsJoystickFunc ??= Torque3D.LookupEngineFunction<_OpenAsJoystick>("fnSDLInputManager_openAsJoystick");
+
                 return _OpenAsJoystickFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetDeviceOpenState__Args
@@ -676,16 +527,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GetDeviceOpenState(GetDeviceOpenState__Args args);
             private static _GetDeviceOpenState _GetDeviceOpenStateFunc;
             internal static _GetDeviceOpenState GetDeviceOpenState() {
-                if (_GetDeviceOpenStateFunc == null) {
-                    _GetDeviceOpenStateFunc =
-                        (_GetDeviceOpenState)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_getDeviceOpenState"), typeof(_GetDeviceOpenState));
-                }
-                
+               _GetDeviceOpenStateFunc ??= Torque3D.LookupEngineFunction<_GetDeviceOpenState>("fnSDLInputManager_getDeviceOpenState");
+
                 return _GetDeviceOpenStateFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct NumJoysticks__Args
@@ -696,16 +542,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _NumJoysticks(NumJoysticks__Args args);
             private static _NumJoysticks _NumJoysticksFunc;
             internal static _NumJoysticks NumJoysticks() {
-                if (_NumJoysticksFunc == null) {
-                    _NumJoysticksFunc =
-                        (_NumJoysticks)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSDLInputManager_numJoysticks"), typeof(_NumJoysticks));
-                }
-                
+               _NumJoysticksFunc ??= Torque3D.LookupEngineFunction<_NumJoysticks>("fnSDLInputManager_numJoysticks");
+
                 return _NumJoysticksFunc;
             }
+
         }
         #endregion
 

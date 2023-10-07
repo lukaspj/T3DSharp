@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
 using T3DSharpFramework.Engine.Util;
+using T3DSharpFramework.Generated.Classes.Console;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Reflection;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Enums.Reflection;
@@ -19,7 +21,7 @@ namespace T3DSharpFramework.Generated.Classes.Net {
     /// <description>
     /// Not intended for game development, internal use only, but does expose GameConnection::play3D.
     /// </description>
-    public unsafe class Sim3DAudioEvent : NetEvent {
+    public class Sim3DAudioEvent : NetEvent {
         public Sim3DAudioEvent(bool pRegister = false) 
             : base(pRegister) {
         }
@@ -43,16 +45,11 @@ namespace T3DSharpFramework.Generated.Classes.Net {
             internal delegate IntPtr _StaticGetType(StaticGetType__Args args);
             private static _StaticGetType _StaticGetTypeFunc;
             internal static _StaticGetType StaticGetType() {
-                if (_StaticGetTypeFunc == null) {
-                    _StaticGetTypeFunc =
-                        (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSim3DAudioEvent_staticGetType"), typeof(_StaticGetType));
-                }
-                
+               _StaticGetTypeFunc ??= Torque3D.LookupEngineFunction<_StaticGetType>("fnSim3DAudioEvent_staticGetType");
+
                 return _StaticGetTypeFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct Create__Args
@@ -63,16 +60,11 @@ namespace T3DSharpFramework.Generated.Classes.Net {
             internal delegate IntPtr _Create(Create__Args args);
             private static _Create _CreateFunc;
             internal static _Create Create() {
-                if (_CreateFunc == null) {
-                    _CreateFunc =
-                        (_Create)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSim3DAudioEvent_create"), typeof(_Create));
-                }
-                
+               _CreateFunc ??= Torque3D.LookupEngineFunction<_Create>("fnSim3DAudioEvent_create");
+
                 return _CreateFunc;
             }
+
         }
         #endregion
 

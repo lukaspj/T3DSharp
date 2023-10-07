@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
 using T3DSharpFramework.Engine.Util;
+using T3DSharpFramework.Generated.Classes.Console;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Reflection;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Enums.Reflection;
@@ -15,13 +17,13 @@ using T3DSharpFramework.Generated.Structs.Math;
 using T3DSharpFramework.Interop;
 
 namespace T3DSharpFramework.Generated.Classes.{{scope}} {
-{{ 
-    prefix_lines class.docs "    /// " indentFirstLine: true 
+{{
+    prefix_lines class.docs "    /// " indentFirstLine: true
 ~}}
 {{~ if class.super_type ~}}
-    public unsafe class {{class.name}} : {{class.super_type.managed_type}}{{ if class.name == "SimObject" }}, ISimObject{{ end }}{{ if class.name == "SimPersistID" }}, ISimPersistID{{ end }} {
+    public class {{class.name}} : {{class.super_type.managed_type}}{{ if class.name == "SimObject" }}, ISimObject{{ end }}{{ if class.name == "SimPersistID" }}, ISimPersistID{{ end }} {
 {{~ else ~}}
-    public unsafe class {{class.name}} : ConsoleObjectBase {
+    public class {{class.name}} : ConsoleObjectBase {
 {{~ end ~}}
 {{~ if class.is_sim_object ~}}
 {{~ include "simobject_body" ~}}
@@ -55,11 +57,11 @@ namespace T3DSharpFramework.Generated.Classes.{{scope}} {
             }
             throw new NotImplementedException();
         }
-        
+
         public static implicit operator string(SimObject simObject) {
             return GenericMarshal.ToString((ISimObject)simObject);
         }
-        
+
         public bool RegisterObject() {
 			InternalUnsafeMethods.RegisterObject__Args _args = new InternalUnsafeMethods.RegisterObject__Args()
 			{

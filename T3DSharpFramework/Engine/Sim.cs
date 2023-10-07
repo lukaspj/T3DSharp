@@ -36,14 +36,8 @@ namespace T3DSharpFramework.Engine
          private delegate IntPtr _FindObjectById(FindObjectById_Struct args);
 
          private static _FindObjectById _FindObjectByIdFunc;
-         internal static IntPtr FindObjectById(FindObjectById_Struct args)
-         {
-            if (_FindObjectByIdFunc == null)
-            {
-               _FindObjectByIdFunc =
-                  (_FindObjectById)Marshal.GetDelegateForFunctionPointer(NativeLibrary.GetExport(Torque3D.Torque3DLibHandle,
-                     "fnFindObjectById"), typeof(_FindObjectById));
-            }
+         internal static IntPtr FindObjectById(FindObjectById_Struct args) {
+            _FindObjectByIdFunc ??= Torque3D.LookupEngineFunction<_FindObjectById>("fnFindObjectById");
 
             return _FindObjectByIdFunc(args);
          }
@@ -53,12 +47,7 @@ namespace T3DSharpFramework.Engine
          private static _FindObjectByName _FindObjectByNameFunc;
          internal static IntPtr FindObjectByName(string name)
          {
-            if (_FindObjectByNameFunc == null)
-            {
-               _FindObjectByNameFunc =
-                  (_FindObjectByName)Marshal.GetDelegateForFunctionPointer(NativeLibrary.GetExport(Torque3D.Torque3DLibHandle,
-                     "fnFindObjectByName"), typeof(_FindObjectByName));
-            }
+            _FindObjectByNameFunc ??= Torque3D.LookupEngineFunction<_FindObjectByName>("fnFindObjectByName");
 
             return _FindObjectByNameFunc(name);
          }
@@ -68,12 +57,7 @@ namespace T3DSharpFramework.Engine
          private static _FindDataBlockByName _FindDataBlockByNameFunc;
          internal static IntPtr FindDataBlockByName(string name)
          {
-            if (_FindDataBlockByNameFunc == null)
-            {
-               _FindDataBlockByNameFunc =
-                  (_FindDataBlockByName)Marshal.GetDelegateForFunctionPointer(NativeLibrary.GetExport(Torque3D.Torque3DLibHandle,
-                     "fnFindDataBlockByName"), typeof(_FindDataBlockByName));
-            }
+            _FindDataBlockByNameFunc ??= Torque3D.LookupEngineFunction<_FindDataBlockByName>("fnFindDataBlockByName");
 
             return _FindDataBlockByNameFunc(name);
          }
@@ -83,12 +67,7 @@ namespace T3DSharpFramework.Engine
          private static _Sim_WrapObject _Sim_WrapObjectFunc;
          internal static IntPtr Sim_WrapObject(IntPtr obj)
          {
-            if (_Sim_WrapObjectFunc == null)
-            {
-               _Sim_WrapObjectFunc =
-                  (_Sim_WrapObject)Marshal.GetDelegateForFunctionPointer(NativeLibrary.GetExport(Torque3D.Torque3DLibHandle,
-                     "fnWrapObject"), typeof(_Sim_WrapObject));
-            }
+            _Sim_WrapObjectFunc ??= Torque3D.LookupEngineFunction<_Sim_WrapObject>("fnWrapObject");
 
             return _Sim_WrapObjectFunc(obj);
          }
@@ -98,12 +77,7 @@ namespace T3DSharpFramework.Engine
          private static _Sim_DeleteObjectPtr _Sim_DeleteObjectPtrFunc;
          internal static void Sim_DeleteObjectPtr(IntPtr obj)
          {
-            if (_Sim_DeleteObjectPtrFunc == null)
-            {
-               _Sim_DeleteObjectPtrFunc =
-                  (_Sim_DeleteObjectPtr)Marshal.GetDelegateForFunctionPointer(NativeLibrary.GetExport(Torque3D.Torque3DLibHandle,
-                     "fnDeleteObjectPtr"), typeof(_Sim_DeleteObjectPtr));
-            }
+            _Sim_DeleteObjectPtrFunc ??= Torque3D.LookupEngineFunction<_Sim_DeleteObjectPtr>("fnDeleteObjectPtr");
 
             _Sim_DeleteObjectPtrFunc(obj);
          }

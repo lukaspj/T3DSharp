@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
 using T3DSharpFramework.Engine.Util;
+using T3DSharpFramework.Generated.Classes.Console;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Reflection;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Enums.Reflection;
@@ -18,7 +20,7 @@ namespace T3DSharpFramework.Generated.Classes.Global {
     /// <description>
     /// Abstract base class for objects that are statically allocated in the engine.
     /// </description>
-    public unsafe class StaticEngineObject : EngineObject {
+    public class StaticEngineObject : EngineObject {
         public StaticEngineObject(bool pRegister = false) 
             : base(pRegister) {
         }
@@ -42,16 +44,11 @@ namespace T3DSharpFramework.Generated.Classes.Global {
             internal delegate IntPtr _StaticGetType(StaticGetType__Args args);
             private static _StaticGetType _StaticGetTypeFunc;
             internal static _StaticGetType StaticGetType() {
-                if (_StaticGetTypeFunc == null) {
-                    _StaticGetTypeFunc =
-                        (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnStaticEngineObject_staticGetType"), typeof(_StaticGetType));
-                }
-                
+               _StaticGetTypeFunc ??= Torque3D.LookupEngineFunction<_StaticGetType>("fnStaticEngineObject_staticGetType");
+
                 return _StaticGetTypeFunc;
             }
+
         }
         #endregion
 

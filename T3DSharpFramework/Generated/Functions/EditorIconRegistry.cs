@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Net;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Structs.Global;
@@ -13,7 +14,7 @@ using T3DSharpFramework.Interop;
 
 namespace T3DSharpFramework.Generated.Functions {
 
-    public static unsafe class EditorIconRegistry {
+    public static class EditorIconRegistry {
 
         #region UnsafeNativeMethods
         new internal struct InternalUnsafeMethods {
@@ -28,16 +29,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _FindIconBySimObject(FindIconBySimObject__Args args);
             private static _FindIconBySimObject _FindIconBySimObjectFunc;
             internal static _FindIconBySimObject FindIconBySimObject() {
-                if (_FindIconBySimObjectFunc == null) {
-                    _FindIconBySimObjectFunc =
-                        (_FindIconBySimObject)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEditorIconRegistry_findIconBySimObject"), typeof(_FindIconBySimObject));
-                }
-                
+               _FindIconBySimObjectFunc ??= Torque3D.LookupEngineFunction<_FindIconBySimObject>("fnEditorIconRegistry_findIconBySimObject");
+
                 return _FindIconBySimObjectFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct FindIconByClassName__Args
@@ -51,16 +47,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _FindIconByClassName(FindIconByClassName__Args args);
             private static _FindIconByClassName _FindIconByClassNameFunc;
             internal static _FindIconByClassName FindIconByClassName() {
-                if (_FindIconByClassNameFunc == null) {
-                    _FindIconByClassNameFunc =
-                        (_FindIconByClassName)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEditorIconRegistry_findIconByClassName"), typeof(_FindIconByClassName));
-                }
-                
+               _FindIconByClassNameFunc ??= Torque3D.LookupEngineFunction<_FindIconByClassName>("fnEditorIconRegistry_findIconByClassName");
+
                 return _FindIconByClassNameFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct Clear__Args
@@ -71,16 +62,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate void _Clear(Clear__Args args);
             private static _Clear _ClearFunc;
             internal static _Clear Clear() {
-                if (_ClearFunc == null) {
-                    _ClearFunc =
-                        (_Clear)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEditorIconRegistry_clear"), typeof(_Clear));
-                }
-                
+               _ClearFunc ??= Torque3D.LookupEngineFunction<_Clear>("fnEditorIconRegistry_clear");
+
                 return _ClearFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct LoadFromPath__Args
@@ -95,16 +81,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate void _LoadFromPath(LoadFromPath__Args args);
             private static _LoadFromPath _LoadFromPathFunc;
             internal static _LoadFromPath LoadFromPath() {
-                if (_LoadFromPathFunc == null) {
-                    _LoadFromPathFunc =
-                        (_LoadFromPath)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEditorIconRegistry_loadFromPath"), typeof(_LoadFromPath));
-                }
-                
+               _LoadFromPathFunc ??= Torque3D.LookupEngineFunction<_LoadFromPath>("fnEditorIconRegistry_loadFromPath");
+
                 return _LoadFromPathFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct Add__Args
@@ -121,16 +102,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate void _Add(Add__Args args);
             private static _Add _AddFunc;
             internal static _Add Add() {
-                if (_AddFunc == null) {
-                    _AddFunc =
-                        (_Add)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEditorIconRegistry_add"), typeof(_Add));
-                }
-                
+               _AddFunc ??= Torque3D.LookupEngineFunction<_Add>("fnEditorIconRegistry_add");
+
                 return _AddFunc;
             }
+
         }
         #endregion
 

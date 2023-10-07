@@ -1,49 +1,81 @@
 namespace T3DSharpFramework.Generated.Enums.Global {
-    /// 
-    public enum VPathObjectOrientationType {
-        FREE = 0, 
-        INTERPOLATE = 1, 
-        TOPATH = 2, 
-        TOOBJECT = 3, 
-        TOPOINT = 4 
+    /// <description>
+    /// Active brush mode type.
+    /// </description>
+    public enum ForestBrushMode {
+        Paint = 0, 
+        Erase = 1, 
+        EraseSelected = 2 
+    }
+
+    /// <description>
+    /// How to snap when snapping is enabled.
+    /// </description>
+    public enum WorldEditorAlignmentType {
+        None = 0, 
+        PlusX = 1, 
+        PlusY = 2, 
+        PlusZ = 3, 
+        MinusX = 4, 
+        MinusY = 5, 
+        MinusZ = 6 
+    }
+
+    /// <description>
+    /// How to drop objects when placed or dropped in the world.
+    /// </description>
+    public enum WorldEditorDropType {
+        AtOrigin = 0, 
+        AtCamera = 1, 
+        AtCameraRot = 2, 
+        BelowCamera = 3, 
+        ScreenCenter = 4, 
+        AtCentroid = 5, 
+        ToTerrain = 6, 
+        BelowSelection = 7, 
+        AtGizmo = 8 
     }
 
     /// 
-    public enum VPathNodeOrientationType {
-        FREE = 0, 
-        TOPOINT = 1 
+    public enum GizmoMode {
+        None = 0, 
+        Move = 1, 
+        Rotate = 2, 
+        Scale = 3 
+    }
+
+    /// <description>
+    /// Whether the gizmo should be aligned with the world, or with the object.
+    /// </description>
+    public enum GizmoAlignment {
+        World = 0, 
+        Object = 1 
+    }
+
+    /// <description>
+    /// GuiSeparatorCtrl orientations
+    /// </description>
+    public enum GuiSeparatorType {
+        Vertical = 0, 
+        Horizontal = 1 
     }
 
     /// 
-    public enum VPathEditorMode {
-        GIZMO = 0, 
-        ADDNODE = 1, 
-        DELETENODE = 2 
+    public enum GuiParticleGraphType {
+        Bar = 3, 
+        Filled = 2, 
+        Point = 0, 
+        Polyline = 1 
     }
 
-    /// 
-    public enum VPathType {
-        BEZIER = 1, 
-        LINEAR = 0 
-    }
-
-    /// 
-    public enum VScriptEventCommandType {
-        EXPRESSION = 0, 
-        METHOD = 1 
-    }
-
-    /// 
-    public enum VDataTableDataType {
-        EXPRESSION = 0, 
-        STATIC = 1, 
-        VARIABLE = 2 
-    }
-
-    /// 
-    public enum VActionToggle {
-        ON = 0, 
-        OFF = 1 
+    /// <description>
+    /// The charting style of a single plotting curve in a GuiGraphCtrl.
+    /// </description>
+    public enum GuiGraphType {
+        Bar = 3, 
+        Filled = 2, 
+        Point = 0, 
+        PolyLine = 1 
     }
 
     /// <description>
@@ -259,15 +291,6 @@ namespace T3DSharpFramework.Generated.Enums.Global {
     }
 
     /// <description>
-    /// Possible texture function types.
-    /// </description>
-    public enum afxBillboard_TexFuncType {
-        Replace = 0, 
-        Modulate = 1, 
-        Add = 2 
-    }
-
-    /// <description>
     /// Possible blending types.
     /// </description>
     public enum afxBillboard_BlendStyle {
@@ -307,91 +330,12 @@ namespace T3DSharpFramework.Generated.Enums.Global {
     }
 
     /// <description>
-    /// GuiSeparatorCtrl orientations
+    /// What size to render the target texture. Sizes are based on the Window the render is occuring in.
     /// </description>
-    public enum GuiSeparatorType {
-        Vertical = 0, 
-        Horizontal = 1 
-    }
-
-    /// 
-    public enum GuiParticleGraphType {
-        Bar = 3, 
-        Filled = 2, 
-        Point = 0, 
-        Polyline = 1 
-    }
-
-    /// <description>
-    /// The charting style of a single plotting curve in a GuiGraphCtrl.
-    /// </description>
-    public enum GuiGraphType {
-        Bar = 3, 
-        Filled = 2, 
-        Point = 0, 
-        PolyLine = 1 
-    }
-
-    /// <description>
-    /// Active brush mode type.
-    /// </description>
-    public enum ForestBrushMode {
-        Paint = 0, 
-        Erase = 1, 
-        EraseSelected = 2 
-    }
-
-    /// <description>
-    /// How to snap when snapping is enabled.
-    /// </description>
-    public enum WorldEditorAlignmentType {
-        None = 0, 
-        PlusX = 1, 
-        PlusY = 2, 
-        PlusZ = 3, 
-        MinusX = 4, 
-        MinusY = 5, 
-        MinusZ = 6 
-    }
-
-    /// <description>
-    /// How to drop objects when placed or dropped in the world.
-    /// </description>
-    public enum WorldEditorDropType {
-        AtOrigin = 0, 
-        AtCamera = 1, 
-        AtCameraRot = 2, 
-        BelowCamera = 3, 
-        ScreenCenter = 4, 
-        AtCentroid = 5, 
-        ToTerrain = 6, 
-        BelowSelection = 7, 
-        AtGizmo = 8 
-    }
-
-    /// 
-    public enum GizmoMode {
-        None = 0, 
-        Move = 1, 
-        Rotate = 2, 
-        Scale = 3 
-    }
-
-    /// <description>
-    /// Whether the gizmo should be aligned with the world, or with the object.
-    /// </description>
-    public enum GizmoAlignment {
-        World = 0, 
-        Object = 1 
-    }
-
-    /// <description>
-    /// Routine to use for converting Theora's Y'CbCr pixel format to RGB color space.
-    /// </description>
-    public enum GuiTheoraTranscoder {
-        Auto = 0, 
-        Generic = 1, 
-        SSE2420RGBA = 2 
+    public enum RenderTexTargetSize {
+        Windowsize = 0, 
+        Windowsizescaled = 1, 
+        Fixedsize = 2 
     }
 
     /// 
@@ -412,6 +356,48 @@ namespace T3DSharpFramework.Generated.Enums.Global {
         SoftShadowHighQuality = 2 
     }
 
+    /// <description>
+    /// When using the Wave material animation, one of these Wave Types will be used to determine the type of wave to display.
+    /// </description>
+    public enum MaterialWaveType {
+        Sin = 0, 
+        Triangle = 1, 
+        Square = 2 
+    }
+
+    /// <description>
+    /// The type of graphical blending operation to apply to this material
+    /// </description>
+    public enum MaterialBlendOp {
+        None = 0, 
+        Mul = 1, 
+        PreMul = 2, 
+        Add = 3, 
+        AddAlpha = 4, 
+        Sub = 5, 
+        LerpAlpha = 6 
+    }
+
+    /// <description>
+    /// The type of animation effect to apply to this material.
+    /// </description>
+    public enum MaterialAnimType {
+        Scroll = 1, 
+        Rotate = 2, 
+        Wave = 4, 
+        Scale = 8, 
+        Sequence = 16 
+    }
+
+    /// <description>
+    /// Description
+    /// </description>
+    public enum baseTexFormat {
+        NONE = 0, 
+        DDS = 1, 
+        PNG = 2 
+    }
+
     /// 
     public enum _TamlFormatMode {
         Xml = 1, 
@@ -419,169 +405,20 @@ namespace T3DSharpFramework.Generated.Enums.Global {
     }
 
     /// <description>
-    /// Type of mesh data available in a shape.
+    /// The type of knot that this marker will be.
     /// </description>
-    public enum ImageAssetType {
-        Albedo = 0, 
-        Normal = 1, 
-        PBRConfig = 2, 
-        GUI = 3, 
-        Roughness = 4, 
-        AO = 5, 
-        Metalness = 6, 
-        Glow = 7, 
-        Particle = 8, 
-        Decal = 9, 
-        Cubemap = 10 
+    public enum MarkerKnotType {
+        Normal = 0, 
+        Position_Only = 1, 
+        Kink = 2 
     }
 
     /// <description>
-    /// Type of mesh data available in a shape.
+    /// The type of smoothing this marker will have for pathed objects.
     /// </description>
-    public enum ReflectionModeEnum {
-        No_Reflections = 0, 
-        Static_Cubemap = 1, 
-        Baked_Cubemap = 2, 
-        Dynamic_Cubemap = 5 
-    }
-
-    /// <description>
-    /// Type of mesh data available in a shape.
-    /// </description>
-    public enum ReflectProbeType {
-        Sphere = 1, 
-        Box = 0 
-    }
-
-    /// <summary>How the weapons are linked to triggers for this TurretShape.</summary>
-    /// <description>
-    /// 
-    /// </description>
-    public enum TurretShapeFireLinkType {
-        FireTogether = 0, 
-        GroupedFire = 1, 
-        IndividualFire = 2 
-    }
-
-    /// <description>
-    /// How to handle the physics simulation with the client's and server.
-    /// </description>
-    public enum PhysicsSimType {
-        ClientOnly = 0, 
-        ServerOnly = 1, 
-        ClientServer = 2 
-    }
-
-    /// <description>
-    /// The type of visual blending style to apply to the particles.
-    /// </description>
-    public enum ParticleBlendStyle {
-        NORMAL = 1, 
-        ADDITIVE = 2, 
-        SUBTRACTIVE = 3, 
-        PREMULTALPHA = 4 
-    }
-
-    /// <description>
-    /// Type of mesh data available in a shape.
-    /// </description>
-    public enum TSMeshType {
-        None = 0, 
-        Bounds = 1, 
-        Collision_Mesh = 2, 
-        Visible_Mesh = 3 
-    }
-
-    /// <summary>The type of light to attach to this ShapeBaseImage.</summary>
-    /// <description>
-    /// 
-    /// </description>
-    public enum ShapeBaseImageLightType {
-        NoLight = 0, 
-        ConstantLight = 1, 
-        SpotLight = 2, 
-        PulsingLight = 3, 
-        WeaponFireLight = 4 
-    }
-
-    /// <summary>What kind of recoil this ShapeBaseImage should emit when fired.</summary>
-    /// <description>
-    /// 
-    /// </description>
-    public enum ShapeBaseImageRecoilState {
-        NoRecoil = 0, 
-        LightRecoil = 1, 
-        MediumRecoil = 2, 
-        HeavyRecoil = 3 
-    }
-
-    /// <summary>How the spin animation should be played.</summary>
-    /// <description>
-    /// 
-    /// </description>
-    public enum ShapeBaseImageSpinState {
-        Ignore = 0, 
-        Stop = 1, 
-        SpinUp = 2, 
-        SpinDown = 3, 
-        FullSpeed = 4 
-    }
-
-    /// <summary>The loaded state of this ShapeBaseImage.</summary>
-    /// <description>
-    /// 
-    /// </description>
-    public enum ShapeBaseImageLoadedState {
-        Ignore = 0, 
-        Loaded = 1, 
-        Empty = 2 
-    }
-
-    /// <summary>The pose of the Player.</summary>
-    /// <description>
-    /// 
-    /// </description>
-    public enum PlayerPose {
-        Stand = 0, 
-        Sprint = 1, 
-        Crouch = 2, 
-        Prone = 3, 
-        Swim = 4 
-    }
-
-    /// <description>
-    /// Possible physical zone force types.
-    /// </description>
-    public enum PhysicalZone_ForceType {
-        Vector = 0, 
-        Spherical = 1, 
-        Cylindrical = 2, 
-        Sphere = 1, 
-        Cylinder = 2 
-    }
-
-    /// <summary>The type of light the Item has</summary>
-    /// <description>
-    /// 
-    /// </description>
-    public enum ItemLightType {
-        NoLight = 0, 
-        ConstantLight = 1, 
-        PulsingLight = 2 
-    }
-
-    /// <description>
-    /// Movement behavior type for Camera.
-    /// </description>
-    public enum CameraMotionMode {
-        Stationary = 0, 
-        FreeRotate = 1, 
-        Fly = 2, 
-        OrbitObject = 3, 
-        OrbitPoint = 4, 
-        TrackObject = 5, 
-        Overhead = 6, 
-        EditOrbit = 7 
+    public enum MarkerSmoothingType {
+        Spline = 1, 
+        Linear = 0 
     }
 
     /// <description>
@@ -622,98 +459,6 @@ namespace T3DSharpFramework.Generated.Enums.Global {
         Standard = 0, 
         Stereo_side_by_side = 1, 
         Stereo_separate = 2 
-    }
-
-    /// 
-    public enum TSShapeConstructorAnimType {
-        Frames = 0, 
-        Seconds = 1, 
-        Milliseconds = 1000 
-    }
-
-    /// 
-    public enum TSShapeConstructorLodType {
-        DetectDTS = 0, 
-        SingleSize = 1, 
-        TrailingNumber = 2 
-    }
-
-    /// <description>
-    /// Axis to use for upwards direction when importing from Collada.
-    /// </description>
-    public enum TSShapeConstructorUpAxis {
-        X_AXIS = 0, 
-        Y_AXIS = 1, 
-        Z_AXIS = 2, 
-        DEFAULT = 3 
-    }
-
-    /// <description>
-    /// Description
-    /// </description>
-    public enum baseTexFormat {
-        NONE = 0, 
-        DDS = 1, 
-        PNG = 2 
-    }
-
-    /// <description>
-    /// The type of knot that this marker will be.
-    /// </description>
-    public enum MarkerKnotType {
-        Normal = 0, 
-        Position_Only = 1, 
-        Kink = 2 
-    }
-
-    /// <description>
-    /// The type of smoothing this marker will have for pathed objects.
-    /// </description>
-    public enum MarkerSmoothingType {
-        Spline = 1, 
-        Linear = 0 
-    }
-
-    /// <description>
-    /// What size to render the target texture. Sizes are based on the Window the render is occuring in.
-    /// </description>
-    public enum RenderTexTargetSize {
-        Windowsize = 0, 
-        Windowsizescaled = 1, 
-        Fixedsize = 2 
-    }
-
-    /// <description>
-    /// When using the Wave material animation, one of these Wave Types will be used to determine the type of wave to display.
-    /// </description>
-    public enum MaterialWaveType {
-        Sin = 0, 
-        Triangle = 1, 
-        Square = 2 
-    }
-
-    /// <description>
-    /// The type of graphical blending operation to apply to this material
-    /// </description>
-    public enum MaterialBlendOp {
-        None = 0, 
-        Mul = 1, 
-        PreMul = 2, 
-        Add = 3, 
-        AddAlpha = 4, 
-        Sub = 5, 
-        LerpAlpha = 6 
-    }
-
-    /// <description>
-    /// The type of animation effect to apply to this material.
-    /// </description>
-    public enum MaterialAnimType {
-        Scroll = 1, 
-        Rotate = 2, 
-        Wave = 4, 
-        Scale = 8, 
-        Sequence = 16 
     }
 
     /// 
@@ -776,6 +521,15 @@ namespace T3DSharpFramework.Generated.Enums.Global {
         AspectRight = 6, 
         AspectCenter = 7, 
         WindowRelative = 8 
+    }
+
+    /// <description>
+    /// Modes for handling keyboard translation or native accelerator requests.
+    /// </description>
+    public enum KeyboardTranslationMode {
+        Platform = 0, 
+        Callback = 1, 
+        Ignore = 2 
     }
 
     /// 
@@ -970,17 +724,18 @@ namespace T3DSharpFramework.Generated.Enums.Global {
         GFXFormatA8L8 = 6, 
         GFXFormatA8 = 0, 
         GFXFormatL8 = 1, 
-        GFXFormatBC1 = 29, 
-        GFXFormatBC2 = 30, 
-        GFXFormatBC3 = 31, 
-        GFXFormatBC4 = 32, 
-        GFXFormatBC5 = 33, 
+        GFXFormatBC1 = 30, 
+        GFXFormatBC2 = 31, 
+        GFXFormatBC3 = 32, 
+        GFXFormatBC4 = 33, 
+        GFXFormatBC5 = 34, 
         GFXFormatD32 = 21, 
         GFXFormatD24X8 = 22, 
         GFXFormatD24S8 = 23, 
         GFXFormatD24FS8 = 24, 
         GFXFormatD16 = 9, 
-        GFXFormatR32G32B32A32F = 28, 
+        GFXFormatD32FS8X24 = 28, 
+        GFXFormatR32G32B32A32F = 29, 
         GFXFormatR16G16B16A16F = 27, 
         GFXFormatL16 = 7, 
         GFXFormatR16G16B16A16 = 26, 
@@ -991,73 +746,13 @@ namespace T3DSharpFramework.Generated.Enums.Global {
     }
 
     /// <description>
-    /// The texture transform state flags.
-    /// </description>
-    public enum GFXTextureTransformFlags {
-        GFXTTFDisable = 0, 
-        GFXTTFFCoord1D = 1, 
-        GFXTTFFCoord2D = 2, 
-        GFXTTFFCoord3D = 3, 
-        GFXTTFFCoord4D = 4, 
-        GFXTTFProjected = 256 
-    }
-
-    /// <description>
-    /// The texture arguments.
-    /// </description>
-    public enum GFXTextureArgument {
-        GFXTADiffuse = 0, 
-        GFXTACurrent = 1, 
-        GFXTATexture = 2, 
-        GFXTATFactor = 3, 
-        GFXTASpecular = 4, 
-        GFXTATemp = 5, 
-        GFXTAConstant = 6, 
-        OneMinus = 16, 
-        AlphaReplicate = 32 
-    }
-
-    /// <description>
-    /// The texture operators.
-    /// </description>
-    public enum GFXTextureOp {
-        GFXTOPDisable = 0, 
-        GFXTOPSelectARG1 = 1, 
-        GFXTOPSelectARG2 = 2, 
-        GFXTOPModulate = 3, 
-        GFXTOPModulate2X = 4, 
-        GFXTOPModulate4X = 5, 
-        GFXTOPAdd = 6, 
-        GFXTOPAddSigned = 7, 
-        GFXTOPAddSigned2X = 8, 
-        GFXTOPSubtract = 9, 
-        GFXTOPAddSmooth = 10, 
-        GFXTOPBlendDiffuseAlpha = 11, 
-        GFXTOPBlendTextureAlpha = 12, 
-        GFXTOPBlendFactorAlpha = 13, 
-        GFXTOPBlendTextureAlphaPM = 14, 
-        GFXTOPBlendCURRENTALPHA = 15, 
-        GFXTOPPreModulate = 16, 
-        GFXTOPModulateAlphaAddColor = 17, 
-        GFXTOPModulateColorAddAlpha = 18, 
-        GFXTOPModulateInvAlphaAddColor = 19, 
-        GFXTOPModulateInvColorAddAlpha = 20, 
-        GFXTOPBumpEnvMap = 21, 
-        GFXTOPBumpEnvMapLuminance = 22, 
-        GFXTOPDotProduct3 = 23, 
-        GFXTOPLERP = 24 
-    }
-
-    /// <description>
     /// The texture filter types.
     /// </description>
     public enum GFXTextureFilterType {
         GFXTextureFilterNone = 0, 
         GFXTextureFilterPoint = 1, 
         GFXTextureFilterLinear = 2, 
-        GFXTextureFilterAnisotropic = 3, 
-        GFXTextureFilterPyramidalQuad = 4, 
-        GFXTextureFilterGaussianQuad = 5 
+        GFXTextureFilterAnisotropic = 3 
     }
 
     /// <description>
@@ -1109,47 +804,6 @@ namespace T3DSharpFramework.Generated.Enums.Global {
         OpenGL = 0, 
         D3D11 = 1, 
         NullDevice = 2 
-    }
-
-    /// <description>
-    /// Return value for messageBox() indicating which button was pressed by the user.
-    /// </description>
-    public enum MBReturnVal {
-        OK = 1, 
-        Cancelled = 2, 
-        Retry = 3, 
-        DontSave = 4 
-    }
-
-    /// <description>
-    /// What icon to show on a message box.
-    /// </description>
-    public enum MBIcons {
-        Information = 1, 
-        Warning = 0, 
-        Stop = 3, 
-        Question = 2 
-    }
-
-    /// <description>
-    /// Which buttons to display on a message box.
-    /// </description>
-    public enum MBButtons {
-        Ok = 0, 
-        OkCancel = 1, 
-        RetryCancel = 2, 
-        SaveDontSave = 3, 
-        SaveDontSaveCancel = 4 
-    }
-
-    /// <summary>Priority levels for logging entries</summary>
-    /// <description>
-    /// 
-    /// </description>
-    public enum LogLevel {
-        Normal = 0, 
-        Warning = 1, 
-        Error = 2 
     }
 
     /// <description>
@@ -1256,5 +910,305 @@ namespace T3DSharpFramework.Generated.Enums.Global {
     public enum SFXPlayListLoopMode {
         All = 0, 
         Single = 1 
+    }
+
+    /// 
+    public enum TSShapeConstructorAnimType {
+        Frames = 0, 
+        Seconds = 1, 
+        Milliseconds = 1000 
+    }
+
+    /// 
+    public enum TSShapeConstructorLodType {
+        DetectDTS = 0, 
+        SingleSize = 1, 
+        TrailingNumber = 2 
+    }
+
+    /// <description>
+    /// Axis to use for upwards direction when importing from Collada.
+    /// </description>
+    public enum TSShapeConstructorUpAxis {
+        X_AXIS = 0, 
+        Y_AXIS = 1, 
+        Z_AXIS = 2, 
+        DEFAULT = 3 
+    }
+
+    /// <description>
+    /// Type of mesh data available in a shape.
+    /// </description>
+    public enum TSMeshType {
+        None = 0, 
+        Bounds = 1, 
+        Collision_Mesh = 2, 
+        Visible_Mesh = 3 
+    }
+
+    /// <summary>The type of light to attach to this ShapeBaseImage.</summary>
+    /// <description>
+    /// 
+    /// </description>
+    public enum ShapeBaseImageLightType {
+        NoLight = 0, 
+        ConstantLight = 1, 
+        SpotLight = 2, 
+        PulsingLight = 3, 
+        WeaponFireLight = 4 
+    }
+
+    /// <summary>What kind of recoil this ShapeBaseImage should emit when fired.</summary>
+    /// <description>
+    /// 
+    /// </description>
+    public enum ShapeBaseImageRecoilState {
+        NoRecoil = 0, 
+        LightRecoil = 1, 
+        MediumRecoil = 2, 
+        HeavyRecoil = 3 
+    }
+
+    /// <summary>How the spin animation should be played.</summary>
+    /// <description>
+    /// 
+    /// </description>
+    public enum ShapeBaseImageSpinState {
+        Ignore = 0, 
+        Stop = 1, 
+        SpinUp = 2, 
+        SpinDown = 3, 
+        FullSpeed = 4 
+    }
+
+    /// <summary>The loaded state of this ShapeBaseImage.</summary>
+    /// <description>
+    /// 
+    /// </description>
+    public enum ShapeBaseImageLoadedState {
+        Ignore = 0, 
+        Loaded = 1, 
+        Empty = 2 
+    }
+
+    /// <description>
+    /// enum types.
+    /// </description>
+    public enum waterSounds {
+        ExitWater = 0, 
+        ImpactSoft = 1, 
+        ImpactMedium = 2, 
+        ImpactHard = 3, 
+        Wake = 4 
+    }
+
+    /// <description>
+    /// enum types.
+    /// </description>
+    public enum bodySounds {
+        SoftImpactSound = 0, 
+        HardImpactSound = 1 
+    }
+
+    /// <summary>The pose of the Player.</summary>
+    /// <description>
+    /// 
+    /// </description>
+    public enum PlayerPose {
+        Stand = 0, 
+        Sprint = 1, 
+        Crouch = 2, 
+        Prone = 3, 
+        Swim = 4 
+    }
+
+    /// <description>
+    /// enum types.
+    /// </description>
+    public enum playerSoundsEnum {
+        FootSoft = 0, 
+        FootHard = 1, 
+        FootMetal = 2, 
+        FootSnow = 3, 
+        FootShallowSplash = 5, 
+        FootWading = 6, 
+        FootUnderWater = 7, 
+        FootBubbles = 8, 
+        MoveBubbles = 9, 
+        WaterBreath = 10, 
+        ImpactSoft = 12, 
+        ImpactHard = 13, 
+        ImpactMetal = 14, 
+        ImpactSnow = 15, 
+        ImpactWaterEasy = 16, 
+        ImpactWaterMedium = 17, 
+        ImpactWaterHard = 18, 
+        ExitWater = 19 
+    }
+
+    /// <description>
+    /// Possible physical zone force types.
+    /// </description>
+    public enum PhysicalZone_ForceType {
+        Vector = 0, 
+        Spherical = 1, 
+        Cylindrical = 2, 
+        Sphere = 1, 
+        Cylinder = 2 
+    }
+
+    /// <summary>The type of light the Item has</summary>
+    /// <description>
+    /// 
+    /// </description>
+    public enum ItemLightType {
+        NoLight = 0, 
+        ConstantLight = 1, 
+        PulsingLight = 2 
+    }
+
+    /// <description>
+    /// Movement behavior type for Camera.
+    /// </description>
+    public enum CameraMotionMode {
+        Stationary = 0, 
+        FreeRotate = 1, 
+        Fly = 2, 
+        OrbitObject = 3, 
+        OrbitPoint = 4, 
+        TrackObject = 5, 
+        Overhead = 6, 
+        EditOrbit = 7 
+    }
+
+    /// <description>
+    /// Type of mesh data available in a shape.
+    /// </description>
+    public enum ImageAssetType {
+        Albedo = 0, 
+        Normal = 1, 
+        ORMConfig = 2, 
+        GUI = 3, 
+        Roughness = 4, 
+        AO = 5, 
+        Metalness = 6, 
+        Glow = 7, 
+        Particle = 8, 
+        Decal = 9, 
+        Cubemap = 10 
+    }
+
+    /// <description>
+    /// Type of mesh data available in a shape.
+    /// </description>
+    public enum ReflectionModeEnum {
+        No_Reflections = 0, 
+        Static_Cubemap = 1, 
+        Baked_Cubemap = 2 
+    }
+
+    /// <description>
+    /// Type of mesh data available in a shape.
+    /// </description>
+    public enum ReflectProbeType {
+        Sphere = 1, 
+        Box = 0 
+    }
+
+    /// <summary>How the weapons are linked to triggers for this TurretShape.</summary>
+    /// <description>
+    /// 
+    /// </description>
+    public enum TurretShapeFireLinkType {
+        FireTogether = 0, 
+        GroupedFire = 1, 
+        IndividualFire = 2 
+    }
+
+    /// <description>
+    /// How to handle the physics simulation with the client's and server.
+    /// </description>
+    public enum PhysicsSimType {
+        ClientOnly = 0, 
+        ServerOnly = 1, 
+        ClientServer = 2 
+    }
+
+    /// <description>
+    /// enum types.
+    /// </description>
+    public enum WheeledVehicleSoundsEnum {
+        JetSound = 0, 
+        EngineSound = 1, 
+        SquealSound = 2, 
+        WheelImpactSound = 3 
+    }
+
+    /// <description>
+    /// enum types.
+    /// </description>
+    public enum hoverSoundsEnum {
+        JetSound = 0, 
+        EngineSound = 1, 
+        FloatSound = 2 
+    }
+
+    /// <description>
+    /// enum types.
+    /// </description>
+    public enum engineSounds {
+        JetSound = 0, 
+        EngineSound = 1 
+    }
+
+    /// <description>
+    /// The type of visual blending style to apply to the particles.
+    /// </description>
+    public enum ParticleBlendStyle {
+        NORMAL = 1, 
+        ADDITIVE = 2, 
+        SUBTRACTIVE = 3, 
+        PREMULTALPHA = 4 
+    }
+
+    /// <description>
+    /// Return value for messageBox() indicating which button was pressed by the user.
+    /// </description>
+    public enum MBReturnVal {
+        OK = 1, 
+        Cancelled = 2, 
+        Retry = 3, 
+        DontSave = 4 
+    }
+
+    /// <description>
+    /// What icon to show on a message box.
+    /// </description>
+    public enum MBIcons {
+        Information = 1, 
+        Warning = 0, 
+        Stop = 3, 
+        Question = 2 
+    }
+
+    /// <description>
+    /// Which buttons to display on a message box.
+    /// </description>
+    public enum MBButtons {
+        Ok = 0, 
+        OkCancel = 1, 
+        RetryCancel = 2, 
+        SaveDontSave = 3, 
+        SaveDontSaveCancel = 4 
+    }
+
+    /// <summary>Priority levels for logging entries</summary>
+    /// <description>
+    /// 
+    /// </description>
+    public enum LogLevel {
+        Normal = 0, 
+        Warning = 1, 
+        Error = 2 
     }
 }

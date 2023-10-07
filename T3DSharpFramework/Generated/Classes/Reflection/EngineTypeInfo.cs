@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
 using T3DSharpFramework.Engine.Util;
+using T3DSharpFramework.Generated.Classes.Console;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Reflection;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Enums.Reflection;
@@ -18,7 +20,7 @@ namespace T3DSharpFramework.Generated.Classes.Reflection {
     /// <description>
     /// Information about an engine type.
     /// </description>
-    public unsafe class EngineTypeInfo : EngineExportScope {
+    public class EngineTypeInfo : EngineExportScope {
         public EngineTypeInfo(bool pRegister = false) 
             : base(pRegister) {
         }
@@ -42,16 +44,11 @@ namespace T3DSharpFramework.Generated.Classes.Reflection {
             internal delegate IntPtr _GetSuperType(IntPtr _this, GetSuperType__Args args);
             private static _GetSuperType _GetSuperTypeFunc;
             internal static _GetSuperType GetSuperType() {
-                if (_GetSuperTypeFunc == null) {
-                    _GetSuperTypeFunc =
-                        (_GetSuperType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEngineTypeInfo_getSuperType"), typeof(_GetSuperType));
-                }
-                
+               _GetSuperTypeFunc ??= Torque3D.LookupEngineFunction<_GetSuperType>("fnEngineTypeInfo_getSuperType");
+
                 return _GetSuperTypeFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetTypeKind__Args
@@ -62,16 +59,11 @@ namespace T3DSharpFramework.Generated.Classes.Reflection {
             internal delegate int _GetTypeKind(IntPtr _this, GetTypeKind__Args args);
             private static _GetTypeKind _GetTypeKindFunc;
             internal static _GetTypeKind GetTypeKind() {
-                if (_GetTypeKindFunc == null) {
-                    _GetTypeKindFunc =
-                        (_GetTypeKind)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEngineTypeInfo_getTypeKind"), typeof(_GetTypeKind));
-                }
-                
+               _GetTypeKindFunc ??= Torque3D.LookupEngineFunction<_GetTypeKind>("fnEngineTypeInfo_getTypeKind");
+
                 return _GetTypeKindFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct StaticGetType__Args
@@ -82,16 +74,11 @@ namespace T3DSharpFramework.Generated.Classes.Reflection {
             internal delegate IntPtr _StaticGetType(StaticGetType__Args args);
             private static _StaticGetType _StaticGetTypeFunc;
             internal static _StaticGetType StaticGetType() {
-                if (_StaticGetTypeFunc == null) {
-                    _StaticGetTypeFunc =
-                        (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEngineTypeInfo_staticGetType"), typeof(_StaticGetType));
-                }
-                
+               _StaticGetTypeFunc ??= Torque3D.LookupEngineFunction<_StaticGetType>("fnEngineTypeInfo_staticGetType");
+
                 return _StaticGetTypeFunc;
             }
+
         }
         #endregion
 

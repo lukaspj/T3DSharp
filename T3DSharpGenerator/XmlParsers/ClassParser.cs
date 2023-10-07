@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Xml;
-using T3DSharpFramework.Interop;
 using T3DSharpGenerator.Model;
 
 namespace T3DSharpGenerator.XmlParsers
@@ -17,10 +16,10 @@ namespace T3DSharpGenerator.XmlParsers
             string name = element.Attributes["name"].InnerText;
             string docs = element.Attributes["docs"].InnerText;
             string superType = element.Attributes["superType"]?.InnerText;
-            bool isAbstract = GenericMarshal.StringToBool(element.Attributes["isAbstract"].InnerText);
-            bool isInstantiable = GenericMarshal.StringToBool(element.Attributes["isInstantiable"].InnerText);
-            bool isDisposable = GenericMarshal.StringToBool(element.Attributes["isDisposable"].InnerText);
-            bool isSingleton = GenericMarshal.StringToBool(element.Attributes["isSingleton"].InnerText);
+            bool isAbstract = ValueParser.ParseBool(element.Attributes["isAbstract"].InnerText);
+            bool isInstantiable = ValueParser.ParseBool(element.Attributes["isInstantiable"].InnerText);
+            bool isDisposable = ValueParser.ParseBool(element.Attributes["isDisposable"].InnerText);
+            bool isSingleton = ValueParser.ParseBool(element.Attributes["isSingleton"].InnerText);
 
             EngineClass engineClass = new EngineClass(name) {
                 Docs = docs,
@@ -63,7 +62,10 @@ namespace T3DSharpGenerator.XmlParsers
             List<EngineClass.Property> properties = new List<EngineClass.Property>();
             foreach (XmlElement propElement in childNode.ChildNodes) {
                 if (propElement.Name.Equals("EngineProperty")) {
-                    EngineClass.Property property = new EngineClass.Property() {
+                   // Currently this is added on ConsoleObjects and below, we don't handle properties on
+                   // ConsoleObjects. We can only handle properties on SimObjects at the moment.
+                   if (propElement.Attributes["name"].InnerText.ToLower() == "docsurl") continue;
+                    EngineClass.Property property = new() {
                         Name = propElement.Attributes["name"].InnerText,
                         Docs = propElement.Attributes["docs"].InnerText,
                         TypeName = propElement.Attributes["type"].InnerText,

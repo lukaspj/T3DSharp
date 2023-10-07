@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
 using T3DSharpFramework.Engine.Util;
+using T3DSharpFramework.Generated.Classes.Console;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Reflection;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Enums.Reflection;
@@ -18,7 +20,7 @@ namespace T3DSharpFramework.Generated.Classes.Global {
     /// <description>
     /// Abstract base class for all objects exposed through the engine API.
     /// </description>
-    public unsafe class EngineObject : ConsoleObjectBase {
+    public class EngineObject : ConsoleObjectBase {
         public EngineObject(bool pRegister = false) 
             : base(pRegister) {
         }
@@ -43,16 +45,11 @@ namespace T3DSharpFramework.Generated.Classes.Global {
             internal delegate void _SetUserData(IntPtr _this, SetUserData__Args args);
             private static _SetUserData _SetUserDataFunc;
             internal static _SetUserData SetUserData() {
-                if (_SetUserDataFunc == null) {
-                    _SetUserDataFunc =
-                        (_SetUserData)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEngineObject_setUserData"), typeof(_SetUserData));
-                }
-                
+               _SetUserDataFunc ??= Torque3D.LookupEngineFunction<_SetUserData>("fnEngineObject_setUserData");
+
                 return _SetUserDataFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetUserData__Args
@@ -63,16 +60,11 @@ namespace T3DSharpFramework.Generated.Classes.Global {
             internal delegate IntPtr _GetUserData(IntPtr _this, GetUserData__Args args);
             private static _GetUserData _GetUserDataFunc;
             internal static _GetUserData GetUserData() {
-                if (_GetUserDataFunc == null) {
-                    _GetUserDataFunc =
-                        (_GetUserData)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEngineObject_getUserData"), typeof(_GetUserData));
-                }
-                
+               _GetUserDataFunc ??= Torque3D.LookupEngineFunction<_GetUserData>("fnEngineObject_getUserData");
+
                 return _GetUserDataFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct Release__Args
@@ -83,16 +75,11 @@ namespace T3DSharpFramework.Generated.Classes.Global {
             internal delegate void _Release(IntPtr _this, Release__Args args);
             private static _Release _ReleaseFunc;
             internal static _Release Release() {
-                if (_ReleaseFunc == null) {
-                    _ReleaseFunc =
-                        (_Release)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEngineObject_release"), typeof(_Release));
-                }
-                
+               _ReleaseFunc ??= Torque3D.LookupEngineFunction<_Release>("fnEngineObject_release");
+
                 return _ReleaseFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct AddRef__Args
@@ -103,16 +90,11 @@ namespace T3DSharpFramework.Generated.Classes.Global {
             internal delegate void _AddRef(IntPtr _this, AddRef__Args args);
             private static _AddRef _AddRefFunc;
             internal static _AddRef AddRef() {
-                if (_AddRefFunc == null) {
-                    _AddRefFunc =
-                        (_AddRef)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEngineObject_addRef"), typeof(_AddRef));
-                }
-                
+               _AddRefFunc ??= Torque3D.LookupEngineFunction<_AddRef>("fnEngineObject_addRef");
+
                 return _AddRefFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetType__Args
@@ -123,16 +105,11 @@ namespace T3DSharpFramework.Generated.Classes.Global {
             internal delegate IntPtr _GetType(IntPtr _this, GetType__Args args);
             private static _GetType _GetTypeFunc;
             internal static _GetType GetType() {
-                if (_GetTypeFunc == null) {
-                    _GetTypeFunc =
-                        (_GetType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEngineObject_getType"), typeof(_GetType));
-                }
-                
+               _GetTypeFunc ??= Torque3D.LookupEngineFunction<_GetType>("fnEngineObject_getType");
+
                 return _GetTypeFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct StaticGetType__Args
@@ -143,16 +120,11 @@ namespace T3DSharpFramework.Generated.Classes.Global {
             internal delegate IntPtr _StaticGetType(StaticGetType__Args args);
             private static _StaticGetType _StaticGetTypeFunc;
             internal static _StaticGetType StaticGetType() {
-                if (_StaticGetTypeFunc == null) {
-                    _StaticGetTypeFunc =
-                        (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnEngineObject_staticGetType"), typeof(_StaticGetType));
-                }
-                
+               _StaticGetTypeFunc ??= Torque3D.LookupEngineFunction<_StaticGetType>("fnEngineObject_staticGetType");
+
                 return _StaticGetTypeFunc;
             }
+
         }
         #endregion
 

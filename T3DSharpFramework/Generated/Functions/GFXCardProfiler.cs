@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Net;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Structs.Global;
@@ -13,7 +14,7 @@ using T3DSharpFramework.Interop;
 
 namespace T3DSharpFramework.Generated.Functions {
 
-    public static unsafe class GFXCardProfiler {
+    public static class GFXCardProfiler {
 
         #region UnsafeNativeMethods
         new internal struct InternalUnsafeMethods {
@@ -27,16 +28,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _GetBestDepthFormat(GetBestDepthFormat__Args args);
             private static _GetBestDepthFormat _GetBestDepthFormatFunc;
             internal static _GetBestDepthFormat GetBestDepthFormat() {
-                if (_GetBestDepthFormatFunc == null) {
-                    _GetBestDepthFormatFunc =
-                        (_GetBestDepthFormat)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXCardProfilerAPI_getBestDepthFormat"), typeof(_GetBestDepthFormat));
-                }
-                
+               _GetBestDepthFormatFunc ??= Torque3D.LookupEngineFunction<_GetBestDepthFormat>("fnGFXCardProfilerAPI_getBestDepthFormat");
+
                 return _GetBestDepthFormatFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct QueryProfile__Args
@@ -50,16 +46,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _QueryProfile(QueryProfile__Args args);
             private static _QueryProfile _QueryProfileFunc;
             internal static _QueryProfile QueryProfile() {
-                if (_QueryProfileFunc == null) {
-                    _QueryProfileFunc =
-                        (_QueryProfile)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXCardProfilerAPI_queryProfile"), typeof(_QueryProfile));
-                }
-                
+               _QueryProfileFunc ??= Torque3D.LookupEngineFunction<_QueryProfile>("fnGFXCardProfilerAPI_queryProfile");
+
                 return _QueryProfileFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct SetCapability__Args
@@ -73,16 +64,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate void _SetCapability(SetCapability__Args args);
             private static _SetCapability _SetCapabilityFunc;
             internal static _SetCapability SetCapability() {
-                if (_SetCapabilityFunc == null) {
-                    _SetCapabilityFunc =
-                        (_SetCapability)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXCardProfilerAPI_setCapability"), typeof(_SetCapability));
-                }
-                
+               _SetCapabilityFunc ??= Torque3D.LookupEngineFunction<_SetCapability>("fnGFXCardProfilerAPI_setCapability");
+
                 return _SetCapabilityFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetVideoMemoryMB__Args
@@ -93,16 +79,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GetVideoMemoryMB(GetVideoMemoryMB__Args args);
             private static _GetVideoMemoryMB _GetVideoMemoryMBFunc;
             internal static _GetVideoMemoryMB GetVideoMemoryMB() {
-                if (_GetVideoMemoryMBFunc == null) {
-                    _GetVideoMemoryMBFunc =
-                        (_GetVideoMemoryMB)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXCardProfilerAPI_getVideoMemoryMB"), typeof(_GetVideoMemoryMB));
-                }
-                
+               _GetVideoMemoryMBFunc ??= Torque3D.LookupEngineFunction<_GetVideoMemoryMB>("fnGFXCardProfilerAPI_getVideoMemoryMB");
+
                 return _GetVideoMemoryMBFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetRenderer__Args
@@ -114,16 +95,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _GetRenderer(GetRenderer__Args args);
             private static _GetRenderer _GetRendererFunc;
             internal static _GetRenderer GetRenderer() {
-                if (_GetRendererFunc == null) {
-                    _GetRendererFunc =
-                        (_GetRenderer)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXCardProfilerAPI_getRenderer"), typeof(_GetRenderer));
-                }
-                
+               _GetRendererFunc ??= Torque3D.LookupEngineFunction<_GetRenderer>("fnGFXCardProfilerAPI_getRenderer");
+
                 return _GetRendererFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetVendor__Args
@@ -135,16 +111,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _GetVendor(GetVendor__Args args);
             private static _GetVendor _GetVendorFunc;
             internal static _GetVendor GetVendor() {
-                if (_GetVendorFunc == null) {
-                    _GetVendorFunc =
-                        (_GetVendor)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXCardProfilerAPI_getVendor"), typeof(_GetVendor));
-                }
-                
+               _GetVendorFunc ??= Torque3D.LookupEngineFunction<_GetVendor>("fnGFXCardProfilerAPI_getVendor");
+
                 return _GetVendorFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetCard__Args
@@ -156,16 +127,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _GetCard(GetCard__Args args);
             private static _GetCard _GetCardFunc;
             internal static _GetCard GetCard() {
-                if (_GetCardFunc == null) {
-                    _GetCardFunc =
-                        (_GetCard)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXCardProfilerAPI_getCard"), typeof(_GetCard));
-                }
-                
+               _GetCardFunc ??= Torque3D.LookupEngineFunction<_GetCard>("fnGFXCardProfilerAPI_getCard");
+
                 return _GetCardFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetVersion__Args
@@ -177,16 +143,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _GetVersion(GetVersion__Args args);
             private static _GetVersion _GetVersionFunc;
             internal static _GetVersion GetVersion() {
-                if (_GetVersionFunc == null) {
-                    _GetVersionFunc =
-                        (_GetVersion)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXCardProfilerAPI_getVersion"), typeof(_GetVersion));
-                }
-                
+               _GetVersionFunc ??= Torque3D.LookupEngineFunction<_GetVersion>("fnGFXCardProfilerAPI_getVersion");
+
                 return _GetVersionFunc;
             }
+
         }
         #endregion
 

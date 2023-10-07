@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Net;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Structs.Global;
@@ -13,7 +14,7 @@ using T3DSharpFramework.Interop;
 
 namespace T3DSharpFramework.Generated.Functions {
 
-    public static unsafe class BanList {
+    public static class BanList {
 
         #region UnsafeNativeMethods
         new internal struct InternalUnsafeMethods {
@@ -28,16 +29,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate void _Export(Export__Args args);
             private static _Export _ExportFunc;
             internal static _Export Export() {
-                if (_ExportFunc == null) {
-                    _ExportFunc =
-                        (_Export)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnBanList_export"), typeof(_Export));
-                }
-                
+               _ExportFunc ??= Torque3D.LookupEngineFunction<_Export>("fnBanList_export");
+
                 return _ExportFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct IsBanned__Args
@@ -52,16 +48,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate bool _IsBanned(IsBanned__Args args);
             private static _IsBanned _IsBannedFunc;
             internal static _IsBanned IsBanned() {
-                if (_IsBannedFunc == null) {
-                    _IsBannedFunc =
-                        (_IsBanned)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnBanList_isBanned"), typeof(_IsBanned));
-                }
-                
+               _IsBannedFunc ??= Torque3D.LookupEngineFunction<_IsBanned>("fnBanList_isBanned");
+
                 return _IsBannedFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct RemoveBan__Args
@@ -75,16 +66,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate void _RemoveBan(RemoveBan__Args args);
             private static _RemoveBan _RemoveBanFunc;
             internal static _RemoveBan RemoveBan() {
-                if (_RemoveBanFunc == null) {
-                    _RemoveBanFunc =
-                        (_RemoveBan)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnBanList_removeBan"), typeof(_RemoveBan));
-                }
-                
+               _RemoveBanFunc ??= Torque3D.LookupEngineFunction<_RemoveBan>("fnBanList_removeBan");
+
                 return _RemoveBanFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct Add__Args
@@ -99,16 +85,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate void _Add(Add__Args args);
             private static _Add _AddFunc;
             internal static _Add Add() {
-                if (_AddFunc == null) {
-                    _AddFunc =
-                        (_Add)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnBanList_add"), typeof(_Add));
-                }
-                
+               _AddFunc ??= Torque3D.LookupEngineFunction<_Add>("fnBanList_add");
+
                 return _AddFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct AddAbsolute__Args
@@ -123,16 +104,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate void _AddAbsolute(AddAbsolute__Args args);
             private static _AddAbsolute _AddAbsoluteFunc;
             internal static _AddAbsolute AddAbsolute() {
-                if (_AddAbsoluteFunc == null) {
-                    _AddAbsoluteFunc =
-                        (_AddAbsolute)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnBanList_addAbsolute"), typeof(_AddAbsolute));
-                }
-                
+               _AddAbsoluteFunc ??= Torque3D.LookupEngineFunction<_AddAbsolute>("fnBanList_addAbsolute");
+
                 return _AddAbsoluteFunc;
             }
+
         }
         #endregion
 

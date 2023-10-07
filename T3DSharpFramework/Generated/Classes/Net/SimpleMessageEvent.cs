@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
 using T3DSharpFramework.Engine.Util;
+using T3DSharpFramework.Generated.Classes.Console;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Reflection;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Enums.Reflection;
@@ -20,7 +22,7 @@ namespace T3DSharpFramework.Generated.Classes.Net {
     /// This object exists purely for instructional purposes. It is primarily geared toward developers that wish to understand the inner-working of Torque 3D's networking system. This is not intended for actual game development.
     /// </description>
     /// <see cref="NetEvent for the inner workings of network events" />
-    public unsafe class SimpleMessageEvent : NetEvent {
+    public class SimpleMessageEvent : NetEvent {
         public SimpleMessageEvent(bool pRegister = false) 
             : base(pRegister) {
         }
@@ -47,16 +49,11 @@ namespace T3DSharpFramework.Generated.Classes.Net {
             internal delegate void _Msg(Msg__Args args);
             private static _Msg _MsgFunc;
             internal static _Msg Msg() {
-                if (_MsgFunc == null) {
-                    _MsgFunc =
-                        (_Msg)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSimpleMessageEvent_msg"), typeof(_Msg));
-                }
-                
+               _MsgFunc ??= Torque3D.LookupEngineFunction<_Msg>("fnSimpleMessageEvent_msg");
+
                 return _MsgFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct StaticGetType__Args
@@ -67,16 +64,11 @@ namespace T3DSharpFramework.Generated.Classes.Net {
             internal delegate IntPtr _StaticGetType(StaticGetType__Args args);
             private static _StaticGetType _StaticGetTypeFunc;
             internal static _StaticGetType StaticGetType() {
-                if (_StaticGetTypeFunc == null) {
-                    _StaticGetTypeFunc =
-                        (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSimpleMessageEvent_staticGetType"), typeof(_StaticGetType));
-                }
-                
+               _StaticGetTypeFunc ??= Torque3D.LookupEngineFunction<_StaticGetType>("fnSimpleMessageEvent_staticGetType");
+
                 return _StaticGetTypeFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct Create__Args
@@ -87,16 +79,11 @@ namespace T3DSharpFramework.Generated.Classes.Net {
             internal delegate IntPtr _Create(Create__Args args);
             private static _Create _CreateFunc;
             internal static _Create Create() {
-                if (_CreateFunc == null) {
-                    _CreateFunc =
-                        (_Create)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSimpleMessageEvent_create"), typeof(_Create));
-                }
-                
+               _CreateFunc ??= Torque3D.LookupEngineFunction<_Create>("fnSimpleMessageEvent_create");
+
                 return _CreateFunc;
             }
+
         }
         #endregion
 

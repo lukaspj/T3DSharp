@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using T3DSharpFramework.Engine;
-using T3DSharpGenerator.Generators.Util;
 
 namespace T3DSharpGenerator.Model
 {
@@ -93,20 +91,8 @@ namespace T3DSharpGenerator.Model
                 return null;
             }
 
-            if (typeName.StartsWith("Math::")) {
-                typeName = typeName.Substring(6);
-            }
-
-            if (typeName.StartsWith("Net::")) {
-                typeName = typeName.Substring(5);
-            }
-
-            if (typeName.StartsWith("Gui::")) {
-                typeName = typeName.Substring(5);
-            }
-
-            if (typeName.StartsWith("Reflection::")) {
-                typeName = typeName.Substring(12);
+            if (typeName.Contains("::")) {
+               typeName = typeName.Substring(typeName.IndexOf("::", StringComparison.Ordinal) + 2);
             }
 
             if (typeName.Equals("MatrixPosition")) {
@@ -204,6 +190,7 @@ namespace T3DSharpGenerator.Model
 
             foreach (EngineStruct engineStruct in Structs) {
                 if (engineStruct.Name.Equals(name)) {
+
                     return engineStruct;
                 }
             }

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
 using T3DSharpFramework.Engine.Util;
+using T3DSharpFramework.Generated.Classes.Console;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Reflection;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Enums.Reflection;
@@ -16,7 +18,7 @@ using T3DSharpFramework.Interop;
 
 namespace T3DSharpFramework.Generated.Classes.Global {
     /// 
-    public unsafe class SimPersistID : EngineObject, ISimPersistID {
+    public class SimPersistID : EngineObject, ISimPersistID {
         public SimPersistID(bool pRegister = false) 
             : base(pRegister) {
         }
@@ -43,16 +45,11 @@ namespace T3DSharpFramework.Generated.Classes.Global {
             internal delegate IntPtr _GetObject(IntPtr _this, GetObject__Args args);
             private static _GetObject _GetObjectFunc;
             internal static _GetObject GetObject() {
-                if (_GetObjectFunc == null) {
-                    _GetObjectFunc =
-                        (_GetObject)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSimPersistID_getObject"), typeof(_GetObject));
-                }
-                
+               _GetObjectFunc ??= Torque3D.LookupEngineFunction<_GetObject>("fnSimPersistID_getObject");
+
                 return _GetObjectFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetUUID__Args
@@ -63,16 +60,11 @@ namespace T3DSharpFramework.Generated.Classes.Global {
             internal delegate UUID.InternalStruct _GetUUID(IntPtr _this, GetUUID__Args args);
             private static _GetUUID _GetUUIDFunc;
             internal static _GetUUID GetUUID() {
-                if (_GetUUIDFunc == null) {
-                    _GetUUIDFunc =
-                        (_GetUUID)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSimPersistID_getUUID"), typeof(_GetUUID));
-                }
-                
+               _GetUUIDFunc ??= Torque3D.LookupEngineFunction<_GetUUID>("fnSimPersistID_getUUID");
+
                 return _GetUUIDFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct StaticGetType__Args
@@ -83,16 +75,11 @@ namespace T3DSharpFramework.Generated.Classes.Global {
             internal delegate IntPtr _StaticGetType(StaticGetType__Args args);
             private static _StaticGetType _StaticGetTypeFunc;
             internal static _StaticGetType StaticGetType() {
-                if (_StaticGetTypeFunc == null) {
-                    _StaticGetTypeFunc =
-                        (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSimPersistID_staticGetType"), typeof(_StaticGetType));
-                }
-                
+               _StaticGetTypeFunc ??= Torque3D.LookupEngineFunction<_StaticGetType>("fnSimPersistID_staticGetType");
+
                 return _StaticGetTypeFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct Create__Args
@@ -103,16 +90,11 @@ namespace T3DSharpFramework.Generated.Classes.Global {
             internal delegate IntPtr _Create(Create__Args args);
             private static _Create _CreateFunc;
             internal static _Create Create() {
-                if (_CreateFunc == null) {
-                    _CreateFunc =
-                        (_Create)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnSimPersistID_create"), typeof(_Create));
-                }
-                
+               _CreateFunc ??= Torque3D.LookupEngineFunction<_Create>("fnSimPersistID_create");
+
                 return _CreateFunc;
             }
+
         }
         #endregion
 

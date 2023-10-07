@@ -717,12 +717,12 @@ namespace T3DSharpFramework.Generated.Structs.Global {
     public class UUID : IEngineStruct {
         [StructLayout(LayoutKind.Explicit)]
         public struct InternalStruct {
-            [FieldOffset(0)] public uint a;
-            [FieldOffset(4)] public ushort b;
-            [FieldOffset(6)] public ushort c;
-            [FieldOffset(8)] public byte d;
-            [FieldOffset(9)] public byte e;
-            [FieldOffset(10)] public IntPtr f;
+            [FieldOffset(16)] public uint a;
+            [FieldOffset(20)] public ushort b;
+            [FieldOffset(22)] public ushort c;
+            [FieldOffset(24)] public byte d;
+            [FieldOffset(25)] public byte e;
+            [FieldOffset(26)] public IntPtr f;
         }
 
         public InternalStruct internalStruct;

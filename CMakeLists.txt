@@ -1,11 +1,31 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.16)
+project(T3DSharp LANGUAGES CSharp)
 
 torqueAddSourceDirectories("${POSSIBLE_PROJECT_ABSOLUTEPATH}/source")
+
+# Set global .NET version
+SET(CMAKE_DOTNET_TARGET_FRAMEWORK "net5.0")
+
+# Set the C# language version for all projects.
+SET(CMAKE_CSharp_FLAGS "/langversion:10")
+
+# Set SDK version
+SET(CMAKE_DOTNET_SDK "Microsoft.NET.Sdk")
+
+include(nethost.cmake)
+include(t3dsharp.cmake)
+
+set(TORQUE_LINK_LIBRARIES ${TORQUE_LINK_LIBRARIES} PARENT_SCOPE)
+set(TORQUE_INCLUDE_DIRECTORIES ${TORQUE_INCLUDE_DIRECTORIES} PARENT_SCOPE)
+
+return()
 
 set(CSHARP_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set(CSHARP_OUTPUT_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set(CSHARP_SOLUTION_NAME "T3DSharpSolution")
 set(CSHARP_SOLUTION_PATH "${CSHARP_SOURCE_DIR}/${CSHARP_SOLUTION_NAME}.sln")
+
+set(CMAKE_VS_DEBUGGER_WORKING_DIRECTORY ${TORQUE_APP_GAME_DIRECTORY} PARENT_SCOPE)
 
 # --------------------
 # -- Solution
@@ -85,8 +105,8 @@ endforeach()
 foreach(f ${tmp_files})
 	string(REGEX REPLACE "(.*)/([^/]*)$" "\\1" tmp_folder ${f})
 	string(REGEX REPLACE "(.*)/([^/]*)$" "\\2" tmp_file ${f})
-	string(REGEX REPLACE "(.*)\.in$" "\\1" tmp_target ${tmp_file})
-	string(REGEX REPLACE "(.*)\.csproj\.in$" "\\1" tmp_project_name ${tmp_file})
+	string(REGEX REPLACE "(.*)/.in$" "\\1" tmp_target ${tmp_file})
+	string(REGEX REPLACE "(.*)/.csproj/.in$" "\\1" tmp_project_name ${tmp_file})
 
    set_relative_paths_for_csproj("${tmp_folder}r")
 	configure_file_if_not_exists(
@@ -117,7 +137,7 @@ endforeach()
 foreach(f ${tmp_files})
 	string(REGEX REPLACE "(.*)/([^/]*)$" "\\1" tmp_folder ${f})
 	string(REGEX REPLACE "(.*)/([^/]*)$" "\\2" tmp_file ${f})
-	string(REGEX REPLACE "(.*)\.csproj$" "\\1" tmp_project_name ${tmp_file})
+	string(REGEX REPLACE "(.*)/.csproj$" "\\1" tmp_project_name ${tmp_file})
 
     set_relative_paths_for_csproj("${tmp_folder}r")
 	add_csproject("${tmp_project_name}" "${tmp_folder}/${tmp_file}")
@@ -130,23 +150,23 @@ endforeach()
 
 list(REMOVE_ITEM CSPROJ_FILES "${CSHARP_OUTPUT_DIR}/T3DSharpGame/T3DSharpGame.csproj")
 list(REMOVE_ITEM CSPROJ_FILES "${CSHARP_OUTPUT_DIR}/T3DSharpGenerator/T3DSharpGenerator.csproj")
-foreach(f ${CSPROJ_FILES})
-	file(RELATIVE_PATH tmp_rel_path "${CSHARP_OUTPUT_DIR}/T3DSharpGame" "${f}")
-	set(GAME_INCLUDES "${GAME_INCLUDES} \n\
-		  <ProjectReference Include=\"${tmp_rel_path}\"> \n\
-			<Private>true</Private> \n\
-		  </ProjectReference> \n\
-	")
-endforeach()
+#foreach(f ${CSPROJ_FILES})
+#	file(RELATIVE_PATH tmp_rel_path "${CSHARP_OUTPUT_DIR}/T3DSharpGame" "${f}")
+#	set(GAME_INCLUDES "${GAME_INCLUDES} /n/
+#		  <ProjectReference Include=/"${tmp_rel_path}/"> /n/
+#			<Private>true</Private> /n/
+#		  </ProjectReference> /n/
+#	")
+#endforeach()
 
-foreach(c ${CMAKE_CONFIGURATION_TYPES})
-string(TOUPPER ${c} tmp_c_upper)
-set(CSHARP_DEFINE_CONSTANTS "${CSHARP_DEFINE_CONSTANTS} \n\
-   <PropertyGroup Condition=\"\'\$(Configuration)'=='${c}'\">\n\
-     <DefineConstants>${tmp_c_upper}</DefineConstants>\n\
-   </PropertyGroup>\n\
-")
-endforeach()
+#foreach(c ${CMAKE_CONFIGURATION_TYPES})
+#string(TOUPPER ${c} tmp_c_upper)
+#set(CSHARP_DEFINE_CONSTANTS "${CSHARP_DEFINE_CONSTANTS} /n/
+#   <PropertyGroup Condition=/"/'/$(Configuration)'=='${c}'/">/n/
+#     <DefineConstants>${tmp_c_upper}</DefineConstants>/n/
+#   </PropertyGroup>/n/
+#")
+#endforeach()
 
 configure_file_if_not_exists(
 	"${CSHARP_SOURCE_DIR}/T3DSharpGame/Program.cs.in"

@@ -1,12 +1,18 @@
 #include "module.h"
 
+
 #include "api.h"
 #include "console/consoleInternal.h"
+#include "core/frameAllocator.h"
+#include "core/volume.h"
+#include "core/util/path.h"
 
+// Heavily based on https://github.com/dotnet/samples/blob/main/core/hosting/src/NativeHost/nativehost.cpp
 namespace Csharp
 {
    CsharpModule::CsharpModule()
-   = default;
+   {
+   };
 
    CsharpModule::~CsharpModule()
    = default;
@@ -29,18 +35,20 @@ namespace Csharp
       return "(...)";
    }
 
-   Con::EvalResult CsharpModule::exec(U32 offset, const char* fnName, Namespace* ns, U32 argc, ConsoleValue* argv, bool noCalls, StringTableEntry packageName, S32 setFrame)
+   Con::EvalResult CsharpModule::exec(U32 offset, const char* fnName, Namespace* ns, U32 argc, ConsoleValue* argv,
+                                      bool noCalls, StringTableEntry packageName, S32 setFrame)
    {
       ConsoleValueToStringArrayWrapper args(argc - 1, argv + 1);
       bool result = false;
-      const char* execResult = Csharp::gExecCallback(ns->getName(), fnName, args.count(), args, &result);
+      const char* nsName = ns->getName();
+      const char* execResult = Csharp::gExecCallback(nsName, fnName, args.count(), args, &result);
 
       ConsoleValue val;
       val.setString(execResult);
       if (result)
       {
-         return { std::move(val) };
+         return {std::move(val)};
       }
-      return { "unable to find the specified function" };
+      return {"unable to find the specified function"};
    }
 }

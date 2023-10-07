@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Net;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Structs.Global;
@@ -13,7 +14,7 @@ using T3DSharpFramework.Interop;
 
 namespace T3DSharpFramework.Generated.Functions {
 
-    public static unsafe class GFXInit {
+    public static class GFXInit {
 
         #region UnsafeNativeMethods
         new internal struct InternalUnsafeMethods {
@@ -26,16 +27,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate void _CreateNullDevice(CreateNullDevice__Args args);
             private static _CreateNullDevice _CreateNullDeviceFunc;
             internal static _CreateNullDevice CreateNullDevice() {
-                if (_CreateNullDeviceFunc == null) {
-                    _CreateNullDeviceFunc =
-                        (_CreateNullDevice)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXInit_createNullDevice"), typeof(_CreateNullDevice));
-                }
-                
+               _CreateNullDeviceFunc ??= Torque3D.LookupEngineFunction<_CreateNullDevice>("fnGFXInit_createNullDevice");
+
                 return _CreateNullDeviceFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetAdapterMode__Args
@@ -49,16 +45,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _GetAdapterMode(GetAdapterMode__Args args);
             private static _GetAdapterMode _GetAdapterModeFunc;
             internal static _GetAdapterMode GetAdapterMode() {
-                if (_GetAdapterModeFunc == null) {
-                    _GetAdapterModeFunc =
-                        (_GetAdapterMode)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXInit_getAdapterMode"), typeof(_GetAdapterMode));
-                }
-                
+               _GetAdapterModeFunc ??= Torque3D.LookupEngineFunction<_GetAdapterMode>("fnGFXInit_getAdapterMode");
+
                 return _GetAdapterModeFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetAdapterModeCount__Args
@@ -70,16 +61,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GetAdapterModeCount(GetAdapterModeCount__Args args);
             private static _GetAdapterModeCount _GetAdapterModeCountFunc;
             internal static _GetAdapterModeCount GetAdapterModeCount() {
-                if (_GetAdapterModeCountFunc == null) {
-                    _GetAdapterModeCountFunc =
-                        (_GetAdapterModeCount)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXInit_getAdapterModeCount"), typeof(_GetAdapterModeCount));
-                }
-                
+               _GetAdapterModeCountFunc ??= Torque3D.LookupEngineFunction<_GetAdapterModeCount>("fnGFXInit_getAdapterModeCount");
+
                 return _GetAdapterModeCountFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetDefaultAdapterIndex__Args
@@ -90,16 +76,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GetDefaultAdapterIndex(GetDefaultAdapterIndex__Args args);
             private static _GetDefaultAdapterIndex _GetDefaultAdapterIndexFunc;
             internal static _GetDefaultAdapterIndex GetDefaultAdapterIndex() {
-                if (_GetDefaultAdapterIndexFunc == null) {
-                    _GetDefaultAdapterIndexFunc =
-                        (_GetDefaultAdapterIndex)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXInit_getDefaultAdapterIndex"), typeof(_GetDefaultAdapterIndex));
-                }
-                
+               _GetDefaultAdapterIndexFunc ??= Torque3D.LookupEngineFunction<_GetDefaultAdapterIndex>("fnGFXInit_getDefaultAdapterIndex");
+
                 return _GetDefaultAdapterIndexFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetAdapterShaderModel__Args
@@ -111,16 +92,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate float _GetAdapterShaderModel(GetAdapterShaderModel__Args args);
             private static _GetAdapterShaderModel _GetAdapterShaderModelFunc;
             internal static _GetAdapterShaderModel GetAdapterShaderModel() {
-                if (_GetAdapterShaderModelFunc == null) {
-                    _GetAdapterShaderModelFunc =
-                        (_GetAdapterShaderModel)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXInit_getAdapterShaderModel"), typeof(_GetAdapterShaderModel));
-                }
-                
+               _GetAdapterShaderModelFunc ??= Torque3D.LookupEngineFunction<_GetAdapterShaderModel>("fnGFXInit_getAdapterShaderModel");
+
                 return _GetAdapterShaderModelFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetAdapterType__Args
@@ -132,16 +108,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GetAdapterType(GetAdapterType__Args args);
             private static _GetAdapterType _GetAdapterTypeFunc;
             internal static _GetAdapterType GetAdapterType() {
-                if (_GetAdapterTypeFunc == null) {
-                    _GetAdapterTypeFunc =
-                        (_GetAdapterType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXInit_getAdapterType"), typeof(_GetAdapterType));
-                }
-                
+               _GetAdapterTypeFunc ??= Torque3D.LookupEngineFunction<_GetAdapterType>("fnGFXInit_getAdapterType");
+
                 return _GetAdapterTypeFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetAdapterOutputName__Args
@@ -154,16 +125,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _GetAdapterOutputName(GetAdapterOutputName__Args args);
             private static _GetAdapterOutputName _GetAdapterOutputNameFunc;
             internal static _GetAdapterOutputName GetAdapterOutputName() {
-                if (_GetAdapterOutputNameFunc == null) {
-                    _GetAdapterOutputNameFunc =
-                        (_GetAdapterOutputName)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXInit_getAdapterOutputName"), typeof(_GetAdapterOutputName));
-                }
-                
+               _GetAdapterOutputNameFunc ??= Torque3D.LookupEngineFunction<_GetAdapterOutputName>("fnGFXInit_getAdapterOutputName");
+
                 return _GetAdapterOutputNameFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetAdapterName__Args
@@ -176,16 +142,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate IntPtr _GetAdapterName(GetAdapterName__Args args);
             private static _GetAdapterName _GetAdapterNameFunc;
             internal static _GetAdapterName GetAdapterName() {
-                if (_GetAdapterNameFunc == null) {
-                    _GetAdapterNameFunc =
-                        (_GetAdapterName)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXInit_getAdapterName"), typeof(_GetAdapterName));
-                }
-                
+               _GetAdapterNameFunc ??= Torque3D.LookupEngineFunction<_GetAdapterName>("fnGFXInit_getAdapterName");
+
                 return _GetAdapterNameFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetAdapterCount__Args
@@ -196,16 +157,11 @@ namespace T3DSharpFramework.Generated.Functions {
             internal delegate int _GetAdapterCount(GetAdapterCount__Args args);
             private static _GetAdapterCount _GetAdapterCountFunc;
             internal static _GetAdapterCount GetAdapterCount() {
-                if (_GetAdapterCountFunc == null) {
-                    _GetAdapterCountFunc =
-                        (_GetAdapterCount)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnGFXInit_getAdapterCount"), typeof(_GetAdapterCount));
-                }
-                
+               _GetAdapterCountFunc ??= Torque3D.LookupEngineFunction<_GetAdapterCount>("fnGFXInit_getAdapterCount");
+
                 return _GetAdapterCountFunc;
             }
+
         }
         #endregion
 

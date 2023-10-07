@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using T3DSharpFramework.Engine;
 using T3DSharpFramework.Engine.Util;
+using T3DSharpFramework.Generated.Classes.Console;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Reflection;
 using T3DSharpFramework.Generated.Classes.Sim;
+using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Enums.Reflection;
@@ -45,45 +47,55 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
     /// 
     /// </remarks>
     /// <see cref="GameConnection, NetConnection, AIClient" />
-    public unsafe class AIConnection : GameConnection {
-        public AIConnection(bool pRegister = false) 
+    public class AIConnection : GameConnection {
+        public AIConnection(bool pRegister = false)
             : base(pRegister) {
+           // Always set the Class Namespace to the C# class name
+           ClassName = ((object)this).GetType().Name;
         }
-        
-        public AIConnection(string pName, bool pRegister) 
-            : this(false) {
+
+        public AIConnection(string pName, bool pRegister)
+            : base(false) {
             Name = pName;
+            // Handle the case where the class name refers to the name of
+            // the object, and thus only meant to be used for that specific object,
+            // not encompassing an actual type
+            var managedClassName = ((object)this).GetType().Name;
+            if (managedClassName != Name) {
+               ClassName = managedClassName;
+            }
             if (pRegister) {
                 RegisterObject();
             }
         }
-        
-        public AIConnection(string pName) 
+
+        public AIConnection(string pName)
             : this(pName, false) {
         }
-        
-        public AIConnection(string pName, string pParent, bool pRegister = false) 
+
+        public AIConnection(string pName, string pParent, bool pRegister = false)
             : this(pName, pRegister) {
             CopyFrom(Engine.Sim.FindObject<SimObject>(pParent));
         }
-        
-        public AIConnection(string pName, SimObject pParent, bool pRegister = false) 
+
+        public AIConnection(string pName, SimObject pParent, bool pRegister = false)
             : this(pName, pRegister) {
             CopyFrom(pParent);
         }
-        
-        public AIConnection(SimObject pObj) 
+
+        public AIConnection(SimObject pObj)
             : base(pObj) {
         }
-        
-        public AIConnection(IntPtr pObj) 
+
+        public AIConnection(IntPtr pObj)
             : base(pObj) {
         }
-        
+
 		protected override void CreateObjectPtr()
 		{
 			ObjectPtr = InternalUnsafeMethods.Create()(new InternalUnsafeMethods.Create__Args());
 		}
+
 
         #region UnsafeNativeMethods
         new internal struct InternalUnsafeMethods {
@@ -97,16 +109,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate IntPtr _GetAddress(IntPtr _this, GetAddress__Args args);
             private static _GetAddress _GetAddressFunc;
             internal static _GetAddress GetAddress() {
-                if (_GetAddressFunc == null) {
-                    _GetAddressFunc =
-                        (_GetAddress)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnAIConnection_getAddress"), typeof(_GetAddress));
-                }
-                
+               _GetAddressFunc ??= Torque3D.LookupEngineFunction<_GetAddress>("fnAIConnection_getAddress");
+
                 return _GetAddressFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetTrigger__Args
@@ -119,16 +126,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate bool _GetTrigger(IntPtr _this, GetTrigger__Args args);
             private static _GetTrigger _GetTriggerFunc;
             internal static _GetTrigger GetTrigger() {
-                if (_GetTriggerFunc == null) {
-                    _GetTriggerFunc =
-                        (_GetTrigger)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnAIConnection_getTrigger"), typeof(_GetTrigger));
-                }
-                
+               _GetTriggerFunc ??= Torque3D.LookupEngineFunction<_GetTrigger>("fnAIConnection_getTrigger");
+
                 return _GetTriggerFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct SetTrigger__Args
@@ -142,16 +144,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate void _SetTrigger(IntPtr _this, SetTrigger__Args args);
             private static _SetTrigger _SetTriggerFunc;
             internal static _SetTrigger SetTrigger() {
-                if (_SetTriggerFunc == null) {
-                    _SetTriggerFunc =
-                        (_SetTrigger)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnAIConnection_setTrigger"), typeof(_SetTrigger));
-                }
-                
+               _SetTriggerFunc ??= Torque3D.LookupEngineFunction<_SetTrigger>("fnAIConnection_setTrigger");
+
                 return _SetTriggerFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetFreeLook__Args
@@ -163,16 +160,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate bool _GetFreeLook(IntPtr _this, GetFreeLook__Args args);
             private static _GetFreeLook _GetFreeLookFunc;
             internal static _GetFreeLook GetFreeLook() {
-                if (_GetFreeLookFunc == null) {
-                    _GetFreeLookFunc =
-                        (_GetFreeLook)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnAIConnection_getFreeLook"), typeof(_GetFreeLook));
-                }
-                
+               _GetFreeLookFunc ??= Torque3D.LookupEngineFunction<_GetFreeLook>("fnAIConnection_getFreeLook");
+
                 return _GetFreeLookFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct SetFreeLook__Args
@@ -185,16 +177,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate void _SetFreeLook(IntPtr _this, SetFreeLook__Args args);
             private static _SetFreeLook _SetFreeLookFunc;
             internal static _SetFreeLook SetFreeLook() {
-                if (_SetFreeLookFunc == null) {
-                    _SetFreeLookFunc =
-                        (_SetFreeLook)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnAIConnection_setFreeLook"), typeof(_SetFreeLook));
-                }
-                
+               _SetFreeLookFunc ??= Torque3D.LookupEngineFunction<_SetFreeLook>("fnAIConnection_setFreeLook");
+
                 return _SetFreeLookFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct GetMove__Args
@@ -207,16 +194,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate float _GetMove(IntPtr _this, GetMove__Args args);
             private static _GetMove _GetMoveFunc;
             internal static _GetMove GetMove() {
-                if (_GetMoveFunc == null) {
-                    _GetMoveFunc =
-                        (_GetMove)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnAIConnection_getMove"), typeof(_GetMove));
-                }
-                
+               _GetMoveFunc ??= Torque3D.LookupEngineFunction<_GetMove>("fnAIConnection_getMove");
+
                 return _GetMoveFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct SetMove__Args
@@ -230,16 +212,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate void _SetMove(IntPtr _this, SetMove__Args args);
             private static _SetMove _SetMoveFunc;
             internal static _SetMove SetMove() {
-                if (_SetMoveFunc == null) {
-                    _SetMoveFunc =
-                        (_SetMove)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnAIConnection_setMove"), typeof(_SetMove));
-                }
-                
+               _SetMoveFunc ??= Torque3D.LookupEngineFunction<_SetMove>("fnAIConnection_setMove");
+
                 return _SetMoveFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct StaticGetType__Args
@@ -250,16 +227,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate IntPtr _StaticGetType(StaticGetType__Args args);
             private static _StaticGetType _StaticGetTypeFunc;
             internal static _StaticGetType StaticGetType() {
-                if (_StaticGetTypeFunc == null) {
-                    _StaticGetTypeFunc =
-                        (_StaticGetType)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnAIConnection_staticGetType"), typeof(_StaticGetType));
-                }
-                
+               _StaticGetTypeFunc ??= Torque3D.LookupEngineFunction<_StaticGetType>("fnAIConnection_staticGetType");
+
                 return _StaticGetTypeFunc;
             }
+
 
             [StructLayout(LayoutKind.Sequential)]
             internal struct Create__Args
@@ -270,16 +242,11 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
             internal delegate IntPtr _Create(Create__Args args);
             private static _Create _CreateFunc;
             internal static _Create Create() {
-                if (_CreateFunc == null) {
-                    _CreateFunc =
-                        (_Create)Marshal.GetDelegateForFunctionPointer(
-                            NativeLibrary.GetExport(
-                                Torque3D.Torque3DLibHandle,
-                                "fnAIConnection_create"), typeof(_Create));
-                }
-                
+               _CreateFunc ??= Torque3D.LookupEngineFunction<_Create>("fnAIConnection_create");
+
                 return _CreateFunc;
             }
+
         }
         #endregion
 
