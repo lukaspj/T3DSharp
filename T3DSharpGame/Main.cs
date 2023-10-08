@@ -1,6 +1,6 @@
 using System.Reflection;
 using T3DSharpFramework.Engine;
-using T3DSharpFramework.Generated.Classes.Sim.Console;
+using T3DSharpFramework.Generated.Classes.Sim;
 using T3DSharpFramework.Generated.Functions;
 using T3DSharpFramework.Interop;
 

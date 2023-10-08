@@ -4,7 +4,6 @@ using System.Runtime.InteropServices;
 using T3DSharpFramework.Generated.Classes.Global;
 using T3DSharpFramework.Generated.Classes.Net;
 using T3DSharpFramework.Generated.Classes.Sim;
-using T3DSharpFramework.Generated.Classes.Sim.Console;
 using T3DSharpFramework.Generated.Classes.Sim.Net;
 using T3DSharpFramework.Generated.Enums.Global;
 using T3DSharpFramework.Generated.Structs.Global;
@@ -1477,6 +1476,38 @@ namespace T3DSharpFramework.Generated.Functions {
                _ResetFPSTrackerFunc ??= Torque3D.LookupEngineFunction<_ResetFPSTracker>("fnresetFPSTracker");
 
                 return _ResetFPSTrackerFunc;
+            }
+
+
+            [StructLayout(LayoutKind.Sequential)]
+            internal struct DeleteObjectPtr__Args
+            {
+                internal IntPtr pObjectPtr;
+            }
+
+            [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+            internal delegate void _DeleteObjectPtr(DeleteObjectPtr__Args args);
+            private static _DeleteObjectPtr _DeleteObjectPtrFunc;
+            internal static _DeleteObjectPtr DeleteObjectPtr() {
+               _DeleteObjectPtrFunc ??= Torque3D.LookupEngineFunction<_DeleteObjectPtr>("fnDeleteObjectPtr");
+
+                return _DeleteObjectPtrFunc;
+            }
+
+
+            [StructLayout(LayoutKind.Sequential)]
+            internal struct WrapObject__Args
+            {
+                internal IntPtr pObject;
+            }
+
+            [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+            internal delegate IntPtr _WrapObject(WrapObject__Args args);
+            private static _WrapObject _WrapObjectFunc;
+            internal static _WrapObject WrapObject() {
+               _WrapObjectFunc ??= Torque3D.LookupEngineFunction<_WrapObject>("fnWrapObject");
+
+                return _WrapObjectFunc;
             }
 
 
@@ -11471,6 +11502,23 @@ start.Free();end.Free();             return _engineResult;
              InternalUnsafeMethods.ResetFPSTracker__Args _args = new InternalUnsafeMethods.ResetFPSTracker__Args() {
              };
              InternalUnsafeMethods.ResetFPSTracker()(_args);
+        }
+
+        /// 
+        public static void DeleteObjectPtr(IntPtr pObjectPtr) {
+             InternalUnsafeMethods.DeleteObjectPtr__Args _args = new InternalUnsafeMethods.DeleteObjectPtr__Args() {
+                pObjectPtr = pObjectPtr,
+             };
+             InternalUnsafeMethods.DeleteObjectPtr()(_args);
+        }
+
+        /// 
+        public static IntPtr WrapObject(SimObject pObject) {
+             InternalUnsafeMethods.WrapObject__Args _args = new InternalUnsafeMethods.WrapObject__Args() {
+                pObject = pObject.ObjectPtr,
+             };
+             IntPtr _engineResult = InternalUnsafeMethods.WrapObject()(_args);
+             return _engineResult;
         }
 
         /// 
