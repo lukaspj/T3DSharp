@@ -7,7 +7,7 @@ using T3DSharpFramework.Interop;
 namespace Game {
    class Program {
       [ScriptEntryPoint]
-      public static void Entry() {
+      public static void CSharpEntryFunction() {
          Global.SetConsoleString("Core::windowIcon", "data/icon.png");
          Global.SetConsoleString("Core::splashWindowImage", "data/splash.png");
 

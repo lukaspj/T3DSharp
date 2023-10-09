@@ -1,5 +1,9 @@
 # T3DSharp - A C# scripting layer for Torque3D
 
+## _Note: Only tested on Windows_
+_While nothing stops this from working on all platforms, the project, as well as the
+Developer Experience around it, has only been tested on Windows._
+
 This project consists of three parts:
 
 * T3DSharpFramework
@@ -14,10 +18,10 @@ The _game_ is a small C# application that initializes Torque3D and implements a 
 
 ## Setup
 
-Simply place this folder inside your `game/data` folder of your project, as if it was a module. Then run _cmake_
-with the `TORQUE_DYNAMIC_LIBRARY` flag set to true.
+Simply place this folder inside your `game/data` folder of your project, as if it was a module. Then run
+CMake configure with `TORQUE_ENTRY_FUNCTION` set to `CSharpEntryFunction`.
 
 CMake will generate necessary templates to inject the project name and relevant paths in, then it will
-find all `*.csproj` files and add them to a solution that will be created in this folder.
+find all `*.cs` files and add them to the VS Solution.
 
 See the [wiki](https://github.com/lukaspj/T3DSharp/wiki) for more information.

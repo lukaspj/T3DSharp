@@ -47,7 +47,7 @@ namespace T3DSharpFramework.Interop {
 
          AddFunctionNative = Marshal.GetDelegateForFunctionPointer<AddFunctionDelegate>(addFunction);
          LookupEngineFunctionNative = Marshal.GetDelegateForFunctionPointer<LookupEngineFunctionDelegate>(lookupEngineFunction);
-         AddFunction(null, "CsharpEntryFunction");
+         AddFunction(null, Initializer.GetScriptEntry().Name);
 
          foreach (var function in EngineCallbacks.GetFunctions()) {
             AddFunction(null, function.Key);
@@ -77,7 +77,7 @@ namespace T3DSharpFramework.Interop {
          if (argv != IntPtr.Zero)
             strings = StringMarshal.IntPtrToAnsiStringArray(argv, argc);
 
-         if (_name == "CsharpEntryFunction") {
+         if (_name == Initializer.GetScriptEntry().Name) {
             Initializer.GetScriptEntry().Invoke(null, null);
             *result = true;
             return StringMarshal.Utf8StringToIntPtr("");
