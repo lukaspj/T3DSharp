@@ -29,23 +29,10 @@ namespace T3DSharpFramework.Generated.Classes.Sim.Net {
     public class GameConnection : NetConnection {
         public GameConnection(bool pRegister = false)
             : base(pRegister) {
-           // Always set the Class Namespace to the C# class name
-           ClassName = ((object)this).GetType().Name;
         }
 
         public GameConnection(string pName, bool pRegister)
-            : base(false) {
-            Name = pName;
-            // Handle the case where the class name refers to the name of
-            // the object, and thus only meant to be used for that specific object,
-            // not encompassing an actual type
-            var managedClassName = ((object)this).GetType().Name;
-            if (managedClassName != Name) {
-               ClassName = managedClassName;
-            }
-            if (pRegister) {
-                RegisterObject();
-            }
+            : base(pName, pRegister) {
         }
 
         public GameConnection(string pName)

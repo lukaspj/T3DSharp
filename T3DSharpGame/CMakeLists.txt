@@ -1,9 +1,33 @@
 ﻿project(T3DSharpGame LANGUAGES CSharp)
 
+file(GLOB_RECURSE tmp_files ${CMAKE_CURRENT_SOURCE_DIR} ${TORQUE_APP_GAME_DIRECTORY}/*.cs)
+
+# Annoying assembly info in obj dirs
+list(FILTER tmp_files EXCLUDE REGEX ".*AssemblyInfo.cs")
+list(FILTER tmp_files EXCLUDE REGEX ".*AssemblyAttributes.cs")
+foreach(entry ${tmp_files})
+   get_filename_component( tmp_dir ${entry} DIRECTORY )
+   list(APPEND tmp_dirs ${tmp_dir})
+endforeach()
+
+list(REMOVE_DUPLICATES tmp_files)
+get_filename_component( tmp_dir ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY )
+list(FILTER tmp_files EXCLUDE REGEX "${tmp_dir}/.*")
+
+message(WARNING ${CMAKE_CURRENT_SOURCE_DIR})
+message(WARNING ${tmp_files})
+
 add_library(${PROJECT_NAME} SHARED
    "CMakeLists.txt"
    "Main.cs"
+   ${tmp_files}
 )
+
+foreach(entry ${tmp_files})
+   file(RELATIVE_PATH tmp_path ${TORQUE_APP_GAME_DIRECTORY} "${entry}")
+   set_source_files_properties(${entry} PROPERTIES VS_CSHARP_Link "${tmp_path}")
+endforeach()
+
 
 target_link_libraries(${PROJECT_NAME} T3DSharpFramework)
 

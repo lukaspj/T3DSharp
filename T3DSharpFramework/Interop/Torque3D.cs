@@ -49,6 +49,19 @@ namespace T3DSharpFramework.Interop {
          LookupEngineFunctionNative = Marshal.GetDelegateForFunctionPointer<LookupEngineFunctionDelegate>(lookupEngineFunction);
          AddFunction(null, "CsharpEntryFunction");
 
+         foreach (var function in EngineCallbacks.GetFunctions()) {
+            AddFunction(null, function.Key);
+         }
+
+         foreach (var type in EngineCallbacks.GetTypes()) {
+            type.Value
+               .GetMethods(BindingFlags.Default | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly |
+                           BindingFlags.IgnoreCase)
+               .ToList()
+               .ForEach(cb =>
+                  AddFunction(type.Key, cb.Name));
+         }
+
          // --- Normally Torque uses the main.tscript file to set these variables, here we have to do it ourselves.
          string CSDir = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location).Replace('\\', '/');
          Global.SetMainDotCsDir(CSDir);

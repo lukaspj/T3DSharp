@@ -1,13 +1,13 @@
         public {{class.name}}(bool pRegister = false)
             : base(pRegister) {
-           {{~ if class.is_sim_object ~}}
+            {{~ if class.name == "SimObject" ~}}
            // Always set the Class Namespace to the C# class name
            ClassName = ((object)this).GetType().Name;
            {{~ end ~}}
         }
 
         public {{class.name}}(string pName, bool pRegister)
-            {{~ if class.is_sim_object ~}}
+            {{~ if class.name == "SimObject" ~}}
             : base(false) {
             Name = pName;
             // Handle the case where the class name refers to the name of
@@ -21,7 +21,7 @@
                 RegisterObject();
             }
             {{~ else ~}}
-            : this(pName, pRegister) {
+            : base(pName, pRegister) {
             {{~ end ~}}
         }
 

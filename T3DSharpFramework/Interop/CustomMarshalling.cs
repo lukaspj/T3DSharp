@@ -34,6 +34,11 @@ namespace T3DSharpFramework.Interop
 
       public static IntPtr Utf8StringToIntPtr(string str)
       {
+         if (str == null)
+         {
+            return IntPtr.Zero;
+         }
+
          int len = Encoding.UTF8.GetByteCount(str);
          byte[] buffer = new byte[len + 1];
          Encoding.UTF8.GetBytes(str, 0, str.Length, buffer, 0);

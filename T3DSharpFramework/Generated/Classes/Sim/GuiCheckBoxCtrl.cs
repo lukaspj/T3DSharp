@@ -38,23 +38,10 @@ namespace T3DSharpFramework.Generated.Classes.Sim {
     public class GuiCheckBoxCtrl : GuiButtonBaseCtrl {
         public GuiCheckBoxCtrl(bool pRegister = false)
             : base(pRegister) {
-           // Always set the Class Namespace to the C# class name
-           ClassName = ((object)this).GetType().Name;
         }
 
         public GuiCheckBoxCtrl(string pName, bool pRegister)
-            : base(false) {
-            Name = pName;
-            // Handle the case where the class name refers to the name of
-            // the object, and thus only meant to be used for that specific object,
-            // not encompassing an actual type
-            var managedClassName = ((object)this).GetType().Name;
-            if (managedClassName != Name) {
-               ClassName = managedClassName;
-            }
-            if (pRegister) {
-                RegisterObject();
-            }
+            : base(pName, pRegister) {
         }
 
         public GuiCheckBoxCtrl(string pName)
