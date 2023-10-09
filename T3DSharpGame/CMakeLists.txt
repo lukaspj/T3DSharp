@@ -14,9 +14,6 @@ list(REMOVE_DUPLICATES tmp_files)
 get_filename_component( tmp_dir ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY )
 list(FILTER tmp_files EXCLUDE REGEX "${tmp_dir}/.*")
 
-message(WARNING ${CMAKE_CURRENT_SOURCE_DIR})
-message(WARNING ${tmp_files})
-
 add_library(${PROJECT_NAME} SHARED
    "CMakeLists.txt"
    "Main.cs"
@@ -27,7 +24,6 @@ foreach(entry ${tmp_files})
    file(RELATIVE_PATH tmp_path ${TORQUE_APP_GAME_DIRECTORY} "${entry}")
    set_source_files_properties(${entry} PROPERTIES VS_CSHARP_Link "${tmp_path}")
 endforeach()
-
 
 target_link_libraries(${PROJECT_NAME} T3DSharpFramework)
 
