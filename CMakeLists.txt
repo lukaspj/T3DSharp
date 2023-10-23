@@ -1,10 +1,56 @@
 cmake_minimum_required(VERSION 3.16)
 project(T3DSharp LANGUAGES CSharp)
 
+# INPUT DEFAULTS --
+IF (WIN32)
+   SET(_DOTNET_OS "win")
+   SET(_DOTNET_ARCH "x64")
+
+   # DOTNET_ROOT > dotnet.exe location
+   IF(NOT $ENV{DOTNET_ROOT} STREQUAL "")
+      SET(_DOTNET_ROOT_PATH "$ENV{DOTNET_ROOT}")
+   ELSE()
+      find_program(_DOTNET_EXE_PATH dotnet)
+      get_filename_component(_DOTNET_ROOT_PATH "${_DOTNET_EXE_PATH}" DIRECTORY)
+   ENDIF ()
+ENDIF (WIN32)
+
+cmake_path(APPEND DOTNET_SDK_DIR "${_DOTNET_ROOT_PATH}" "sdk")
+
+subdirlist(DOTNET_SDK_SUBDIRS "${DOTNET_SDK_DIR}")
+
+list(SORT DOTNET_SDK_SUBDIRS COMPARE NATURAL ORDER DESCENDING)
+list(GET DOTNET_SDK_SUBDIRS 0 _DOTNET_SDK_VERSION)
+
+cmake_path(APPEND DOTNET_RUNTIME_DIR "${_DOTNET_ROOT_PATH}" "shared/Microsoft.AspNetCore.App")
+subdirlist(DOTNET_RUNTIME_SUBDIRS "${DOTNET_RUNTIME_DIR}")
+
+list(SORT DOTNET_RUNTIME_SUBDIRS COMPARE NATURAL ORDER DESCENDING)
+list(GET DOTNET_RUNTIME_SUBDIRS 0 _DOTNET_RUNTIME_VERSION)
+# -- INPUT DEFAULTS
+
+# USER INPUT --
+SET(DOTNET_OS "${_DOTNET_OS}" CACHE STRING "Which OS to target, will default to current OS")
+SET(DOTNET_ARCH "${_DOTNET_ARCH}" CACHE STRING "Which architecture to target, will default to current OS")
+SET(DOTNET_ROOT_PATH "${_DOTNET_ROOT_PATH}" CACHE STRING "The path to the DOTNET SDK root directory")
+SET(DOTNET_SDK_VERSION "${_DOTNET_SDK_VERSION}" CACHE STRING "The SDK version to use")
+SET(DOTNET_RUNTIME_VERSION "${_DOTNET_RUNTIME_VERSION}" CACHE STRING "The runtime version to use")
+# -- USER INPUT
+
+# VALIDATION --
+IF ("$CACHE{DOTNET_ROOT_PATH}" STREQUAL "")
+   message(FATAL_ERROR "Failed to detect dotnet SDK path")
+ENDIF ()
+# --VALIDATION
+
 torqueAddSourceDirectories("${POSSIBLE_PROJECT_ABSOLUTEPATH}/source")
 
+message(STATUS "Using dotnet at ${DOTNET_ROOT_PATH}")
+message(STATUS "Dotnet SDKs: ${DOTNET_SDK_SUBDIRS}, selected: ${DOTNET_SDK_VERSION} (${DOTNET_OS}_${DOTNET_ARCH})")
+message(STATUS "Dotnet Runtimes: ${DOTNET_RUNTIME_SUBDIRS}, selected: ${DOTNET_RUNTIME_VERSION} (${DOTNET_OS}_${DOTNET_ARCH})")
+
 # Set global .NET version
-SET(CMAKE_DOTNET_TARGET_FRAMEWORK "net7.0")
+SET(CMAKE_DOTNET_TARGET_FRAMEWORK "net6.0")
 
 # Set the C# language version for all projects.
 SET(CMAKE_CSharp_FLAGS "/langversion:10")

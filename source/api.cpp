@@ -14,6 +14,8 @@
 #include <coreclr_delegates.h>
 #include <hostfxr.h>
 
+#include "console/engineAPI.h"
+
 #ifdef WIN32
 #include <Windows.h>
 
@@ -67,68 +69,62 @@ TORQUE_API const void* csharp_get_engine_function_pointer(const char* pFnName)
 }
 }
 
+void InitializeDotnetRuntime()
+{
+   //
+   // STEP 1: Load HostFxr and get exported hosting functions
+   //
+   AssertFatal(Csharp::loadHostfxr(NULL), "failed to load hostfxr for C# code execution");
+
+   //
+   // STEP 2: Initialize and start the .NET Core runtime
+   //
+
+   char pathBuffer[2048] = {};
+   AssertFatal(Con::expandPath(pathBuffer, 2048, "T3DSharpGame.runtimeconfig.json"),
+               "failed to expand path for runtimeconfig");
+   const char_t* config_path = STR("T3DSharpGame.runtimeconfig.json");
+   String path = pathBuffer;
+   const load_assembly_and_get_function_pointer_fn load_assembly_and_get_function_pointer =
+      Csharp::getDotNetLoadAssembly(path.utf16());
+   AssertFatal(load_assembly_and_get_function_pointer != nullptr, "Failure: get_dotnet_load_assembly()");
+
+   //
+   // STEP 3: Load managed assembly and get function pointer to a managed method
+   //
+   const char_t* dotnetlib_path = STR("T3DSharpFramework.dll");
+
+   // Load stuff from T3DSharpFramework library
+   const char_t* dotnetframework_type = STR("T3DSharpFramework.Interop.Torque3D, T3DSharpFramework");
+   Csharp::InitT3DSharp initDotnetFunction = nullptr;
+   int rc = load_assembly_and_get_function_pointer(
+      dotnetlib_path,
+      dotnetframework_type,
+      STR("InitT3DSharp"),
+      UNMANAGEDCALLERSONLY_METHOD /*delegate_type_name*/,
+      nullptr,
+      (void**)&initDotnetFunction);
+   AssertFatal(rc == 0 && initDotnetFunction != nullptr, "Failure: load_assembly_and_get_function_pointer()");
+   initDotnetFunction((void*)csharp_add_function, (void*)csharp_get_engine_function_pointer);
+
+   component_entry_point_fn execConsoleFunction = nullptr;
+   rc = load_assembly_and_get_function_pointer(
+      dotnetlib_path,
+      dotnetframework_type,
+      STR("ExecConsoleFunction"),
+      UNMANAGEDCALLERSONLY_METHOD /*delegate_type_name*/,
+      nullptr,
+      (void**)&execConsoleFunction);
+   AssertFatal(rc == 0 && execConsoleFunction != nullptr, "Failure: load_assembly_and_get_function_pointer()");
+   Csharp::gExecCallback = reinterpret_cast<Csharp::ExecCallback>(execConsoleFunction);
+}
+
 
 MODULE_BEGIN(CSharp)
 
    MODULE_INIT
    {
-      //
-      // STEP 1: Load HostFxr and get exported hosting functions
-      //
-      AssertFatal(Csharp::loadHostfxr(NULL), "failed to load hostfxr for C# code execution");
-
-      //
-      // STEP 2: Initialize and start the .NET Core runtime
-      //
-
-      char pathBuffer[2048] = {};
-      AssertFatal(Con::expandPath(pathBuffer, 2048, "T3DSharpGame.runtimeconfig.json"),
-                  "failed to expand path for runtimeconfig");
-      const char_t* config_path = STR("T3DSharpGame.runtimeconfig.json");
-      String path = pathBuffer;
-      const load_assembly_and_get_function_pointer_fn load_assembly_and_get_function_pointer =
-         Csharp::getDotNetLoadAssembly(path.utf16());
-      AssertFatal(load_assembly_and_get_function_pointer != nullptr, "Failure: get_dotnet_load_assembly()");
-
-      //
-      // STEP 3: Load managed assembly and get function pointer to a managed method
-      //
-      const char_t* dotnetlib_path = STR("T3DSharpGame.dll");
-      const char_t* dotnetlib_type = STR("T3DSharpGame.Main, T3DSharpGame");
-
-      // Force loading the main assembly
-      void** ignored = nullptr;
-      int rc = load_assembly_and_get_function_pointer(
-         dotnetlib_path,
-         dotnetlib_type,
-         STR("Ignored"),
-         UNMANAGEDCALLERSONLY_METHOD /*delegate_type_name*/,
-         nullptr,
-         (void**)&ignored);
-
-      // Load stuff from T3DSharpFramework library
-      const char_t* dotnetframework_type = STR("T3DSharpFramework.Interop.Torque3D, T3DSharpFramework");
-      Csharp::InitT3DSharp initDotnetFunction = nullptr;
-      rc = load_assembly_and_get_function_pointer(
-         dotnetlib_path,
-         dotnetframework_type,
-         STR("InitT3DSharp"),
-         UNMANAGEDCALLERSONLY_METHOD /*delegate_type_name*/,
-         nullptr,
-         (void**)&initDotnetFunction);
-      AssertFatal(rc == 0 && initDotnetFunction != nullptr, "Failure: load_assembly_and_get_function_pointer()");
-      initDotnetFunction((void*)csharp_add_function, (void*)csharp_get_engine_function_pointer);
-
-      component_entry_point_fn execConsoleFunction = nullptr;
-      rc = load_assembly_and_get_function_pointer(
-         dotnetlib_path,
-         dotnetframework_type,
-         STR("ExecConsoleFunction"),
-         UNMANAGEDCALLERSONLY_METHOD /*delegate_type_name*/,
-         nullptr,
-         (void**)&execConsoleFunction);
-      AssertFatal(rc == 0 && execConsoleFunction != nullptr, "Failure: load_assembly_and_get_function_pointer()");
-      Csharp::gExecCallback = reinterpret_cast<Csharp::ExecCallback>(execConsoleFunction);
+      InitializeDotnetRuntime();
    }
 
    MODULE_SHUTDOWN

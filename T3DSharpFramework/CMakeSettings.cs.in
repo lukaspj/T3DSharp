@@ -1,0 +1,6 @@
+﻿namespace Modules.T3DSharpGenerator;
+
+public class CMakeSettings {
+   public static string SOLUTION_PATH = @"@T3DSharpGameSlnPath@";
+   public static string DOTNET_SDK_PATH = @"@DOTNET_SDK_DIR@/@DOTNET_SDK_VERSION@";
+}

@@ -1,11 +1,21 @@
 ﻿project(T3DSharpFramework LANGUAGES CSharp)
 
+SET(T3DSharpGameSlnPath "${T3DSharp_BINARY_DIR}/T3DSharpGame/T3DSharpGame.sln")
+configure_file(CMakeSettings.cs.in ${CMAKE_CURRENT_BINARY_DIR}/CMakeSettings.cs)
+
 FILE(GLOB_RECURSE GENERATED_SRCS Generated/*.cs)
 
 SET(CMAKE_CSharp_FLAGS "${CMAKE_CSharp_FLAGS} /unsafe")
 
 add_library(${PROJECT_NAME} SHARED
   CMakeLists.txt
+  Directory.Build.targets
+  "${CMAKE_CURRENT_BINARY_DIR}/CMakeSettings.cs"
+
+  # EditAndContinue
+  Reloading/MsBuildReloader.cs
+  Reloading/ReloadContext.cs
+  Reloading/AssemblyReloadedEventArgs.cs
 
   # Engine
   Engine/ConsoleObjectBase.cs
@@ -47,13 +57,18 @@ add_library(${PROJECT_NAME} SHARED
   ${GENERATED_SRCS}
 )
 
+
+
 # Set CLR assembly properties.
 SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES
     VS_DOTNET_REFERENCES "System;System.Core;System.Runtime.InteropServices"
     VS_GLOBAL_ROOTNAMESPACE ${PROJECT_NAME}
     VS_GLOBAL_GenerateAssemblyInfo false
     VS_GLOBAL_PlatformTarget "x64"
+    VS_GLOBAL_EnableDynamicLoading true
 )
+
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/Directory.Build.targets" "${CMAKE_INSTALL_LIBRARY_DIR}" COPYONLY)
 
 # Setup installer.
 INSTALL(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Config
